@@ -17,7 +17,10 @@ jobs:
       - name: Playwright
         run: npm ci && npx playwright install chromium
       - name: Check the example
-        run: bin/reel check examples/khan-skill | tee check.txt && grep -q "text: PASS" check.txt && grep -q "deterministic: true" check.txt
+        run: |
+          bin/reel check examples/khan-skill | tee check.txt
+          grep -q "text: PASS" check.txt
+          grep -q "deterministic: true" check.txt
       - name: Export the example
         run: mkdir -p out && bin/reel export examples/khan-skill out/khan-skill.mp4
         env:
