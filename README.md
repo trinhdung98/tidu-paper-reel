@@ -6,6 +6,8 @@ A Claude Code skill that makes faceless 9:16 explainer reels in a cut-paper styl
 
 **[Watch the example reel](docs/demo.mp4)** (23 s, made with this skill, about the [khan-explainer](https://github.com/haiderfarooq3/khan-explainer) skill).
 
+Write-up: [paper-reel: a free Claude Code skill that draws cut-paper explainer reels from one prompt](https://haiderfarooq.dev/blog/paper-reel-explainer-reels-in-code). How the skill explains itself, on YouTube: [wide cut](https://youtu.be/c6hUOxt4eXg) and [Short](https://www.youtube.com/shorts/HXAgpEai8pA).
+
 Everything is drawn in code and runs on your Mac: Kokoro for the voice, whisper.cpp for word timing, an HTML canvas, Playwright and ffmpeg. No API keys, no accounts, no editor.
 
 ## How it stays in sync
