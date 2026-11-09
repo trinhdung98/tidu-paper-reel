@@ -567,8 +567,8 @@ function drawAsset(name, x, y, w, h, o = {}) {
 //  flat cut-paper shapes with NO outlines, a mottled paper texture inside every shape, soft drop shadows,
 //  a muted palette (slate, navy, mustard, cream) with one hero colour (the mascot's terracotta).
 //  Pieces: a screwed enamel sign (kicker + headline), a typing terminal bar, counter cards, rubber stamps,
-//  word-by-word caption chips on torn salmon paper, the box mascot ("clawd"), the Tidu Math owl ("tidu"), the Tidu Money pig ("piggy")
-//  and the Tidu Mind brain ("brainy"), each with a hat per scene.
+//  word-by-word caption chips on torn salmon paper, the box mascot ("clawd"), the Tidu Math owl ("tidu"), the Tidu Money pig ("piggy"),
+//  the Tidu Mind brain ("brainy") and the Tidu Science flask ("flasky"), each with a hat per scene.
 //  Built on kit/core.js. Motion on 1s (smooth, code-driven), static paper (no boil).
 // =====================================================================
 const PR = {
@@ -576,6 +576,7 @@ const PR = {
   tidu: '#2aa79b', tiduD: '#1f8a80', tiduL: '#5cc3b5',
   money: '#5f9f52', moneyD: '#477f3e', moneyL: '#8fc27e', moneyK: '#2d5228',
   mind: '#a08cd0', mindD: '#7d69b0', mindL: '#c4b6ea', mindK: '#463a70',
+  sci: '#f08a3c', sciD: '#c9661f', sciL: '#f9c08c', glass: '#d8ecf1', glassD: '#a9cfd8', sciK: '#6b7886',
   slate: '#869997', slateL: '#95a9a7', slateD: '#788a89',
   navy: '#1c2b56', navyD: '#192833', ink: '#181b24', char: '#23262c',
   cream: '#e9e5da', creamL: '#f4f1e8', paperW: '#f9f8f4',
@@ -1206,6 +1207,143 @@ function brainyHat(h, key) {
     });
   }
 }
+// ---- THE TIDU SCIENCE FLASK: a pale paper-glass Erlenmeyer flask with a bright orange liquid (a rippling surface, rising bubbles),
+//  measuring ticks on the glass, the face in the liquid, steel-grey limbs with light-blue lab gloves and dark shoes.
+//  Same contract as clawd()/tidu()/piggy()/brainy(): (x, y) = where the body meets the legs; the shoes reach about 80px below it.
+//  o: s, hat ('goggles'|'astronaut'|'mortar'|'propeller'|'hardhat'|'explorer'|'party'|null), mood ('neutral'|'happy'|'wow'|'flat'), look (pupil shift, px),
+//     view ('side'), walk, hand: { x, y } near glove (default hanging at the left side), hold(hx, hy, behind) draws a prop in the glove
+//     (propTube, propMagnet, propGlass, propStick, ...), pop (0..1 scale-in), lean (rad), flip, key
+var FLASKY_SCALE = 1;
+function flasky(x, y, o = {}) {
+  const s = (o.s ?? 1) * (o.pop ?? 1) * FLASKY_SCALE; if (s <= 0.01) return;
+  const key = o.key ?? 'fl', ph = hash(key) % 100 / 100 * TAU;
+  const bob = Math.sin(TT * TAU * 1.15 + ph) * 7, sq = 1 + Math.sin(TT * TAU * 2.3 + ph) * 0.012;
+  ctx.save(); ctx.translate(x, y); ctx.rotate(o.lean ?? 0); ctx.scale(o.flip ? -s : s, s);
+  const side = o.view === 'side', mood = o.mood ?? 'neutral', lk = o.look ?? 0;
+  const blink = (Math.floor(TT * FPS) + Math.round(ph * 10)) % 96 < 4;
+  // legs and shoes (behind the body), lifted in turn when o.walk
+  (side ? [-50, 70] : [-80, 80]).forEach((lx, i) => {
+    const lift = o.walk ? Math.max(0, Math.sin(TT * TAU * 2.4 + i * Math.PI)) * 20 : 0;
+    pp(pR(lx - 22, -40 - lift, 44, 96, 14), PR.sciK, { key: key + 'leg' + i, sb: 10, sy: 5, tex: 0.5 });
+    pp(pE(lx + (side ? -16 : 0), 58 - lift, side ? 50 : 44, 22), PR.sciD, { key: key + 'shoe' + i, sb: 8, sy: 4, tex: 0.45 });
+  });
+  ctx.translate(0, bob * 0.6); ctx.scale(1 / sq, sq);
+  // the flask: a narrow neck sloping out to a flat base with rounded corners; d insets it (the inside of the glass)
+  const flask = (d) => () => {
+    const nw = 62 - d, bw = 232 - d, top = -500 + d, sh = -350, base = -12 - d, r = 46;
+    ctx.moveTo(-nw, top); ctx.lineTo(-nw, sh); ctx.lineTo(-bw + 18, base - r * 1.1);
+    ctx.quadraticCurveTo(-bw - 6, base, -bw + r, base); ctx.lineTo(bw - r, base);
+    ctx.quadraticCurveTo(bw + 6, base, bw - 18, base - r * 1.1); ctx.lineTo(nw, sh); ctx.lineTo(nw, top); ctx.closePath();
+  };
+  pp(flask(0), PR.glass, { key: key + 'glass', sb: 22, sy: 10, tex: 0.45, rim: 'rgba(255,255,255,0.7)', rw: 4 });
+  // the liquid, clipped to the inside of the glass: a rippling surface, a lighter meniscus line and rising bubbles
+  const ly = -255, wave = (dy) => (xx) => ly + dy + Math.sin(xx * 0.03 + TT * 4 + ph) * 7;
+  ctx.save(); ctx.beginPath(); flask(16)(); ctx.clip();
+  const surf = wave(0);
+  pp(() => { ctx.moveTo(-300, surf(-300)); for (let xx = -300; xx <= 300; xx += 20) ctx.lineTo(xx, surf(xx)); ctx.lineTo(300, 40); ctx.lineTo(-300, 40); ctx.closePath(); }, PR.sci, { key: key + 'liq', shadow: false, tex: 0.5 });
+  ctx.save(); ctx.strokeStyle = PR.sciL; ctx.lineWidth = 9; ctx.lineCap = 'round'; ctx.beginPath(); for (let xx = -300; xx <= 300; xx += 20) ctx.lineTo(xx, surf(xx) + 3); ctx.stroke(); ctx.restore();
+  const R = RNG(key, 'bub');
+  for (let i = 0; i < 7; i++) {
+    const bx = (i % 2 ? 1 : -1) * R.r(115, 185), sp = R.r(40, 90), off = R.r(0, 220), br = R.r(7, 15), by = -30 - (TT * sp + off) % 220;   // either side of the face
+    if (by > ly + 12) pp(pE(bx, by, br, br), 'rgba(253,226,196,0.85)', { shadow: false, tex: false });
+  }
+  ctx.restore();
+  // glass details: the lip, a highlight on the neck and the slope, measuring ticks above the liquid
+  pp(pR(-84, -530, 168, 40, 14), PR.glassD, { key: key + 'lip', sb: 8, sy: 4, tex: 0.4, rim: 'rgba(255,255,255,0.6)', rw: 3 });
+  pp(pR(-44, -484, 16, 112, 8), 'rgba(255,255,255,0.6)', { shadow: false, tex: false });
+  withT(-112, -205, 0.48, 1, () => pp(pR(-10, -80, 20, 150, 10), 'rgba(255,255,255,0.5)', { shadow: false, tex: false }));
+  [[-330, 34], [-300, 22], [-270, 34]].forEach(([ty, tw]) => pp(pR(side ? -20 : 20, ty, tw, 6, 3), 'rgba(40,60,90,0.45)', { shadow: false, tex: false }));
+  // eyes in the liquid: white paper with an ink pupil; 'happy' closes them into arcs, 'flat' and blinks drop an orange lid
+  for (const [ex, ey, k] of (side ? [[-95, -150, 0.95]] : [[-72, -150, 1], [72, -150, 1]])) {
+    const erx = 34 * k, ery = 40 * k;
+    if (mood === 'happy') {
+      ctx.save(); ctx.strokeStyle = PR.ink; ctx.lineWidth = 12 * k; ctx.lineCap = 'round'; ctx.beginPath();
+      ctx.moveTo(ex - 26 * k + lk, ey + 10); ctx.quadraticCurveTo(ex + lk, ey - 32 * k, ex + 26 * k + lk, ey + 10); ctx.stroke(); ctx.restore();
+      continue;
+    }
+    pp(pE(ex, ey, erx, ery), PR.paperW, { key: key + 'eye' + ex, sb: 6, sy: 3, tex: 0.25 });
+    const pr = (mood === 'wow' ? 25 : 20) * k, px = ex + lk * k, py = ey + 6;
+    pp(pE(px, py, pr, pr), PR.ink, { key: key + 'pup' + ex, shadow: false, tex: 0.2 });
+    pp(pE(px + pr * 0.35, py - pr * 0.38, pr * 0.32, pr * 0.32), PR.paperW, { shadow: false, tex: false });
+    if (blink || mood === 'flat') {
+      ctx.save(); ctx.beginPath(); ctx.ellipse(ex, ey, erx, ery, 0, 0, TAU); ctx.clip();
+      const lidY = blink ? ey + ery : ey + 2;
+      pp(pR(ex - erx, ey - ery, 2 * erx, lidY - ey + ery, 0), PR.sciD, { key: key + 'lid' + ex, shadow: false, tex: 0.5 });
+      pp(pR(ex - erx, lidY - 4, 2 * erx, 8, 3), '#8a4312', { shadow: false, tex: false });
+      ctx.restore();
+    }
+  }
+  if (mood === 'happy') (side ? [[-36, -104]] : [[-126, -104], [126, -104]]).forEach(([bx, by]) => pp(pE(bx, by, 26, 13), PR.pink, { key: key + 'blush' + bx, shadow: false, tex: 0.3 }));
+  // mouth
+  const mx = side ? -112 : 0, my = -84;
+  if (mood === 'happy') {
+    pp(pA(mx, my - 8, 30, 0, Math.PI), PR.ink, { key: key + 'mouth', shadow: false, tex: 0.2 });
+    pp(pE(mx, my + 11, 14, 7), PR.pink, { shadow: false, tex: false });
+  } else if (mood === 'wow') pp(pE(mx, my + 6, 19, 24), PR.ink, { key: key + 'mouth', shadow: false, tex: 0.2 });
+  else if (mood === 'flat') pp(pR(mx - 24, my, 48, 10, 4), PR.ink, { key: key + 'mouth', shadow: false, tex: 0.2 });
+  else { ctx.save(); ctx.strokeStyle = PR.ink; ctx.lineWidth = 9; ctx.lineCap = 'round'; ctx.beginPath(); ctx.arc(mx, my - 12, 22, 0.18 * Math.PI, 0.82 * Math.PI); ctx.stroke(); ctx.restore(); }
+  // arms: the far one hangs still (front view only); the near one is o.hand and holds the prop
+  const arm = (sx, sy, hx, hy, k) => {
+    const wl = Math.hypot(hx - sx, hy - sy), wa = Math.atan2(hy - sy, hx - sx);
+    pp(pE((sx + hx) / 2, (sy + hy) / 2, wl / 2 + 18, 24, wa), PR.sciK, { key: k, sb: 10, sy: 5, tex: 0.5 });
+    pp(pE(hx, hy, 30, 30), '#9fd3e6', { key: k + 'h', sb: 6, sy: 3, tex: 0.45 });
+  };
+  if (!side) arm(150, -190, 220, -96, key + 'armR');
+  const shx = side ? 40 : -150, shy = side ? -150 : -190;
+  const hx = o.hand?.x ?? (side ? 10 : -220), hy = o.hand?.y ?? (side ? -62 : -96) + Math.sin(TT * TAU * 1.3 + ph) * 6;
+  if (o.hold) o.hold(hx, hy, true);
+  arm(shx, shy, hx, hy, key + 'armL');
+  if (o.hold) o.hold(hx, hy, false);
+  if (o.hat) { ctx.save(); ctx.translate(0, -530); ctx.scale(0.75, 0.75); flaskyHat(o.hat, key); ctx.restore(); }
+  ctx.restore();
+}
+// hats in their own frame: (0, 0) = the top of the flask's lip, drawn at 0.75 so they perch on the narrow neck; positive y runs down the neck
+function flaskyHat(h, key) {
+  if (h === 'goggles') {
+    pp(pR(-130, 96, 260, 28, 10), PR.ink, { key: key + 'gband', sb: 8, sy: 4, tex: 0.4 });
+    [-64, 64].forEach((gx) => {
+      pp(pE(gx, 110, 56, 50), PR.char, { key: key + 'grim' + gx, sb: 10, sy: 5, tex: 0.4 });
+      pp(pE(gx, 110, 42, 36), '#bfe6f2', { key: key + 'glens' + gx, shadow: false, tex: 0.25 });
+      pp(pE(gx - 14, 98, 12, 8, -0.5), 'rgba(255,255,255,0.8)', { shadow: false, tex: false });
+    });
+  } else if (h === 'astronaut') {
+    pp(pE(0, 60, 160, 186), 'rgba(205,232,245,0.42)', { key: key + 'adome', sb: 16, sy: 8, tex: 0.25, rim: 'rgba(255,255,255,0.85)', rw: 6 });
+    pp(pE(-70, -40, 22, 50, 0.5), 'rgba(255,255,255,0.65)', { shadow: false, tex: false });
+    pp(pR(-170, 220, 340, 44, 20), PR.paperW, { key: key + 'acollar', sb: 10, sy: 5, tex: 0.45 });
+    pp(pE(110, 242, 12, 12), PR.red, { shadow: false, tex: false });
+  } else if (h === 'mortar') {
+    pp(pR(-130, -50, 260, 70, 8), PR.ink, { key: key + 'mcap', sb: 12, sy: 6, tex: 0.4 });
+    pp(pG([[0, -140], [260, -80], [0, -22], [-260, -80]]), '#262a3a', { key: key + 'mboard', sb: 16, sy: 8, tex: 0.45 });
+    const sw = Math.sin(TT * 5) * 6;
+    ctx.save(); ctx.strokeStyle = PR.mustard; ctx.lineWidth = 9; ctx.beginPath(); ctx.moveTo(0, -82); ctx.quadraticCurveTo(160, -70, 196 + sw, 20); ctx.stroke(); ctx.restore();
+    pp(pR(182 + sw, 16, 30, 62, 6), PR.mustard, { key: key + 'mtas', sb: 6, sy: 3, tex: 0.5 });
+  } else if (h === 'propeller') {
+    [PR.red, PR.yellow, PR.blue, PR.green].forEach((c, i) => pp(() => { ctx.moveTo(0, 14); ctx.arc(0, 14, 165, Math.PI + i * Math.PI / 4, Math.PI + (i + 1) * Math.PI / 4); ctx.closePath(); }, c, { key: key + 'pdome' + i, sb: 12, sy: 5, tex: 0.55 }));
+    pp(pR(-172, -2, 344, 28, 12), PR.navy, { key: key + 'pband', sb: 8, sy: 4, tex: 0.45 });
+    pp(pR(-9, -200, 18, 56, 4), PR.char, { key: key + 'pstem', sb: 6, sy: 3, tex: 0.3 });
+    const spin = Math.cos(TT * TAU * 1.5), sx = Math.sign(spin || 1) * Math.max(0.08, Math.abs(spin));
+    ctx.save(); ctx.translate(0, -200); ctx.scale(sx, 1);
+    pp(pE(-66, 0, 66, 16), PR.red, { key: key + 'pbl', sb: 6, sy: 3, tex: 0.4 }); pp(pE(66, 0, 66, 16), PR.blue, { key: key + 'pbr', sb: 6, sy: 3, tex: 0.4 });
+    ctx.restore();
+    pp(pE(0, -200, 15, 15), PR.mustard, { key: key + 'phub', shadow: false, tex: 0.4 });
+  } else if (h === 'hardhat') {
+    pp(pA(0, 8, 172, Math.PI, TAU), PR.yellow, { key: key + 'hdome', sb: 14, sy: 6, tex: 0.6 });
+    pp(pR(-24, -170, 48, 172, 20), PR.mustard, { key: key + 'hcrest', shadow: false, tex: 0.5 });
+    pp(pR(-215, -12, 430, 34, 16), PR.mustard, { key: key + 'hbrim', sb: 10, sy: 5, tex: 0.5 });
+  } else if (h === 'explorer') {
+    pp(pE(0, 4, 250, 44), PR.tan, { key: key + 'ebrim', sb: 14, sy: 7, tex: 0.6 });
+    pp(pA(0, -4, 166, Math.PI, TAU), '#d9c08b', { key: key + 'edome', sb: 10, sy: 4, tex: 0.6 });
+    pp(pR(-166, -40, 332, 30, 3), PR.brown, { key: key + 'eband', shadow: false, tex: 0.5 });
+    pp(pE(0, -172, 16, 10), PR.tan, { key: key + 'ebtn', shadow: false, tex: 0.4 });
+  } else if (h === 'party') {
+    withT(30, 10, 0.2, 1, () => {
+      const w = (yy) => 115 * (1 + yy / 270);
+      pp(pG([[-115, 0], [115, 0], [0, -270]]), PR.blue, { key: key + 'pcone', sb: 14, sy: 7, tex: 0.55 });
+      [[-40, -80], [-150, -190]].forEach(([y0, y1], i) => pp(pG([[-w(y0), y0], [w(y0), y0], [w(y1), y1], [-w(y1), y1]]), PR.mustard, { key: key + 'pstr' + i, shadow: false, tex: 0.5 }));
+      pp(pE(0, -272, 32, 32), PR.red, { key: key + 'ppom', sb: 8, sy: 4, tex: 0.5 });
+    });
+  }
+}
 // ---- props
 // a gold ₫ coin of radius r
 function prCoin(x, y, r, key = 'coin') {
@@ -1233,6 +1371,17 @@ function prCouch(x, y, s = 1, fill = '#8a4a5a', back = '#6e3a48') {
     pp(pR(-400, -110, 120, 190, 56), fill, { key: 'carm', sb: 14, sy: 7, tex: 0.6 });
     pp(pR(-300, -40, 160, 50, 24), PR.creamL, { key: 'cpill', sb: 8, sy: 4, tex: 0.5 });
   });
+}
+// an atom icon of radius r: a red nucleus and three orbits (cream by default; pass a dark orbit colour on light paper) with electrons running round them
+function prAtom(x, y, r, key = 'atom', orbit = 'rgba(244,241,232,0.85)') {
+  for (let i = 0; i < 3; i++) {
+    const rot = i * Math.PI / 3, a = TT * TAU * 0.6 + i * TAU / 3;
+    ctx.save(); ctx.translate(x, y); ctx.rotate(rot);
+    ctx.strokeStyle = orbit; ctx.lineWidth = r * 0.05; ctx.beginPath(); ctx.ellipse(0, 0, r, r * 0.36, 0, 0, TAU); ctx.stroke();
+    pp(pE(Math.cos(a) * r, Math.sin(a) * r * 0.36, r * 0.09, r * 0.09), PR.mustard, { key: key + 'e' + i, sb: 6, sy: 3, tex: 0.4 });
+    ctx.restore();
+  }
+  pp(pE(x, y, r * 0.2, r * 0.2), PR.red, { key: key + 'n', sb: 10, sy: 5, tex: 0.5 });
 }
 function prClock(x, y, r, hh, mm, key = 'clk') {
   pp(pE(x, y, r, r), PR.woodD, { key: key + 'o', sb: 14, sy: 7 });
@@ -1305,6 +1454,17 @@ const propGlass = (a = -0.6) => (hx, hy, behind) => { if (!behind) return; withT
   pp(pE(0, -230, 86, 86), PR.char, { key: 'mgr', sb: 12, sy: 6, tex: 0.35 });
   pp(pE(0, -230, 68, 68), 'rgba(190,225,240,0.75)', { key: 'mgl', shadow: false, tex: 0.2 });
   pp(pE(-22, -254, 18, 12, -0.6), 'rgba(255,255,255,0.7)', { shadow: false, tex: false });
+}); };
+// science props for flasky({ hold }) (any mascot can hold them): a test tube with a green liquid and a horseshoe magnet (angle a)
+const propTube = (a = -0.2) => (hx, hy, behind) => { if (!behind) return; withT(hx, hy, a, 1, () => {
+  pp(pR(-22, -230, 44, 220, 22), PR.glass, { key: 'tube', sb: 8, sy: 4, tex: 0.35, rim: 'rgba(255,255,255,0.7)', rw: 3 });
+  pp(pR(-16, -120, 32, 104, 16), PR.green, { key: 'tubel', shadow: false, tex: 0.45 });
+  pp(pR(-30, -238, 60, 16, 6), PR.glassD, { key: 'tuber', sb: 4, sy: 2, tex: 0.35 });
+}); };
+const propMagnet = (a = 0) => (hx, hy, behind) => { if (!behind) return; withT(hx, hy, a, 1, () => {
+  ctx.save(); ctx.shadowColor = 'rgba(12,10,8,0.3)'; ctx.shadowBlur = 10; ctx.shadowOffsetY = 5;
+  ctx.strokeStyle = PR.red; ctx.lineWidth = 46; ctx.beginPath(); ctx.moveTo(-70, -230); ctx.lineTo(-70, -110); ctx.arc(0, -110, 70, Math.PI, 0, true); ctx.lineTo(70, -230); ctx.stroke(); ctx.restore();
+  [-70, 70].forEach((mx) => pp(pR(mx - 23, -262, 46, 40, 3), PR.creamL, { key: 'mag' + mx, shadow: false, tex: 0.35 }));
 }); };
 // a framed blackboard with a chalk tray; draw on it afterwards with chalk() / chalkLine()
 function prBoard(x, y, w, h, key = 'board') {
