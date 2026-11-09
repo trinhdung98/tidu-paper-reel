@@ -567,12 +567,14 @@ function drawAsset(name, x, y, w, h, o = {}) {
 //  flat cut-paper shapes with NO outlines, a mottled paper texture inside every shape, soft drop shadows,
 //  a muted palette (slate, navy, mustard, cream) with one hero colour (the mascot's terracotta).
 //  Pieces: a screwed enamel sign (kicker + headline), a typing terminal bar, counter cards, rubber stamps,
-//  word-by-word caption chips on torn salmon paper, the box mascot ("clawd") and the Tidu Math owl ("tidu"), each with a hat per scene.
+//  word-by-word caption chips on torn salmon paper, the box mascot ("clawd"), the Tidu Math owl ("tidu") and the Tidu Money pig ("piggy"),
+//  each with a hat per scene.
 //  Built on kit/core.js. Motion on 1s (smooth, code-driven), static paper (no boil).
 // =====================================================================
 const PR = {
   clawd: '#d67555', clawdD: '#c46b4c', clawdL: '#de8466',
   tidu: '#2aa79b', tiduD: '#1f8a80', tiduL: '#5cc3b5',
+  money: '#5f9f52', moneyD: '#477f3e', moneyL: '#8fc27e', moneyK: '#2d5228',
   slate: '#869997', slateL: '#95a9a7', slateD: '#788a89',
   navy: '#1c2b56', navyD: '#192833', ink: '#181b24', char: '#23262c',
   cream: '#e9e5da', creamL: '#f4f1e8', paperW: '#f9f8f4',
@@ -633,6 +635,14 @@ function txt(str, x, y, size, color, o = {}) {
   if (o.track) ctx.letterSpacing = o.track + 'px';
   if (o.frac != null && o.frac < 1) { const w = ctx.measureText(str).width, x0 = o.align === 'center' ? x - w / 2 : x; ctx.beginPath(); ctx.rect(x0 - 4, y - size * 1.2, Math.max(0, w * o.frac) + 4, size * 1.7); ctx.clip(); }
   ctx.fillText(str, x, y); const w = ctx.measureText(str).width; ctx.restore(); return w;
+}
+// txt() that stays readable inside a mirrored transform (a flipped mascot and the props it holds): un-mirrors around the anchor
+function txtR(str, x, y, size, color, o = {}) {
+  const m = ctx.getTransform();
+  if (m.a * m.d - m.b * m.c >= 0) return txt(str, x, y, size, color, o);
+  ctx.save(); ctx.translate(x, y); ctx.scale(-1, 1);
+  const w = txt(str, 0, 0, size, color, { ...o, align: o.align === 'center' ? 'center' : o.align === 'right' ? 'left' : 'right' });
+  ctx.restore(); return w;
 }
 function txtW(str, size, o = {}) { ctx.save(); ctx.font = `${o.weight ?? 800} ${size}px ${o.font ?? F_HEAD}`; if (o.track) ctx.letterSpacing = o.track + 'px'; const w = ctx.measureText(str).width; ctx.restore(); return w; }
 const fitSize = (str, maxW, s0, o = {}) => { let s = s0; while (s > 20 && txtW(str, s, o) > maxW) s -= 2; return s; };
@@ -933,7 +943,145 @@ function tiduHat(h, key) {
     pp(pE(0, top - 172, 16, 10), PR.tan, { key: key + 'ebtn', shadow: false, tex: 0.4 });
   }
 }
+// ---- THE TIDU MONEY PIG: a money-green paper piggy bank with a coin slot, a round snout, a ₫ belly badge, stubby hoofed legs and a curly tail.
+//  Same contract as clawd()/tidu(), except (x, y) is where the body meets the legs and the hooves reach 62px below it.
+//  o: s, hat ('bowler'|'tophat'|'visor'|'mortar'|'nonla'|'newsboy'|'party'|null), mood ('neutral'|'happy'|'wow'|'flat'), look (pupil shift, px),
+//     view ('side'), walk, hand: { x, y } front trotter position (default hanging at the left side), hold(hx, hy, behind) draws a prop
+//     at the trotter (propCoin, propBill, propCalc, propStick, propPencil), pop (0..1 scale-in), lean (rad), flip, key
+var PIGGY_SCALE = 1;
+function piggy(x, y, o = {}) {
+  const s = (o.s ?? 1) * (o.pop ?? 1) * PIGGY_SCALE; if (s <= 0.01) return;
+  const key = o.key ?? 'pg', ph = hash(key) % 100 / 100 * TAU;
+  const bob = Math.sin(TT * TAU * 1.15 + ph) * 7, sq = 1 + Math.sin(TT * TAU * 2.3 + ph) * 0.012;
+  ctx.save(); ctx.translate(x, y); ctx.rotate(o.lean ?? 0); ctx.scale(o.flip ? -s : s, s);
+  const side = o.view === 'side', mood = o.mood ?? 'neutral', lk = o.look ?? 0;
+  const blink = (Math.floor(TT * FPS) + Math.round(ph * 10)) % 96 < 4;
+  // legs (behind the body): front pair in body green, far pair darker; lifted in turn when o.walk
+  const legs = side ? [[-170, 0], [-75, 1], [95, 0], [190, 1]] : [[-160, 1], [160, 1], [-72, 0], [72, 0]];
+  legs.forEach(([lx, far], i) => {
+    const lift = o.walk ? Math.max(0, Math.sin(TT * TAU * 2.4 + i * Math.PI / 2)) * 18 : 0, top = side ? -90 : far ? -80 : -50;
+    const bottom = (far && !side ? 48 : 62) - lift;
+    pp(pR(lx - 34, top, 68, bottom - top, 16), far ? PR.moneyD : PR.money, { key: key + 'leg' + i, sb: 10, sy: 5, tex: 0.55 });
+    pp(pR(lx - 34, bottom - 22, 68, 22, 8), PR.moneyK, { key: key + 'hoof' + i, shadow: false, tex: 0.4 });
+  });
+  ctx.translate(0, bob * 0.6); ctx.scale(1 / sq, sq);
+  piggyTail(side ? 292 : 212, side ? -250 : -150, key);
+  // ears: the far ear behind the body, the near ear(s) with a light inner flap
+  if (side) {
+    pp(pG([[-60, -350], [-5, -470], [45, -372]]), PR.moneyD, { key: key + 'earF', sb: 10, sy: 5, tex: 0.55 });
+    pp(pG([[-185, -330], [-150, -480], [-75, -365]]), PR.money, { key: key + 'earN', sb: 12, sy: 6, tex: 0.6 });
+    pp(pG([[-162, -350], [-146, -446], [-98, -370]]), PR.moneyL, { key: key + 'earNi', shadow: false, tex: 0.5 });
+  } else [-1, 1].forEach((d) => {
+    pp(pG([[d * 55, -360], [d * 205, -495], [d * 198, -305]]), PR.money, { key: key + 'ear' + d, sb: 12, sy: 6, tex: 0.6 });
+    pp(pG([[d * 98, -382], [d * 184, -464], [d * 182, -345]]), PR.moneyL, { key: key + 'eari' + d, shadow: false, tex: 0.5 });
+  });
+  if (side) pp(pE(20, -210, 275, 185), PR.money, { key: key + 'body', sb: 22, sy: 10, tex: 0.6, rim: 'rgba(225,255,215,0.3)', rw: 3 });
+  else pp(pE(0, -200, 230, 200), PR.money, { key: key + 'body', sb: 22, sy: 10, tex: 0.6, rim: 'rgba(225,255,215,0.3)', rw: 3 });
+  pp(side ? pR(-30, -390, 120, 20, 10) : pR(-60, -396, 120, 22, 11), PR.moneyK, { key: key + 'slot', shadow: false, tex: 0.35 });
+  // the ₫ belly badge
+  const [bx, by, brx, bry] = side ? [70, -112, 82, 46] : [0, -60, 88, 46];
+  pp(pE(bx, by, brx, bry), PR.creamL, { key: key + 'badge', sb: 6, sy: 3, tex: 0.5 });
+  txtR('₫', bx, by + 4, 68, PR.moneyD, { align: 'center', base: 'middle', weight: 800 });
+  // eyes: white paper with an ink pupil; 'happy' closes them into arcs, 'flat' and blinks drop a green lid
+  for (const [ex, ey, k] of (side ? [[-150, -300, 0.95]] : [[-88, -290, 1], [88, -290, 1]])) {
+    const rx = 34 * k, ry = 40 * k;
+    if (mood === 'happy') {
+      ctx.save(); ctx.strokeStyle = PR.ink; ctx.lineWidth = 12 * k; ctx.lineCap = 'round'; ctx.beginPath();
+      ctx.moveTo(ex - 26 * k + lk, ey + 10); ctx.quadraticCurveTo(ex + lk, ey - 32 * k, ex + 26 * k + lk, ey + 10); ctx.stroke(); ctx.restore();
+      continue;
+    }
+    pp(pE(ex, ey, rx, ry), PR.paperW, { key: key + 'eye' + ex, sb: 6, sy: 3, tex: 0.25 });
+    const pr = (mood === 'wow' ? 25 : 20) * k, px = ex + lk * k, py = ey + 6;
+    pp(pE(px, py, pr, pr), PR.ink, { key: key + 'pup' + ex, shadow: false, tex: 0.2 });
+    pp(pE(px + pr * 0.35, py - pr * 0.38, pr * 0.32, pr * 0.32), PR.paperW, { shadow: false, tex: false });
+    if (blink || mood === 'flat') {
+      ctx.save(); ctx.beginPath(); ctx.ellipse(ex, ey, rx, ry, 0, 0, TAU); ctx.clip();
+      const ly = blink ? ey + ry : ey + 2;
+      pp(pR(ex - rx, ey - ry, 2 * rx, ly - ey + ry, 0), PR.moneyD, { key: key + 'lid' + ex, shadow: false, tex: 0.5 });
+      pp(pR(ex - rx, ly - 4, 2 * rx, 8, 3), PR.moneyK, { shadow: false, tex: false });
+      ctx.restore();
+    }
+  }
+  // snout and nostrils
+  if (side) {
+    pp(pR(-312, -266, 82, 100, 32), PR.moneyL, { key: key + 'snout', sb: 8, sy: 4, tex: 0.5 });
+    pp(pE(-292, -216, 10, 20), PR.moneyK, { key: key + 'nos', shadow: false, tex: 0.3 });
+  } else {
+    pp(pE(0, -212, 74, 52), PR.moneyL, { key: key + 'snout', sb: 8, sy: 4, tex: 0.5 });
+    [-24, 24].forEach((nx) => pp(pE(nx, -212, 11, 18), PR.moneyK, { key: key + 'nos' + nx, shadow: false, tex: 0.3 }));
+  }
+  if (mood === 'happy') (side ? [-188] : [-150, 150]).forEach((cx) => pp(pE(cx, -205, 30, 15), PR.pink, { key: key + 'blush' + cx, shadow: false, tex: 0.3 }));
+  // mouth under the snout
+  const mx = side ? -238 : 0, my = side ? -150 : -150;
+  if (mood === 'happy') {
+    pp(pA(mx, my - 8, 32, 0, Math.PI), PR.ink, { key: key + 'mouth', shadow: false, tex: 0.2 });
+    pp(pE(mx, my + 12, 15, 8), PR.pink, { shadow: false, tex: false });
+  } else if (mood === 'wow') pp(pE(mx, my + 6, 20, 25), PR.ink, { key: key + 'mouth', shadow: false, tex: 0.2 });
+  else if (mood === 'flat') pp(pR(mx - 26, my, 52, 10, 4), PR.ink, { key: key + 'mouth', shadow: false, tex: 0.2 });
+  else { ctx.save(); ctx.strokeStyle = PR.ink; ctx.lineWidth = 9; ctx.lineCap = 'round'; ctx.beginPath(); ctx.arc(mx, my - 12, 24, 0.18 * Math.PI, 0.82 * Math.PI); ctx.stroke(); ctx.restore(); }
+  // trotters: the far one hangs still (front view only); the near one is o.hand and holds the prop
+  const arm = (sx, sy, hx, hy, k) => {
+    const wl = Math.hypot(hx - sx, hy - sy), wa = Math.atan2(hy - sy, hx - sx);
+    pp(pE((sx + hx) / 2, (sy + hy) / 2, wl / 2 + 26, 36, wa), PR.moneyD, { key: k, sb: 10, sy: 5, tex: 0.55 });
+    pp(pE(hx + Math.cos(wa) * 14, hy + Math.sin(wa) * 14, 30, 30), PR.moneyK, { key: k + 'h', shadow: false, tex: 0.4 });
+  };
+  if (!side) arm(178, -190, 222, -88, key + 'armR');
+  const shx = side ? -140 : -178, shy = side ? -170 : -190;
+  const hx = o.hand?.x ?? (side ? -205 : -222), hy = o.hand?.y ?? (side ? -72 : -88) + Math.sin(TT * TAU * 1.3 + ph) * 6;
+  if (o.hold) o.hold(hx, hy, true);
+  arm(shx, shy, hx, hy, key + 'armL');
+  if (o.hold) o.hold(hx, hy, false);
+  if (o.hat) { ctx.save(); if (side) ctx.translate(-130, 30); piggyHat(o.hat, key); ctx.restore(); }
+  ctx.restore();
+}
+function piggyTail(x, y, key) {
+  const P = []; for (let i = 0; i <= 40; i++) { const u = i / 40, a = -Math.PI / 2 + u * TAU * 1.4, r = 34 * (1 - u * 0.55); P.push([x + u * 46 + Math.cos(a) * r, y + Math.sin(a) * r]); }
+  ctx.save(); ctx.shadowColor = 'rgba(12,10,8,0.3)'; ctx.shadowBlur = 8; ctx.shadowOffsetY = 4;
+  ctx.strokeStyle = PR.moneyD; ctx.lineWidth = 15; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  ctx.beginPath(); ctx.moveTo(x - 50, y + 20); for (const [px, py] of P) ctx.lineTo(px, py); ctx.stroke(); ctx.restore();
+}
+function piggyHat(h, key) {
+  const top = -392;
+  if (h === 'bowler') {
+    pp(pA(0, top + 4, 150, Math.PI, TAU), PR.char, { key: key + 'bwdome', sb: 14, sy: 6, tex: 0.5 });
+    pp(pR(-150, top - 34, 300, 32, 3), PR.brown, { key: key + 'bwband', shadow: false, tex: 0.45 });
+    pp(pE(0, top + 4, 218, 34), PR.ink, { key: key + 'bwbrim', sb: 12, sy: 6, tex: 0.45 });
+  } else if (h === 'tophat') {
+    pp(pR(-125, top - 250, 250, 256, 8), PR.char, { key: key + 'thcrown', sb: 16, sy: 8, tex: 0.5 });
+    pp(pR(-125, top - 58, 250, 44, 2), PR.mustard, { key: key + 'thband', shadow: false, tex: 0.5 });
+    pp(pE(0, top + 4, 215, 32), PR.ink, { key: key + 'thbrim', sb: 12, sy: 6, tex: 0.45 });
+  } else if (h === 'visor') {
+    pp(pR(-205, top + 6, 410, 32, 14), PR.char, { key: key + 'vband', sb: 8, sy: 4, tex: 0.4 });
+    pp(pG([[-240, top + 82], [240, top + 82], [195, top + 30], [-195, top + 30]]), 'rgba(70,175,120,0.72)', { key: key + 'vbrim', sb: 10, sy: 6, tex: 0.35 });
+  } else if (h === 'mortar') {
+    pp(pR(-130, top - 50, 260, 70, 8), PR.ink, { key: key + 'mcap', sb: 12, sy: 6, tex: 0.4 });
+    pp(pG([[0, top - 140], [260, top - 80], [0, top - 22], [-260, top - 80]]), '#262a3a', { key: key + 'mboard', sb: 16, sy: 8, tex: 0.45 });
+    const sw = Math.sin(TT * 5) * 6;
+    ctx.save(); ctx.strokeStyle = PR.mustard; ctx.lineWidth = 9; ctx.beginPath(); ctx.moveTo(0, top - 82); ctx.quadraticCurveTo(160, top - 70, 196 + sw, top + 20); ctx.stroke(); ctx.restore();
+    pp(pR(182 + sw, top + 16, 30, 62, 6), PR.mustard, { key: key + 'mtas', sb: 6, sy: 3, tex: 0.5 });
+  } else if (h === 'nonla') {
+    pp(pG([[-290, top + 40], [290, top + 40], [0, top - 190]]), '#d9c08b', { key: key + 'nl', sb: 16, sy: 8, tex: 0.6 });
+    [0.4, 0.72].forEach((k, i) => { const yy = top - 190 + k * 230, w = 290 * k; pp(pR(-w, yy - 4, 2 * w, 8, 3), '#b8995d', { key: key + 'nlr' + i, shadow: false, tex: 0.4 }); });
+  } else if (h === 'newsboy') {
+    pp(pE(0, top - 26, 195, 80), '#8a7a62', { key: key + 'nbcrown', sb: 14, sy: 6, tex: 0.65 });
+    pp(pE(0, top - 100, 16, 10), '#6f624e', { key: key + 'nbbtn', shadow: false, tex: 0.4 });
+    pp(pE(0, top + 22, 150, 30), '#6f624e', { key: key + 'nbbrim', sb: 10, sy: 6, tex: 0.5 });
+  } else if (h === 'party') {
+    withT(30, top + 10, 0.2, 1, () => {
+      const w = (yy) => 115 * (1 + yy / 270);
+      pp(pG([[-115, 0], [115, 0], [0, -270]]), PR.blue, { key: key + 'pcone', sb: 14, sy: 7, tex: 0.55 });
+      [[-40, -80], [-150, -190]].forEach(([y0, y1], i) => pp(pG([[-w(y0), y0], [w(y0), y0], [w(y1), y1], [-w(y1), y1]]), PR.mustard, { key: key + 'pstr' + i, shadow: false, tex: 0.5 }));
+      pp(pE(0, -272, 32, 32), PR.red, { key: key + 'ppom', sb: 8, sy: 4, tex: 0.5 });
+    });
+  }
+}
 // ---- props
+// a gold ₫ coin of radius r
+function prCoin(x, y, r, key = 'coin') {
+  pp(pE(x, y, r, r), PR.mustard, { key: key + 'o', sb: 10, sy: 5, tex: 0.5 });
+  pp(pE(x, y, r * 0.78, r * 0.78), PR.yellow, { key: key + 'i', shadow: false, tex: 0.45 });
+  txtR('₫', x, y + r * 0.06, r * 1.05, '#a87412', { align: 'center', base: 'middle', weight: 800 });
+}
 function prClock(x, y, r, hh, mm, key = 'clk') {
   pp(pE(x, y, r, r), PR.woodD, { key: key + 'o', sb: 14, sy: 7 });
   pp(pE(x, y, r * 0.84, r * 0.84), PR.creamL, { key: key + 'i', shadow: false, tex: 0.5 });
@@ -977,6 +1125,20 @@ function chalkLine(P, frac, o = {}) {
 // props for clawd({ hold }): a pointer stick (angle a, length len) and a pencil
 const propStick = (a, len = 360) => (hx, hy, behind) => { if (!behind) return; withT(hx, hy, a, 1, () => { pp(pR(-10, -len, 20, len, 8), PR.char, { key: 'stick', sb: 8, sy: 4, tex: 0.3 }); pp(pR(-12, -len - 6, 24, 70, 8), PR.orange, { key: 'sticktip', shadow: false, tex: 0.4 }); pp(pR(-12, -len + 64, 24, 18, 2), PR.creamL, { shadow: false, tex: false }); }); };
 const propPencil = (a) => (hx, hy, behind) => { if (!behind) return; withT(hx, hy, a, 1, () => { pp(pR(-14, -230, 28, 200, 3), PR.yellow, { key: 'pcl', sb: 6, sy: 3, tex: 0.4 }); pp(pG([[-14, -30], [14, -30], [0, 10]]), PR.tan, { shadow: false, tex: 0.4 }); pp(pR(-14, -250, 28, 26, 4), PR.pink, { shadow: false, tex: 0.4 }); }); };
+// money props for piggy({ hold }) (any mascot can hold them): a coin pinched in front of the trotter, a banknote, a calculator (angle a)
+const propCoin = (r = 54) => (hx, hy, behind) => { if (!behind) prCoin(hx, hy - r * 0.8, r, 'pcoin'); };
+const propBill = (a = -0.2) => (hx, hy, behind) => { if (!behind) return; withT(hx, hy, a, 1, () => {
+  pp(pR(-50, -150, 260, 128, 8), '#8fc28a', { key: 'bill', sb: 10, sy: 5, tex: 0.5 });
+  pp(pR(-36, -136, 232, 100, 5), '#a9d6a0', { key: 'billi', shadow: false, tex: 0.45 });
+  pp(pE(162, -86, 26, 32), PR.moneyD, { key: 'billp', shadow: false, tex: 0.4 });
+  txtR('500.000₫', -26, -74, 24, PR.moneyK, { weight: 800 });
+}); };
+const propCalc = (a = 0) => (hx, hy, behind) => { if (!behind) return; withT(hx, hy, a, 1, () => {
+  pp(pR(-66, -230, 140, 210, 16), PR.char, { key: 'calc', sb: 12, sy: 6, tex: 0.35 });
+  pp(pR(-50, -214, 108, 50, 6), '#b9d8a8', { key: 'calcs', shadow: false, tex: 0.3 });
+  txtR('1.000', 50, -178, 28, PR.ink, { align: 'right', weight: 700, font: F_MONO });
+  for (let r = 0; r < 3; r++) for (let c = 0; c < 3; c++) pp(pR(-48 + c * 36, -150 + r * 36, 28, 26, 5), c === 2 && r === 2 ? PR.orange : PR.creamL, { key: 'cb' + r + c, shadow: false, tex: 0.3 });
+}); };
 // a framed blackboard with a chalk tray; draw on it afterwards with chalk() / chalkLine()
 function prBoard(x, y, w, h, key = 'board') {
   pp(pR(x, y, w, h, 10), PR.woodD, { key: key + 'f', sb: 20, sy: 10 });

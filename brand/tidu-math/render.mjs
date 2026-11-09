@@ -3,6 +3,7 @@
 //   banner.jpg  2560x1440 (YouTube's recommended size). Every owl stays inside the centred 1546x423 safe area
 //               that TV, desktop and phone all show; the rest is background that may be cropped.
 //   avatar.png  800x800, shown as a circle (as small as 98x98): one owl, centred, clear of the corners.
+//   grid.jpg    every state of the owl: rows = no hat, each hat, the side view; columns = each mood (labelled with the code names).
 //   usage: node brand/tidu-math/render.mjs [out dir] [--preview dir]   (--preview also writes the crops each device shows)
 import fs from 'node:fs';
 import path from 'node:path';
@@ -15,9 +16,10 @@ const HERE = path.dirname(fileURLToPath(import.meta.url)), SKILL = path.resolve(
 const args = process.argv.slice(2), pi = args.indexOf('--preview'), PREVIEW = pi >= 0 ? path.resolve(args.splice(pi, 2)[1]) : null;
 const OUT = path.resolve(args[0] ?? HERE);
 const core = fs.readFileSync(path.join(SKILL, 'kit/core.js'), 'utf8');
-// the paper texture is sized for a 1080x1920 frame and drawn in screen space; the banner is 2560 wide, so it needs a wider sheet
-const kit = fs.readFileSync(path.join(SKILL, 'styles/paper-reel/kit.js'), 'utf8').replace('TW = 1600, TH = 2600', 'TW = 3200, TH = 2600');
-if (!kit.includes('TW = 3200')) throw new Error('the paper texture size in styles/paper-reel/kit.js changed: update the patch in render.mjs');
+// the paper texture is sized for a 1080x1920 frame and drawn in screen space (offset up to 480x640): grow it to cover each artwork
+// (never below 3200x2600, the size the banner and avatar were first rendered at, so they stay byte-identical)
+const kit = fs.readFileSync(path.join(SKILL, 'styles/paper-reel/kit.js'), 'utf8').replace('TW = 1600, TH = 2600', 'TW = Math.max(3200, W + 500), TH = Math.max(2600, H + 700)');
+if (!kit.includes('TW = Math.max')) throw new Error('the paper texture size in styles/paper-reel/kit.js changed: update the patch in render.mjs');
 
 const SAFE = { x: 507, y: 509, w: 1546, h: 423 };
 const ART = {
@@ -54,6 +56,21 @@ const ART = {
     ctx.restore();
     tidu(W / 2, 742, { s: 0.98, hat: 'mortar', mood: 'neutral', key: 'avatar' });
     STYLE.post();` },
+  grid: { W: 1900, H: 4480, jpeg: true, draw: `
+    const MOODS = ['neutral', 'happy', 'wow', 'flat'];
+    const rows = [null, 'mortar', 'propeller', 'chef', 'builder', 'crown', 'party', 'explorer'].map((hat) => ({ hat, label: hat ?? 'no hat' }));
+    rows.push({ hat: null, view: 'side', label: "view: 'side'" });
+    const LW = 220, TOP = 200, CW = (W - LW) / MOODS.length, RH = (H - TOP - 40) / rows.length;
+    prWall('#2b3b5e', { panel: 'rgba(255,255,255,0.04)', streak: false });
+    txt('TIDU MATH · tidu()', W / 2, 110, 80, PR.creamL, { align: 'center', weight: 800 });
+    MOODS.forEach((m, c) => txt(m, LW + CW * (c + 0.5), TOP - 20, 42, PR.mustard, { align: 'center', weight: 800 }));
+    rows.forEach((r, i) => {
+      const y0 = TOP + RH * i;
+      if (i % 2 === 0) { ctx.fillStyle = 'rgba(255,255,255,0.05)'; ctx.fillRect(0, y0, W, RH); }
+      txt(r.label, 30, y0 + RH / 2 + 14, 36, PR.creamL, { weight: 800 });
+      MOODS.forEach((mood, c) => tidu(LW + CW * (c + 0.5), y0 + RH - 50, { s: 0.55, hat: r.hat, mood, view: r.view, key: 'g' + i + c }));
+    });
+    STYLE.post();` },
 };
 
 const page = (name) => { const a = ART[name]; return `<!doctype html><html><body style="margin:0"><canvas id="c" width="${a.W}" height="${a.H}"></canvas><script>
@@ -82,10 +99,11 @@ for (const name of Object.keys(ART)) {
   console.log(`${file}: ${ART[name].W}x${ART[name].H}, ${(data.length / 1e6).toFixed(2)} MB`);
   if (!PREVIEW) continue;
   fs.mkdirSync(PREVIEW, { recursive: true });
-  // what each surface shows: the banner's desktop strip and phone safe area; the avatar as a 98px circle
-  const crops = name === 'banner'
-    ? { 'banner-desktop': [0, SAFE.y, 2560, SAFE.h, 1280], 'banner-phone': [SAFE.x, SAFE.y, SAFE.w, SAFE.h, 773] }
-    : { 'avatar-98': [0, 0, 800, 800, 98, true], 'avatar-176': [0, 0, 800, 800, 176, true] };
+  // what each surface shows: the banner's desktop strip and phone safe area; the avatar as a 98px circle (the grid is not uploaded)
+  const crops = {
+    banner: { 'banner-desktop': [0, SAFE.y, 2560, SAFE.h, 1280], 'banner-phone': [SAFE.x, SAFE.y, SAFE.w, SAFE.h, 773] },
+    avatar: { 'avatar-98': [0, 0, 800, 800, 98, true], 'avatar-176': [0, 0, 800, 800, 176, true] },
+  }[name] ?? {};
   for (const [cn, [x, y, w, h, outW, round]] of Object.entries(crops)) {
     const url = await tab.evaluate(([x, y, w, h, outW, round]) => {
       const src = document.getElementById('c'), c = document.createElement('canvas'), k = outW / w;

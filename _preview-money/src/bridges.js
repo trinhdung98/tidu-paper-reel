@@ -1,0 +1,1 @@
+function pieceCam() { return null; }
