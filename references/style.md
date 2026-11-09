@@ -10,6 +10,7 @@ Matched from a reference reel by sampling its frames. Frame: 1080x1920, 30fps.
 | Tidu Money pig (replaces clawd as the hero) | money green `#5f9f52`, far legs/arms/lids `#477f3e`, snout/inner ears `#8fc27e`, hooves/slot/nostrils `#2d5228`; a cream ₫ badge |
 | Tidu Mind brain (replaces clawd as the hero) | lavender `#a08cd0`, limbs/lids `#7d69b0`, grooves `#6550a0`, hands `#c4b6ea`, shoes `#463a70` |
 | Tidu Science flask (replaces clawd as the hero) | orange liquid `#f08a3c` (lids and shoes `#c9661f`, meniscus `#f9c08c`), glass `#d8ecf1` / lip `#a9cfd8`, steel limbs `#6b7886`, gloves `#9fd3e6` |
+| Tidu English parrot (replaces clawd as the hero) | sky blue `#3d9be0`, wings/tail `#2a78b8`, crest feathers and eyelids `#7cc0ef`, belly `#f6cf4a`; white face mask, ivory beak `#f2ebdc`, grey feet |
 | slate wall | `#869997` (light `#95a9a7`, dark `#788a89`) |
 | navy (sign text, hats) | `#1c2b56`, card behind the sign `#192833` |
 | ink | `#181b24`, terminal `#23262c` |
@@ -33,7 +34,7 @@ Change the wall colour every scene (slate, navy `#2b3b5e`, plum `#583656`, teal 
 | 322–400 | the terminal bar (optional) |
 | 420–1300 | the scene's hero props (boards, cards, screens) |
 | 1450–1600 | **caption chips**, from x 70 and wrapping at x 930. Keep other text out of this band |
-| 1260–1860 | the mascot: body centre x about 880 (cropped by the right edge), clawd's legs from y about 1640, the Tidu owl's feet at y about 1800, the Tidu Money pig's, Tidu Mind brain's and Tidu Science flask's body bottom at y about 1790 |
+| 1260–1860 | the mascot: body centre x about 880 (cropped by the right edge), clawd's legs from y about 1640, the Tidu owl's and Tidu English parrot's feet at y about 1800, the Tidu Money pig's, Tidu Mind brain's and Tidu Science flask's body bottom at y about 1790 |
 | > 1620, x > 960 | phone UI (likes, comments, caption). No text there |
 
 ## Type
