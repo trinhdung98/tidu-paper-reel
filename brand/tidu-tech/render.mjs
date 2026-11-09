@@ -3,11 +3,13 @@
 //   banner.jpg  2560x1440 (YouTube's recommended size). Every robot stays inside the centred 1546x423 safe area
 //               that TV, desktop and phone all show; the rest is background that may be cropped.
 //   avatar.png  800x800, shown as a circle (as small as 98x98): one smiling robot, centred, clear of the corners.
+//   watermark.png  150x150 video watermark: the avatar's robot alone, as a cream-edged sticker on transparency.
 //   grid.jpg    every state of the robot: rows = no hat, each hat, the side view; columns = each mood (labelled with the code names).
 //   usage: node brand/tidu-tech/render.mjs [out dir] [--preview dir]   (--preview also writes the crops each device shows)
-import { render, SAFE } from '../render-lib.mjs';
+import { render, SAFE, watermark } from '../render-lib.mjs';
 
 const WALL = '#142235';
+const MASCOT = `botty(400, 672, { s: 0.92, mood: 'happy', key: 'avatar' });`;
 const ART = {
   banner: { W: 2560, H: 1440, jpeg: true, draw: `
     const S = ${JSON.stringify(SAFE)}, FLOOR = S.y + S.h - 34;
@@ -43,8 +45,9 @@ const ART = {
     ctx.save(); ctx.translate(W / 2, H * 0.47); ctx.fillStyle = 'rgba(79,240,255,0.06)';
     for (let i = 0; i < 16; i += 2) { ctx.beginPath(); ctx.moveTo(0, 0); ctx.arc(0, 0, W, i * TAU / 16, (i + 1) * TAU / 16); ctx.closePath(); ctx.fill(); }
     ctx.restore();
-    botty(W / 2, 672, { s: 0.92, mood: 'happy', key: 'avatar' });
+    ${MASCOT}
     STYLE.post();` },
+  watermark: watermark(MASCOT),
   grid: { W: 1900, H: 4480, jpeg: true, draw: `
     const MOODS = ['neutral', 'happy', 'wow', 'flat'];
     const rows = [null, 'headset', 'vr', 'beanie', 'drone', 'mortar', 'tinfoil', 'party'].map((hat) => ({ hat, label: hat ?? 'no hat' }));

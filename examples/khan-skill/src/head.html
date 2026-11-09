@@ -27,7 +27,7 @@ const HAND = '"Chalkboard SE", "Comic Sans MS", cursive';
 const CX = 540;
 const VL = (id) => VOICE.lines.find((l) => l.id === id);
 // VW(id, word, n): the n-th (0-based) occurrence of word in line id -> { t0, t1 }
-const VW = (id, word, n = 0) => { const L = VL(id), k = word.toLowerCase(); const hits = L.words.filter((w) => w.w.toLowerCase().replace(/[^a-z0-9']/g, '') === k); return hits[n] || hits[0] || { t0: L.t0, t1: L.t1 }; };
+const VW = (id, word, n = 0) => { const L = VL(id), nw = (s) => s.toLowerCase().normalize('NFC').replace(/[^\p{L}\p{N}']/gu, ''), k = nw(word); const hits = L.words.filter((w) => nw(w.w) === k); return hits[n] || hits[0] || { t0: L.t0, t1: L.t1 }; };
 const CUT = (id) => Math.max(0, VL(id).t0 - 0.1);    // a scene starts just before its line
 
 // the shot list: [t0, scene]

@@ -12,7 +12,9 @@
 // (so a style made for one project, e.g. <project>/styles/my-look/, works for every piece in that project).
 // Checks: the script compiles; the style defines STYLE; no data: URIs and no http(s) URLs in the code.
 // Generated parts: <piece>/beats.json -> const BEATS (a supplied track's beat map); <piece>/voice.json -> const VOICE (voice-over timing); <piece>/assets/* -> const ASSETS
-// (the user's own screenshots and logos, embedded; window.renderFrame appears once they're decoded).
+// (the user's own screenshots and logos, embedded; window.renderFrame appears once they're decoded); piece.json "fonts"
+// { family: file } -> FontFace data embedded from <piece>/fonts/ or the style's fonts/, one face per family covering
+// every weight (so canvas never fakes a bold); window.renderFrame appears once they're loaded.
 import fs from 'node:fs';
 import path from 'node:path';
 import vm from 'node:vm';
@@ -80,18 +82,29 @@ if (assetFiles.length) {
   for (const n of assetFiles) { const b = fs.readFileSync(path.join(ASSET_DIR, n)); assetBytes += b.length; src[n] = `data:${MIME[n.split('.').pop().toLowerCase()]};base64,` + b.toString('base64'); }
   inject.push(`// ---- assets/ (embedded by tools/build.mjs): ${assetFiles.join(', ')}\nconst ASSETS = {};\nwindow.ASSETS_READY = Promise.all(Object.entries(${JSON.stringify(src)}).map(([k, u]) => { const i = new Image(); i.src = u; ASSETS[k] = i; return i.decode(); }));`);
 }
+const fontEntries = Object.entries(meta.fonts || {});
+let fontBytes = 0;
+if (fontEntries.length) {
+  const faces = fontEntries.map(([family, file]) => {
+    const f = [path.join(ROOT, 'fonts', file), path.join(styleDir(styleName), 'fonts', file)].find((p) => fs.existsSync(p));
+    if (!f) { console.error(`font "${family}": no ${file} in ${path.join(ROOT, 'fonts')} or the style's fonts/`); process.exit(1); }
+    const b = fs.readFileSync(f); fontBytes += b.length;
+    return [family, `url(data:font/${file.split('.').pop().toLowerCase()};base64,${b.toString('base64')})`];
+  });
+  inject.push(`// ---- piece.json fonts (embedded by tools/build.mjs): ${fontEntries.map(([f]) => f).join(', ')}\nwindow.FONTS_READY = Promise.all(${JSON.stringify(faces)}.map(([fam, src]) => { const f = new FontFace(fam, src, { weight: '100 900' }); document.fonts.add(f); return f.load(); }));`);
+}
 if (inject.length) {
   const at = out.indexOf('"use strict";') >= 0 ? out.indexOf('"use strict";') + '"use strict";'.length : out.indexOf('<script>') + '<script>'.length;
   out = out.slice(0, at) + '\n' + inject.join('\n') + out.slice(at);
 }
-// with assets, tools wait until the images are decoded: window.renderFrame appears only then
-if (assetFiles.length) {
+// with assets or fonts, tools wait until they are decoded: window.renderFrame appears only then
+if (assetFiles.length || fontEntries.length) {
   const end = out.lastIndexOf('</script>');
-  out = out.slice(0, end) + `// ---- hold renderFrame until the assets are decoded (export, review and tile wait for it)\n{ const rf = window.renderFrame; window.renderFrame = undefined; window.ASSETS_READY.then(() => { window.renderFrame = rf; }); }\n` + out.slice(end);
+  out = out.slice(0, end) + `// ---- hold renderFrame until the assets and fonts are ready (export, review and tile wait for it)\n{ const rf = window.renderFrame; window.renderFrame = undefined; Promise.all([window.ASSETS_READY, window.FONTS_READY]).then(() => { window.renderFrame = rf; }); }\n` + out.slice(end);
 }
 const m2 = out.match(/<script>([\s\S]*)<\/script>/);
 try { new vm.Script(m2[1], { filename: 'index.html' }); } catch (e) { console.error('syntax error:', e.message); process.exit(1); }
 fs.writeFileSync(path.join(ROOT, 'index.html'), out);
-const extras = [fs.existsSync(beatsFile) ? 'beats.json' : null, fs.existsSync(voiceFile) ? 'voice.json' : null, assetFiles.length ? `${assetFiles.length} asset(s), ${(assetBytes / 1e6).toFixed(1)} MB` : null].filter(Boolean);
+const extras = [fs.existsSync(beatsFile) ? 'beats.json' : null, fs.existsSync(voiceFile) ? 'voice.json' : null, assetFiles.length ? `${assetFiles.length} asset(s), ${(assetBytes / 1e6).toFixed(1)} MB` : null, fontEntries.length ? `${fontEntries.length} font(s), ${(fontBytes / 1e6).toFixed(2)} MB` : null].filter(Boolean);
 if (assetBytes > 12e6) console.warn(`warning: ${(assetBytes / 1e6).toFixed(1)} MB of assets — resize screenshots to the size they're shown at`);
 console.log(`built ${path.join(ROOT, 'index.html')}: ${out.split('\n').length} lines from ${parts.length} parts (style: ${styleName})${extras.length ? ' + ' + extras.join(' + ') : ''}; syntax ok; no external assets`);

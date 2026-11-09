@@ -24,22 +24,34 @@ const ROOT = path.resolve(argv[0]), VDIR = path.join(ROOT, 'voice'), SR = 48000;
 const S = JSON.parse(fs.readFileSync(path.join(VDIR, 'script.json'), 'utf8'));
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 
-// --scratch: the OS's own voice for missing lines (timing only; never ship it)
+// --scratch: the OS's own voice for missing lines. English: timing only, never ship it. macOS --voice/--rate pick the
+// voice and words per minute; `say -v Linh` is the only free local Vietnamese voice (Kokoro has none), so it ships there.
 function scratch(text, out) {
   if (process.platform === 'win32') {
     const ps = `Add-Type -AssemblyName System.Speech; $s = New-Object System.Speech.Synthesis.SpeechSynthesizer; $s.Rate = ${Number(opt('--rate', 0))}; $s.SetOutputToWaveFile($env:VO_OUT); $s.Speak($env:VO_TEXT); $s.Dispose()`;
     return spawnSync('powershell', ['-NoProfile', '-Command', ps], { env: { ...process.env, VO_TEXT: text, VO_OUT: out } }).status === 0;
   }
-  if (process.platform === 'darwin') return spawnSync('say', ['-o', out, '--data-format=LEI16@22050', text]).status === 0;
+  if (process.platform === 'darwin') {
+    const v = opt('--voice'), r = Number(opt('--rate', 0));
+    return spawnSync('say', [...(v ? ['-v', v] : []), ...(r > 0 ? ['-r', String(r)] : []), '-o', out, '--data-format=LEI16@22050', text]).status === 0;
+  }
   return spawnSync('espeak', ['-w', out, text]).status === 0;
 }
 
 // decode a take to 48 kHz mono s16, trimmed of the silence around it
-function decode(file) {
-  const trim = 'silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.02';
-  const r = spawnSync('ffmpeg', ['-v', 'error', '-i', file, '-af', `${trim},areverse,${trim},areverse`, '-ac', '1', '-ar', String(SR), '-f', 's16le', '-'], { maxBuffer: 1 << 30 });
+const TRIM = 'silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.02';
+function decode(file, af = `${TRIM},areverse,${TRIM},areverse`) {
+  const r = spawnSync('ffmpeg', ['-v', 'error', '-i', file, ...(af ? ['-af', af] : []), '-ac', '1', '-ar', String(SR), '-f', 's16le', '-'], { maxBuffer: 1 << 30 });
   if (r.status !== 0) { console.error('could not decode', file, r.stderr.toString()); process.exit(1); }
   return r.stdout;
+}
+// a take's own word times (<take>.words.json from tools/eleven_lines.mjs or tools/eleven_align.mjs; ignored when older
+// than the take), moved by the silence decode() trimmed off its start
+function takeWords(file, t0, dur) {
+  const wf = file + '.words.json';
+  if (!fs.existsSync(wf) || fs.statSync(wf).mtimeMs < fs.statSync(file).mtimeMs) return null;
+  const cut = (decode(file, '').length - decode(file, TRIM).length) / 2 / SR, at = (s) => +(t0 + Math.min(dur, Math.max(0, s - cut))).toFixed(3);
+  return JSON.parse(fs.readFileSync(wf, 'utf8')).map((w) => ({ w: w.w, t0: at(w.t0), t1: at(w.t1) }));
 }
 
 const lead = S.lead ?? 0.8, tail = S.tail ?? 1.5;
@@ -54,7 +66,7 @@ for (const [i, L] of S.lines.entries()) {
     if (!scratch(L.text, file)) { console.error('scratch voice failed for', id); process.exit(1); }
   }
   const pcm = decode(file), dur = pcm.length / 2 / SR;
-  lines.push({ id, text: L.text, t0: +t.toFixed(3), t1: +(t + dur).toFixed(3), take: path.relative(ROOT, file).replace(/\\/g, '/') });
+  lines.push({ id, text: L.text, t0: +t.toFixed(3), t1: +(t + dur).toFixed(3), take: path.relative(ROOT, file).replace(/\\/g, '/'), tts: takeWords(file, t, dur) });
   parts.push([Math.round(t * SR), pcm]);
   t += dur + (L.after ?? 0.35);
 }
@@ -69,17 +81,33 @@ const wav = path.join(VDIR, 'voice.wav');
 fs.writeFileSync(wav, Buffer.concat([hdr, out]));
 
 // ---- word times: what the recogniser heard, matched to the script's words line by line
-const norm = (w) => w.toLowerCase().replace(/[^a-z0-9]/g, '');
+const norm = (w) => w.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '').replace(/đ/g, 'd').replace(/[^a-z0-9]/g, '');
+const WEIGHTS = {}, byVoice = argv.includes('--scratch') && process.platform === 'darwin' && !!opt('--voice');
+function wordWeight(w) {
+  if (!byVoice) return norm(w).length + 1;
+  const k = w.toLowerCase().replace(/[^\p{L}\p{N}']/gu, '');
+  if (!(k in WEIGHTS)) {
+    const f = path.join(VDIR, '_word.wav');
+    WEIGHTS[k] = scratch(k, f) ? decode(f).length / 2 / SR : norm(w).length * 0.06;
+    fs.rmSync(f, { force: true });
+  }
+  return WEIGHTS[k] + (/[,.:;!?]$/.test(w) ? 0.25 : 0);
+}
 let heard = null;
 const py = !process.env.REEL_FASTER_WHISPER ? { status: 1 } : spawnSync(process.platform === 'win32' ? 'python' : 'python3', [path.join(HERE, 'voice_words.py'), wav, '--model', opt('--model', 'small.en')], { maxBuffer: 1 << 26 });
 if (py.status === 0) { try { heard = JSON.parse(py.stdout.toString().trim().split('\n').pop()); } catch { heard = null; } }
-if (!heard) console.warn('word times: estimated here; tools/align.mjs replaces them with whisper.cpp times');
-let matched = 0, totalWords = 0;
+if (!heard && !lines.every((l) => l.tts)) console.warn(byVoice ? 'word times: spread by each word\'s own spoken length' : 'word times: estimated here; tools/align.mjs replaces them with whisper.cpp times');
+let matched = 0, totalWords = 0, ttsLines = 0;
 for (const L of lines) {
-  const words = L.text.split(/\s+/).filter((w) => norm(w));
+  const words = L.text.split(/\s+/).filter((w) => norm(w)), tts = L.tts?.filter((w) => norm(w.w));
+  delete L.tts;
   totalWords += words.length;
-  // estimate: spread the line's length over its words by letter count
-  const lens = words.map((w) => norm(w).length + 1), sum = lens.reduce((a, b) => a + b, 0);
+  // the TTS's own timestamps, when its words are the script's words
+  if (tts && tts.length === words.length && tts.every((w, i) => norm(w.w) === norm(words[i]))) { L.words = tts.map((w, i) => ({ ...w, w: words[i] })); ttsLines++; continue; }
+  if (tts) console.warn(`${L.id}: the take's words differ from the script's ("say"?), so its times are estimated`);
+  // estimate: spread the line's length over its words by letter count, or (a macOS --voice take) by each word's own
+  // spoken length plus a beat for trailing punctuation, which tracks syllable-timed languages like Vietnamese closely
+  const lens = words.map(wordWeight), sum = lens.reduce((a, b) => a + b, 0);
   let acc = L.t0;
   L.words = words.map((w, i) => { const d = (L.t1 - L.t0) * lens[i] / sum, o = { w, t0: +acc.toFixed(3), t1: +(acc + d).toFixed(3), est: true }; acc += d; return o; });
   if (!heard) continue;
@@ -102,8 +130,9 @@ for (const L of lines) {
     i = j - 1;
   }
 }
-const voice = { duration: +total.toFixed(3), lead, tail, lines };
+const voice = { duration: +total.toFixed(3), lead, tail, ...(ttsLines === lines.length ? { timing: 'tts' } : {}), lines };
 fs.writeFileSync(path.join(ROOT, 'voice.json'), JSON.stringify(voice, null, 1));
-console.log(`voice: ${lines.length} lines, ${totalWords} words, ${total.toFixed(2)}s (lead ${lead}s, tail ${tail}s); word times ${heard ? `${matched}/${totalWords} heard, the rest filled in` : 'estimated'}`);
+const rest = ttsLines === lines.length ? '' : heard ? `${matched}/${totalWords} heard, the rest filled in` : `${ttsLines ? 'the rest ' : ''}estimated`;
+console.log(`voice: ${lines.length} lines, ${totalWords} words, ${total.toFixed(2)}s (lead ${lead}s, tail ${tail}s); word times ${ttsLines ? `from the take's own word file on ${ttsLines}/${lines.length} lines${rest ? ', ' : ''}` : ''}${rest}`);
 for (const L of lines) console.log(`  ${L.id.padEnd(10)} ${L.t0.toFixed(2)}-${L.t1.toFixed(2)}s  ${(L.words.length / (L.t1 - L.t0)).toFixed(2)} w/s  ${L.take}  "${L.text}"`);
 console.log(`wrote ${path.relative(process.cwd(), wav)} and ${path.relative(process.cwd(), path.join(ROOT, 'voice.json'))} (rebuild to inject VOICE)`);

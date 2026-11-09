@@ -4,7 +4,9 @@
 
 New in paper-reel: `styles/paper-reel/kit.js`, `tools/kokoro_lines.py`, `tools/align.mjs`, `bin/reel`, `templates/starter`, `examples/khan-skill`.
 
-Third-party runtime pieces, installed separately: Kokoro (kokoro-onnx, Apache-2.0), whisper.cpp (MIT), Playwright (Apache-2.0), ffmpeg.
+Third-party runtime pieces, installed separately: Kokoro (kokoro-onnx, Apache-2.0), VieNeu-TTS v3 Turbo (pnnbao97/VieNeu-TTS and pnnbao-ump/VieNeu-TTS-v3-Turbo, Apache-2.0, preset voices cleared for commercial use), whisper.cpp (MIT), Playwright (Apache-2.0), ffmpeg. ElevenLabs (`tools/eleven_lines.mjs`, `tools/eleven_align.mjs`) is a web API used with the user's own key.
+
+Bundled fonts in `styles/paper-reel/fonts/`, SIL Open Font License 1.1 (texts beside them): Be Vietnam Pro (The Be Vietnam Pro Project Authors) and Bevan (The Bevan Project Authors).
 
 ## animate licence
 

@@ -1,0 +1,10 @@
+{
+  "name": "tidu-math-01-hinh-vuong",
+  "title": "Tidu Math 01 — Có bao nhiêu hình vuông?",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> hint -> 1×1 -> 2×2 -> 3×3 -> sum -> comment CTA",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -13 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}

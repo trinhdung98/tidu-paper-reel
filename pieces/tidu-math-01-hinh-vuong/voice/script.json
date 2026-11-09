@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 2.6,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Bạn đếm được bao nhiêu hình vuông trong hình này?",
+   "after": 7.0,
+   "file": "hook.wav"
+  },
+  {
+   "id": "tip",
+   "text": "Đừng chỉ đếm những ô nhỏ nhé.",
+   "after": 1.0,
+   "file": "tip.wav"
+  },
+  {
+   "id": "ones",
+   "text": "Có chín hình vuông kích thước một ô.",
+   "after": 3.2,
+   "file": "ones.wav"
+  },
+  {
+   "id": "twos",
+   "text": "Ghép bốn ô liền nhau, chúng ta tìm thêm bốn hình vuông lớn hơn.",
+   "after": 3.4,
+   "file": "twos.wav"
+  },
+  {
+   "id": "whole",
+   "text": "Và toàn bộ khung cũng là một hình vuông.",
+   "after": 2.0,
+   "file": "whole.wav"
+  },
+  {
+   "id": "sum",
+   "text": "Vậy tổng cộng là chín cộng bốn cộng một, bằng mười bốn.",
+   "after": 2.4,
+   "file": "sum.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn đếm đúng ngay lần đầu không? Bình luận con số ban đầu nhé!",
+   "after": 0.1,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Trúc Ly",
+  "speed": 0.88
+ }
+}

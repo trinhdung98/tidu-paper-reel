@@ -26,8 +26,10 @@ const PR = {
   purple: '#462b59', plum: '#583656', sky: '#a9cbe0', grey: '#9a968c', greyD: '#5f6068', orange: '#e07a4f',
   brown: '#8a5a33', tan: '#c9a46b', blue: '#3f6fb0', pink: '#e9a3a3',
 };
-const F_HEAD = '"Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif';
-const F_CHIP = 'SuperClarendon, Rockwell, Georgia, serif';
+// F_HEAD / F_CHIP are var so a piece can swap them; Vietnamese pieces embed Be Vietnam Pro + Bevan (piece.json "fonts"),
+// because Avenir Next and SuperClarendon misplace stacked tone marks (ĐẾM, những, được)
+var F_HEAD = '"Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif';
+var F_CHIP = 'SuperClarendon, Rockwell, Georgia, serif';
 const F_CHALK = 'Chalkduster, "Chalkboard SE", "Comic Sans MS", cursive';
 const F_MONO = 'Menlo, "SF Mono", Consolas, monospace';
 
@@ -181,7 +183,7 @@ function prChips() {
     const sz = 70, h = 112; let x = CHIP_X, y = CHIP_Y;
     g.forEach((w, i) => {
       if (TT < w.t0 - 0.03) return;
-      const word = w.w.replace(/^[^\w']+|[^\w']+$/g, ''); if (!word) return;
+      const word = w.w.replace(/^[^\p{L}\p{N}']+|[^\p{L}\p{N}']+$/gu, ''); if (!word) return;
       const cw = txtW(word, sz, { font: F_CHIP, weight: 700 }) + 46;
       if (x + cw > CHIP_MAXX) { x = CHIP_X; y += h + 14; }
       const R = RNG('chip', word, w.t0), rot = (i % 2 ? 1 : -1) * R.r(0.012, 0.04), s = EZ.back(clamp((TT - w.t0 + 0.03) / 0.16));
@@ -1240,7 +1242,7 @@ function prCommentBox(x, y, word, t, o = {}) {
   const k = Math.floor(word.length * ev(t, 0.45));
   withT(x, y, 0, o.s ?? 1, () => {
     pp(pR(-380, -60, 760, 120, 60), PR.paperW, { key: 'cbox', sb: 16, sy: 8, tex: 0.4 });
-    if (k === 0) txt('Add a comment...', -330, 14, 38, PR.grey, { weight: 600 }); else txt(word.slice(0, k), -330, 18, 52, PR.ink, { weight: 800 });
+    if (k === 0) txt(o.hint ?? 'Add a comment...', -330, 14, 38, PR.grey, { weight: 600 }); else txt(word.slice(0, k), -330, 18, 52, PR.ink, { weight: 800 });
     pp(pE(318, 0, 40, 40), PR.blue, { key: 'send', shadow: false, tex: 0.3 }); pp(pG([[304, -18], [334, 0], [304, 18]]), PR.paperW, { shadow: false, tex: false });
   });
 }

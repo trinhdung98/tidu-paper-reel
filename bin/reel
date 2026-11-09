@@ -2,8 +2,9 @@
 # reel — the paper-reel pipeline in one command. Free and local: Kokoro voice, whisper.cpp timing, canvas + Playwright + ffmpeg.
 #   reel doctor                              check every dependency, print the fix for anything missing
 #   reel new <piece-dir> [--from khan-skill] copy the starter (or an example) into <piece-dir>
-#   reel voice <piece> [--voice am_michael] [--speed 1.32] [--only id1,id2] [--say]
-#                                            one Kokoro take per script line -> voice.wav + word times (--say: macOS voice)
+#   reel voice <piece> [--voice am_michael] [--speed 1.32] [--only id1,id2] [--say | --vieneu | --eleven]
+#                                            one take per script line -> voice.wav + word times (default Kokoro; --say: macOS voice;
+#                                            --vieneu [--voice "Trúc Ly"]: local Vietnamese; --eleven [--voice <id>]: ElevenLabs)
 #   reel build <piece>                       assemble index.html (style + kit + scenes + VOICE)
 #   reel still <piece> <t1,t2,..> <out.png> [--scale 0.4]   render frames to look at
 #   reel check <piece>                       text overlap / safe-zone check + determinism
@@ -16,6 +17,7 @@ if [ -z "${KOKORO_PY:-}" ]; then
   for KOKORO_PY in "$HOME/.venvs/kokoro/bin/python" "$HOME/motion-kits/.venv-voice/bin/python" python3; do [ -x "$KOKORO_PY" ] && break; done
 fi
 KOKORO_DIR="${KOKORO_DIR:-$HOME/.cache/hyperframes/tts}"; export KOKORO_DIR
+VIENEU_PY="${VIENEU_PY:-$HOME/.venvs/vieneu/bin/python}"
 WHISPER_MODEL="${WHISPER_MODEL:-$HOME/.cache/whisper/ggml-base.en.bin}"; export WHISPER_MODEL
 T="$SKILL/tools"
 cmd="${1:-help}"; shift || true
@@ -41,8 +43,13 @@ case "$cmd" in
     mkdir -p "$(dirname "$dest")"; cp -R "$SKILL/$from" "$dest"
     echo "new piece: $dest (from $from). Next: edit voice/script.json, then: reel voice $dest" ;;
   voice)
-    p="${1:?usage: reel voice <piece> [--voice V] [--speed S] [--only ids] [--say]}"; shift
-    if [ "${1:-}" = "--say" ]; then node "$T/voice.mjs" "$p" --scratch; else "$KOKORO_PY" -u "$T/kokoro_lines.py" "$p" "$@" 2>&1 | grep -v -i warn || true; node "$T/voice.mjs" "$p"; fi
+    p="${1:?usage: reel voice <piece> [--voice V] [--speed S] [--only ids] [--say [--voice Linh] [--rate 170]] [--eleven [--voice <voice_id>] [--model M]]}"; shift
+    case " $* " in
+      *" --say "*) node "$T/voice.mjs" "$p" --scratch "$@" ;;
+      *" --vieneu "*) "$VIENEU_PY" -u "$T/vieneu_lines.py" "$p" "$@"; node "$T/eleven_align.mjs" "$p" "$@"; node "$T/voice.mjs" "$p" ;;
+      *" --eleven "*) node "$T/eleven_lines.mjs" "$p" "$@"; node "$T/voice.mjs" "$p" ;;
+      *) "$KOKORO_PY" -u "$T/kokoro_lines.py" "$p" "$@" 2>&1 | grep -v -i warn || true; node "$T/voice.mjs" "$p" ;;
+    esac
     node "$T/align.mjs" "$p" ;;
   build) node "$T/build.mjs" "${1:?piece}" ;;
   still) p="${1:?piece}"; ts="${2:?times}"; out="${3:?out.png}"; shift 3; node "$T/build.mjs" "$p" >/dev/null && node "$T/still.mjs" "$p" "$ts" "$out" --scale "${2:-0.4}" ;;
@@ -53,5 +60,5 @@ case "$cmd" in
     rm -rf "$p/frames"
     [ -n "$out" ] && cp "$p/renders/final.mp4" "$out" && echo "-> $out"
     ffmpeg -nostats -i "$p/renders/final.mp4" -af ebur128=framelog=quiet -f null - 2>&1 | grep -E "^\s+I:" || true ;;
-  *) sed -n '2,12p' "$0" ;;
+  *) sed -n '2,13p' "$0" ;;
 esac
