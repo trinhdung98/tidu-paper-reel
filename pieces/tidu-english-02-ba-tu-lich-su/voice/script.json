@@ -1,0 +1,59 @@
+{
+ "lead": 0.2,
+ "tail": 0.6,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Muốn nói chuyện lịch sự bằng tiếng Anh, hãy nhớ ba cụm từ này.",
+   "after": 1.2,
+   "file": "hook.wav"
+  },
+  {
+   "id": "please",
+   "text": "Please, dùng khi nhờ hoặc yêu cầu lịch sự.",
+   "after": 5.5,
+   "file": "please.wav"
+  },
+  {
+   "id": "thankyou",
+   "text": "Thank you, nghĩa là cảm ơn.",
+   "after": 4.8,
+   "file": "thankyou.wav"
+  },
+  {
+   "id": "welcome",
+   "text": "Khi ai đó cảm ơn mình, có thể đáp: You're welcome!",
+   "after": 2.2,
+   "file": "welcome.wav"
+  },
+  {
+   "id": "dialogue",
+   "text": "Xem nhé! Một bạn đưa sách cho bạn kia. Thank you! You're welcome!",
+   "after": 3.5,
+   "file": "dialogue.wav"
+  },
+  {
+   "id": "quiz",
+   "text": "Bây giờ đến lượt bạn. Khi nhận được món quà, bạn nói gì?",
+   "after": 7.8,
+   "file": "quiz.wav"
+  },
+  {
+   "id": "answer",
+   "text": "Thank you! Rất tốt!",
+   "after": 1.0,
+   "file": "answer.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Hãy thử nói Thank you với một người trong gia đình hôm nay.",
+   "after": 0.5,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Trúc Ly",
+  "speed": 0.88
+ }
+}

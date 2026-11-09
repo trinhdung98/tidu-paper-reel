@@ -1,0 +1,10 @@
+{
+  "name": "tidu-tech-06-cloud-o-dau",
+  "title": "Tidu Tech 06 — Cloud thực sự nằm ở đâu?",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> datacenter -> connection -> backup -> sync -> takeaway -> cta",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -14 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}

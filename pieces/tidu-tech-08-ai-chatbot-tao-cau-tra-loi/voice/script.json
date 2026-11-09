@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.0,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Khi bạn gửi câu hỏi tới một chatbot AI, điều gì thực sự xảy ra trước khi câu trả lời xuất hiện?",
+   "after": 1.0,
+   "file": "hook.wav"
+  },
+  {
+   "id": "tokens",
+   "text": "Hệ thống trước tiên chia câu hỏi của bạn thành các mẩu nhỏ gọi là token.",
+   "after": 1.2,
+   "file": "tokens.wav"
+  },
+  {
+   "id": "context",
+   "text": "Mạng nơ-ron xử lý ngữ cảnh và tính toán xác suất của các từ tiếp theo.",
+   "after": 1.2,
+   "file": "context.wav"
+  },
+  {
+   "id": "generation",
+   "text": "Từng token mới được sinh ra liên tiếp, từ này nối tiếp từ kia như một dòng chảy.",
+   "after": 1.5,
+   "file": "generation.wav"
+  },
+  {
+   "id": "rag",
+   "text": "Một số hệ thống còn kết hợp công cụ tìm kiếm trên web để cập nhật dữ liệu mới.",
+   "after": 1.5,
+   "file": "rag.wav"
+  },
+  {
+   "id": "takeaway",
+   "text": "Chatbot không phải mở cuốn từ điển chép đáp án, mà đang dự đoán câu chữ theo xác suất!",
+   "after": 1.2,
+   "file": "takeaway.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bình luận 'AI' bên dưới nếu bạn muốn làm phần hai về cách huấn luyện mô hình nhé!",
+   "after": 0.2,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Minh Đức",
+  "speed": 0.88
+ }
+}

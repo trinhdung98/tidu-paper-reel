@@ -1,0 +1,10 @@
+{
+  "name": "tidu-english-02-ba-tu-lich-su",
+  "title": "Tidu English 02 — Ba từ lịch sự bé nên biết",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> please -> thankyou -> welcome -> dialogue -> quiz -> answer -> cta",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -13 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}

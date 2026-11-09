@@ -1,0 +1,10 @@
+{
+  "name": "tidu-tech-10-thuat-toan-tiktok",
+  "title": "Tidu Tech 10 — Vì sao TikTok liên tục đề xuất đúng thứ bạn thích?",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> signals -> metrics -> metadata -> algorithm -> takeaway -> cta",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -14 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}

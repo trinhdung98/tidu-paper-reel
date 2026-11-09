@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.0,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Khi bạn lưu một bức ảnh lên cloud, nó không hề bay vào một đám mây thật.",
+   "after": 1.0,
+   "file": "hook.wav"
+  },
+  {
+   "id": "datacenter",
+   "text": "Dữ liệu được lưu trên các hệ thống máy chủ vật lý, đặt trong các trung tâm dữ liệu khổng lồ.",
+   "after": 1.5,
+   "file": "datacenter.wav"
+  },
+  {
+   "id": "connection",
+   "text": "Thiết bị của bạn kết nối qua Internet để gửi hoặc lấy dữ liệu về.",
+   "after": 1.2,
+   "file": "connection.wav"
+  },
+  {
+   "id": "backup",
+   "text": "Các dịch vụ còn lưu nhiều bản sao ở các nơi khác nhau để đảm bảo an toàn tuyệt đối.",
+   "after": 1.5,
+   "file": "backup.wav"
+  },
+  {
+   "id": "sync",
+   "text": "Nhờ vậy, bạn đổi sang điện thoại mới hay mở máy tính vẫn xem được cùng một bức ảnh.",
+   "after": 1.5,
+   "file": "sync.wav"
+  },
+  {
+   "id": "takeaway",
+   "text": "Cloud thực chất là máy tính của người khác được bạn thuê dùng qua Internet!",
+   "after": 1.2,
+   "file": "takeaway.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn có muốn khám phá bên trong một trung tâm dữ liệu không? Bình luận bên dưới nhé!",
+   "after": 0.2,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Minh Đức",
+  "speed": 0.88
+ }
+}

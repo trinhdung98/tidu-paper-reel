@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 1.2,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Mặt Trời không cháy giống như một đống lửa!",
+   "after": 1.0,
+   "file": "hook.wav"
+  },
+  {
+   "id": "light",
+   "text": "Mặt Trời tỏa ra ánh sáng và nhiệt khổng lồ mỗi ngày. Nhưng nó không cháy như ngọn lửa trong bếp.",
+   "after": 1.5,
+   "file": "light.wav"
+  },
+  {
+   "id": "core",
+   "text": "Ở lõi Mặt Trời, nhiệt độ lên tới khoảng 15 triệu độ C.",
+   "after": 2.0,
+   "file": "core.wav"
+  },
+  {
+   "id": "fusion",
+   "text": "Trong điều kiện cực kỳ nóng và áp suất rất lớn, các hạt nhân hydro tham gia phản ứng hợp hạch để tạo thành heli và giải phóng năng lượng.",
+   "after": 2.5,
+   "file": "fusion.wav"
+  },
+  {
+   "id": "radiate",
+   "text": "Năng lượng đó cuối cùng truyền ra ngoài không gian và chiếu sáng Trái Đất.",
+   "after": 2.2,
+   "file": "radiate.wav"
+  },
+  {
+   "id": "reactor",
+   "text": "Mặt Trời chính là một lò phản ứng hạt nhân tự nhiên khổng lồ.",
+   "after": 2.0,
+   "file": "reactor.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn muốn khám phá lõi Mặt Trời hay lõi Trái Đất tiếp theo?",
+   "after": 2.2,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Thiện Minh",
+  "speed": 0.88
+ }
+}

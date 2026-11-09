@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.0,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Gói mạng 100 Mbps, nhưng tại sao tải file chỉ được khoảng 12 megabyte mỗi giây?",
+   "after": 1.0,
+   "file": "hook.wav"
+  },
+  {
+   "id": "difference",
+   "text": "Vì 100 Mbps là một trăm megabit, không phải một trăm megabyte.",
+   "after": 1.2,
+   "file": "difference.wav"
+  },
+  {
+   "id": "units",
+   "text": "Bit viết bằng chữ b thường, còn byte viết bằng chữ B hoa.",
+   "after": 1.2,
+   "file": "units.wav"
+  },
+  {
+   "id": "math",
+   "text": "Cứ tám bit mới ghép thành một byte. Lấy 100 chia 8, bạn chỉ còn 12,5 megabyte mỗi giây lý thuyết.",
+   "after": 1.5,
+   "file": "math.wav"
+  },
+  {
+   "id": "overhead",
+   "text": "Tốc độ thực tế còn thấp hơn do giao thức truyền tải và máy chủ.",
+   "after": 1.5,
+   "file": "overhead.wav"
+  },
+  {
+   "id": "takeaway",
+   "text": "Nhớ kỹ nhé: Chữ b nhỏ là của nhà mạng, chữ B lớn mới là dung lượng file tải về!",
+   "after": 1.2,
+   "file": "takeaway.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn đang dùng gói mạng bao nhiêu Mbps ở nhà? Bình luận bên dưới nhé!",
+   "after": 0.2,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Minh Đức",
+  "speed": 0.88
+ }
+}

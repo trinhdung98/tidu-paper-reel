@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.0,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Mật khẩu mạnh đến mấy vẫn có thể bị lộ qua các vụ rò rỉ dữ liệu hoặc trang web giả mạo.",
+   "after": 1.2,
+   "file": "hook.wav"
+  },
+  {
+   "id": "mfa",
+   "text": "Xác thực hai lớp, hay MFA, sinh ra để bổ sung một cánh cửa bảo vệ thứ hai.",
+   "after": 1.2,
+   "file": "mfa.wav"
+  },
+  {
+   "id": "step",
+   "text": "Sau khi điền mật khẩu, bạn phải xác nhận thêm bằng mã ứng dụng hoặc khóa bảo mật.",
+   "after": 1.2,
+   "file": "step.wav"
+  },
+  {
+   "id": "blocked",
+   "text": "Dù kẻ gian có được mật khẩu của bạn, chúng vẫn lập tức bị chặn đứng ở vòng này.",
+   "after": 1.5,
+   "file": "blocked.wav"
+  },
+  {
+   "id": "methods",
+   "text": "Tuy nhiên, hãy ưu tiên dùng ứng dụng Authenticator hoặc Passkey thay vì tin nhắn SMS.",
+   "after": 1.5,
+   "file": "methods.wav"
+  },
+  {
+   "id": "takeaway",
+   "text": "Hai lớp khóa luôn an toàn hơn một: Đừng để mật khẩu gánh vác toàn bộ tài sản số của bạn!",
+   "after": 1.2,
+   "file": "takeaway.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Kiểm tra ngay email chính của bạn đã bật xác thực hai lớp chưa nhé!",
+   "after": 0.2,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Minh Đức",
+  "speed": 0.88
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "lead": 0.3,
+ "tail": 1.2,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Một vụ nổ khổng lồ ngoài vũ trụ có thể hoàn toàn im lặng!",
+   "after": 1.0
+  },
+  {
+   "id": "scifi",
+   "text": "Trong phim khoa học viễn tưởng, tàu vũ trụ nổ thường phát ra tiếng động cực lớn.",
+   "after": 1.2
+  },
+  {
+   "id": "space",
+   "text": "Nhưng ngoài khoảng không gần như chân không, bạn sẽ không nghe được tiếng nổ ấy.",
+   "after": 1.5
+  },
+  {
+   "id": "medium",
+   "text": "Vì âm thanh cần vật chất như không khí hoặc nước để truyền đi.",
+   "after": 2.2
+  },
+  {
+   "id": "vacuum",
+   "text": "Trong chân không, không có đủ hạt vật chất để truyền sóng âm.",
+   "after": 2.5
+  },
+  {
+   "id": "radio",
+   "text": "Vậy phi hành gia liên lạc thế nào? Họ dùng tín hiệu vô tuyến, rồi thiết bị chuyển tín hiệu thành âm thanh để nghe.",
+   "after": 2.0,
+   "file": "radio.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn biết bộ phim vũ trụ nào có tiếng nổ hoành tráng nhất?",
+   "after": 2.2,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Thiện Minh",
+  "speed": 0.88
+ }
+}

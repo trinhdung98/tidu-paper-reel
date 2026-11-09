@@ -1,0 +1,59 @@
+{
+ "lead": 0.2,
+ "tail": 0.8,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Bạn có biết tên của ba hình này bằng tiếng Anh không?",
+   "after": 1.2,
+   "file": "hook.wav"
+  },
+  {
+   "id": "circle",
+   "text": "Hình tròn là Circle.",
+   "after": 6.8,
+   "file": "circle.wav"
+  },
+  {
+   "id": "square_triangle",
+   "text": "Hình vuông là Square. Hình tam giác là Triangle.",
+   "after": 4.5,
+   "file": "square_triangle.wav"
+  },
+  {
+   "id": "repeat",
+   "text": "Cùng nói lại nhé: Circle, Square, Triangle!",
+   "after": 2.8,
+   "file": "repeat.wav"
+  },
+  {
+   "id": "quiz",
+   "text": "Bây giờ ba hình sẽ đổi chỗ. Bạn tìm được hình tam giác không?",
+   "after": 10.5,
+   "file": "quiz.wav"
+  },
+  {
+   "id": "answer",
+   "text": "Đây rồi! Triangle!",
+   "after": 2.0,
+   "file": "answer.wav"
+  },
+  {
+   "id": "house",
+   "text": "Chúng ta còn có thể ghép hình vuông và tam giác thành một ngôi nhà nhỏ nữa đấy!",
+   "after": 4.0,
+   "file": "house.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn nhìn thấy hình circle ở đâu trong nhà?",
+   "after": 0.5,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Trúc Ly",
+  "speed": 0.88
+ }
+}

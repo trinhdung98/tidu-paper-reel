@@ -37,8 +37,10 @@ function paperKid(x, y, o = {}) {
   }
   // head
   pp(pE(0, -350, 70, 74), PR.tan, { key: key + 'head', sb: 14, sy: 7, tex: 0.45 });
-  // dark hair
-  pp(pA(0, -365, 78, Math.PI * 0.82, Math.PI * 2.18), PR.char, { key: key + 'hair', sb: 10, sy: 5, tex: 0.5 });
+  // dark hair: top cap + sides
+  pp(pR(-74, -425, 148, 65, 24), PR.char, { key: key + 'hair', sb: 10, sy: 5, tex: 0.5 });
+  pp(pR(-74, -395, 26, 45, 10), PR.char, { key: key + 'hL', shadow: false, tex: 0.4 });
+  pp(pR(48, -395, 26, 45, 10), PR.char, { key: key + 'hR', shadow: false, tex: 0.4 });
   // eyes
   pp(pE(-25, -352, 8, 8), PR.ink, { key: key + 'e1', shadow: false, tex: false });
   pp(pE(25, -352, 8, 8), PR.ink, { key: key + 'e2', shadow: false, tex: false });
@@ -74,8 +76,9 @@ function paperTeacher(x, y, o = {}) {
   // head
   pp(pE(0, -355, 66, 70), PR.tan, { key: key + 'head', sb: 14, sy: 7, tex: 0.45 });
   // hair bun
-  pp(pE(0, -425, 32, 32), PR.woodD, { key: key + 'bun', sb: 8, sy: 4, tex: 0.5 });
-  pp(pA(0, -370, 72, Math.PI * 0.78, Math.PI * 2.22), PR.woodD, { key: key + 'hair', sb: 10, sy: 5, tex: 0.5 });
+  pp(pR(-70, -425, 140, 60, 22), PR.woodD, { key: key + 'hair', sb: 10, sy: 5, tex: 0.5 });
+  pp(pR(-70, -395, 24, 45, 8), PR.woodD, { key: key + 'hL', shadow: false, tex: 0.4 });
+  pp(pR(46, -395, 24, 45, 8), PR.woodD, { key: key + 'hR', shadow: false, tex: 0.4 });
   // glasses
   ctx.save(); ctx.strokeStyle = PR.redD; ctx.lineWidth = 4.5;
   ctx.strokeRect(-40, -370, 32, 24); ctx.strokeRect(8, -370, 32, 24);
@@ -111,20 +114,20 @@ SCENES.hook = () => {
   prSign('GẶP BẠN MỚI', { kicker: KICK });
 
   // Friend walking in on the left
-  const kidWalk = clamp((TT - VL('hook').t0) / 1.4);
-  const kidX = 140 + kidWalk * 120;
-  paperKid(kidX, 1470, { key: 'hk_kid', s: 0.86, wave: TT > 1.2 });
+  paperKid(220, 1470, { key: 'hk_kid', wave: TT > 1.0 });
 
-  // Hero card: big question badge at cx = 540, cy = 800
-  const qPop = popS(VW('hook', 'nói').t0);
-  withT(540, 800, 0, qPop, () => {
+  // Hero card: big question badge at cx = 540, cy = 800 (ready at t=0)
+  withT(540, 800, 0, 1, () => {
     pp(pR(-300, -220, 600, 440, 22), PR.creamL, { key: 'hk_cd', sb: 22, sy: 11, tex: 0.6, rim: 'rgba(255,255,255,0.7)' });
     pp(pR(-280, -200, 560, 400, 16), PR.paperW, { key: 'hk_in', shadow: false, tex: 0.4 });
     // question mark
     txt('?', 0, -20, 160, PR.red, { align: 'center', base: 'middle', weight: 800 });
     // question banner
-    pp(pR(-240, 100, 480, 74, 12), PR.navy, { key: 'hk_tag', sb: 8, sy: 4, tex: 0.5 });
-    txt('NÓI GÌ BẰNG TIẾNG ANH?', 0, 148, 30, PR.creamL, { align: 'center', weight: 800 });
+    const qPop = popS(VW('hook', 'nói').t0);
+    withT(0, 137, 0, qPop, () => {
+      pp(pR(-240, -37, 480, 74, 12), PR.navy, { key: 'hk_tag', sb: 8, sy: 4, tex: 0.5 });
+      txt('NÓI GÌ BẰNG TIẾNG ANH?', 0, 10, 30, PR.creamL, { align: 'center', weight: 800 });
+    });
   });
 
   // Mascot Polly on the right
@@ -166,8 +169,8 @@ SCENES.hello = () => {
     // Sub note
     const nPop = popS(tXinchao + 0.4);
     withT(0, 155, 0, nPop, () => {
-      pp(pR(-240, -24, 480, 48, 12), PR.mint, { key: 'hl_pill', shadow: false, tex: 0.4 });
-      txt('Dùng trong mọi hoàn cảnh · Lịch sự', 0, 8, 23, PR.greenD, { align: 'center', weight: 800 });
+      pp(pR(-240, -24, 480, 48, 12), '#d8efe2', { key: 'hl_pill', shadow: false, tex: 0.4 });
+      txt('Dùng trong mọi hoàn cảnh · Lịch sự', 0, 8, 23, '#1d6b3e', { align: 'center', weight: 800 });
     });
   });
 
@@ -264,8 +267,8 @@ SCENES.morning = () => {
   pp(pE(240, 580, 90, 42), PR.paperW, { key: 'cld1', sb: 10, sy: 5, tex: 0.4 });
   pp(pE(840, 540, 110, 48), PR.paperW, { key: 'cld2', sb: 10, sy: 5, tex: 0.4 });
 
-  // Hero card at cx = 540, cy = 940 (w = 660, h = 340)
-  const mPop = popS(VW('morning', 'good').t0);
+  // Hero card at cx = 540, cy = 940 (w = 660, h = 340) - ready on cut
+  const mPop = popS(E0 + 0.1);
   withT(540, 940, -0.01, mPop, () => {
     pp(pR(-330, -170, 660, 340, 22), PR.creamL, { key: 'gm_cd', sb: 22, sy: 11, tex: 0.6, rim: 'rgba(255,255,255,0.7)' });
     pp(pR(-310, -150, 620, 300, 16), PR.paperW, { key: 'gm_in', shadow: false, tex: 0.45 });
@@ -307,10 +310,10 @@ SCENES.quiz = () => {
   });
 
   // Teacher character standing on the left
-  paperTeacher(230, 1470, { key: 'qz_tch', s: 0.88, wave: true });
+  paperTeacher(230, 1470, { key: 'qz_tch', wave: true });
 
-  // Question header board at cx = 540, cy = 600
-  const qPop = popS(VW('quiz', 'cô').t0);
+  // Question header board at cx = 540, cy = 600 - ready on cut
+  const qPop = popS(E0 + 0.1);
   withT(540, 600, 0, qPop, () => {
     pp(pR(-310, -90, 620, 180, 18), PR.creamL, { key: 'qz_qbd', sb: 18, sy: 9, tex: 0.55, rim: 'rgba(255,255,255,0.6)' });
     pp(pR(-290, -74, 580, 148, 14), PR.paperW, { key: 'qz_qin', shadow: false, tex: 0.4 });
@@ -320,8 +323,8 @@ SCENES.quiz = () => {
   });
 
   // Two choice cards side by side (Paired elements: midpoint must be 540!)
-  // Desired gap = 380 -> left = 350, right = 730
-  const optPop = popS(VW('quiz', 'gì').t0);
+  // Desired gap = 380 -> left = 350, right = 730 - ready on cut
+  const optPop = popS(E0 + 0.25);
   // Option A at x = 350, y = 870 (w = 320, h = 220)
   withT(350, 870, -0.015, optPop, () => {
     pp(pR(-160, -110, 320, 220, 18), PR.creamL, { key: 'opt_a', sb: 16, sy: 8, tex: 0.5 });
@@ -375,32 +378,32 @@ SCENES.answer = () => {
   prSign('ĐÁP ÁN CHÍNH XÁC', { kicker: KICK });
 
   // Teacher waving happily
-  paperTeacher(230, 1470, { key: 'ans_tch', s: 0.88, wave: true });
+  paperTeacher(230, 1470, { key: 'ans_tch', wave: true });
 
   // Winning card at cx = 540, cy = 820
   withT(540, 820, 0, 1, () => {
     pp(pR(-320, -220, 640, 440, 24), PR.creamL, { key: 'ans_cd', sb: 24, sy: 12, tex: 0.6, rim: 'rgba(255,255,255,0.7)' });
-    pp(pR(-300, -200, 600, 400, 18), PR.mint, { key: 'ans_in', shadow: false, tex: 0.45 });
+    pp(pR(-300, -200, 600, 400, 18), '#eaf5ee', { key: 'ans_in', shadow: false, tex: 0.45 });
 
     // Option B badge
-    pp(pR(-260, -170, 120, 48, 10), PR.green, { key: 'ans_tag', shadow: false, tex: 0.4 });
-    txt('ĐÁP ÁN B', -200, -138, 22, PR.creamL, { align: 'center', weight: 800 });
+    pp(pR(-260, -170, 130, 48, 10), PR.green, { key: 'ans_tag', shadow: false, tex: 0.4 });
+    txt('ĐÁP ÁN B', -195, -138, 22, PR.creamL, { align: 'center', weight: 800 });
 
     // Answer text
-    txt('Good morning!', 0, -40, 64, PR.greenD, { align: 'center', base: 'middle', weight: 800 });
+    txt('Good morning!', 0, -40, 68, '#1d6b3e', { align: 'center', base: 'middle', weight: 800 });
 
     // divider
-    pp(pR(-240, 20, 480, 6, 3), PR.greenL, { key: 'ans_div', shadow: false, tex: 0.3 });
+    pp(pR(-240, 20, 480, 6, 3), '#8fc27e', { key: 'ans_div', shadow: false, tex: 0.3 });
 
     // Explanation
     txt('Chào cô giáo vào buổi sáng lịch sự nhất!', 0, 80, 26, PR.navy, { align: 'center', weight: 700 });
   });
 
   // Green checkmark
-  prCheck(760, 680, VL('answer').t0 + 0.1);
+  prCheck(760, 680, E0 + 0.1);
 
   // Big celebration stamp slamming down
-  prStamp('CHÍNH XÁC', 540, 960, PR.green, VW('answer', 'xác').t0, { rot: -0.05, size: 52, from: 1.3 });
+  prStamp('CHÍNH XÁC', 540, 960, PR.green, E0 + 0.25, { rot: -0.05, size: 52, from: 1.25 });
 
   // Polly celebrating with mortar hat
   polly(POLLY_X, POLLY_Y, { hat: 'mortar', mood: 'happy', hand: { x: -240, y: -420 }, key: 'p_ans' });

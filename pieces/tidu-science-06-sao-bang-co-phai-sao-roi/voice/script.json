@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 1.2,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Thứ bạn ước nguyện khi thấy trên trời có thể chỉ là một hạt bụi vũ trụ!",
+   "after": 1.0,
+   "file": "hook.wav"
+  },
+  {
+   "id": "streak",
+   "text": "Đêm nay, nếu thấy một vệt sáng lao qua bầu trời, bạn có thể gọi đó là sao băng.",
+   "after": 1.2,
+   "file": "streak.wav"
+  },
+  {
+   "id": "notastar",
+   "text": "Nhưng nó không phải một ngôi sao rơi xuống Trái Đất. Đó thường là một mảnh đá hoặc hạt vật chất nhỏ từ không gian.",
+   "after": 2.2,
+   "file": "notastar.wav"
+  },
+  {
+   "id": "glow",
+   "text": "Khi lao vào khí quyển với tốc độ cao, nó làm không khí xung quanh nóng và phát sáng. Phần lớn bị phá hủy trên đường đi.",
+   "after": 2.5,
+   "file": "glow.wav"
+  },
+  {
+   "id": "meteorite",
+   "text": "Nếu còn mảnh vật chất chạm tới mặt đất, chúng ta gọi đó là thiên thạch rơi.",
+   "after": 2.2,
+   "file": "meteorite.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn đã từng nhìn thấy sao băng ngoài đời chưa?",
+   "after": 2.2,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Thiện Minh",
+  "speed": 0.88
+ }
+}

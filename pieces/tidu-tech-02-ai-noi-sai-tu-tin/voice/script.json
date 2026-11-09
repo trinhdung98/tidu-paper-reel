@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.0,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Bạn hỏi AI một câu, nó trả lời rất mượt. Nhưng câu trả lời đó có thể sai hoàn toàn!",
+   "after": 1.2,
+   "file": "hook.wav"
+  },
+  {
+   "id": "term",
+   "text": "Hiện tượng này được gọi là AI hallucination, hay ảo giác AI.",
+   "after": 1.2,
+   "file": "term.wav"
+  },
+  {
+   "id": "pattern",
+   "text": "Mô hình ngôn ngữ tạo câu trả lời dựa trên những mẫu đã học và ngữ cảnh hiện tại.",
+   "after": 1.5,
+   "file": "pattern.wav"
+  },
+  {
+   "id": "reality",
+   "text": "Nó không tự động kiểm chứng từng khẳng định với thực tế.",
+   "after": 1.5,
+   "file": "reality.wav"
+  },
+  {
+   "id": "fake",
+   "text": "Vì vậy, AI đôi khi tạo ra tên sách, số liệu hoặc nguồn tham khảo không tồn tại.",
+   "after": 1.6,
+   "file": "fake.wav"
+  },
+  {
+   "id": "takeaway",
+   "text": "Câu trả lời nghe thuyết phục không đồng nghĩa với câu trả lời chính xác.",
+   "after": 1.2,
+   "file": "takeaway.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Lưu video này để nhớ kiểm chứng thông tin do AI tạo ra.",
+   "after": 0.2,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Minh Đức",
+  "speed": 0.88
+ }
+}

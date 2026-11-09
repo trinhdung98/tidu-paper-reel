@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.0,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Không phải mã QR nào cũng đáng tin. Kẻ gian có thể dán mã QR giả đè lên mã thật ở nơi công cộng.",
+   "after": 1.2,
+   "file": "hook.wav"
+  },
+  {
+   "id": "phishing",
+   "text": "Khi quét, bạn có thể bị dẫn đến website giả mạo để nhập thông tin đăng nhập hoặc thanh toán.",
+   "after": 1.2,
+   "file": "phishing.wav"
+  },
+  {
+   "id": "risk",
+   "text": "Bản thân hành động quét mã không có nghĩa là tiền tự động biến mất.",
+   "after": 1.2,
+   "file": "risk.wav"
+  },
+  {
+   "id": "action",
+   "text": "Rủi ro thường xuất hiện ở liên kết và các thao tác tiếp theo.",
+   "after": 1.2,
+   "file": "action.wav"
+  },
+  {
+   "id": "verify",
+   "text": "Hãy kiểm tra địa chỉ website, xác minh người nhận tiền và không nhập mật khẩu trên trang đáng ngờ.",
+   "after": 1.5,
+   "file": "verify.wav"
+  },
+  {
+   "id": "takeaway",
+   "text": "Nhìn kỹ trước khi chuyển tiền: Mã QR chỉ là một đường link dẫn lối!",
+   "after": 1.2,
+   "file": "takeaway.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Lưu lại video này trước lần thanh toán QR tiếp theo nhé.",
+   "after": 0.2,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Minh Đức",
+  "speed": 0.88
+ }
+}

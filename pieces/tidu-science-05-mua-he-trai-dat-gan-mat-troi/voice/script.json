@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 1.2,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Mùa hè không đơn giản là lúc Trái Đất ở gần Mặt Trời!",
+   "after": 1.0,
+   "file": "hook.wav"
+  },
+  {
+   "id": "question",
+   "text": "Có phải mùa hè xuất hiện vì Trái Đất tiến lại gần Mặt Trời? Không phải nguyên nhân chính đâu.",
+   "after": 1.5,
+   "file": "question.wav"
+  },
+  {
+   "id": "tilt",
+   "text": "Trục quay của Trái Đất nghiêng khoảng 23,4 độ so với phương vuông góc mặt phẳng quỹ đạo.",
+   "after": 2.0,
+   "file": "tilt.wav"
+  },
+  {
+   "id": "direct",
+   "text": "Khi một bán cầu nghiêng về phía Mặt Trời, nơi đó nhận ánh sáng trực tiếp hơn và có ngày dài hơn.",
+   "after": 2.5,
+   "file": "direct.wav"
+  },
+  {
+   "id": "seasons",
+   "text": "Vì vậy, nhiệt lượng nhận được cũng thay đổi theo mùa.",
+   "after": 2.0,
+   "file": "seasons.wav"
+  },
+  {
+   "id": "hemispheres",
+   "text": "Đó là lý do khi bán cầu Bắc có mùa hè, bán cầu Nam thường đang có mùa đông.",
+   "after": 2.2,
+   "file": "hemispheres.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn thích mùa hè hay mùa đông hơn?",
+   "after": 2.2,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Thiện Minh",
+  "speed": 0.88
+ }
+}

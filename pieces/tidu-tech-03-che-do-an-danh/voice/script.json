@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.0,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Bạn bật chế độ ẩn danh và nghĩ không ai biết mình truy cập gì?",
+   "after": 1.0,
+   "file": "hook.wav"
+  },
+  {
+   "id": "device",
+   "text": "Chế độ ẩn danh chỉ giúp trình duyệt không lưu lịch sử trên thiết bị sau khi đóng tab.",
+   "after": 1.2,
+   "file": "device.wav"
+  },
+  {
+   "id": "not_invisible",
+   "text": "Nhưng nó hoàn toàn không biến bạn thành người vô hình trên Internet.",
+   "after": 1.2,
+   "file": "not_invisible.wav"
+  },
+  {
+   "id": "who_sees",
+   "text": "Website bạn truy cập và nhà cung cấp mạng vẫn quan sát được kết nối.",
+   "after": 1.5,
+   "file": "who_sees.wav"
+  },
+  {
+   "id": "login",
+   "text": "Nếu đăng nhập vào tài khoản, website vẫn biết chính xác bạn là ai.",
+   "after": 1.5,
+   "file": "login.wav"
+  },
+  {
+   "id": "takeaway",
+   "text": "Ẩn danh là quyền riêng tư trên thiết bị, không phải tàng hình trên mạng!",
+   "after": 1.2,
+   "file": "takeaway.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Gửi video này cho người đang hiểu nhầm về chế độ ẩn danh nhé.",
+   "after": 0.2,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Minh Đức",
+  "speed": 0.88
+ }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "tidu-tech-05-mbps-khac-mbs",
+  "title": "Tidu Tech 05 — Mạng 100 Mbps sao tải không được 100 MB/s?",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> difference -> units -> math -> overhead -> takeaway -> cta",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -14 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}

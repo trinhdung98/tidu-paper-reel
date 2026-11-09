@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.0,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Thấy biểu tượng ổ khóa HTTPS trên website thì chắc chắn an toàn và không bị lừa đảo?",
+   "after": 1.0,
+   "file": "hook.wav"
+  },
+  {
+   "id": "encryption",
+   "text": "HTTPS thực chất chỉ giúp mã hóa đường truyền giữa máy bạn và máy chủ.",
+   "after": 1.2,
+   "file": "encryption.wav"
+  },
+  {
+   "id": "phishing",
+   "text": "Nó không đảm bảo người sở hữu trang web đó là người bán hàng lương thiện!",
+   "after": 1.2,
+   "file": "phishing.wav"
+  },
+  {
+   "id": "free_cert",
+   "text": "Ngày nay, một trang web lừa đảo hoàn toàn có thể cài chứng chỉ HTTPS miễn phí trong vài phút.",
+   "after": 1.5,
+   "file": "free_cert.wav"
+  },
+  {
+   "id": "verify",
+   "text": "Vì vậy, hãy kiểm tra kỹ tên miền, nguồn link và thông tin pháp lý bên bán.",
+   "after": 1.5,
+   "file": "verify.wav"
+  },
+  {
+   "id": "takeaway",
+   "text": "Ổ khóa chỉ chứng nhận đường truyền kín đáo, chứ không chứng nhận website đó tử tế!",
+   "after": 1.2,
+   "file": "takeaway.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Chia sẻ ngay điều này với người thân hay mua sắm online nhé!",
+   "after": 0.2,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Minh Đức",
+  "speed": 0.88
+ }
+}

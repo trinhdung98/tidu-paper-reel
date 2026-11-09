@@ -1,0 +1,59 @@
+{
+ "lead": 0.2,
+ "tail": 0.8,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Có bao nhiêu ngôi sao trong chiếc hộp này? Cùng đếm bằng tiếng Anh nhé!",
+   "after": 1.2,
+   "file": "hook.wav"
+  },
+  {
+   "id": "one",
+   "text": "One! Một.",
+   "after": 7.4,
+   "file": "one.wav"
+  },
+  {
+   "id": "two_three",
+   "text": "Two! Hai. Three! Ba.",
+   "after": 5.0,
+   "file": "two_three.wav"
+  },
+  {
+   "id": "four_five",
+   "text": "Four! Bốn. Five! Năm.",
+   "after": 5.0,
+   "file": "four_five.wav"
+  },
+  {
+   "id": "quiz",
+   "text": "Bây giờ mình giấu đi một ngôi sao. Còn bao nhiêu ngôi sao nào?",
+   "after": 10.5,
+   "file": "quiz.wav"
+  },
+  {
+   "id": "answer",
+   "text": "Four! Bốn ngôi sao! Tuyệt vời!",
+   "after": 2.0,
+   "file": "answer.wav"
+  },
+  {
+   "id": "countall",
+   "text": "Hãy đếm lại thật to cùng mình: One, two, three, four, five!",
+   "after": 3.0,
+   "file": "countall.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Hãy thử đếm năm đồ vật trên bàn bằng tiếng Anh.",
+   "after": 0.5,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Trúc Ly",
+  "speed": 0.88
+ }
+}

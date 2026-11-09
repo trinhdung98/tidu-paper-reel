@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.0,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Bạn vừa xem vài video về mèo, sao cả trang đề xuất hôm nay ngập tràn video mèo?",
+   "after": 1.0,
+   "file": "hook.wav"
+  },
+  {
+   "id": "signals",
+   "text": "TikTok không hề đọc suy nghĩ của bạn, mà học từ chính những tín hiệu bạn để lại.",
+   "after": 1.2,
+   "file": "signals.wav"
+  },
+  {
+   "id": "metrics",
+   "text": "Hệ thống ghi nhận bạn dừng lại xem bao lâu, có thả tim, bình luận hay lướt qua nhanh.",
+   "after": 1.2,
+   "file": "metrics.wav"
+  },
+  {
+   "id": "metadata",
+   "text": "Nó cũng phân tích chi tiết âm thanh, mô tả và hashtag của từng video.",
+   "after": 1.5,
+   "file": "metadata.wav"
+  },
+  {
+   "id": "algorithm",
+   "text": "Thuật toán liên tục tính điểm để đưa nội dung bạn thích nhất lên đầu bảng tin.",
+   "after": 1.5,
+   "file": "algorithm.wav"
+  },
+  {
+   "id": "takeaway",
+   "text": "Bạn tương tác với thứ gì, thuật toán sẽ xây dựng thế giới của bạn bằng chính thứ đó!",
+   "after": 1.2,
+   "file": "takeaway.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Trang đề xuất TikTok của bạn hiện đang ngập tràn chủ đề gì? Kể bên dưới nhé!",
+   "after": 0.2,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Minh Đức",
+  "speed": 0.88
+ }
+}

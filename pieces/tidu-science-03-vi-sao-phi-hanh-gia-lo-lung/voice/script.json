@@ -1,0 +1,59 @@
+{
+ "lead": 0.3,
+ "tail": 1.2,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Trên trạm vũ trụ vẫn có trọng lực. Vậy tại sao phi hành gia bay được?",
+   "after": 1.0,
+   "file": "hook.wav"
+  },
+  {
+   "id": "gravity",
+   "text": "Bạn nghĩ phi hành gia bay lơ lửng vì ngoài vũ trụ không có trọng lực?",
+   "after": 1.2,
+   "file": "gravity.wav"
+  },
+  {
+   "id": "reality",
+   "text": "Thực ra, ở độ cao của trạm ISS, lực hấp dẫn của Trái Đất vẫn rất mạnh.",
+   "after": 1.8,
+   "file": "reality.wav"
+  },
+  {
+   "id": "freefall",
+   "text": "Bí mật nằm ở trạng thái rơi tự do.",
+   "after": 2.0,
+   "file": "freefall.wav"
+  },
+  {
+   "id": "orbit",
+   "text": "Trạm vũ trụ chuyển động ngang đủ nhanh để liên tục rơi quanh Trái Đất thay vì đâm xuống mặt đất.",
+   "after": 2.5,
+   "file": "orbit.wav"
+  },
+  {
+   "id": "together",
+   "text": "Phi hành gia và mọi đồ vật bên trong cũng rơi cùng trạm.",
+   "after": 2.0,
+   "file": "together.wav"
+  },
+  {
+   "id": "weightless",
+   "text": "Vì vậy, họ có cảm giác gần như không trọng lượng.",
+   "after": 2.2,
+   "file": "weightless.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Nếu được lên ISS, bạn muốn thử làm gì đầu tiên?",
+   "after": 2.2,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Thiện Minh",
+  "speed": 0.88
+ }
+}

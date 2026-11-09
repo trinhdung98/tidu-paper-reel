@@ -2040,9 +2040,9 @@ function ttServerRack(cx, cy, s = 1, o = {}) {
     }
 
     // Globe badge on top
-    withT(0, -sh / 2 - 50, 0, 1, () => {
-      pp(pR(-130, -30, 260, 60, 12), PR.navyD, { key: (o.key ?? 'sr') + '_badge', sb: 8, sy: 4, tex: 0.4 });
-      txt('🌐 MÁY CHỦ INTERNET', 0, 8, 18, PR.glow, { align: 'center', weight: 800 });
+    withT(0, -sh / 2 - 32, 0, 1, () => {
+      pp(pR(-125, -22, 250, 44, 10), PR.navyD, { key: (o.key ?? 'sr') + '_badge', sb: 6, sy: 3, tex: 0.4 });
+      txt('🌐 MÁY CHỦ TOÀN CẦU', 0, 8, 17, PR.glow, { align: 'center', weight: 800 });
     });
   });
 }
@@ -2163,7 +2163,7 @@ SCENES.difference = () => {
 
   // Two comparison cards side by side
   // Left: Wi-Fi card (Cyan)
-  ttCard(290, 840, 380, 520, '📶 WI-FI', [
+  ttCard(250, 840, 340, 520, '📶 WI-FI', [
     'Sóng vô tuyến nội bộ',
     'Nối thiết bị tới router',
     'Phạm vi: trong nhà bạn',
@@ -2171,18 +2171,18 @@ SCENES.difference = () => {
   ], PR.blue, 'c_wf');
 
   // Right: Internet card (Orange/Navy)
-  ttCard(750, 840, 380, 520, '🌐 INTERNET', [
+  ttCard(690, 840, 340, 520, '🌐 INTERNET', [
     'Mạng lưới toàn cầu',
     'Hàng triệu máy chủ',
-    'Cáp quang xuyên đại dương',
+    'Cáp quang xuyên biển',
     'Chứa dữ liệu thế giới',
   ], PR.mustard, 'c_in');
 
   // Big "≠" (KHÁC NHAU) badge between them
-  withT(520, 840, 0, popS(tDiff), () => {
-    pp(pE(0, 0, 78, 78), PR.red, { key: 'diff_neq', sb: 16, sy: 8, tex: 0.5 });
-    pp(pE(0, 0, 68, 68), PR.creamL, { shadow: false, tex: false });
-    txt('≠', 0, 24, 76, PR.red, { align: 'center', weight: 800 });
+  withT(470, 840, 0, popS(tDiff), () => {
+    pp(pE(0, 0, 74, 74), PR.red, { key: 'diff_neq', sb: 16, sy: 8, tex: 0.5 });
+    pp(pE(0, 0, 64, 64), PR.creamL, { shadow: false, tex: false });
+    txt('≠', 0, 24, 72, PR.red, { align: 'center', weight: 800 });
   });
 
   // Mascot: botty with beanie, nodding
@@ -2245,18 +2245,18 @@ SCENES.internet = () => {
   // Left: Home box (Phone + Router)
   withT(220, 880, 0, 1, () => {
     // Dotted home container
-    pp(pR(-160, -220, 320, 440, 16), '#13283e', { key: 'in_homebox', sb: 10, sy: 5, tex: 0.35 });
+    pp(pR(-160, -240, 320, 480, 16), '#13283e', { key: 'in_homebox', sb: 10, sy: 5, tex: 0.35 });
     ctx.save();
     ctx.strokeStyle = PR.glow;
     ctx.lineWidth = 3;
     ctx.setLineDash([10, 8]);
-    ctx.strokeRect(-152, -212, 304, 424);
+    ctx.strokeRect(-152, -232, 304, 464);
     ctx.restore();
-    txt('TRONG NHÀ (BẠN)', 0, -188, 20, PR.creamL, { align: 'center', weight: 800 });
+    txt('TRONG NHÀ (BẠN)', 0, -200, 20, PR.creamL, { align: 'center', weight: 800 });
 
-    // Mini router and phone inside home
-    ttRouter(0, 40, 0.68, { key: 'in_homerouter', online: true });
-    ttPhone(0, -70, 0.45, { key: 'in_homephone', bars: 4, mini: true });
+    // Mini phone and router inside home
+    ttPhone(0, -85, 0.42, { key: 'in_homephone', bars: 4, mini: true });
+    ttRouter(0, 115, 0.64, { key: 'in_homerouter', online: true });
   });
 
   // Right: Global Datacenter / Server Rack
@@ -2265,10 +2265,10 @@ SCENES.internet = () => {
   // Center: Long fiber optic cable carrying data packets
   ttCable(380, 920, 540, 920, { torn: false });
 
-  // Top banner: Globe connection
-  withT(460, 640, 0, 1, () => {
-    pp(pR(-180, -30, 360, 60, 14), PR.mustard, { key: 'in_topbanner', sb: 10, sy: 5, tex: 0.5 });
-    txt('CÁP QUANG RA MÁY CHỦ', 0, 9, 21, PR.navy, { align: 'center', weight: 800 });
+  // Center cable pill
+  withT(460, 860, 0, 1, () => {
+    pp(pR(-110, -20, 220, 40, 10), PR.mustard, { key: 'in_cablepill', sb: 6, sy: 3, tex: 0.4 });
+    txt('CÁP RA MÁY CHỦ', 0, 6, 16, PR.navy, { align: 'center', weight: 800 });
   });
 
   // Mascot: botty with professor mortar hat holding AI chip
@@ -2292,14 +2292,16 @@ SCENES.disconnect = () => {
 
   // Left: Home Router + Phone (Wi-Fi STILL WORKS!)
   withT(220, 880, 0, 1, () => {
-    pp(pR(-160, -220, 320, 440, 16), '#13283e', { key: 'dc_homebox', sb: 10, sy: 5, tex: 0.35 });
-    ttRouter(0, 40, 0.68, { key: 'dc_homerouter', online: !isCut });
-    ttPhone(0, -70, 0.45, { key: 'dc_homephone', bars: 4, barCol: PR.green, mini: true });
-    ttWifiPulse(0, -10, 140, 1.5, PR.green, 0.9);
+    pp(pR(-160, -240, 320, 480, 16), '#13283e', { key: 'dc_homebox', sb: 10, sy: 5, tex: 0.35 });
+    txt('TRONG NHÀ (BẠN)', 0, -200, 20, PR.creamL, { align: 'center', weight: 800 });
+
+    ttPhone(0, -85, 0.42, { key: 'dc_homephone', bars: 4, barCol: PR.green, mini: true });
+    ttWifiPulse(0, -10, 120, 1.5, PR.green, 0.9);
+    ttRouter(0, 115, 0.64, { key: 'dc_homerouter', online: !isCut });
 
     // Green check badge: Wi-Fi vẫn chạy
-    pp(pR(-130, 150, 260, 46, 10), PR.green, { key: 'dc_wfok', sb: 6, sy: 3, tex: 0.4 });
-    txt('WI-FI: VẪN BÌNH THƯỜNG', 0, 180, 16, PR.creamL, { align: 'center', weight: 800 });
+    pp(pR(-130, 185, 260, 44, 10), PR.green, { key: 'dc_wfok', sb: 6, sy: 3, tex: 0.4 });
+    txt('WI-FI: VẪN BÌNH THƯỜNG', 0, 213, 16, PR.creamL, { align: 'center', weight: 800 });
   });
 
   // Right: Global servers (Dimmed out when cut)
@@ -2335,23 +2337,22 @@ SCENES.takeaway = () => {
 
   // Top card: Wi-Fi meaning
   withT(480, 680, 0, 1, () => {
-    pp(pR(-380, -90, 760, 180, 18), PR.techK, { key: 'ta_c1', sb: 14, sy: 7, tex: 0.45 });
-    // Wi-Fi signal icon
-    for (let b = 0; b < 4; b++) {
-      pp(pR(-330 + b * 14, 20 - (b + 1) * 14, 10, (b + 1) * 14, 2), PR.green, { shadow: false, tex: false });
-    }
-    txt('VẠCH WI-FI: SÓNG TỚI ROUTER', -240, -24, 28, PR.glow, { weight: 800 });
-    txt('Chỉ cho biết điện thoại kết nối tốt tới cục phát trong nhà.', -240, 16, 20, PR.creamD, { weight: 600 });
-    txt('Tín hiệu nội bộ đạt 100%', -240, 52, 18, PR.green, { weight: 700 });
+    pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c1', sb: 14, sy: 7, tex: 0.5 });
+    pp(pR(-380, -90, 760, 52, 18), PR.blue, { key: 'ta_c1_hd', shadow: false, tex: 0.4 });
+    pp(pR(-380, -56, 760, 18, 0), PR.blue, { shadow: false, tex: false });
+    txt('📶 VẠCH WI-FI: SÓNG TỚI ROUTER', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
+    txt('Chỉ cho biết điện thoại kết nối tốt tới router trong nhà.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
+    txt('✓ Tín hiệu nội bộ đạt 100%', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
   });
 
   // Bottom card: Internet meaning
   withT(480, 940, 0, 1, () => {
-    pp(pR(-380, -90, 760, 180, 18), '#0e1d2d', { key: 'ta_c2', sb: 14, sy: 7, tex: 0.45 });
-    txt('🌐', -320, 20, 48, PR.mustard, { align: 'center', weight: 800 });
-    txt('INTERNET: KẾT NỐI RA THẾ GIỚI', -240, -24, 28, PR.mustard, { weight: 800 });
-    txt('Đường dây từ router đi ra ngoài nhà mạng (ISP).', -240, 16, 20, PR.creamD, { weight: 600 });
-    txt('Đường này đứt thì Wi-Fi đầy vạch vẫn không có mạng!', -240, 52, 18, PR.red, { weight: 700 });
+    pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c2', sb: 14, sy: 7, tex: 0.5 });
+    pp(pR(-380, -90, 760, 52, 18), PR.mustard, { key: 'ta_c2_hd', shadow: false, tex: 0.4 });
+    pp(pR(-380, -56, 760, 18, 0), PR.mustard, { shadow: false, tex: false });
+    txt('🌐 INTERNET: KẾT NỐI RA THẾ GIỚI', 0, -55, 26, PR.navy, { align: 'center', weight: 800 });
+    txt('Đường dây cáp từ router đi ra ngoài nhà mạng (ISP).', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
+    txt('⚠ Đường này đứt thì Wi-Fi đầy vạch vẫn mất mạng!', 0, 50, 19, PR.red, { align: 'center', weight: 800 });
   });
 
   // Big rubber stamp slamming on the takeaway
