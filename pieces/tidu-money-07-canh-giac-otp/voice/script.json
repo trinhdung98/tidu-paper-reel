@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.8,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Có người tự xưng là ngân hàng và hỏi mã OTP của bạn. Bạn sẽ làm gì?",
+   "after": 1.5,
+   "file": "hook.wav"
+  },
+  {
+   "id": "scam",
+   "text": "Dù họ nói tài khoản đang bị khóa hay có giao dịch bất thường, đừng đọc mã OTP, mật khẩu hoặc thông tin đăng nhập cho người khác.",
+   "after": 2.0,
+   "file": "scam.wav"
+  },
+  {
+   "id": "fake",
+   "text": "Kẻ gian có thể giả mạo số điện thoại, giao diện và cả giọng nói để tạo cảm giác đáng tin.",
+   "after": 1.8,
+   "file": "fake.wav"
+  },
+  {
+   "id": "stop",
+   "text": "Nếu nhận được yêu cầu đáng ngờ, hãy dừng tương tác.",
+   "after": 1.5,
+   "file": "stop.wav"
+  },
+  {
+   "id": "verify",
+   "text": "Sau đó, tự truy cập ứng dụng hoặc liên hệ ngân hàng qua kênh chính thức mà bạn đã xác minh.",
+   "after": 2.0,
+   "file": "verify.wav"
+  },
+  {
+   "id": "seconds",
+   "text": "Chỉ vài giây kiểm tra có thể giúp bạn tránh một sai lầm lớn.",
+   "after": 0.2,
+   "file": "seconds.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Hải Đăng",
+  "speed": 0.88
+ }
+}

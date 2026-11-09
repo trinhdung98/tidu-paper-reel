@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.8,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Cùng một trăm nghìn đồng, tại sao hôm nay giỏ hàng lại vơi đi?",
+   "after": 1.5,
+   "file": "hook.wav"
+  },
+  {
+   "id": "reason",
+   "text": "Một lý do có thể là lạm phát.",
+   "after": 1.2,
+   "file": "reason.wav"
+  },
+  {
+   "id": "example",
+   "text": "Hãy tưởng tượng giá của một giỏ hàng tăng ba phần trăm trong một năm.",
+   "after": 1.8,
+   "file": "example.wav"
+  },
+  {
+   "id": "price",
+   "text": "Giỏ hàng từng có giá một trăm nghìn, nay cần một trăm linh ba nghìn để mua đúng những món ấy.",
+   "after": 2.0,
+   "file": "price.wav"
+  },
+  {
+   "id": "same",
+   "text": "Trong khi đó, số tiền bạn giữ nguyên vẫn là một trăm nghìn. Nghĩa là sức mua đã giảm.",
+   "after": 2.2,
+   "file": "same.wav"
+  },
+  {
+   "id": "disclaimer",
+   "text": "Ba phần trăm ở đây chỉ là ví dụ, không phải mức lạm phát hiện tại.",
+   "after": 1.5,
+   "file": "disclaimer.wav"
+  },
+  {
+   "id": "plan",
+   "text": "Hiểu lạm phát giúp bạn suy nghĩ đúng hơn về thu nhập, tiết kiệm và những kế hoạch dài hạn.",
+   "after": 0.2,
+   "file": "plan.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Hải Đăng",
+  "speed": 0.88
+ }
+}

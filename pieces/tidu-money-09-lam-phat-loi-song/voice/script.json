@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.8,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Lương tăng ba triệu, vì sao tiền tiết kiệm vẫn bằng không?",
+   "after": 1.5,
+   "file": "hook.wav"
+  },
+  {
+   "id": "upgrade",
+   "text": "Khi thu nhập tăng, chúng ta thường nâng mức sống: gọi đồ ăn nhiều hơn, mua sắm thoải mái hơn, sử dụng thêm dịch vụ.",
+   "after": 2.0,
+   "file": "upgrade.wav"
+  },
+  {
+   "id": "creep",
+   "text": "Hiện tượng chi tiêu tăng theo thu nhập thường được gọi là lạm phát lối sống.",
+   "after": 1.8,
+   "file": "creep.wav"
+  },
+  {
+   "id": "enjoy",
+   "text": "Tận hưởng thành quả lao động là điều bình thường.",
+   "after": 1.2,
+   "file": "enjoy.wav"
+  },
+  {
+   "id": "goals",
+   "text": "Nhưng trước khi nâng chi tiêu, hãy quyết định dành bao nhiêu phần của khoản tăng lương cho các mục tiêu dài hạn.",
+   "after": 2.0,
+   "file": "goals.wav"
+  },
+  {
+   "id": "better",
+   "text": "Như vậy, thu nhập cao hơn không chỉ mang lại nhiều món đồ hơn, mà còn giúp bạn có nền tảng tài chính tốt hơn.",
+   "after": 0.2,
+   "file": "better.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Hải Đăng",
+  "speed": 0.88
+ }
+}

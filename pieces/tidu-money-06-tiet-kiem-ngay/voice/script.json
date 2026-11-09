@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.8,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Đừng chờ cuối tháng mới tiết kiệm tiền.",
+   "after": 1.5,
+   "file": "hook.wav"
+  },
+  {
+   "id": "empty",
+   "text": "Bởi khi mọi khoản chi đều lấy từ một chiếc ví, số tiền còn lại đôi khi chẳng còn bao nhiêu.",
+   "after": 1.8,
+   "file": "empty.wav"
+  },
+  {
+   "id": "reverse",
+   "text": "Hãy thử đảo thứ tự: ngay khi nhận lương, dành trước một khoản phù hợp với khả năng của bạn.",
+   "after": 2.0,
+   "file": "reverse.wav"
+  },
+  {
+   "id": "example",
+   "text": "Ví dụ, với thu nhập mười triệu, năm phần trăm tương đương năm trăm nghìn đồng.",
+   "after": 2.0,
+   "file": "example.wav"
+  },
+  {
+   "id": "separate",
+   "text": "Chuyển khoản ấy sang một tài khoản riêng, rồi lập ngân sách cho số tiền còn lại.",
+   "after": 2.0,
+   "file": "separate.wav"
+  },
+  {
+   "id": "startlow",
+   "text": "Nếu hiện tại quá khó, hãy bắt đầu thấp hơn.",
+   "after": 1.2,
+   "file": "startlow.wav"
+  },
+  {
+   "id": "habit",
+   "text": "Điều quan trọng là tạo được thói quen đều đặn.",
+   "after": 0.2,
+   "file": "habit.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Hải Đăng",
+  "speed": 0.88
+ }
+}

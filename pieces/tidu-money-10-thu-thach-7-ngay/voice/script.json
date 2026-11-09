@@ -1,0 +1,41 @@
+{
+ "lead": 0.3,
+ "tail": 3.8,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Chỉ cần bảy ngày để bắt đầu hiểu rõ ví tiền của bạn.",
+   "after": 1.5,
+   "file": "hook.wav"
+  },
+  {
+   "id": "days13",
+   "text": "Ngày một, ghi lại tất cả khoản chi. Ngày hai, chia chúng thành nhóm cần thiết và không thiết yếu. Ngày ba, tìm khoản chi khiến bạn bất ngờ nhất.",
+   "after": 2.2,
+   "file": "days13.wav"
+  },
+  {
+   "id": "days46",
+   "text": "Ngày bốn, thử đặt một giới hạn cho nhóm đó. Ngày năm, dành ra một khoản tiết kiệm phù hợp. Ngày sáu, kiểm tra các dịch vụ tự động trừ tiền.",
+   "after": 2.2,
+   "file": "days46.wav"
+  },
+  {
+   "id": "day7",
+   "text": "Ngày bảy, tổng kết và chọn một thói quen tốt để tiếp tục.",
+   "after": 1.8,
+   "file": "day7.wav"
+  },
+  {
+   "id": "mindset",
+   "text": "Bạn không cần thay đổi toàn bộ cuộc sống chỉ trong một tuần. Hãy bắt đầu bằng sự hiểu biết.",
+   "after": 0.2,
+   "file": "mindset.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Hải Đăng",
+  "speed": 0.88
+ }
+}

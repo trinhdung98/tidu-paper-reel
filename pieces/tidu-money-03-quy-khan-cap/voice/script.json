@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.8,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Nếu ngày mai không còn lương, bạn sống được mấy tháng?",
+   "after": 1.5,
+   "file": "hook.wav"
+  },
+  {
+   "id": "reason",
+   "text": "Đó là câu hỏi giúp bạn hiểu vì sao cần quỹ khẩn cấp.",
+   "after": 1.5,
+   "file": "reason.wav"
+  },
+  {
+   "id": "monthly",
+   "text": "Giả sử chi phí thiết yếu mỗi tháng là bốn triệu đồng.",
+   "after": 1.8,
+   "file": "monthly.wav"
+  },
+  {
+   "id": "calc",
+   "text": "Ba tháng tương đương mười hai triệu, còn sáu tháng là hai mươi bốn triệu.",
+   "after": 2.2,
+   "file": "calc.wav"
+  },
+  {
+   "id": "benchmark",
+   "text": "Mức ba đến sáu tháng thường được dùng làm mốc tham khảo, nhưng bạn cần điều chỉnh theo công việc, người phụ thuộc và mức độ ổn định thu nhập.",
+   "after": 2.2,
+   "file": "benchmark.wav"
+  },
+  {
+   "id": "start",
+   "text": "Không nhất thiết phải có ngay toàn bộ số tiền.",
+   "after": 1.5,
+   "file": "start.wav"
+  },
+  {
+   "id": "safe",
+   "text": "Hãy bắt đầu từ một khoản nhỏ và giữ nó ở nơi tương đối an toàn, dễ rút khi thật sự cần.",
+   "after": 0.2,
+   "file": "safe.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Hải Đăng",
+  "speed": 0.88
+ }
+}

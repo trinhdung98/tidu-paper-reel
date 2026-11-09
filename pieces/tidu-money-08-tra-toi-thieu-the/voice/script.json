@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.8,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Trả tối thiểu thẻ tín dụng không có nghĩa là bạn đã hết nợ.",
+   "after": 1.5,
+   "file": "hook.wav"
+  },
+  {
+   "id": "explain",
+   "text": "Khoản thanh toán tối thiểu chỉ là số tiền tối thiểu cần trả theo sao kê để đáp ứng nghĩa vụ thanh toán kỳ đó.",
+   "after": 1.8,
+   "file": "explain.wav"
+  },
+  {
+   "id": "interest",
+   "text": "Phần dư nợ chưa trả vẫn còn, và lãi có thể phát sinh theo điều khoản của thẻ.",
+   "after": 2.0,
+   "file": "interest.wav"
+  },
+  {
+   "id": "accumulate",
+   "text": "Nếu cứ duy trì dư nợ, chi phí vay có thể tăng theo thời gian.",
+   "after": 1.8,
+   "file": "accumulate.wav"
+  },
+  {
+   "id": "terms",
+   "text": "Khi sử dụng thẻ, hãy xem kỹ ngày đến hạn, cách tính lãi, phí và điều kiện miễn lãi.",
+   "after": 2.2,
+   "file": "terms.wav"
+  },
+  {
+   "id": "full",
+   "text": "Nếu có khả năng, ưu tiên thanh toán đầy đủ khoản phải trả theo sao kê đúng hạn.",
+   "after": 0.2,
+   "file": "full.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Hải Đăng",
+  "speed": 0.88
+ }
+}

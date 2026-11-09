@@ -1,0 +1,10 @@
+{
+  "name": "tidu-money-04-ca-phe-35k",
+  "title": "Tidu Money 04 — Cà phê 35 nghìn có thật sự nhỏ?",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> days -> notbad -> joy -> choice -> reduce -> mindful",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -14 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}

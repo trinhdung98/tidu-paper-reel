@@ -1,0 +1,10 @@
+{
+  "name": "tidu-money-06-tiet-kiem-ngay",
+  "title": "Tidu Money 06 — Vì sao nên tiết kiệm ngay khi nhận lương?",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> empty -> reverse -> example -> separate -> startlow -> habit",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -14 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}

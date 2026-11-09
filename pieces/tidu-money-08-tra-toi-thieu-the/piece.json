@@ -1,0 +1,10 @@
+{
+  "name": "tidu-money-08-tra-toi-thieu-the",
+  "title": "Tidu Money 08 — Trả tối thiểu thẻ tín dụng có nghĩa là an toàn?",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> explain -> interest -> accumulate -> terms -> full",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -14 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}

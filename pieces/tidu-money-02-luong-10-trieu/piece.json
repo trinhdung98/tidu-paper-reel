@@ -1,0 +1,10 @@
+{
+  "name": "tidu-money-02-luong-10-trieu",
+  "title": "Tidu Money 02 — Lương 10 triệu nên chia thế nào?",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> rule -> needs -> wants -> savings -> adjust -> rent -> purpose",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -14 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}

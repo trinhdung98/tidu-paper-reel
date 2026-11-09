@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.8,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Một ly cà phê ba mươi lăm nghìn có thể thành hơn một triệu mỗi tháng.",
+   "after": 1.5,
+   "file": "hook.wav"
+  },
+  {
+   "id": "days",
+   "text": "Nếu ngày nào bạn cũng mua một ly, ba mươi ngày sẽ là một triệu không trăm năm mươi nghìn đồng.",
+   "after": 2.0,
+   "file": "days.wav"
+  },
+  {
+   "id": "notbad",
+   "text": "Nhưng điều đó không có nghĩa bạn phải bỏ cà phê.",
+   "after": 1.2,
+   "file": "notbad.wav"
+  },
+  {
+   "id": "joy",
+   "text": "Nếu đây là niềm vui bạn thật sự trân trọng, khoản chi ấy có thể hoàn toàn xứng đáng.",
+   "after": 1.8,
+   "file": "joy.wav"
+  },
+  {
+   "id": "choice",
+   "text": "Vấn đề là bạn có chủ động chọn nó hay không.",
+   "after": 1.5,
+   "file": "choice.wav"
+  },
+  {
+   "id": "reduce",
+   "text": "Thử giảm vài buổi trong tuần và xem số tiền chênh lệch.",
+   "after": 2.0,
+   "file": "reduce.wav"
+  },
+  {
+   "id": "mindful",
+   "text": "Tài chính cá nhân không phải cấm mọi niềm vui, mà là chi tiêu có ý thức.",
+   "after": 0.2,
+   "file": "mindful.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Hải Đăng",
+  "speed": 0.88
+ }
+}

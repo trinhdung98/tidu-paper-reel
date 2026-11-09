@@ -1,0 +1,10 @@
+{
+  "name": "tidu-money-05-lam-phat-suc-mua",
+  "title": "Tidu Money 05 — Vì sao 100 nghìn mua được ít đồ hơn?",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> reason -> example -> price -> same -> disclaimer -> plan",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -14 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}

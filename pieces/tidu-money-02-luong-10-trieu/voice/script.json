@@ -1,0 +1,59 @@
+{
+ "lead": 0.3,
+ "tail": 3.8,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Lương mười triệu, chia thế nào để cuối tháng vẫn còn tiền?",
+   "after": 1.5,
+   "file": "hook.wav"
+  },
+  {
+   "id": "rule",
+   "text": "Bạn có thể bắt đầu bằng quy tắc năm mươi, ba mươi, hai mươi.",
+   "after": 1.5,
+   "file": "rule.wav"
+  },
+  {
+   "id": "needs",
+   "text": "Năm triệu cho những khoản thiết yếu như nhà ở, ăn uống và đi lại.",
+   "after": 1.8,
+   "file": "needs.wav"
+  },
+  {
+   "id": "wants",
+   "text": "Ba triệu cho những điều bạn muốn, như giải trí hay mua sắm.",
+   "after": 1.8,
+   "file": "wants.wav"
+  },
+  {
+   "id": "savings",
+   "text": "Hai triệu dành cho tiết kiệm hoặc mục tiêu trả nợ.",
+   "after": 2.2,
+   "file": "savings.wav"
+  },
+  {
+   "id": "adjust",
+   "text": "Nhưng đây chỉ là điểm xuất phát, không phải công thức bắt buộc.",
+   "after": 1.2,
+   "file": "adjust.wav"
+  },
+  {
+   "id": "rent",
+   "text": "Nếu tiền thuê nhà quá cao, bạn cần điều chỉnh theo hoàn cảnh của mình.",
+   "after": 1.8,
+   "file": "rent.wav"
+  },
+  {
+   "id": "purpose",
+   "text": "Quan trọng nhất là mỗi đồng tiền đều có mục đích.",
+   "after": 0.2,
+   "file": "purpose.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Hải Đăng",
+  "speed": 0.88
+ }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "tidu-money-09-lam-phat-loi-song",
+  "title": "Tidu Money 09 — Lương tăng nhưng vẫn không dư đồng nào",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> upgrade -> creep -> enjoy -> goals -> better",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -14 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}

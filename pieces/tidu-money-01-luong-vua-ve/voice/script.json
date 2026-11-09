@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.8,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Lương vừa về. Sao mười ngày sau ví lại trống?",
+   "after": 1.5,
+   "file": "hook.wav"
+  },
+  {
+   "id": "issue",
+   "text": "Vấn đề đôi khi không nằm ở một món đồ quá đắt, mà ở hàng chục khoản nhỏ ta không nhớ.",
+   "after": 1.8,
+   "file": "issue.wav"
+  },
+  {
+   "id": "items",
+   "text": "Một bữa ăn thêm, một lần đặt xe, một khoản đăng ký ứng dụng.",
+   "after": 2.5,
+   "file": "items.wav"
+  },
+  {
+   "id": "groups",
+   "text": "Hãy thử ghi lại mọi khoản chi trong bảy ngày, chia thành ba nhóm: cần thiết, linh hoạt và phát sinh.",
+   "after": 4.2,
+   "file": "groups.wav"
+  },
+  {
+   "id": "check",
+   "text": "Cuối tuần, nhìn xem nhóm nào khiến bạn bất ngờ.",
+   "after": 3.8,
+   "file": "check.wav"
+  },
+  {
+   "id": "step",
+   "text": "Đừng vội cắt giảm mọi thứ. Bước đầu tiên là biết tiền đang đi đâu.",
+   "after": 3.8,
+   "file": "step.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Lưu video để thử ngay tối nay.",
+   "after": 0.2,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Hải Đăng",
+  "speed": 0.88
+ }
+}
