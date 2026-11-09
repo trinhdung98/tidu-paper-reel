@@ -7,6 +7,7 @@ Lương vừa về, sao 10 ngày sau ví lại trống? 💸 Quản lý chi tiê
 ```
 
 Phương án khác:
+
 - `Tiền của bạn đã đi đâu sau 10 ngày nhận lương? | Thử thách 7 ngày #Shorts`
 - `Đừng vội cắt giảm chi tiêu nếu chưa biết điều này! | Tidu Money #Shorts`
 

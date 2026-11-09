@@ -7,28 +7,29 @@ Nói "không" có phải là ích kỷ? 🛑 Cách đặt ranh giới lành mạ
 ```
 
 Phương án khác:
-- `Sợ làm người khác thất vọng nên luôn nói "có"? | Tidu Mind #Shorts`
-- `Học cách từ chối khéo léo để bảo vệ sức khỏe tinh thần #Shorts`
+- `Sợ làm người khác thất vọng nên lúc nào cũng nói "có"? | Tidu Mind #Shorts`
+- `Từ chối bình tĩnh mà vẫn giữ được sự quan tâm #Shorts`
 
 ## Mô tả
 
 ```
-Bạn luôn gật đầu đồng ý giúp đỡ mọi người xung quanh, dù bản thân đã kiệt sức và quá tải? 🛑
+Bạn đồng ý giúp mọi người, dù bản thân đã quá tải? 🛑
 
-Nhiều người trong chúng ta sợ nói "KHÔNG" vì:
-• Sợ bị coi là ích kỷ
+Đôi khi chúng ta ngại nói "không" vì:
 • Sợ làm người khác thất vọng
-• Muốn làm hài lòng tất cả mọi người (People Pleasing)
+• Sợ bị nghĩ là ích kỷ
+• Muốn làm hài lòng tất cả mọi người (people pleasing)
 
-NHƯNG SỰ THẬT LÀ:
-Mỗi lần bạn nói "CÓ" với việc của người khác mà không suy nghĩ, bạn đang nói "KHÔNG" với thời gian, sức khỏe và các ưu tiên quan trọng của chính mình!
+Nhưng thời gian có hạn: đồng ý với tất cả mọi việc cũng có nghĩa là thời gian dành cho những ưu tiên khác của bạn bị thu hẹp.
 
-Đặt ranh giới KHÔNG CÓ NGHĨA là bạn không quan tâm họ.
-Nó có nghĩa: Bạn nói rõ giới hạn khả năng của mình để giữ mối quan hệ lâu dài và lành mạnh!
+Đặt ranh giới không có nghĩa là bạn không quan tâm người khác.
+Nó có nghĩa là bạn nói rõ điều mình có thể và không thể đảm nhận.
 
-💡 Câu từ chối bình tĩnh: "Mình rất muốn hỗ trợ, nhưng hôm nay mình chưa thể nhận thêm việc này." 🧠✨
+💬 Thay vì im lặng rồi khó chịu, bạn có thể nói: "Mình không thể giúp việc này hôm nay."
 
-👉 Bạn thấy khó nói "không" nhất với ai: Gia đình, bạn bè hay đồng nghiệp? Bình luận bên dưới nhé! 👇
+Một mối quan hệ lành mạnh cần cả sự quan tâm lẫn khả năng trao đổi về giới hạn. 🧠
+
+👉 Bạn thấy khó nói "không" nhất trong tình huống nào? Bình luận bên dưới nhé! 👇
 
 #TiduMind #RanhGioi #NoiKhong #PeoplePleaser #QuanHeLanhManh #PhatTrienBanThan #TamLyHoc #Shorts
 ```
@@ -36,11 +37,11 @@ Nó có nghĩa: Bạn nói rõ giới hạn khả năng của mình để giữ 
 ## Thẻ (Tags)
 
 ```
-tidu mind, nói không, đặt ranh giới, people pleaser, làm hài lòng người khác, từ chối khéo léo, quan hệ lành mạnh, tâm lý học, ranh giới cá nhân, shorts
+tidu mind, nói không, đặt ranh giới, people pleaser, làm hài lòng người khác, từ chối, quan hệ lành mạnh, tâm lý học, ranh giới cá nhân, shorts
 ```
 
 ## Bình luận ghim (Pinned Comment)
 
 ```
-Bạn thấy khó nói "không" nhất trong tình huống nào: Được nhờ vả ngoài giờ làm, cho mượn tiền hay từ chối một buổi hẹn? Chia sẻ bên dưới nhé! 🛑💬
+Bạn thấy khó nói "không" nhất trong tình huống nào: được nhờ việc ngoài giờ, cho mượn tiền hay từ chối một buổi hẹn? Chia sẻ bên dưới nhé! 🛑💬
 ```

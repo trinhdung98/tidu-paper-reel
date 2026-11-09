@@ -3,7 +3,7 @@
 ## Tiêu đề
 
 ```
-Vì sao bạn luôn nghĩ ai cũng đang nhìn mình? 💡 Hiệu ứng ánh đèn sân khấu #Shorts
+Vì sao bạn hay nghĩ ai cũng đang nhìn mình? 💡 Hiệu ứng ánh đèn sân khấu #Shorts
 ```
 
 Phương án khác:
@@ -21,6 +21,8 @@ NHƯNG SỰ THẬT LÀ:
 Trong tâm lý học, hiện tượng này được gọi là HIỆU ỨNG ÁNH ĐÈN SÂN KHẤU (Spotlight Effect).
 Chúng ta có xu hướng đánh giá quá cao mức độ người khác chú ý đến mình.
 Thực tế, họ cũng đang bận tâm với cuộc sống, công việc và những lo toan của chính họ!
+
+📚 Nguồn: Gilovich, Medvec & Savitsky (2000), "The spotlight effect in social judgment", Journal of Personality and Social Psychology 78(2), 211–222. Sinh viên mặc áo in hình ca sĩ Barry Manilow vào phòng đoán khoảng 46% người trong phòng sẽ để ý; thực tế chỉ khoảng 23%.
 
 Lần tới khi thấy ngượng ngùng, hãy tự hỏi:
 "Mình có đang tưởng tượng ánh đèn chiếu vào mình quá mạnh không?" 🧠✨

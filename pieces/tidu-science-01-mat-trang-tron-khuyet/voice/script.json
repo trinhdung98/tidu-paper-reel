@@ -1,0 +1,59 @@
+{
+ "lead": 0.3,
+ "tail": 1.2,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Ai đã lấy mất một miếng Mặt Trăng?",
+   "after": 1.2,
+   "file": "hook.wav"
+  },
+  {
+   "id": "question",
+   "text": "Bạn có bao giờ thắc mắc vì sao Mặt Trăng hôm nay tròn, nhưng vài ngày sau lại chỉ còn một mảnh cong?",
+   "after": 1.5,
+   "file": "question.wav"
+  },
+  {
+   "id": "reality",
+   "text": "Thực ra, Mặt Trăng không bị mất đi phần nào cả.",
+   "after": 1.6,
+   "file": "reality.wav"
+  },
+  {
+   "id": "sun",
+   "text": "Mặt Trời luôn chiếu sáng khoảng một nửa Mặt Trăng.",
+   "after": 2.8,
+   "file": "sun.wav"
+  },
+  {
+   "id": "orbit",
+   "text": "Khi Mặt Trăng chuyển động quanh Trái Đất, chúng ta nhìn thấy những phần khác nhau của nửa được chiếu sáng ấy.",
+   "after": 4.5,
+   "file": "orbit.wav"
+  },
+  {
+   "id": "phases",
+   "text": "Đó là các pha Mặt Trăng.",
+   "after": 4.2,
+   "file": "phases.wav"
+  },
+  {
+   "id": "myth",
+   "text": "Và không, hiện tượng này thông thường không phải do bóng Trái Đất che khuất đâu nhé!",
+   "after": 2.5,
+   "file": "myth.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn thích ngắm trăng tròn hay trăng lưỡi liềm?",
+   "after": 2.8,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Thiện Minh",
+  "speed": 0.88
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "lead": 0.2,
+ "tail": 0.6,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Gặp bạn mới, bạn nói gì bằng tiếng Anh?",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "hello",
+   "text": "Hello! Nghĩa là xin chào.",
+   "after": 7.2,
+   "file": "hello.wav"
+  },
+  {
+   "id": "hi",
+   "text": "Hi! Cũng là xin chào, thường thân mật hơn.",
+   "after": 2.4,
+   "file": "hi.wav"
+  },
+  {
+   "id": "morning",
+   "text": "Còn vào buổi sáng, chúng ta có thể nói Good morning!",
+   "after": 5.3,
+   "file": "morning.wav"
+  },
+  {
+   "id": "quiz",
+   "text": "Bây giờ thử nhé. Bạn gặp cô giáo vào buổi sáng, bạn sẽ nói gì?",
+   "after": 10.5,
+   "file": "quiz.wav"
+  },
+  {
+   "id": "answer",
+   "text": "Good morning! Chính xác!",
+   "after": 1.0,
+   "file": "answer.wav"
+  },
+  {
+   "id": "recap",
+   "text": "Hãy nói lại cùng mình: Hello! Hi! Good morning!",
+   "after": 0.8,
+   "file": "recap.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn thích Hello hay Hi hơn? Hãy nói thử!",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Trúc Ly",
+  "speed": 0.88
+ }
+}

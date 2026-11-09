@@ -11,14 +11,18 @@ const BRAINY_X = 880, BRAINY_Y = 1790;
 const KICK = 'TIDU MIND · TÂM LÝ HỌC';
 const TEAL  = '#2e4f4f';
 const TEAL_L = '#3d6b6b';
-const CREAM  = PR.creamL;
+const CHALK_C = 'rgba(244,244,236,0.92)';
+const M1_SKIN = ['#f0d2b4', '#d9a77f', '#e8c4a0', '#c08a62'];
+const M1_SHIRT = [PR.blue, PR.orange, '#5a7a6a', PR.plum, PR.mustard, TEAL_L];
+const M1_HAIR = [PR.char, PR.brown, '#3a2a20', PR.greyD];
 
 const SCENES = {};
 
-// ---- CUSTOM HELPERS (tm prefix) ----
+// ---- CUSTOM HELPERS ----
 
 // Đèn sân khấu spotlight hình tròn gradient từ trên chiếu xuống
 function tmSpotlight(cx, cy, r, alpha = 1) {
+  if (r <= 1) return;
   const grad = ctx.createRadialGradient(cx, cy - r * 0.3, r * 0.05, cx, cy, r);
   grad.addColorStop(0, `rgba(255,230,120,${0.55 * alpha})`);
   grad.addColorStop(0.55, `rgba(255,220,80,${0.18 * alpha})`);
@@ -26,202 +30,321 @@ function tmSpotlight(cx, cy, r, alpha = 1) {
   ctx.save();
   ctx.fillStyle = grad;
   ctx.beginPath();
-  ctx.ellipse(cx, cy, r * 0.72, r, 0, 0, Math.TAU ?? (Math.PI * 2));
+  ctx.ellipse(cx, cy, r * 0.72, r, 0, 0, TAU);
   ctx.fill();
   ctx.restore();
 }
 
-// Mắt giấy đơn giản: ellipse với pupil nhìn về nhân vật
-function tmEye(cx, cy, s, lookX) {
-  const dx = clamp((lookX - cx) / 120, -1, 1);
-  pp(pE(cx, cy, 36 * s, 28 * s), PR.paperW, { key: 'eye' + cx, sb: 6, sy: 3, tex: 0.4 });
-  pp(pE(cx + dx * 10 * s, cy, 14 * s, 14 * s), '#1a1a1a', { shadow: false });
-  pp(pE(cx + dx * 10 * s - 4 * s, cy - 4 * s, 5 * s, 5 * s), PR.creamL, { shadow: false });
+// Một người giấy: (x, y) là tâm đầu; (dx, dy) là hướng nhìn của con ngươi (-1..1)
+function m1Person(x, y, s, i, dx = 0, dy = 0, key = 'p') {
+  withT(x, y, 0, s, () => {
+    pp(pR(-78, 46, 156, 200, 64), M1_SHIRT[i % M1_SHIRT.length], { key: key + 'b' + i, sb: 12, sy: 6, tex: 0.55 });
+    pp(pE(0, 0, 58, 62), M1_SKIN[i % M1_SKIN.length], { key: key + 'h' + i, sb: 10, sy: 5, tex: 0.45 });
+    pp(() => ctx.ellipse(0, -16, 61, 50, 0, Math.PI, TAU), M1_HAIR[i % M1_HAIR.length], { key: key + 'hr' + i, shadow: false, tex: 0.5 });
+    [-22, 22].forEach((ex) => {
+      pp(pE(ex, 8, 15, 17), PR.paperW, { key: key + 'e' + i + ex, shadow: false, tex: 0.3 });
+      pp(pE(ex + dx * 6, 8 + dy * 7, 8, 8), PR.ink, { shadow: false, tex: false });
+    });
+  });
 }
 
-// Đám đông đơn giản: hàng các hình người giấy ngồi/đứng, mắt nhìn về nhân vật
-function tmCrowd(focusX, alpha = 1) {
-  const seats = [-420, -280, -140, 0, 140, 280, 420];
-  ctx.save(); ctx.globalAlpha = alpha;
-  seats.forEach((dx, i) => {
-    const x = CX + dx, y = 1300 + (i % 2 === 0 ? 0 : 30);
-    const col = [PR.char, TEAL_L, '#5a7a6a', PR.greyD][i % 4];
-    pp(pR(x - 28, y - 90, 56, 90, 10), col, { key: 'body' + i, sb: 8, sy: 4, tex: 0.5 });
-    pp(pE(x, y - 110, 30, 30), PR.cream, { key: 'head' + i, sb: 6, sy: 3, tex: 0.4 });
-    tmEye(x - 10, y - 115, 0.65, focusX);
-    tmEye(x + 10, y - 115, 0.65, focusX);
+// Hướng nhìn từ (x, y) tới (tx, ty), chuẩn hoá về -1..1
+function m1Gaze(x, y, tx, ty) {
+  const d = Math.hypot(tx - x, ty - y) || 1;
+  return [(tx - x) / d, (ty - y) / d];
+}
+
+// Áo phông giấy treo trên móc; (x, y) là tâm áo
+function m1Shirt(x, y, s, key = 'shirt') {
+  withT(x, y, 0, s, () => {
+    ctx.save(); ctx.strokeStyle = PR.greyD; ctx.lineWidth = 8; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(0, -196); ctx.lineTo(0, -232); ctx.arc(14, -232, 14, Math.PI, TAU); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(-150, -150); ctx.lineTo(0, -196); ctx.lineTo(150, -150); ctx.stroke(); ctx.restore();
+    pp(pG([[-90, -200], [-230, -130], [-180, -30], [-130, -60], [-130, 200], [130, 200], [130, -60], [180, -30], [230, -130], [90, -200], [48, -176], [-48, -176]]),
+      PR.sky, { key: key + 'body', sb: 16, sy: 8, tex: 0.55 });
+    pp(pG([[-48, -176], [0, -120], [48, -176], [30, -186], [0, -146], [-30, -186]]), PR.blue, { key: key + 'col', shadow: false, tex: 0.5 });
   });
-  ctx.restore();
+}
+
+// Vết bẩn giấy; k = độ lớn (0..1)
+function m1Stain(x, y, k, key = 'stain') {
+  if (k <= 0.01) return;
+  withT(x, y, 0.2, k, () => {
+    pp(pE(0, 0, 46, 36), '#7a4a22', { key: key + 'a', sb: 4, sy: 2, tex: 0.7 });
+    pp(pE(34, 22, 16, 13), '#7a4a22', { key: key + 'b', shadow: false, tex: 0.7 });
+    pp(pE(-38, -20, 12, 10), '#7a4a22', { key: key + 'c', shadow: false, tex: 0.7 });
+    pp(pE(-6, 44, 9, 8), '#7a4a22', { key: key + 'd', shadow: false, tex: 0.7 });
+  });
+}
+
+// Vòng đỏ khoanh quanh một chỗ, vẽ dần theo frac
+function m1Ring(x, y, rx, ry, frac) {
+  if (frac <= 0) return;
+  ctx.save(); ctx.strokeStyle = PR.red; ctx.lineWidth = 9; ctx.lineCap = 'round';
+  ctx.beginPath(); ctx.ellipse(x, y, rx, ry, -0.15, -Math.PI / 2, -Math.PI / 2 + TAU * 1.05 * clamp(frac)); ctx.stroke(); ctx.restore();
+}
+
+// Cây đèn sân khấu treo từ trần, chúc xuống về phía (tx, ty)
+function m1Lamp(x, y, tx, ty, power) {
+  const a = Math.atan2(ty - y, tx - x) - Math.PI / 2;
+  if (power > 0.01) {
+    ctx.save(); ctx.fillStyle = `rgba(255,226,130,${0.3 * power})`;
+    ctx.beginPath();
+    ctx.moveTo(x + Math.cos(a) * 70, y + Math.sin(a) * 70);
+    ctx.lineTo(x - Math.cos(a) * 70, y - Math.sin(a) * 70);
+    ctx.lineTo(tx - 290, ty); ctx.lineTo(tx + 290, ty); ctx.closePath(); ctx.fill(); ctx.restore();
+  }
+  pp(pR(x - 10, 300, 20, y - 300, 4), PR.char, { key: 'lamprod', sb: 8, sy: 4, tex: 0.4 });
+  pp(pR(x - 60, y - 34, 120, 40, 10), PR.greyD, { key: 'lampyoke', sb: 8, sy: 4, tex: 0.5 });
+  withT(x, y, a, 1, () => {
+    pp(pG([[-120, -40], [120, -40], [80, 120], [-80, 120]]), PR.char, { key: 'lampbody', sb: 16, sy: 8, tex: 0.5 });
+    pp(pE(0, 120, 82, 22), power > 0.4 ? '#ffe9a0' : PR.cream, { key: 'lamplens', shadow: false, tex: 0.3 });
+  });
 }
 
 // ---- SCENES ----
 
-SCENES.hook = () => {   // S1: nhân vật bước vào phòng; nhiều mắt hướng về
-  const t0 = E0;
+SCENES.hook = () => {   // S1: bước vào phòng; mọi ánh mắt quay về phía mình
+  const t0 = E0, tLook = VW('hook', 'nhìn').t0, tAll = VW('hook', 'tất').t0;
   prWall(TEAL, { streak: 400, panel: 'rgba(255,255,255,0.03)' });
   prFloor(1480, PR.woodD, { studs: false });
   pp(pR(60, 1450, W - 120, 32, 4), PR.wood, { key: 'flb', sb: 10, sy: 5, tex: 0.6 });
 
-  // khán phòng ngồi sau
-  tmCrowd(BRAINY_X, 1);
-
-  // đèn sân khấu từ trên
-  const slightFrac = ev(t0 + 0.6, 1.5);
-  tmSpotlight(BRAINY_X, 1500, 580 * slightFrac);
-
-  // rèm sân khấu hai bên
   pp(pR(-10, 300, 160, 1200, 0), '#6b1a1a', { key: 'curtainL', sb: 20, sy: 10, tex: 0.7 });
   pp(pR(W - 150, 300, 160, 1200, 0), '#6b1a1a', { key: 'curtainR', sb: 20, sy: 10, tex: 0.7 });
+  prStar(CX, 380, 50, PR.mustard);
+  prStar(260, 420, 30, PR.orange);
+  prStar(820, 420, 30, PR.pink);
 
-  // ngôi sao trên sân khấu
-  prStar(CX, 350, 55, PR.mustard);
-  prStar(200, 420, 32, PR.orange);
-  prStar(880, 420, 32, PR.pink);
-
-  // mascot bước vào từ trái, mood ngại ngùng
   const walkX = springMove(t0 + 0.2, 100, BRAINY_X, { stiff: 90, damp: 14 });
-  brainy(walkX, BRAINY_Y, { hat: 'detective', mood: TT > t0 + 1.6 ? 'flat' : 'neutral', look: -20, key: 'b1', walk: TT < t0 + 1.4 });
+  tmSpotlight(walkX, 1500, 600 * ev(tAll, 0.8));
 
+  // cả phòng: lúc đầu ai nhìn hướng nấy, đến chữ "nhìn" thì mọi ánh mắt quay về mình
+  const turn = EZ.o3(ev(tLook - 0.1, 0.35));
+  const seats = [[230, 720, 0.95], [385, 700, 0.95], [540, 720, 0.95], [695, 700, 0.95], [850, 720, 0.95],
+                 [310, 1030, 1.1], [460, 1010, 1.1], [620, 1030, 1.1], [770, 1010, 1.1]];
+  seats.forEach(([x, y, s], i) => {
+    const R = RNG('m1seat', i), own = [R.r(-1, 1), R.r(-0.8, 0.3)];
+    const [gx, gy] = m1Gaze(x, y, walkX, 1600);
+    m1Person(x, y, s, i, lerp(own[0], gx, turn), lerp(own[1], gy, turn), 'hk');
+  });
+
+  brainy(walkX, BRAINY_Y, { hat: 'detective', mood: TT > tLook ? 'flat' : 'neutral', look: -20, key: 'b1', walk: TT < t0 + 1.4 });
   prSign('TẤT CẢ ĐANG NHÌN MÌNH?', { kicker: KICK });
   prChips();
 };
 
-SCENES.feel = () => {   // S2: nhân vật phát hiện vết bẩn trên áo, bối rối
+SCENES.feel = () => {   // S2a: vết bẩn trên áo, câu nói lỡ lời
+  const tStain = VW('feel', 'vết').t0, tSlip = VW('feel', 'câu').t0;
   prWall(TEAL, { streak: 580 });
   prFloor(1500, PR.woodD, { studs: false });
   pp(pR(60, 1468, W - 120, 32, 4), PR.wood, { key: 'flb2', sb: 10, sy: 5, tex: 0.6 });
 
-  // gương soi trên tường
-  pp(pR(80, 500, 340, 460, 18), '#c8c0a8', { key: 'mirror_frame', sb: 20, sy: 10, tex: 0.5 });
-  pp(pR(100, 520, 300, 420, 12), '#d6e8e8', { key: 'mirror', shadow: false, tex: 0.3 });
-  txt('👁', 250, 730, 60, PR.char, { align: 'center', base: 'middle' });
-
-  // vết bẩn trên áo (xuất hiện theo từ "vết bẩn")
-  const stainT = VW('feel', 'vết', 0).t0;
-  const stainPop = popS(stainT);
-  withT(BRAINY_X - 20, BRAINY_Y - 310, 0.1, stainPop, () => {
-    pp(pE(0, 0, 38, 28), '#7a3a10', { key: 'stain', sb: 8, sy: 4, tex: 0.6 });
-    txt('!', 0, 2, 32, PR.red, { align: 'center', base: 'middle', weight: 800 });
-  });
-
-  // dấu chấm hỏi lơ lửng (bối rối)
-  const confT = VW('feel', 'câu', 0).t0;
-  prBurst(CX - 80, 900, confT);
-  withT(CX - 80, 870, 0, popS(confT), () =>
-    txt('?', 0, 0, 72, PR.mustard, { align: 'center', base: 'middle', weight: 800 }));
-
-  // nốt nhỏ nhắc "đã quên ngay"
-  const forgetT = VW('feel', 'quên', 0).t0;
-  prStamp('ĐÃ QUÊN', 230, 1180, PR.greyD, forgetT, { rot: -0.08, size: 1.0 });
-
-  // đồng hồ trên tường
   prClock(960, 500, 70, 11, 48, 'clk2');
+  prNote(160, 520, 120, 140, '#f3e3a5', -0.06, 'note2');
+  prStar(150, 1000, 30, PR.mustard);
 
-  // chi tiết nền
-  prNote(160, 1180, { rot: -0.06, key: 'note1' });
-  pp(pR(830, 1250, 120, 160, 6), PR.char, { key: 'book1', sb: 10, sy: 5, tex: 0.5 });
-  pp(pR(856, 1232, 68, 180, 4), PR.blue, { key: 'book2', sb: 8, sy: 4, tex: 0.5 });
+  m1Shirt(CX, 770, 1.15, 'sh2');
+  m1Stain(CX + 50, 800, popS(tStain), 'st2');
+  prBurst(CX + 50, 800, tStain);
+  m1Ring(CX + 50, 800, 110, 90, ev(VW('feel', 'áo').t0, 0.5));
 
-  brainy(BRAINY_X, BRAINY_Y, { hat: 'detective', mood: 'flat', look: -30, key: 'b2' });
-  prSign('VẾT BẨN — VÀ NHỚ MÃI', { kicker: KICK });
+  prSpeech(CX, 1180, 600, 160, 780, 1420, 'LỠ LỜI…', { t: tSlip, key: 'sp2', size: 72 });
+
+  brainy(BRAINY_X, BRAINY_Y, { hat: 'beret', mood: TT > tStain ? 'flat' : 'neutral', look: -30, key: 'b2' });
+  prSign('VẾT BẨN, LỠ LỜI', { kicker: KICK });
   prChips();
 };
 
-SCENES.explain = () => {   // S3: camera kéo rộng — mọi người đang làm việc riêng
+SCENES.feel2 = () => {   // S2b: mình nhớ mãi — người khác đã quên ngay
+  const t0 = E0, tRem = VW('feel', 'nhớ').t0, tOth = VW('feel', 'người').t0, tFor = VW('feel', 'quên').t0;
+  prWall('#294646', { streak: 300, panel: 'rgba(255,255,255,0.03)' });
+  prFloor(1500, PR.woodD, { studs: false });
+  pp(pR(60, 1468, W - 120, 32, 4), PR.wood, { key: 'flb2b', sb: 10, sy: 5, tex: 0.6 });
+
+  prThought(CX, 630, 780, 320, 800, 1400, '', { t: t0 + 0.05, key: 'th2' });
+  if (popS(t0 + 0.05) > 0.6) {
+    m1Shirt(390, 650, 0.48, 'mini');
+    m1Stain(390 + 24, 664, 0.48, 'ministain');
+    txt('LỠ LỜI…', 650, 650, 54, PR.navy, { align: 'center', base: 'middle', weight: 800 });
+  }
+  prStamp('NHỚ MÃI', CX, 800, PR.red, tRem, { rot: -0.06, size: 56 });
+
+  // người khác: bong bóng nhỏ có vết bẩn, mờ đi khi "quên"
+  const fade = 1 - ev(tFor, 0.5);
+  [[200, 1110], [360, 1090], [520, 1110]].forEach(([x, y], i) => {
+    m1Person(x, y, 0.85 * popS(tOth + i * 0.08), i + 2, i === 1 ? -0.8 : 0.8, -0.2, 'oth');
+    const k = popS(tOth + 0.15 + i * 0.08);
+    if (k > 0.01) {
+      pp(pE(x, 975, 58 * k, 40 * k), PR.creamL, { key: 'oc' + i, sb: 8, sy: 4, tex: 0.4 });
+      if (fade > 0.01) { ctx.save(); ctx.globalAlpha = fade; m1Stain(x, 975, 0.38 * k, 'os' + i); ctx.restore(); }
+    }
+  });
+  prStamp('ĐÃ QUÊN', 360, 1250, PR.greyD, tFor, { rot: 0.05, size: 54 });
+
+  brainy(BRAINY_X, BRAINY_Y, { hat: 'nightcap', mood: 'flat', look: -30, key: 'b2b' });
+  prSign('MÌNH NHỚ, HỌ ĐÃ QUÊN', { kicker: KICK });
+  prChips();
+};
+
+SCENES.explain = () => {   // S3: tên hiện tượng trên bảng
   const t0 = E0;
   prWall('#3a5a5a', { streak: 300, panel: 'rgba(255,255,255,0.04)' });
   prFloor(1500, PR.woodD, { studs: true });
-
-  // hiện tên khái niệm lên bảng lớn
-  const boardT = VW('explain', 'hiệu', 0).t0;
-  prBoard(50, 450, 760, 580, 'board3');
-  chalk('HIỆU ỨNG', 110, 600, 54, ev(boardT, 0.7));
-  chalk('ÁNH ĐÈN', 110, 680, 54, ev(boardT + 0.3, 0.7));
-  chalk('SÂN KHẤU', 110, 760, 54, ev(boardT + 0.6, 0.7));
-
-  // spotlight nhỏ mờ dần đi
-  const fadeFrac = clamp(1 - ev(t0 + 1.0, 1.5));
-  tmSpotlight(BRAINY_X, 1500, 460 * fadeFrac);
-
-  // đám đông quay đi làm việc riêng (alpha giảm dần)
-  const crowdAlpha = clamp(1 - ev(t0 + 0.8, 1.2));
-  tmCrowd(CX, crowdAlpha);
-
-  prClock(960, 500, 70, 10, 15, 'clk3');
-  prStar(880, 1120, 28, PR.mustard);
   prBunting(280);
+
+  prBoard(150, 430, 780, 640, 'board3');
+  const tA = VW('explain', 'hiệu').t0, tB = VW('explain', 'ánh').t0, tC = VW('explain', 'sân').t0;
+  txt('HIỆU ỨNG', CX, 590, 76, CHALK_C, { align: 'center', frac: ev(tA, 0.5) });
+  txt('ÁNH ĐÈN', CX, 690, 76, CHALK_C, { align: 'center', frac: ev(tB, 0.4) });
+  txt('SÂN KHẤU', CX, 790, 76, CHALK_C, { align: 'center', frac: ev(tC, 0.4) });
+  // chiếc đèn phấn chiếu xuống một người nhỏ
+  const tL = VW('explain', 'khấu').t0 + 0.2;
+  chalkLine([[500, 850], [580, 850], [600, 890], [480, 890], [500, 850]], ev(tL, 0.4));
+  chalkLine([[480, 900], [420, 1010]], ev(tL + 0.3, 0.3), { dash: [14, 12] });
+  chalkLine([[600, 900], [660, 1010]], ev(tL + 0.3, 0.3), { dash: [14, 12] });
+  chalkLine([[540, 975], [540, 1010], [522, 1035], [540, 1010], [558, 1035]], ev(tL + 0.5, 0.3));
+  if (TT > tL + 0.5) pp(pE(540, 960, 14, 14), 'rgba(244,244,236,0.85)', { shadow: false, tex: false });
+
+  tmSpotlight(BRAINY_X, 1500, 460 * clamp(1 - ev(t0 + 1.0, 1.5)));
+  prClock(160, 1200, 60, 10, 15, 'clk3');
+  prStar(880, 1180, 28, PR.mustard);
 
   brainy(BRAINY_X, BRAINY_Y, { hat: 'mortar', mood: 'wow', look: -20, key: 'b3', hold: propNotebook(0.1) });
   prSign('HIỆU ỨNG ÁNH ĐÈN', { kicker: KICK });
   prChips();
 };
 
-SCENES.science = () => {   // S4: góc nhìn rộng — mọi người bận tâm chuyện riêng
-  const t0 = E0;
+SCENES.science = () => {   // S4a: đánh giá quá cao mức người khác chú ý
+  const tOver = VW('science', 'đánh').t0, tHigh = VW('science', 'cao').t0, tAtt = VW('science', 'chú').t0;
   prWall(TEAL, { streak: 460, panel: 'rgba(255,255,255,0.03)' });
   prFloor(1500, PR.woodD, { studs: false });
 
-  // 3 ô nhỏ miêu tả người khác đang bận: điện thoại, sách, cà phê
-  const cells = [
-    { x: 130, y: 680, icon: '📱', label: 'ĐANG NHẮN TIN', col: '#3d6b6b' },
-    { x: CX,  y: 680, icon: '☕', label: 'ĐANG CÀ PHÊ',   col: PR.orange },
-    { x: 790, y: 680, icon: '📖', label: 'ĐANG ĐỌC SÁCH', col: '#5a4a7a' },
-  ];
-  cells.forEach(({ x, y, icon, label, col }, i) => {
-    const pt = popS(t0 + 0.3 + i * 0.4);
-    withT(x, y, 0, pt, () => {
-      pp(pR(-155, -180, 310, 360, 18), col, { key: 'cell' + i, sb: 14, sy: 7, tex: 0.5 });
-      txt(icon, 0, -60, 72, '#fff', { align: 'center', base: 'middle' });
-      txt(label, 0, 70, 24, PR.creamL, { align: 'center', weight: 800 });
-    });
+  withT(CX, 860, 0, popS(E0 + 0.1), () => {
+    pp(pR(-380, -330, 760, 660, 24), PR.creamL, { key: 'chart', sb: 16, sy: 8, tex: 0.5 });
+    const title = 'NGƯỜI KHÁC CHÚ Ý ĐẾN MÌNH';
+    txt(title, 0, -250, fitSize(title, 660, 40), PR.navy, { align: 'center', weight: 800 });
+    const h1 = 400 * EZ.o3(ev(tOver, 0.9)), h2 = 190 * EZ.o3(ev(tAtt, 0.6));
+    if (h1 > 1) pp(pR(-270, 230 - h1, 200, h1, 10), PR.red, { key: 'bar1', sb: 10, sy: 5, tex: 0.5 });
+    if (h2 > 1) pp(pR(70, 230 - h2, 200, h2, 10), PR.green, { key: 'bar2', sb: 10, sy: 5, tex: 0.5 });
+    pp(pR(-320, 228, 640, 8, 4), PR.navy, { shadow: false, tex: false });
+    txt('MÌNH TƯỞNG', -170, 285, 32, PR.navy, { align: 'center', weight: 800 });
+    txt('THẬT RA', 170, 285, 32, PR.navy, { align: 'center', weight: 800 });
   });
+  prStamp('QUÁ CAO', CX - 170, 900, PR.navy, tHigh, { rot: -0.12, size: 50 });
 
-  // counter: "Mỗi người" đang làm X
-  const countT = VW('science', 'họ', 0).t0;
-  prCounter('NGƯỜI KHÁC', '100%', 540, 1180, { w: 440, h: 180, rot: -0.02, s: popS(countT) });
+  prStar(170, 1300, 32, PR.mustard);
+  prStar(940, 1240, 26, PR.pink);
 
-  prStar(170, 1250, 32, PR.mustard);
-  prStar(900, 1200, 26, PR.pink);
-  prClock(960, 1380, 60, 3, 25, 'clk4');
-
-  brainy(BRAINY_X, BRAINY_Y, { hat: 'beret', mood: 'neutral', key: 'b4', hold: propGlass(0.15) });
-  prSign('HỌ ĐANG BẬN CHUYỆN RIÊNG', { kicker: KICK });
+  brainy(BRAINY_X, BRAINY_Y, { hat: 'detective', mood: TT > tHigh ? 'wow' : 'neutral', key: 'b4', look: -20 });
+  prSign('ĐÁNH GIÁ QUÁ CAO', { kicker: KICK });
   prChips();
 };
 
-SCENES.reframe = () => {   // S5: đèn tắt dần; câu hỏi tự vấn hiện ra
-  prWall(TEAL, { streak: 200, panel: 'rgba(255,255,255,0.025)' });
+SCENES.science2 = () => {   // S4b: thực tế họ bận chuyện của chính họ
+  const tOwn = VW('science', 'chính').t0;
+  prWall('#335656', { streak: 640, panel: 'rgba(255,255,255,0.03)' });
   prFloor(1500, PR.woodD, { studs: false });
 
-  // spotlight lớn rồi mờ dần khi nhắc đến "ánh đèn"
-  const lightT  = VW('reframe', 'ánh', 0).t0;
-  tmSpotlight(CX, 1300, 600 * (1 - clamp(ev(lightT + 0.5, 1.5))));
+  const cells = [
+    { x: 230, label: 'NHẮN TIN', col: '#3d6b6b', t: VW('science', 'họ').t0, prop: 'phone' },
+    { x: CX,  label: 'UỐNG CÀ PHÊ', col: PR.orange, t: VW('science', 'bận').t0, prop: 'cup' },
+    { x: 850, label: 'ĐỌC SÁCH', col: '#5a4a7a', t: VW('science', 'cuộc').t0, prop: 'book' },
+  ];
+  cells.forEach(({ x, label, col, t, prop }, i) => {
+    withT(x, 860, (i - 1) * 0.02, popS(t), () => {
+      pp(pR(-140, -230, 280, 460, 20), col, { key: 'cell' + i, sb: 14, sy: 7, tex: 0.5 });
+      m1Person(0, -90, 0.95, i + 1, 0, 1, 'sc');
+      if (prop === 'phone') {
+        pp(pR(-34, 6, 68, 104, 10), PR.char, { key: 'cph', sb: 8, sy: 4, tex: 0.4 });
+        pp(pR(-26, 14, 52, 80, 6), PR.sky, { shadow: false, tex: 0.3 });
+      } else if (prop === 'cup') {
+        pp(pR(-38, 20, 76, 86, 12), PR.creamL, { key: 'ccup', sb: 8, sy: 4, tex: 0.4 });
+        ctx.save(); ctx.strokeStyle = PR.creamL; ctx.lineWidth = 10; ctx.beginPath(); ctx.arc(42, 58, 20, -Math.PI / 2, Math.PI / 2); ctx.stroke();
+        ctx.strokeStyle = 'rgba(244,241,232,0.7)'; ctx.lineWidth = 6; ctx.lineCap = 'round';
+        [-14, 14].forEach((sx) => { const w = Math.sin(TT * 4 + sx) * 6; ctx.beginPath(); ctx.moveTo(sx, 10); ctx.quadraticCurveTo(sx + 10 + w, -6, sx, -22); ctx.stroke(); });
+        ctx.restore();
+      } else {
+        pp(pG([[0, 30], [-96, 14], [-96, 104], [0, 120]]), PR.paperW, { key: 'cbk1', sb: 8, sy: 4, tex: 0.4 });
+        pp(pG([[0, 30], [96, 14], [96, 104], [0, 120]]), PR.cream, { key: 'cbk2', sb: 8, sy: 4, tex: 0.4 });
+      }
+      txt(label, 0, 185, fitSize(label, 240, 32), PR.creamL, { align: 'center', weight: 800 });
+    });
+    tmSpotlight(x, 820, 300 * ev(tOwn, 0.5), 0.7);
+  });
 
-  // thought bubble tự vấn — single-line để tránh clip
-  const thinkT = VW('reframe', 'tự', 0).t0;
-  const thinkK = thinkT != null ? popS(thinkT) : 1;
-  prThought(200, 620, 820, 280, BRAINY_X - 280, BRAINY_Y - 400, '', { t: thinkT });
-  if (thinkK > 0.6) {
-    txt('MÌNH CÓ ĐANG', 200, 560, 48, PR.navy, { align: 'center', weight: 800 });
-    txt('TƯỞNG TƯỢNG', 200, 620, 48, PR.navy, { align: 'center', weight: 800 });
-    txt('QUÁ MẠNH?', 200, 680, 48, PR.navy, { align: 'center', weight: 800 });
+  prClock(960, 1360, 56, 3, 25, 'clk4');
+  prStar(150, 1300, 30, PR.mustard);
+
+  brainy(BRAINY_X, BRAINY_Y, { hat: 'beret', mood: 'neutral', key: 'b4b', hold: propGlass(0.15) });
+  prSign('HỌ BẬN CHUYỆN RIÊNG', { kicker: KICK });
+  prChips();
+};
+
+SCENES.reframe = () => {   // S5a: khi thấy ngượng ngùng, hãy tự hỏi
+  const tShy = VW('reframe', 'ngượng').t0, tAsk = VW('reframe', 'hỏi').t0;
+  prWall('#2a4747', { streak: 200, panel: 'rgba(255,255,255,0.025)' });
+  prFloor(1500, PR.woodD, { studs: false });
+
+  m1Lamp(CX, 520, BRAINY_X, 1500, ev(E0 + 0.1, 0.4));
+  tmSpotlight(BRAINY_X, 1500, 560);
+
+  // giọt mồ hôi ngượng ngùng
+  [[700, 1330, 0], [1000, 1300, 0.15]].forEach(([x, y, d], i) => {
+    const k = popS(tShy + d);
+    if (k > 0.01) withT(x, y + Math.sin(TT * 5 + i) * 6, 0, k, () => pp(() => { ctx.moveTo(0, -36); ctx.quadraticCurveTo(26, 0, 0, 22); ctx.quadraticCurveTo(-26, 0, 0, -36); }, PR.sky, { key: 'drop' + i, sb: 6, sy: 3, tex: 0.3 }));
+  });
+
+  prThought(330, 1060, 340, 230, 700, 1420, '?', { t: tAsk, key: 'thq', size: 120 });
+
+  prClock(160, 520, 64, 9, 55, 'clk5');
+  prStar(900, 640, 30, PR.mustard);
+
+  brainy(BRAINY_X, BRAINY_Y, { hat: 'nightcap', mood: 'flat', key: 'b5', look: -30 });
+  prSign('KHI THẤY NGƯỢNG NGÙNG', { kicker: KICK });
+  prChips();
+};
+
+SCENES.reframe2 = () => {   // S5b: ánh đèn có chiếu mạnh như mình tưởng?
+  const t0 = E0, tLight = VW('reframe', 'ánh').t0, tStrong = VW('reframe', 'mạnh').t0;
+  prWall(TEAL, { streak: 760, panel: 'rgba(255,255,255,0.025)' });
+  prFloor(1500, PR.woodD, { studs: false });
+
+  const slide = EZ.o3(ev(tStrong, 0.9));
+  tmSpotlight(BRAINY_X, 1500, 600 * lerp(1, 0.4, slide));
+
+  prThought(CX, 640, 800, 360, CX, 640, '', { t: t0 + 0.05, key: 'th5' });
+  [[920, 1330, 12], [945, 1210, 18], [960, 1070, 26]].forEach(([x, y, r], i) => {
+    const k = popS(t0 + 0.05 + i * 0.06);
+    if (k > 0.01) pp(pE(x, y, r * k, r * k), PR.creamL, { key: 'th5d' + i, sb: 8, sy: 4, tex: 0.4 });
+  });
+  if (popS(t0 + 0.05) > 0.6) {
+    const lines = ['MÌNH CÓ ĐANG', 'TƯỞNG TƯỢNG ÁNH ĐÈN', 'QUÁ MẠNH?'];
+    const sz = Math.min(...lines.map((l) => fitSize(l, 600, 56)));
+    lines.forEach((l, i) => txt(l, CX, 570 + i * 72, sz, PR.navy, { align: 'center', base: 'middle', weight: 800 }));
   }
 
-  // dấu check khi câu trả lời là "không"
-  const checkT = VW('reframe', 'không', 0).t0;
-  prCheck(CX, 1200, checkT);
+  // núm chỉnh độ sáng: kéo từ MẠNH về giữa
+  withT(CX, 1090, 0, popS(tLight), () => {
+    pp(pR(-290, -100, 580, 200, 24), PR.char, { key: 'dim', sb: 14, sy: 7, tex: 0.5 });
+    txt('ÁNH ĐÈN', 0, -48, 30, PR.creamL, { align: 'center', base: 'middle', weight: 800 });
+    pp(pR(-230, 2, 460, 16, 8), PR.greyD, { shadow: false, tex: 0.3 });
+    const kx = lerp(210, -20, slide);
+    pp(pR(-230, 2, kx + 230, 16, 8), PR.mustard, { shadow: false, tex: 0.3 });
+    pp(pR(kx - 22, -26, 44, 72, 12), PR.yellow, { key: 'knob', sb: 8, sy: 4, tex: 0.4 });
+    txt('YẾU', -230, 70, 24, PR.creamL, { align: 'left', base: 'middle', weight: 800 });
+    txt('MẠNH', 230, 70, 24, PR.creamL, { align: 'right', base: 'middle', weight: 800 });
+  });
 
-  prClock(960, 500, 70, 9, 55, 'clk5');
-  prNote(140, 1300, { rot: 0.05, key: 'note5' });
-  prStar(900, 1120, 30, PR.mustard);
+  prStar(150, 1300, 30, PR.mustard);
 
-  brainy(BRAINY_X, BRAINY_Y, { hat: 'halo', mood: TT > lightT + 1.0 ? 'happy' : 'neutral', key: 'b5', look: -30 });
-  prSign('BẠN KHÔNG PHẢI TÂM ĐIỂM', { kicker: KICK });
+  brainy(BRAINY_X, BRAINY_Y, { hat: 'halo', mood: TT > tStrong + 0.9 ? 'happy' : 'neutral', key: 'b5b', look: -30 });
+  prSign('ÁNH ĐÈN CÓ QUÁ MẠNH?', { kicker: KICK });
   prChips();
 };
 
 SCENES.cta = () => {   // S6: comment box CTA
-  const t0 = E0;
+  const tSit = VW('cta', 'tình').t0, tTell = VW('cta', 'kể').t0;
   prWall(TEAL, { streak: 300, panel: 'rgba(255,255,255,0.03)' });
   prFloor(1500, PR.woodD, { studs: true });
 
@@ -229,12 +352,19 @@ SCENES.cta = () => {   // S6: comment box CTA
   prStar(190, 420, 36, PR.mustard);
   prStar(880, 390, 28, PR.pink);
   prStar(540, 340, 44, PR.orange);
-  prClock(960, 540, 68, 10, 0, 'clk6');
+  prClock(960, 560, 60, 10, 0, 'clk6');
 
-  prCommentBox(CX, 820, 'CÂU CHUYỆN CỦA BẠN', t0 + 0.5, { hint: 'Kể một câu chuyện nhé…' });
+  prCommentBox(CX, 820, 'CÂU CHUYỆN CỦA BẠN', tTell, { hint: 'Kể một câu chuyện nhé…' });
 
-  prNote(150, 1240, { rot: -0.04, key: 'note6' });
-  pp(pR(830, 1270, 110, 150, 6), '#3d5050', { key: 'bk6', sb: 10, sy: 5, tex: 0.5 });
+  // các bình luận kể chuyện khác (giấy, không chữ)
+  [0, 1].forEach((i) => {
+    withT(CX, 1030 + i * 170, i ? 0.015 : -0.015, popS(tSit + i * 0.25), () => {
+      pp(pR(-340, -65, 680, 130, 24), PR.paperW, { key: 'cmt' + i, sb: 12, sy: 6, tex: 0.4 });
+      pp(pE(-270, 0, 40, 40), [PR.orange, PR.blue][i], { key: 'cav' + i, shadow: false, tex: 0.4 });
+      pp(pR(-205, -30, 380 - i * 60, 18, 9), PR.cream, { shadow: false, tex: 0.3 });
+      pp(pR(-205, 10, 280 + i * 40, 18, 9), PR.cream, { shadow: false, tex: 0.3 });
+    });
+  });
 
   brainy(BRAINY_X, BRAINY_Y, { hat: 'party', mood: 'happy', key: 'b6', look: -20 });
   prSign('KỂ CHO MÌNH NGHE NHÉ!', { kicker: KICK });
@@ -244,26 +374,24 @@ SCENES.cta = () => {   // S6: comment box CTA
 // =====================================================================
 //  SHOTS + TIMELINE
 // =====================================================================
-const SPLITS = [];
+const SPLITS = [
+  ['feel', 'và', 0, 'feel2'],
+  ['science', 'thực', 0, 'science2'],
+  ['reframe', 'mình', 0, 'reframe2'],
+];
 function SFX_CUES() {
   const cues = [];
-  // thud khi vết bẩn xuất hiện
-  const stainT = VW('feel', 'vết', 0).t0;
-  cues.push({ k: 'pop', t: stainT });
-  // tick khi hiện tên khái niệm
-  const boardT = VW('explain', 'hiệu', 0).t0;
-  cues.push({ k: 'tick', t: boardT });
-  cues.push({ k: 'tick', t: boardT + 0.3 });
-  cues.push({ k: 'tick', t: boardT + 0.6 });
-  // pop mỗi ô cuộc sống
-  [0, 0.4, 0.8].forEach(d => cues.push({ k: 'pop', t: VL('science').t0 + 0.3 + d }));
-  // chime khi thought bubble
-  cues.push({ k: 'chime', t: VW('reframe', 'tự', 0).t0 });
-  // pop check
-  cues.push({ k: 'pop', t: VW('reframe', 'không', 0).t0 });
-  // type cho comment box
-  const ctaL = VL('cta');
-  cues.push({ k: 'type', t: ctaL.t0 + 0.5, n: 16, d: 1.4 });
+  cues.push({ k: 'pop', t: VW('feel', 'vết').t0 });
+  cues.push({ k: 'pop', t: VW('feel', 'câu').t0 });
+  cues.push({ k: 'thud', t: VW('feel', 'nhớ').t0 });
+  cues.push({ k: 'thud', t: VW('feel', 'quên').t0 });
+  ['hiệu', 'ánh', 'sân'].forEach((w) => cues.push({ k: 'tick', t: VW('explain', w).t0 }));
+  cues.push({ k: 'thud', t: VW('science', 'cao').t0 });
+  ['họ', 'bận', 'cuộc'].forEach((w) => cues.push({ k: 'pop', t: VW('science', w).t0 }));
+  cues.push({ k: 'chime', t: VW('reframe', 'hỏi').t0 });
+  cues.push({ k: 'tick', t: VW('reframe', 'mạnh').t0 });
+  cues.push({ k: 'pop', t: VW('cta', 'tình').t0 });
+  cues.push({ k: 'type', t: VW('cta', 'kể').t0, n: 16, d: 0.45 });
   return cues;
 }
 const SHOT_LIST = VOICE.lines.map((l, i) => [i === 0 ? 0 : CUT(l.id), l.id])

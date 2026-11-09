@@ -746,18 +746,21 @@ var CHIP_MAX = 3, CHIP_Y = 1520, CHIP_X = 70, CHIP_MAXX = 930;
 function prChips() {
   const draw = () => {
     const g = chipGroups().find((q) => TT >= q.t0 && TT < q.t1); if (!g) return;
-    const sz = 70, h = 112; let x = CHIP_X, y = CHIP_Y;
+    const clean = (w) => w.w.replace(/^[^\p{L}\p{N}']+|[^\p{L}\p{N}']+$/gu, '');
+    // a group that would wrap is scaled down to one row instead: a second row lands in the phone-UI band below y 1620
+    const full = g.map(clean).filter(Boolean).reduce((a, word) => a + txtW(word, 70, { font: F_CHIP, weight: 700 }) + 58, -12);
+    const k = Math.max(0.65, Math.min(1, (CHIP_MAXX - CHIP_X) / full)), sz = 70 * k, h = 112 * k; let x = CHIP_X, y = CHIP_Y;
     g.forEach((w, i) => {
       if (TT < w.t0 - 0.03) return;
-      const word = w.w.replace(/^[^\p{L}\p{N}']+|[^\p{L}\p{N}']+$/gu, ''); if (!word) return;
-      const cw = txtW(word, sz, { font: F_CHIP, weight: 700 }) + 46;
+      const word = clean(w); if (!word) return;
+      const cw = txtW(word, sz, { font: F_CHIP, weight: 700 }) + 46 * k;
       if (x + cw > CHIP_MAXX) { x = CHIP_X; y += h + 14; }
       const R = RNG('chip', word, w.t0), rot = (i % 2 ? 1 : -1) * R.r(0.012, 0.04), s = EZ.back(clamp((TT - w.t0 + 0.03) / 0.16));
       withT(x + cw / 2, y, rot, s, () => {
         pp(pG([[-cw / 2 + R.n(3), -h / 2 + R.n(3)], [cw / 2 + R.n(3), -h / 2 + R.n(3)], [cw / 2 + R.n(3), h / 2 + R.n(3)], [-cw / 2 + R.n(3), h / 2 + R.n(3)]]), PR.chip, { key: 'chip' + word + w.t0, sb: 12, sy: 7, tex: 0.6, rim: 'rgba(255,236,220,0.38)', rw: 3 });
         txt(word, 0, sz * 0.33, sz, PR.chipText, { font: F_CHIP, weight: 700, align: 'center' });
       });
-      x += cw + 12;
+      x += cw + 12 * k;
     });
   };
   if (DEFER) DEFER.push(draw); else draw();
@@ -1803,12 +1806,13 @@ function prRepoCard(x, y, repo, sub, stars, ta, tb, o = {}) {
   });
   if (TT > ta) { const R = RNG('st' + repo); for (let i = 0; i < 8; i++) { const a = R.r(0, TAU), d = 360 + 60 * Math.sin(TT * 3 + i); prStar(x + Math.cos(a) * d * 0.95, y + 20 + Math.sin(a) * d * 0.6, 16 + 6 * Math.sin(TT * 6 + i)); } }
 }
-// an Instagram-style comment box that types `word` from t (then a send button); returns nothing
+// an Instagram-style comment box that types `word` from t (then a send button); returns nothing. The word and the hint are
+// fitted to 570 px, ending ~20 px before the send button (sized on the whole word, so typing never resizes it)
 function prCommentBox(x, y, word, t, o = {}) {
-  const k = Math.floor(word.length * ev(t, 0.45));
+  const k = Math.floor(word.length * ev(t, 0.45)), hint = o.hint ?? 'Add a comment...';
   withT(x, y, 0, o.s ?? 1, () => {
     pp(pR(-380, -60, 760, 120, 60), PR.paperW, { key: 'cbox', sb: 16, sy: 8, tex: 0.4 });
-    if (k === 0) txt(o.hint ?? 'Add a comment...', -330, 14, 38, PR.grey, { weight: 600 }); else txt(word.slice(0, k), -330, 18, 52, PR.ink, { weight: 800 });
+    if (k === 0) txt(hint, -330, 14, fitSize(hint, 570, 38, { weight: 600 }), PR.grey, { weight: 600 }); else txt(word.slice(0, k), -330, 18, fitSize(word, 570, 52), PR.ink, { weight: 800 });
     pp(pE(318, 0, 40, 40), PR.blue, { key: 'send', shadow: false, tex: 0.3 }); pp(pG([[304, -18], [334, 0], [304, 18]]), PR.paperW, { shadow: false, tex: false });
   });
 }

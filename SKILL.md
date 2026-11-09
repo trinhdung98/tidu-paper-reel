@@ -51,11 +51,12 @@ What every scene needs (the style's fingerprint):
 5. **3+ details of background life:** a clock, bunting, books, a lamp, notes, stars, a moon, acoustic foam, lane marks moving.
 6. **`prChips()` last.** The captions are automatic, one paper scrap per spoken word. Keep the bottom-left band (y 1450–1600, x < 930) free of other text.
 
-Before writing any `withT`/`prStamp`/helper call, read **[references/layout-rules.md](references/layout-rules.md)**: centering rules, safe-zone numbers, paired-element formula, 3-column centres, vertical-gap formula, and text-width estimation.
+Before writing any `withT`/`prStamp`/helper call, read **[references/layout-rules.md](references/layout-rules.md)**: centering rules, safe-zone numbers, paired-element formula, 3-column centres, vertical-gap formula, and text-width estimation. Then read **[references/review-rules.md](references/review-rules.md)**: no emoji, no Vietnamese in `chalk()`, text fitted to its container, no invented numbers, a hero that shows the line's concrete thing, one sentence per script line (or a `SPLITS` cut), and the voice audit.
 
 ## 4. Check, then export
 - `$REEL still <piece> 2.6,6,10,14 look.png --scale 0.4`. Look at the frames, and check them against [references/style.md](references/style.md).
 - **Layout rules grep** — run the two greps in [references/layout-rules.md § Verification checklist](references/layout-rules.md) and fix every hit before continuing.
+- **Review checklist** — run [references/review-rules.md § Checklist](references/review-rules.md#checklist-before-export): emoji and `chalk()` greps, two frames per line looked at, and `python3 tools/voice_audit.py <piece>` (re-take lines whose heard meaning changed). `reel check` passing is not a review: it cannot see shapes off the frame, text overflowing its card, emoji or a wrong fact.
 - `$REEL check <piece>` must say `text: PASS` and `deterministic: true`. Fix any overlaps it reports by moving props, not captions.
 - `$REEL export <piece> <out.mp4>` renders a 1080x1920 30fps video at about -14 LUFS in about 30 seconds and deletes the frame cache.
 - Tell the user what you can't verify: you can't hear the mix, so ask them to listen.

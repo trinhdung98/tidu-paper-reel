@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.0,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Điện thoại có Wi-Fi đầy vạch, nhưng tại sao vẫn không vào mạng được?",
+   "after": 0.8,
+   "file": "hook.wav"
+  },
+  {
+   "id": "difference",
+   "text": "Vì Wi-Fi và Internet là hai thứ khác nhau.",
+   "after": 1.2,
+   "file": "difference.wav"
+  },
+  {
+   "id": "wifi",
+   "text": "Wi-Fi giúp điện thoại kết nối không dây với router trong nhà.",
+   "after": 1.8,
+   "file": "wifi.wav"
+  },
+  {
+   "id": "internet",
+   "text": "Còn Internet là mạng lưới kết nối với thế giới bên ngoài.",
+   "after": 1.8,
+   "file": "internet.wav"
+  },
+  {
+   "id": "disconnect",
+   "text": "Nếu đường truyền Internet bị mất, Wi-Fi vẫn có thể hoạt động bình thường.",
+   "after": 2.0,
+   "file": "disconnect.wav"
+  },
+  {
+   "id": "takeaway",
+   "text": "Vì vậy, đầy vạch Wi-Fi không có nghĩa là Internet đang hoạt động!",
+   "after": 1.5,
+   "file": "takeaway.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn từng gặp tình huống này chưa?",
+   "after": 0.2,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Minh Đức",
+  "speed": 0.88
+ }
+}

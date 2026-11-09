@@ -3,43 +3,46 @@
 ## Tiêu đề
 
 ```
-Vì sao 10 lời khen không bằng 1 lời chê? 💭 Thiên kiến tiêu cực của não bộ #Shorts
+Vì sao một lời chê có thể lấn át nhiều lời khen? 💭 Thiên kiến tiêu cực #Shorts
 ```
 
 Phương án khác:
-- `Nhận 10 lời khen nhưng chỉ nhớ 1 lời chê? Bí mật đằng sau tâm lý con người | Tidu Mind #Shorts`
-- `Đừng để 1 lời nhận xét định nghĩa bạn: Cách vượt qua Negativity Bias #Shorts`
+- `Nhiều người khen nhưng chỉ nhớ một lời chê? | Tidu Mind #Shorts`
+- `Đừng để một lời nhận xét định nghĩa bạn: thiên kiến tiêu cực (negativity bias) #Shorts`
 
 ## Mô tả
 
 ```
-Rất nhiều người khen bạn làm tốt, nhưng tối về bạn lại trằn trọc chỉ vì MỘT lời chê duy nhất? 💭
+Nhiều người khen bạn, nhưng bạn lại chỉ nhớ một lời chê? 💭
 
-Bạn không hề cô đơn! Đây là hiện tượng tâm lý cực kỳ phổ biến gọi là THIÊN KIẾN TIÊU CỰC (Negativity Bias):
-🧠 Não bộ con người từ thời tiền sử đã được lập trình để chú ý mạnh hơn đến các tín hiệu tiêu cực hay nguy cơ.
+Điều đó có thể liên quan đến THIÊN KIẾN TIÊU CỰC (negativity bias): xu hướng chú ý mạnh hơn tới thông tin tiêu cực. Bài tổng quan "Bad is stronger than good" (Baumeister và cộng sự, 2001) cho thấy ở nhiều lĩnh vực, như cảm xúc, phản hồi và các mối quan hệ, điều tiêu cực thường tác động mạnh và lâu hơn điều tích cực tương đương.
 
-NHƯNG HÃY NHỚ RÕ:
-⚠️ Chú ý nhiều KHÔNG ĐỒNG NGHĨA với việc lời chê ấy là toàn bộ sự thật!
+NHƯNG HÃY NHỚ:
+Chú ý nhiều không đồng nghĩa với việc nhận xét ấy là toàn bộ sự thật.
 
-Lần tới khi nhận lời phê bình, hãy tự hỏi 2 câu:
-1. "Phần nào trong này thực sự có ích để mình cải thiện?"
-2. "Mình có đang bỏ qua những điều bản thân đã làm rất tốt không?"
+Lần tới khi nhận lời phê bình, hãy thử tách hai câu hỏi:
+1. "Phản hồi nào thực sự hữu ích để mình cải thiện?"
+2. "Mình có đang bỏ qua những điều đã làm tốt không?"
 
-Học hỏi từ lời chê — nhưng tuyệt đối không phủ nhận giá trị của chính mình! 🧠✨
+Bạn có thể học từ lời chê mà không cần phủ nhận giá trị của mình. 🧠
+
+Nguồn: Baumeister, R. F., Bratslavsky, E., Finkenauer, C., & Vohs, K. D. (2001). Bad is stronger than good. Review of General Psychology, 5(4), 323–370. https://doi.org/10.1037/1089-2680.5.4.323
+
+Video mang tính chia sẻ kiến thức, không thay thế tư vấn của chuyên gia sức khỏe tinh thần.
 
 👉 Gửi video này cho một người bạn đang quá khắt khe với bản thân nhé! 👇
 
-#TiduMind #TamLyHoc #NegativityBias #ThienKienTieuCuc #PhatTrienBanThan #YeuBanThan #Shorts
+#TiduMind #TamLyHoc #NegativityBias #ThienKienTieuCuc #PhatTrienBanThan #Shorts
 ```
 
 ## Thẻ (Tags)
 
 ```
-tidu mind, lời chê và lời khen, thiên kiến tiêu cực, negativity bias, tâm lý học, khắt khe với bản thân, phát triển bản thân, yêu bản thân, tự tin, shorts
+tidu mind, lời chê và lời khen, thiên kiến tiêu cực, negativity bias, tâm lý học, khắt khe với bản thân, phản hồi, phê bình, phát triển bản thân, shorts
 ```
 
 ## Bình luận ghim (Pinned Comment)
 
 ```
-Bạn có thường xuyên nhớ lời chê lâu hơn lời khen không? Gửi video này cho người bạn thân đang cần được động viên nhé! 🧠❤️
+Bạn có hay nhớ lời chê lâu hơn lời khen không? Gửi video này cho người bạn đang cần được động viên nhé! 🧠
 ```

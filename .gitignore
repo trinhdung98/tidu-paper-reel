@@ -5,3 +5,4 @@ renders/
 examples/*/index.html
 templates/*/index.html
 .env
+__pycache__

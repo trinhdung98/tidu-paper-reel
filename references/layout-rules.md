@@ -42,6 +42,8 @@ Example: `tmJar(370, y)` + `withT(710, y, ...)` → midpoint 540 ✓
 
 **Do NOT use 190 / 500 / 810** for w=280 — col-1 left edge lands at x = 50, inside the wall behind the sign (safe boundary is 70 px).
 
+**Text inside column 3 must still end at x ≤ 960**, the right phone-UI margin `reel check` watches at every height. With w = 280 at 850 the card edge is 990, so fit the label to ≤ 220 px (or use w ≤ 260 at **260, 540, 820**); a pop's overshoot also counts.
+
 ---
 
 ## Safe zone

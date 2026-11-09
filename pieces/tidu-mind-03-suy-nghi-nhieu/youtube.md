@@ -3,42 +3,46 @@
 ## Tiêu đề
 
 ```
-Suy nghĩ nhiều có thực sự giúp giải quyết vấn đề? 🌀 Thoát khỏi vòng lặp lo lắng #Shorts
+Suy nghĩ nhiều có thực sự giúp giải quyết vấn đề? 🌀 Khi lo lắng cứ quay vòng #Shorts
 ```
 
 Phương án khác:
-- `Nghĩ suốt 3 tiếng không xong việc? Bí quyết chuyển lo lắng thành hành động | Tidu Mind #Shorts`
-- `Phân biệt suy nghĩ giải quyết và lo lắng vòng lặp: Vòng tròn kiểm soát #Shorts`
+- `Nghĩ suốt 3 tiếng mà chưa xong việc? Thử chuyển lo lắng thành một bước nhỏ | Tidu Mind #Shorts`
+- `Suy nghĩ để giải quyết hay lo lắng lặp lại? Cách phân biệt #Shorts`
 
 ## Mô tả
 
 ```
-Bạn đã bao giờ ngồi suy nghĩ về một vấn đề suốt 3 tiếng, nhưng cuối cùng vẫn chưa làm được gì? 🌀
+Bạn đã bao giờ nghĩ về một vấn đề suốt 3 tiếng, nhưng vẫn chưa giải quyết được gì? 🌀
 
-Có một sự khác biệt rất lớn giữa hai trạng thái:
-🟢 SUY NGHĨ ĐỂ GIẢI QUYẾT: Dẫn đến một lựa chọn hoặc hành động cụ thể.
-🔴 LO LẮNG VÒNG LẶP (Rumination): Đưa bạn quay lại câu hỏi quen thuộc: "Nếu chuyện xấu xảy ra thì sao?".
+Có một điểm khác biệt giữa hai kiểu suy nghĩ:
+🟢 SUY NGHĨ ĐỂ GIẢI QUYẾT: thường dẫn đến một lựa chọn hoặc một hành động.
+🔴 LO LẮNG LẶP LẠI: có thể đưa bạn quay lại cùng một câu hỏi: "Nếu chuyện xấu xảy ra thì sao?"
 
-3 bước đơn giản để thoát khỏi vòng lặp:
-1. Viết vấn đề ra giấy — Đừng để nó chạy vòng vòng trong đầu!
-2. Vẽ Vòng tròn kiểm soát — Tách riêng phần bạn có thể tác động được.
-3. Tìm bước nhỏ nhất làm ngay trong 5 phút!
+Thử 3 bước nhỏ:
+1. Viết vấn đề ra giấy.
+2. Khoanh lại phần mình có thể tác động.
+3. Tìm bước nhỏ nhất có thể làm ngay.
 
-Nếu chuyện đó chưa thể giải quyết hôm nay, hãy đặt lịch "Worry Time" (15 phút mỗi chiều) để suy nghĩ có kiểm soát! 🧠✨
+Nếu chưa thể xử lý, hãy dành một khoảng thời gian riêng để xem xét nó. Ý tưởng "giờ lo lắng" này đến từ nghiên cứu của Borkovec và cộng sự (1983): mỗi ngày dành một khoảng cố định (trong nghiên cứu là 30 phút, cùng giờ và cùng chỗ) để nghĩ về các lo lắng, ngoài giờ đó thì hẹn lại với chúng. 🧠
+
+Nguồn: Borkovec, T. D., Wilkinson, L., Folensbee, R., & Lerman, C. (1983). Stimulus control applications to the treatment of worry. Behaviour Research and Therapy, 21(3), 247–251. https://doi.org/10.1016/0005-7967(83)90206-1
+
+Video mang tính chia sẻ kiến thức, không thay thế tư vấn của chuyên gia sức khỏe tinh thần.
 
 👉 Bạn hay nghĩ nhiều nhất về công việc, tương lai hay các mối quan hệ? Bình luận bên dưới nhé! 👇
 
-#TiduMind #SuyNghiNhieu #Overthinking #QuanLyLoLang #PhatTrienBanThan #TamLyHoc #Shorts
+#TiduMind #SuyNghiNhieu #Overthinking #LoLang #PhatTrienBanThan #TamLyHoc #Shorts
 ```
 
 ## Thẻ (Tags)
 
 ```
-tidu mind, suy nghĩ nhiều, overthinking, quản lý lo lắng, rumination, vòng tròn kiểm soát, lo âu, tâm lý học, hành động nhỏ, phát triển bản thân, shorts
+tidu mind, suy nghĩ nhiều, overthinking, lo lắng, worry time, giờ lo lắng, giải quyết vấn đề, tâm lý học, bước nhỏ, phát triển bản thân, shorts
 ```
 
 ## Bình luận ghim (Pinned Comment)
 
 ```
-Bạn thường hay mắc kẹt trong suy nghĩ về điều gì nhất: Công việc, tương lai hay các mối quan hệ? Chia sẻ để cùng tìm cách gỡ nhé! 🧠👇
+Bạn thường hay mắc kẹt trong suy nghĩ về điều gì nhất: công việc, tương lai hay các mối quan hệ? Chia sẻ để cùng tìm một bước nhỏ nhé! 🧠👇
 ```

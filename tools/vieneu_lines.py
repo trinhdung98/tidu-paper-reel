@@ -4,35 +4,10 @@ VieNeu samples every take afresh and now and then slurs a word, so each line is 
 (multilingual model) transcribes closest to the script wins. It reads at about 5 words/s; --speed < 1 then slows the take with
 ffmpeg's pitch-keeping atempo. Voice and speed are saved in script.json "vieneu": { "voice", "speed" } so a rerun of one line
 keeps them. Writes <piece>/voice/<id>.wav and sets "file" on the line; tools/eleven_align.mjs then times its words."""
-import os, sys, json, subprocess, re, unicodedata
+import os, sys, json, subprocess
 from vieneu import Vieneu
+from vi_heard import words, distance, heard
 
-MODEL = os.environ.get('WHISPER_MODEL_MULTI', os.path.expanduser('~/.cache/whisper/ggml-small.bin'))
-UNITS = ['không', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín']
-def say_number(n):
-    """0–999 as read aloud (whisper writes '48' for 'bốn mươi tám'): mười lăm, hai mươi mốt, một trăm lẻ năm."""
-    if n < 10: return UNITS[n]
-    if n < 20: return 'mười' + ('' if n == 10 else ' lăm' if n == 15 else ' ' + UNITS[n - 10])
-    if n < 100:
-        t, u = divmod(n, 10)
-        return f'{UNITS[t]} mươi' + ('' if u == 0 else ' mốt' if u == 1 else ' lăm' if u == 5 else ' ' + UNITS[u])
-    h, r = divmod(n, 100)
-    return f'{UNITS[h]} trăm' + ('' if r == 0 else ' lẻ ' + UNITS[r] if r < 10 else ' ' + say_number(r))
-def words(s):
-    s = unicodedata.normalize('NFC', s.lower())
-    return [w for t in re.findall(r'\w+', s) for w in (say_number(int(t)) if t.isdigit() and int(t) < 1000 else t).split()]
-def distance(a, b):
-    D = list(range(len(b) + 1))
-    for i in range(1, len(a) + 1):
-        prev, D[0] = D[0], i
-        for j in range(1, len(b) + 1): prev, D[j] = D[j], min(D[j] + 1, D[j - 1] + 1, prev + (a[i - 1] != b[j - 1]))
-    return D[-1]
-def heard(wav):
-    tmp = wav + '.16k.wav'
-    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', wav, '-ar', '16000', '-ac', '1', tmp], check=True)
-    r = subprocess.run(['whisper-cli', '-m', MODEL, '-l', 'vi', '-f', tmp, '-np', '-ng', '-nt'], capture_output=True, text=True)
-    os.remove(tmp)
-    return r.stdout.strip()
 a = sys.argv[1:]; piece = a[0]
 opt = lambda k, d: a[a.index(k) + 1] if k in a else d
 sp = os.path.join(piece, 'voice', 'script.json'); S = json.load(open(sp))

@@ -16,15 +16,17 @@ Phương án khác:
 Một tin nhắn gửi đi chưa được trả lời có thể khiến bạn tưởng tượng ra cả một câu chuyện:
 • "Họ đang giận mình?"
 • "Mình nói gì sai à?"
-• "Hay họ không còn muốn chơi với mình nữa?"
+• "Hay họ không còn thích mình nữa?"
 
 Nhưng hãy dừng lại một nhịp và nhìn rõ:
 🟢 ĐIỀU BẠN THỰC SỰ BIẾT: Họ chưa trả lời.
 🔴 ĐIỀU BẠN TỰ SUY ĐOÁN: Tất cả những lý do tiêu cực phía sau.
 
-Trong tâm lý học, đây gọi là bẫy "Đọc tâm trí" (Mind Reading) — xu hướng mặc định mình biết người khác đang nghĩ gì khi ta lo lắng. Thực tế, họ có thể chỉ đang bận việc, điện thoại hết pin, hoặc chưa kịp phản hồi.
+Trong tâm lý học, đây gọi là bẫy "Đọc tâm trí" (Mind Reading) — khi lo lắng, ta đôi khi mặc định mình biết người khác đang nghĩ gì mà không có bằng chứng. Thực tế, họ có thể chỉ đang bận việc, điện thoại hết pin, hoặc chưa kịp phản hồi.
 
-Lần tới, hãy tự hỏi: "Mình có bằng chứng nào cho suy nghĩ này không?" 🧠✨
+📚 Nguồn: "Đọc tâm trí" là một dạng "nhảy đến kết luận" trong danh sách lối nghĩ méo mó của liệu pháp nhận thức – hành vi (Aaron Beck; David D. Burns, "Feeling Good", 1980).
+
+Lần tới, hãy tự hỏi: "Mình có bằng chứng nào cho kết luận này không?" Nếu cần, hãy hỏi thẳng người đó thay vì tự viết tiếp câu chuyện trong đầu. 🧠✨
 
 👉 Bạn từng mất ngủ chỉ vì một tin nhắn chưa được trả lời chưa? Chia sẻ bên dưới nhé! 👇
 
