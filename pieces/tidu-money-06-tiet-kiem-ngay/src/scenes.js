@@ -43,10 +43,10 @@ SCENES.hook = () => {
   prClock(190, 420, 68, 20, 0);
 
   // Empty jar on left
-  tmJar(340, 750, 0, 'TIẾT KIỆM', popS(E0 + 0.15));
+  tmJar(370, 750, 0, 'TIẾT KIỆM', popS(E0 + 0.15));
 
   // Flat empty wallet on right
-  withT(640, 750, 0.03, popS(E0 + 0.3), () => {
+  withT(710, 750, 0.03, popS(E0 + 0.3), () => {
     pp(pR(-140, -80, 280, 160, 14), '#8a4e25', { key: 'hk_w', sb: 14, sy: 7, tex: 0.5 });
     txt('VÍ CUỐI THÁNG', 0, -15, 22, PR.creamL, { align: 'center', weight: 800 });
     txt('RỖNG TUẾCH (0₫)', 0, 30, 26, PR.mustard, { align: 'center', weight: 800, font: F_MONO });
@@ -65,7 +65,7 @@ SCENES.empty = () => {
   prFloor(1560, PR.char, { studs: true });
 
   // Flawed formula card: LƯƠNG - CHI TIÊU = TIẾT KIỆM?
-  withT(470, 720, 0, popS(E0 + 0.15), () => {
+  withT(540, 720, 0, popS(E0 + 0.15), () => {
     const w = 620, h = 340;
     pp(pR(-w / 2, -h / 2, w, h, 18), PR.paperW, { key: 'em_card', sb: 16, sy: 8, tex: 0.45 });
     txt('CÁCH LÀM QUEN THUỘC (NHƯNG SAI)', 0, -110, 22, PR.red, { align: 'center', weight: 800 });
@@ -78,7 +78,7 @@ SCENES.empty = () => {
   });
 
   // Cross on old way
-  prCross(470, 700, E0 + 0.8, 75);
+  prCross(540, 700, E0 + 0.8, 75);
 
   // Piggy bowler
   piggy(PIGGY_X, PIGGY_Y, { hat: 'bowler', mood: 'flat', look: -16, key: 'p2' });
@@ -95,7 +95,7 @@ SCENES.reverse = () => {
   prFloor(1560, PR.woodD, { trim: false });
 
   // Reversed formula card: LƯƠNG - TIẾT KIỆM = CHI TIÊU!
-  withT(470, 720, 0, popS(E0 + 0.15), () => {
+  withT(540, 720, 0, popS(E0 + 0.15), () => {
     const w = 620, h = 360;
     pp(pR(-w / 2, -h / 2, w, h, 18), PR.paperW, { key: 'rev_card', sb: 16, sy: 8, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 82, 16), PR.green, { shadow: false, tex: 0.4 });
@@ -108,7 +108,7 @@ SCENES.reverse = () => {
   });
 
   // Stamp: "TIẾT KIỆM TRƯỚC"
-  prStamp('TRÍCH TRƯỚC CHO MÌNH', 470, 1020, PR.green, tDao + 0.3, { rot: -0.03, size: 32, from: 1.25 });
+  prStamp('TRÍCH TRƯỚC CHO MÌNH', 540, 1020, PR.green, tDao + 0.3, { rot: -0.03, size: 32, from: 1.25 });
 
   // Piggy mortar pointing
   piggy(PIGGY_X, PIGGY_Y, { hat: 'mortar', mood: 'happy', look: -16, hold: propStick(-0.25), key: 'p3' });
@@ -125,9 +125,9 @@ SCENES.example = () => {
   prFloor(1560, PR.wood, { trim: false });
 
   // 10M salary with 5% = 500k flying into jar
-  tmJar(300, 750, 4, 'HŨ 500K', popS(E0 + 0.15));
+  tmJar(340, 750, 4, 'HŨ 500K', popS(E0 + 0.15));
 
-  withT(640, 750, 0, popS(E0 + 0.3), () => {
+  withT(740, 750, 0, popS(E0 + 0.3), () => {
     pp(pR(-160, -110, 320, 220, 16), PR.paperW, { key: 'ex_sal', sb: 14, sy: 7, tex: 0.45 });
     pp(pR(-160, -110, 320, 65, 14), PR.teal, { shadow: false, tex: 0.35 });
     txt('LƯƠNG 10 TRIỆU', 0, -68, 22, PR.creamL, { align: 'center', weight: 800 });
@@ -138,7 +138,7 @@ SCENES.example = () => {
   });
 
   // Coin animation
-  prCoin(470, 980, 44, 'ex_coin');
+  prCoin(540, 980, 44, 'ex_coin');
 
   // Piggy newsboy
   piggy(PIGGY_X, PIGGY_Y, { hat: 'newsboy', mood: 'happy', look: -15, hold: propCoin(55), key: 'p4' });
@@ -153,7 +153,7 @@ SCENES.separate = () => {
   prFloor(1560, PR.floor, { studs: true });
 
   // Split Accounts Box
-  withT(470, 720, 0, popS(E0 + 0.15), () => {
+  withT(540, 720, 0, popS(E0 + 0.15), () => {
     const w = 620, h = 380;
     pp(pR(-w / 2, -h / 2, w, h, 18), PR.paperW, { key: 'sep_box', sb: 16, sy: 8, tex: 0.45 });
     txt('PHÂN TÁCH 2 TÀI KHOẢN', 0, -130, 26, PR.char, { align: 'center', weight: 800 });
@@ -196,7 +196,7 @@ SCENES.startlow = () => {
     { pct: '5%', amt: '500.000₫' }
   ];
 
-  withT(470, 720, 0, popS(E0 + 0.15), () => {
+  withT(540, 720, 0, popS(E0 + 0.15), () => {
     txt('BẮT ĐẦU TỪ MỨC VỪA SỨC', 0, -140, 28, PR.char, { align: 'center', weight: 800 });
     options.forEach((op, i) => {
       const ox = (i - 1) * 190;
@@ -208,7 +208,7 @@ SCENES.startlow = () => {
   });
 
   // Stamp: "BẮT ĐẦU TỪ BÂY GIỜ"
-  prStamp('BẮT ĐẦU VỪA SỨC', 470, 980, PR.mustard, tThap + 0.2, { rot: -0.03, size: 34, from: 1.25 });
+  prStamp('BẮT ĐẦU VỪA SỨC', 540, 980, PR.mustard, tThap + 0.2, { rot: -0.03, size: 34, from: 1.25 });
 
   // Piggy nonla
   piggy(PIGGY_X, PIGGY_Y, { hat: 'nonla', mood: 'happy', look: -14, hold: propCoin(55), key: 'p6' });
@@ -225,10 +225,10 @@ SCENES.habit = () => {
   prFloor(1560, PR.wood, { trim: false });
 
   // Stamp: "THÓI QUEN ĐỀU ĐẶN"
-  prStamp('THÓI QUEN ĐỀU ĐẶN', 470, 560, PR.mustard, E0 + 0.1, { rot: -0.03, size: 36, from: 1.25 });
+  prStamp('THÓI QUEN ĐỀU ĐẶN', 540, 560, PR.mustard, E0 + 0.1, { rot: -0.03, size: 36, from: 1.25 });
 
   // CTA Card
-  withT(470, 880, 0, popS(tDan + 0.2), () => {
+  withT(540, 880, 0, popS(tDan + 0.2), () => {
     const w = 580, h = 360;
     pp(pR(-w / 2, -h / 2, w, h, 20), PR.paperW, { key: 'cta_box_06', sb: 18, sy: 9, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 82, 18), PR.money, { shadow: false, tex: 0.4 });

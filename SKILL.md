@@ -51,8 +51,11 @@ What every scene needs (the style's fingerprint):
 5. **3+ details of background life:** a clock, bunting, books, a lamp, notes, stars, a moon, acoustic foam, lane marks moving.
 6. **`prChips()` last.** The captions are automatic, one paper scrap per spoken word. Keep the bottom-left band (y 1450–1600, x < 930) free of other text.
 
+Before writing any `withT`/`prStamp`/helper call, read **[references/layout-rules.md](references/layout-rules.md)**: centering rules, safe-zone numbers, paired-element formula, 3-column centres, vertical-gap formula, and text-width estimation.
+
 ## 4. Check, then export
 - `$REEL still <piece> 2.6,6,10,14 look.png --scale 0.4`. Look at the frames, and check them against [references/style.md](references/style.md).
+- **Layout rules grep** — run the two greps in [references/layout-rules.md § Verification checklist](references/layout-rules.md) and fix every hit before continuing.
 - `$REEL check <piece>` must say `text: PASS` and `deterministic: true`. Fix any overlaps it reports by moving props, not captions.
 - `$REEL export <piece> <out.mp4>` renders a 1080x1920 30fps video at about -14 LUFS in about 30 seconds and deletes the frame cache.
 - Tell the user what you can't verify: you can't hear the mix, so ask them to listen.
@@ -91,5 +94,6 @@ Never post it anywhere without the user's explicit go-ahead.
 - **Name clashes:** `kit/core.js` and `kit/morph.js` already define many short top-level names (`smooth`, `grain`, `ink`, `burst`, `push`, `layer`, `W`, `H`, `F`, `B`…), so prefix your own scene helpers. A clash shows up as a `syntax error` at build.
 - **Vietnamese text:** Avenir Next and SuperClarendon have the letters but misplace stacked tone marks (ĐẾM, những, được), and Chalkduster lacks most of them. A Vietnamese piece embeds Be Vietnam Pro (signs, `txt`) and Bevan (chips) from `styles/paper-reel/fonts/` with `"fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" }` in `piece.json`, and sets `F_HEAD = '"Be Vietnam Pro", "Avenir Next", sans-serif'; F_CHIP = 'Bevan, SuperClarendon, serif';` at the top of `src/scenes.js`. Keep `chalk()` to digits and symbols.
 - **Reviewing frames:** the animate `review.mjs` sheets need ffmpeg's `drawtext`, which the Homebrew build lacks. Use `still` and `check` instead.
+- **Canvas layout bugs** (off-centre cards, column overflow, paired midpoint drift, stacked overlap, text overflow, redundant layers, cross-scene y jumps): all documented with formulas and correct values in [references/layout-rules.md](references/layout-rules.md). Read it when writing scenes; run the verification greps before exporting.
 
 Renderer and tools are vendored from the MIT-licensed `animate` skill (cth9191/animate); see NOTICE.md.

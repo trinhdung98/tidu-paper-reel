@@ -59,7 +59,7 @@ SCENES.hook = () => {
   prClock(190, 420, 68, 7, 0);
 
   // Big 7-Day Board
-  withT(470, 720, 0, popS(E0 + 0.15), () => {
+  withT(540, 680, 0, popS(E0 + 0.15), () => {
     const w = 580, h = 340;
     pp(pR(-w / 2, -h / 2, w, h, 18), PR.paperW, { key: 'hk_board', sb: 16, sy: 8, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 85, 16), PR.teal, { shadow: false, tex: 0.35 });
@@ -70,7 +70,7 @@ SCENES.hook = () => {
   });
 
   // Week bar
-  tmCalendarWeek(470, 960, 0, popS(tBay));
+  tmCalendarWeek(540, 960, 0, popS(tBay));
 
   // Piggy with visor
   piggy(PIGGY_X, PIGGY_Y, { hat: 'visor', mood: 'happy', look: -15, key: 'p1' });
@@ -85,14 +85,14 @@ SCENES.days13 = () => {
   prFloor(1560, PR.woodD, { trim: false });
 
   // Week bar (3 days done)
-  tmCalendarWeek(470, 480, 3, popS(E0 + 0.1));
+  tmCalendarWeek(540, 480, 3, popS(E0 + 0.1));
 
   const steps13 = [
     { day: 'NGÀY 1', action: 'Ghi chép lại toàn bộ khoản chi trong ngày' },
     { day: 'NGÀY 2', action: 'Phân loại: Cần thiết vs Không thiết yếu' },
     { day: 'NGÀY 3', action: 'Tìm ra khoản chi khiến bạn bất ngờ nhất!' }
   ];
-  tmChallengeCard(470, 800, 'CHẶNG 1: NHẬN DIỆN DÒNG TIỀN', steps13, PR.green, popS(E0 + 0.2));
+  tmChallengeCard(540, 800, 'CHẶNG 1: NHẬN DIỆN DÒNG TIỀN', steps13, PR.green, popS(E0 + 0.2));
 
   // Piggy bowler
   piggy(PIGGY_X, PIGGY_Y, { hat: 'bowler', mood: 'neutral', look: -16, key: 'p2' });
@@ -107,14 +107,14 @@ SCENES.days46 = () => {
   prFloor(1560, PR.wood, { trim: false });
 
   // Week bar (6 days done)
-  tmCalendarWeek(470, 480, 6, popS(E0 + 0.1));
+  tmCalendarWeek(540, 480, 6, popS(E0 + 0.1));
 
   const steps46 = [
     { day: 'NGÀY 4', action: 'Đặt hạn mức chi tiêu cho nhóm phát sinh' },
     { day: 'NGÀY 5', action: 'Trích một khoản tiết kiệm phù hợp khả năng' },
     { day: 'NGÀY 6', action: 'Rà soát các gói dịch vụ tự động trừ tiền' }
   ];
-  tmChallengeCard(470, 800, 'CHẶNG 2: THIẾT LẬP KỶ LUẬT', steps46, PR.mustard, popS(E0 + 0.2));
+  tmChallengeCard(540, 800, 'CHẶNG 2: THIẾT LẬP KỶ LUẬT', steps46, PR.mustard, popS(E0 + 0.2));
 
   // Piggy newsboy
   piggy(PIGGY_X, PIGGY_Y, { hat: 'newsboy', mood: 'happy', look: -15, key: 'p3' });
@@ -131,10 +131,10 @@ SCENES.day7 = () => {
   prFloor(1560, PR.char, { studs: true });
 
   // Week bar fully completed (7 days)
-  tmCalendarWeek(470, 520, 7, popS(E0 + 0.1));
+  tmCalendarWeek(540, 480, 7, popS(E0 + 0.1));
 
   // Day 7 Summary Card
-  withT(470, 800, 0, popS(E0 + 0.2), () => {
+  withT(540, 800, 0, popS(E0 + 0.2), () => {
     const w = 580, h = 320;
     pp(pR(-w / 2, -h / 2, w, h, 18), PR.paperW, { key: 'd7_box', sb: 16, sy: 8, tex: 0.45 });
     txt('NGÀY 7: TỔNG KẾT & CHỌN THÓI QUEN', 0, -h / 2 + 55, 24, PR.char, { align: 'center', weight: 800 });
@@ -146,7 +146,7 @@ SCENES.day7 = () => {
   });
 
   // Stamp: "HOÀN THÀNH 7 NGÀY"
-  prStamp('HOÀN THÀNH 7 NGÀY! 🏆', 470, 1060, PR.green, tBay + 0.3, { rot: -0.04, size: 34, from: 1.25 });
+  prStamp('HOÀN THÀNH 7 NGÀY! 🏆', 540, 1060, PR.green, tBay + 0.3, { rot: -0.04, size: 34, from: 1.25 });
 
   // Piggy tophat
   piggy(PIGGY_X, PIGGY_Y, { hat: 'tophat', mood: 'happy', look: -14, hold: propCoin(55), key: 'p4' });
@@ -163,10 +163,10 @@ SCENES.mindset = () => {
   prFloor(1560, PR.wood, { trim: false });
 
   // Golden Stamp: "BẮT ĐẦU BẰNG SỰ HIỂU BIẾT"
-  prStamp('BẮT ĐẦU BẰNG SỰ HIỂU BIẾT', 470, 560, PR.mustard, E0 + 0.1, { rot: -0.03, size: 28, from: 1.2 });
+  prStamp('BẮT ĐẦU BẰNG SỰ HIỂU BIẾT', 540, 560, PR.mustard, E0 + 0.1, { rot: -0.03, size: 28, from: 1.2 });
 
   // CTA Card
-  withT(470, 880, 0, popS(tBiet + 0.2), () => {
+  withT(540, 880, 0, popS(tBiet + 0.2), () => {
     const w = 580, h = 360;
     pp(pR(-w / 2, -h / 2, w, h, 20), PR.paperW, { key: 'cta_box_10', sb: 18, sy: 9, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 82, 18), PR.money, { shadow: false, tex: 0.4 });

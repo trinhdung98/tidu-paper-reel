@@ -69,10 +69,10 @@ SCENES.hook = () => {
   prClock(190, 420, 68, 8, 30);
 
   // Big hero coffee cup in center
-  tmCoffeeCup(470, 720, 1.8 * popS(E0 + 0.15), true);
+  tmCoffeeCup(540, 720, 1.8 * popS(E0 + 0.15), true);
 
   // Price tag: 35.000₫
-  withT(470, 960, 0, popS(tPhe), () => {
+  withT(540, 960, 0, popS(tPhe), () => {
     pp(pR(-180, -45, 360, 90, 14), PR.mustard, { key: 'hk_tag', sb: 14, sy: 7, tex: 0.5 });
     txt('1 LY CÀ PHÊ SÁNG', 0, -12, 22, PR.char, { align: 'center', weight: 800 });
     txt('35.000₫', 0, 32, 44, PR.char, { align: 'center', weight: 800, font: F_MONO });
@@ -94,7 +94,7 @@ SCENES.days = () => {
   prFloor(1560, PR.char, { studs: true });
 
   // Grid of 30 coffee cups (5 rows x 6 cols)
-  withT(470, 640, 0, 1, () => {
+  withT(540, 640, 0, 1, () => {
     for (let r = 0; r < 5; r++) {
       for (let c = 0; c < 6; c++) {
         const idx = r * 6 + c;
@@ -106,7 +106,7 @@ SCENES.days = () => {
   });
 
   // Math multiplication banner
-  withT(470, 950, 0, popS(tMuoi), () => {
+  withT(540, 950, 0, popS(tMuoi), () => {
     pp(pR(-280, -50, 560, 100, 14), PR.paperW, { key: 'days_math', sb: 14, sy: 7, tex: 0.4 });
     txt('35.000₫  ×  30 NGÀY', 0, -10, 26, PR.greyD, { align: 'center', weight: 800, font: F_MONO });
     txt('= 1.050.000₫ / THÁNG', 0, 32, 40, PR.red, { align: 'center', weight: 800, font: F_MONO });
@@ -127,15 +127,15 @@ SCENES.notbad = () => {
   prFloor(1560, PR.woodD, { trim: false });
 
   // "PHẢI BỎ CÀ PHÊ?" with red cross
-  withT(470, 680, 0, popS(E0 + 0.15), () => {
+  withT(540, 680, 0, popS(E0 + 0.15), () => {
     pp(pR(-260, -80, 520, 160, 16), PR.paperW, { key: 'nb_bad', sb: 14, sy: 7, tex: 0.4 });
     tmCoffeeCup(-150, 0, 0.9, false);
     txt('PHẢI CẮT BỎ CÀ PHÊ?', 40, 12, 28, PR.char, { align: 'center', weight: 800 });
   });
 
-  prCross(470, 680, tBo + 0.1, 75);
+  prCross(540, 680, tBo + 0.1, 75);
 
-  withT(470, 960, 0, popS(tBo + 0.3), () => {
+  withT(540, 960, 0, popS(tBo + 0.3), () => {
     pp(pR(-260, -45, 520, 90, 14), PR.green, { key: 'nb_good', sb: 12, sy: 6, tex: 0.4 });
     txt('KHÔNG CẦN CỰC ĐOAN!', 0, 12, 28, PR.creamL, { align: 'center', weight: 800 });
   });
@@ -155,7 +155,7 @@ SCENES.joy = () => {
   prFloor(1560, PR.wood, { trim: false });
 
   // Coffee with Heart / Value card
-  withT(470, 720, 0, popS(E0 + 0.15), () => {
+  withT(540, 720, 0, popS(E0 + 0.15), () => {
     const w = 580, h = 420;
     pp(pR(-w / 2, -h / 2, w, h, 18), PR.paperW, { key: 'joy_box', sb: 16, sy: 8, tex: 0.45 });
     tmCoffeeCup(0, -90, 1.1, true);
@@ -166,7 +166,7 @@ SCENES.joy = () => {
   });
 
   // Stamp: "XỨNG ĐÁNG"
-  prStamp('HOÀN TOÀN XỨNG ĐÁNG', 470, 1060, PR.green, tXung + 0.1, { rot: -0.04, size: 30, from: 1.25 });
+  prStamp('HOÀN TOÀN XỨNG ĐÁNG', 540, 1060, PR.green, tXung + 0.1, { rot: -0.04, size: 30, from: 1.25 });
 
   // Piggy happy
   piggy(PIGGY_X, PIGGY_Y, { hat: 'mortar', mood: 'happy', look: -15, hold: propCoin(55), key: 'p4' });
@@ -183,14 +183,14 @@ SCENES.choice = () => {
   prFloor(1560, PR.floor, { studs: true });
 
   // Two mindsets split
-  withT(270, 740, -0.02, popS(E0 + 0.1), () => {
+  withT(340, 740, -0.02, popS(E0 + 0.1), () => {
     pp(pR(-150, -140, 300, 280, 16), '#edf2f7', { key: 'ch_auto', sb: 12, sy: 6, tex: 0.4 });
     txt('UỐNG THEO QUÁN TÍNH', 0, -85, 20, PR.greyD, { align: 'center', weight: 800 });
     txt('Tiện tay mua', 0, -20, 22, PR.char, { align: 'center', weight: 700 });
     txt('Không để ý ví', 0, 25, 22, PR.red, { align: 'center', weight: 800 });
   });
 
-  withT(670, 740, 0.02, popS(tDong), () => {
+  withT(740, 740, 0.02, popS(tDong), () => {
     pp(pR(-150, -140, 300, 280, 16), PR.paperW, { key: 'ch_mind', sb: 16, sy: 8, tex: 0.45 });
     pp(pR(-150, -140, 300, 60, 14), PR.teal, { shadow: false, tex: 0.35 });
     txt('CHỦ ĐỘNG CHỌN', 0, -100, 20, PR.creamL, { align: 'center', weight: 800 });
@@ -213,20 +213,20 @@ SCENES.reduce = () => {
   prFloor(1560, PR.woodD, { trim: false });
 
   // Comparison: 7 days vs 3 days
-  withT(470, 620, 0, popS(E0 + 0.1), () => {
+  withT(540, 620, 0, popS(E0 + 0.1), () => {
     pp(pR(-280, -65, 560, 130, 14), PR.paperW, { key: 'rd_full', sb: 12, sy: 6, tex: 0.4 });
     txt('MỖI NGÀY 1 LY (7 NGÀY/TUẦN)', 0, -20, 22, PR.greyD, { align: 'center', weight: 800 });
     txt('245.000₫ / tuần  ·  1.050.000₫ / tháng', 0, 25, 24, PR.char, { align: 'center', weight: 800, font: F_MONO });
   });
 
-  withT(470, 800, 0, popS(tGiam + 0.2), () => {
+  withT(540, 800, 0, popS(tGiam + 0.2), () => {
     pp(pR(-280, -65, 560, 130, 14), PR.paperW, { key: 'rd_opt', sb: 16, sy: 8, tex: 0.45 });
     txt('GIẢM CÒN 3 NGÀY / TUẦN', 0, -20, 22, PR.green, { align: 'center', weight: 800 });
     txt('105.000₫ / tuần  ·  450.000₫ / tháng', 0, 25, 24, PR.green, { align: 'center', weight: 800, font: F_MONO });
   });
 
   // Savings result
-  withT(470, 980, 0, popS(tGiam + 0.5), () => {
+  withT(540, 980, 0, popS(tGiam + 0.5), () => {
     pp(pR(-240, -40, 480, 80, 12), PR.mustard, { key: 'rd_sav', sb: 12, sy: 6, tex: 0.4 });
     txt('DƯ RA 600.000₫ MỖI THÁNG!', 0, 12, 26, PR.char, { align: 'center', weight: 800, font: F_MONO });
   });
@@ -246,10 +246,10 @@ SCENES.mindful = () => {
   prFloor(1560, PR.wood, { trim: false });
 
   // Stamp: "CHI TIÊU CÓ Ý THỨC"
-  prStamp('CHI TIÊU CÓ Ý THỨC', 470, 580, PR.mustard, E0 + 0.1, { rot: -0.03, size: 36, from: 1.25 });
+  prStamp('CHI TIÊU CÓ Ý THỨC', 540, 580, PR.mustard, E0 + 0.1, { rot: -0.03, size: 36, from: 1.25 });
 
   // CTA Box
-  withT(470, 900, 0, popS(tThuc + 0.2), () => {
+  withT(540, 900, 0, popS(tThuc + 0.2), () => {
     const w = 580, h = 360;
     pp(pR(-w / 2, -h / 2, w, h, 20), PR.paperW, { key: 'cta_box_04', sb: 18, sy: 9, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 82, 18), PR.money, { shadow: false, tex: 0.4 });

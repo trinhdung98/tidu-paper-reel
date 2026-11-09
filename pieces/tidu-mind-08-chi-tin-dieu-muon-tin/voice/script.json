@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Bạn có chắc mình đang tìm sự thật, hay chỉ đang tìm bằng chứng để chứng minh mình đúng?",
+   "after": 1.8,
+   "file": "hook.wav"
+  },
+  {
+   "id": "bias",
+   "text": "Giả sử bạn tin một phương pháp học rất hiệu quả. Bạn đọc những bài khen ngợi nó, nhưng bỏ qua các nghiên cứu có kết quả khác.",
+   "after": 2.0,
+   "file": "bias.wav"
+  },
+  {
+   "id": "confirm",
+   "text": "Đây là ví dụ của thiên kiến xác nhận: xu hướng ưu tiên thông tin phù hợp với niềm tin sẵn có. Vấn đề là cảm giác chắc chắn có thể tăng lên dù bằng chứng chưa đầy đủ.",
+   "after": 2.5,
+   "file": "confirm.wav"
+  },
+  {
+   "id": "challenge",
+   "text": "Lần tới khi tranh luận, hãy thử tìm một nguồn đáng tin có quan điểm khác mình. Đó không phải là tự phủ nhận.",
+   "after": 2.0,
+   "file": "challenge.wav"
+  },
+  {
+   "id": "test",
+   "text": "Đó là cách kiểm tra niềm tin tốt hơn.",
+   "after": 1.6,
+   "file": "test.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn từng thay đổi quan điểm sau khi đọc một bằng chứng mới chưa?",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

@@ -96,10 +96,10 @@ SCENES.hook = () => {
   prClock(190, 420, 68, 17, 30);
 
   // Grocery basket
-  tmBasket(470, 720, 1, popS(E0 + 0.15));
+  tmBasket(540, 720, 1, popS(E0 + 0.15));
 
   // Tag 100.000₫
-  withT(470, 960, 0, popS(E0 + 0.3), () => {
+  withT(540, 960, 0, popS(E0 + 0.3), () => {
     pp(pR(-180, -45, 360, 90, 14), PR.mustard, { key: 'hk_tag', sb: 14, sy: 7, tex: 0.45 });
     txt('GIÁ TRỊ GIỎ HÀNG', 0, -12, 22, PR.char, { align: 'center', weight: 800 });
     txt('100.000₫', 0, 32, 42, PR.char, { align: 'center', weight: 800, font: F_MONO });
@@ -120,7 +120,7 @@ SCENES.reason = () => {
   prFloor(1560, PR.char, { studs: true });
 
   // Big Inflation banner with rising arrow
-  withT(470, 720, 0, popS(E0 + 0.15), () => {
+  withT(540, 720, 0, popS(E0 + 0.15), () => {
     pp(pR(-280, -110, 560, 220, 18), PR.paperW, { key: 'rs_card', sb: 18, sy: 9, tex: 0.45 });
     pp(pR(-280, -110, 560, 80, 16), PR.red, { shadow: false, tex: 0.4 });
     txt('KHÁI NIỆM KINH TẾ', 0, -58, 28, PR.creamL, { align: 'center', weight: 800 });
@@ -130,7 +130,7 @@ SCENES.reason = () => {
   });
 
   // Up arrow stamp
-  prStamp('GIÁ CẢ TĂNG LÊN 📈', 470, 980, PR.red, tPhat + 0.1, { rot: -0.04, size: 34, from: 1.25 });
+  prStamp('GIÁ CẢ TĂNG LÊN 📈', 540, 980, PR.red, tPhat + 0.1, { rot: -0.04, size: 34, from: 1.25 });
 
   // Piggy with bowler hat
   piggy(PIGGY_X, PIGGY_Y, { hat: 'bowler', mood: 'flat', look: -16, key: 'p2' });
@@ -147,7 +147,7 @@ SCENES.example = () => {
   prFloor(1560, PR.woodD, { trim: false });
 
   // 1-Year timeline comparison
-  withT(470, 680, 0, popS(E0 + 0.15), () => {
+  withT(540, 680, 0, popS(E0 + 0.15), () => {
     const w = 600, h = 340;
     pp(pR(-w / 2, -h / 2, w, h, 18), PR.paperW, { key: 'ex_box', sb: 16, sy: 8, tex: 0.45 });
     txt('GIẢ ĐỊNH LẠM PHÁT 3% / NĂM', 0, -110, 26, PR.char, { align: 'center', weight: 800 });
@@ -167,7 +167,7 @@ SCENES.example = () => {
   });
 
   // Stamp "+3%"
-  prStamp('+3.000₫ / NĂM', 470, 950, PR.red, tBa + 0.2, { rot: -0.03, size: 34, from: 1.25 });
+  prStamp('+3.000₫ / NĂM', 540, 950, PR.red, tBa + 0.2, { rot: -0.03, size: 34, from: 1.25 });
 
   // Piggy mortar pointing
   piggy(PIGGY_X, PIGGY_Y, { hat: 'mortar', mood: 'neutral', look: -16, hold: propStick(-0.25), key: 'p3' });
@@ -184,17 +184,17 @@ SCENES.price = () => {
   prFloor(1560, PR.wood, { trim: false });
 
   // Visual Basket with Price Increase
-  tmBasket(470, 680, 1, 1.1);
+  tmBasket(540, 680, 1, 1.1);
 
   // Price tag morphing to 103.000₫
-  withT(470, 940, 0, popS(E0 + 0.2), () => {
+  withT(540, 940, 0, popS(E0 + 0.2), () => {
     pp(pR(-240, -50, 480, 100, 14), PR.paperW, { key: 'pr_tag_box', sb: 14, sy: 7, tex: 0.45 });
     txt('GIÁ MỚI ĐỂ MUA ĐÚNG GIỎ ĐÓ:', 0, -12, 22, PR.greyD, { align: 'center', weight: 700 });
     txt('103.000₫', 0, 30, 42, PR.red, { align: 'center', weight: 800, font: F_MONO });
   });
 
   // Extra cost chip
-  withT(470, 1080, 0, popS(tLinh), () => {
+  withT(540, 1080, 0, popS(tLinh), () => {
     pp(pR(-180, -32, 360, 64, 10), PR.mustard, { key: 'pr_extra', sb: 8, sy: 4, tex: 0.4 });
     txt('CẦN THÊM 3.000₫!', 0, 10, 24, PR.char, { align: 'center', weight: 800, font: F_MONO });
   });
@@ -214,14 +214,14 @@ SCENES.same = () => {
   prFloor(1560, PR.floor, { studs: true });
 
   // Basket with missing item (fillLevel = 0.7)
-  tmBasket(470, 620, 0.7, 1);
+  tmBasket(540, 620, 0.7, 1);
 
   // Purchasing power ruler shrinking
   const rulerRatio = TT < tGiam ? 1 : 0.85;
-  tmPurchasingRuler(470, 860, 560, rulerRatio, popS(E0 + 0.2));
+  tmPurchasingRuler(540, 860, 560, rulerRatio, popS(E0 + 0.2));
 
   // Stamp: "SỨC MUA ĐÃ GIẢM"
-  prStamp('SỨC MUA ĐÃ GIẢM', 470, 990, PR.red, tGiam + 0.1, { rot: -0.04, size: 34, from: 1.25 });
+  prStamp('SỨC MUA ĐÃ GIẢM', 540, 990, PR.red, tGiam + 0.1, { rot: -0.04, size: 34, from: 1.25 });
 
   // Piggy flat
   piggy(PIGGY_X, PIGGY_Y, { hat: 'tophat', mood: 'flat', look: -16, key: 'p5' });
@@ -236,7 +236,7 @@ SCENES.disclaimer = () => {
   prFloor(1560, PR.woodD, { trim: false });
 
   // Note card
-  withT(470, 720, 0, popS(E0 + 0.15), () => {
+  withT(540, 720, 0, popS(E0 + 0.15), () => {
     const w = 580, h = 360;
     pp(pR(-w / 2, -h / 2, w, h, 18), PR.paperW, { key: 'disc_card', sb: 16, sy: 8, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 82, 16), PR.char, { shadow: false, tex: 0.35 });
@@ -262,11 +262,10 @@ SCENES.plan = () => {
   prFloor(1560, PR.wood, { trim: false });
 
   // Stamp: "KẾ HOẠCH DÀI HẠN"
-  prStamp('KẾ HOẠCH DÀI HẠN', 470, 560, PR.mustard, E0 + 0.1, { rot: -0.03, size: 34, from: 1.25 });
+  prStamp('KẾ HOẠCH DÀI HẠN', 540, 560, PR.mustard, E0 + 0.1, { rot: -0.03, size: 34, from: 1.25 });
 
   // CTA Card
-  withT(470, 880, 0, popS(tHan + 0.2), () => {
-    const w = 580, h = 360;
+  withT(540, 880, 0, popS(tHan + 0.2), () => {
     pp(pR(-w / 2, -h / 2, w, h, 20), PR.paperW, { key: 'cta_box_05', sb: 18, sy: 9, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 82, 18), PR.money, { shadow: false, tex: 0.4 });
     txt('HIỂU KINH TẾ DỄ DÀNG', 0, -h / 2 + 52, 28, PR.creamL, { align: 'center', weight: 800 });

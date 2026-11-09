@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Chỉ vì bạn nghĩ mình thất bại, không có nghĩa đó là sự thật.",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "situation",
+   "text": "Giả sử bạn làm hỏng một bài thuyết trình. Suy nghĩ đầu tiên có thể là: mình thật kém cỏi.",
+   "after": 2.0,
+   "file": "situation.wav"
+  },
+  {
+   "id": "reality",
+   "text": "Nhưng hãy thử tách tình huống khỏi cách diễn giải. Sự thật là bài thuyết trình lần này chưa tốt. Còn kết luận rằng bạn luôn kém cỏi là một nhận định rộng hơn rất nhiều.",
+   "after": 2.5,
+   "file": "reality.wav"
+  },
+  {
+   "id": "questions",
+   "text": "Hãy hỏi: bằng chứng nào ủng hộ suy nghĩ đó, và bằng chứng nào không?",
+   "after": 2.0,
+   "file": "questions.wav"
+  },
+  {
+   "id": "reframe",
+   "text": "Bạn không cần ép mình suy nghĩ tích cực. Chỉ cần cố gắng suy nghĩ công bằng và chính xác hơn.",
+   "after": 2.0,
+   "file": "reframe.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Lưu lại ba câu hỏi: Chuyện gì xảy ra? Mình đang nghĩ gì? Bằng chứng là gì?",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

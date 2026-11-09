@@ -1877,8 +1877,8 @@ function tmStatement(cx, cy, totalStr, minStr, s = 1) {
     ctx.roundRect(-220, 60, 440, 75, 12);
     ctx.stroke();
     ctx.restore();
-    txt('THANH TOÁN TỐI THIỂU (5%):', -200, 92, 19, PR.red, { weight: 700 });
-    txt(minStr, 190, 108, 28, PR.red, { align: 'right', weight: 800, font: F_MONO });
+    txt('TỐI THIỂU (5%):', -200, 104, 20, PR.red, { weight: 700 });
+    txt(minStr, 190, 104, 28, PR.red, { align: 'right', weight: 800, font: F_MONO });
   });
 }
 
@@ -1886,7 +1886,7 @@ function tmStatement(cx, cy, totalStr, minStr, s = 1) {
 function tmDebtBar(cx, cy, totalW, paidPct = 5, s = 1) {
   withT(cx, cy, 0, s, () => {
     const h = 70;
-    const paidW = Math.max(35, totalW * (paidPct / 100));
+    const paidW = Math.max(85, totalW * (paidPct / 100));
     const remW = totalW - paidW;
 
     // Paid portion (green)
@@ -1912,9 +1912,9 @@ SCENES.hook = () => {
   prClock(190, 420, 68, 21, 0);
 
   // Statement Card
-  tmStatement(470, 720, '10.000.000₫', '500.000₫', popS(E0 + 0.15));
+  tmStatement(540, 720, '10.000.000₫', '500.000₫', popS(E0 + 0.15));
   // Stamp: "CHƯA HẾT NỢ!"
-  prStamp('CHƯA HẾT NỢ!', 470, 950, PR.red, tNo + 0.2, { rot: -0.04, size: 34, from: 1.2 });
+  prStamp('CHƯA HẾT NỢ!', 540, 950, PR.red, tNo + 0.2, { rot: -0.04, size: 34, from: 1.2 });
   // Piggy flat
   piggy(PIGGY_X, PIGGY_Y, { hat: 'visor', mood: 'flat', look: -15, key: 'p1' });
 
@@ -1928,7 +1928,7 @@ SCENES.explain = () => {
   prFloor(1560, PR.char, { studs: true });
 
   // Definition Box
-  withT(470, 720, 0, popS(E0 + 0.15), () => {
+  withT(540, 720, 0, popS(E0 + 0.15), () => {
     const w = 620, h = 380;
     pp(pR(-w / 2, -h / 2, w, h, 18), PR.paperW, { key: 'exp_card', sb: 16, sy: 8, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 82, 16), PR.char, { shadow: false, tex: 0.35 });
@@ -1956,13 +1956,13 @@ SCENES.interest = () => {
   prFloor(1560, PR.woodD, { trim: false });
 
   // Debt split: 500k vs 9.500.000₫
-  withT(470, 640, 0, popS(E0 + 0.15), () => {
+  withT(540, 640, 0, popS(E0 + 0.15), () => {
     txt('TỔNG DƯ NỢ: 10.000.000₫', 0, -80, 28, PR.char, { align: 'center', weight: 800, font: F_MONO });
     tmDebtBar(0, 0, 580, 5);
   });
 
   // Warning about remaining debt
-  withT(470, 880, 0, popS(tLai), () => {
+  withT(540, 880, 0, popS(tLai), () => {
     pp(pR(-280, -60, 560, 120, 16), PR.paperW, { key: 'int_alert', sb: 14, sy: 7, tex: 0.45 });
     txt('9.500.000₫ CÒN LẠI BỊ TÍNH LÃI NGAY!', 0, -10, 24, PR.red, { align: 'center', weight: 800 });
     txt('Lãi suất thẻ thường từ 20% - 40% / năm', 0, 28, 20, PR.greyD, { align: 'center', weight: 700 });
@@ -1983,7 +1983,7 @@ SCENES.accumulate = () => {
   prFloor(1560, PR.woodD, { trim: false });
 
   // Compound Interest Trap Box
-  withT(470, 720, 0, popS(E0 + 0.15), () => {
+  withT(540, 720, 0, popS(E0 + 0.15), () => {
     const w = 600, h = 380;
     pp(pR(-w / 2, -h / 2, w, h, 18), PR.paperW, { key: 'acc_box', sb: 16, sy: 8, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 82, 16), PR.red, { shadow: false, tex: 0.4 });
@@ -1995,7 +1995,7 @@ SCENES.accumulate = () => {
   });
 
   // Stamp: "CHI PHÍ TĂNG THEO THỜI GIAN"
-  prStamp('LÃI TÍCH LŨY TĂNG VỌT', 470, 1020, PR.red, tTang + 0.2, { rot: -0.04, size: 32, from: 1.25 });
+  prStamp('LÃI TÍCH LŨY TĂNG VỌT', 540, 1020, PR.red, tTang + 0.2, { rot: -0.04, size: 32, from: 1.25 });
 
   // Piggy flat
   piggy(PIGGY_X, PIGGY_Y, { hat: 'bowler', mood: 'flat', look: -15, key: 'p4' });
@@ -2016,7 +2016,7 @@ SCENES.terms = () => {
     '4. Điều kiện được miễn lãi 45-55 ngày'
   ];
 
-  withT(470, 740, 0, popS(E0 + 0.15), () => {
+  withT(540, 740, 0, popS(E0 + 0.15), () => {
     const w = 600, h = 440;
     pp(pR(-w / 2, -h / 2, w, h, 18), PR.paperW, { key: 'terms_card', sb: 16, sy: 8, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 82, 16), PR.teal, { shadow: false, tex: 0.35 });
@@ -2044,10 +2044,10 @@ SCENES.full = () => {
   prFloor(1560, PR.wood, { trim: false });
 
   // Stamp: "ƯU TIÊN TRẢ TOÀN BỘ 100%"
-  prStamp('ƯU TIÊN TRẢ HẾT 100% ĐÚNG HẠN', 470, 560, PR.green, E0 + 0.1, { rot: -0.03, size: 28, from: 1.2 });
+  prStamp('ƯU TIÊN TRẢ HẾT 100% ĐÚNG HẠN', 540, 560, PR.green, E0 + 0.1, { rot: -0.03, size: 28, from: 1.2 });
 
   // CTA Box
-  withT(470, 880, 0, popS(tHan + 0.2), () => {
+  withT(540, 880, 0, popS(tHan + 0.2), () => {
     const w = 580, h = 360;
     pp(pR(-w / 2, -h / 2, w, h, 20), PR.paperW, { key: 'cta_box_08', sb: 18, sy: 9, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 82, 18), PR.money, { shadow: false, tex: 0.4 });

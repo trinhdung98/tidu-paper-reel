@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Bạn không cần hoàn thành cả ngọn núi ngay hôm nay. Hãy bắt đầu bằng một viên đá.",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "heavy",
+   "text": "Khi một công việc trông quá lớn, chúng ta dễ cảm thấy ngại bắt đầu. Viết báo cáo hai mươi trang nghe thật nặng nề.",
+   "after": 2.0,
+   "file": "heavy.wav"
+  },
+  {
+   "id": "small",
+   "text": "Nhưng mở tài liệu và viết ba dòng thì sao? Bước nhỏ không giải quyết toàn bộ công việc, nhưng giúp bạn có một điểm khởi đầu rõ ràng.",
+   "after": 2.2,
+   "file": "small.wav"
+  },
+  {
+   "id": "action",
+   "text": "Hãy thử chọn một hành động đơn giản đến mức bạn có thể làm ngay. Sau đó quyết định bước tiếp theo.",
+   "after": 2.0,
+   "file": "action.wav"
+  },
+  {
+   "id": "reframe",
+   "text": "Đôi khi điều cần thay đổi không phải mục tiêu, mà là kích thước của bước đầu tiên.",
+   "after": 1.8,
+   "file": "reframe.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Việc nhỏ nhất bạn có thể bắt đầu trong hôm nay là gì?",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

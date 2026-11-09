@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Bạn có một ý tưởng hay, nhưng chưa bao giờ bắt đầu vì sợ làm chưa đủ tốt?",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "delay",
+   "text": "Có lúc mong muốn làm mọi thứ thật hoàn hảo khiến chúng ta trì hoãn bước đầu tiên. Một bài viết chưa được đăng, một dự án chưa được thử, một ý tưởng vẫn nằm trong đầu.",
+   "after": 2.2,
+   "file": "delay.wav"
+  },
+  {
+   "id": "draft",
+   "text": "Nhưng bạn không thể cải thiện một bản nháp chưa tồn tại.",
+   "after": 1.8,
+   "file": "draft.wav"
+  },
+  {
+   "id": "question",
+   "text": "Thay vì hỏi làm sao để kết quả đầu tiên hoàn hảo, hãy hỏi: phiên bản đầu tiên cần đạt điều kiện tối thiểu nào?",
+   "after": 2.2,
+   "file": "question.wav"
+  },
+  {
+   "id": "iterate",
+   "text": "Hãy hoàn thành, quan sát và chỉnh sửa. Làm cẩn thận là điều tốt. Nhưng đừng để tiêu chuẩn cao biến thành lý do không bắt đầu.",
+   "after": 2.0,
+   "file": "iterate.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn đang trì hoãn điều gì vì muốn nó thật hoàn hảo?",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

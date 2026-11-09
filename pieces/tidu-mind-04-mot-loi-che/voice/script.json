@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Nhiều người khen bạn, nhưng bạn lại chỉ nhớ một lời chê?",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "bias",
+   "text": "Điều đó có thể liên quan đến xu hướng chú ý mạnh hơn tới thông tin tiêu cực.",
+   "after": 1.8,
+   "file": "bias.wav"
+  },
+  {
+   "id": "occupy",
+   "text": "Một nhận xét không vui đôi khi chiếm gần hết suy nghĩ, dù trước đó có nhiều phản hồi tích cực.",
+   "after": 2.0,
+   "file": "occupy.wav"
+  },
+  {
+   "id": "truth",
+   "text": "Nhưng chú ý nhiều không đồng nghĩa với việc nhận xét ấy là toàn bộ sự thật.",
+   "after": 1.8,
+   "file": "truth.wav"
+  },
+  {
+   "id": "filter",
+   "text": "Lần tới khi nhận lời phê bình, hãy thử tách hai câu hỏi. Phản hồi nào thực sự hữu ích để mình cải thiện? Và mình có đang bỏ qua những điều đã làm tốt không?",
+   "after": 2.8,
+   "file": "filter.wav"
+  },
+  {
+   "id": "value",
+   "text": "Bạn có thể học từ lời chê mà không cần phủ nhận giá trị của mình.",
+   "after": 2.0,
+   "file": "value.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Gửi video này cho người thường quá khắt khe với bản thân.",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

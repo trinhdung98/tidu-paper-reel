@@ -263,13 +263,13 @@ SCENES.items = () => {
   prBunting(-14, undefined, 'bun_items');
 
   // Three clear receipts appearing one by one
-  tmExpenseCard(470, 620, '🍜', 'Ăn vặt & cà phê', '55.000₫', PR.orange, popS(tThem), -0.02);
-  tmExpenseCard(470, 790, '🚗', 'Đặt xe di chuyển', '42.000₫', PR.teal, popS(tXe), 0.02);
-  tmExpenseCard(470, 960, '📱', 'Đăng ký ứng dụng', '79.000₫', PR.purple, popS(tDung), -0.015);
+  tmExpenseCard(540, 620, '🍜', 'Ăn vặt & cà phê', '55.000₫', PR.orange, popS(tThem), -0.02);
+  tmExpenseCard(540, 790, '🚗', 'Đặt xe di chuyển', '42.000₫', PR.teal, popS(tXe), 0.02);
+  tmExpenseCard(540, 960, '📱', 'Đăng ký ứng dụng', '79.000₫', PR.purple, popS(tDung), -0.015);
 
   // Cumulative callout card at the bottom
   const tEndLine = VL('items').t1;
-  withT(470, 1140, 0, popS(tEndLine + 0.1), () => {
+  withT(540, 1140, 0, popS(tEndLine + 0.1), () => {
     pp(pR(-260, -42, 520, 84, 14), PR.mustard, { key: 'item_total', sb: 14, sy: 7, tex: 0.5 });
     txt('GOM LẠI MỖI THÁNG = VÀI TRIỆU ĐỒNG!', 0, 12, 24, PR.char, { align: 'center', weight: 800 });
   });
@@ -299,7 +299,7 @@ SCENES.groups = () => {
     { name: 'Ăn uống', cost: '1.8M' },
     { name: 'Điện nước', cost: '600k' }
   ];
-  tmColumn(190, colY, colW, colH, 'CẦN THIẾT', 'Cố định hàng tháng', PR.green, items1, '5.900.000₫', popS(tThiet));
+  tmColumn(230, colY, colW, colH, 'CẦN THIẾT', 'Cố định hàng tháng', PR.green, items1, '5.900.000₫', popS(tThiet));
 
   // Col 2: Linh hoạt
   const items2 = [
@@ -307,7 +307,7 @@ SCENES.groups = () => {
     { name: 'Ăn ngoài', cost: '850k' },
     { name: 'Mua sắm', cost: '700k' }
   ];
-  tmColumn(500, colY, colW, colH, 'LINH HOẠT', 'Thay đổi theo tuần', PR.mustard, items2, '2.000.000₫', popS(tHoat));
+  tmColumn(540, colY, colW, colH, 'LINH HOẠT', 'Thay đổi theo tuần', PR.mustard, items2, '2.000.000₫', popS(tHoat));
 
   // Col 3: Phát sinh
   const items3 = [
@@ -315,7 +315,7 @@ SCENES.groups = () => {
     { name: 'Tiệc cưới', cost: '500k' },
     { name: 'Lặt vặt', cost: '400k' }
   ];
-  tmColumn(810, colY, colW, colH, 'PHÁT SINH', 'Khoản không dự tính', PR.red, items3, '1.250.000₫', popS(tSinh));
+  tmColumn(850, colY, colW, colH, 'PHÁT SINH', 'Khoản không dự tính', PR.red, items3, '1.250.000₫', popS(tSinh));
 
   // Piggy with mortar hat pointing at the board
   piggy(PIGGY_X, PIGGY_Y, { hat: 'mortar', mood: 'neutral', look: -18, hold: propStick(-0.35), key: 'pg4' });
@@ -335,7 +335,7 @@ SCENES.check = () => {
   const colW = 280, colH = 500, colY = 770;
 
   // Col 1: 50%
-  withT(190, colY, 0, popS(E0 + 0.1), () => {
+  withT(230, colY, 0, popS(E0 + 0.1), () => {
     pp(pR(-colW / 2, -colH / 2, colW, colH, 16), '#edf2f7', { key: 'ck_c1', sb: 12, sy: 6, tex: 0.4 });
     pp(pR(-colW / 2, -colH / 2, colW, 70, 14), PR.green, { shadow: false, tex: 0.4 });
     txt('CẦN THIẾT', 0, -colH / 2 + 46, 26, PR.creamL, { align: 'center', weight: 800 });
@@ -344,7 +344,7 @@ SCENES.check = () => {
   });
 
   // Col 2: 35% - THE SURPRISE
-  withT(500, colY, 0, popS(E0 + 0.2), () => {
+  withT(540, colY, 0, popS(E0 + 0.2), () => {
     pp(pR(-colW / 2, -colH / 2, colW, colH, 16), '#fef9e7', { key: 'ck_c2', sb: 16, sy: 8, tex: 0.45 });
     pp(pR(-colW / 2, -colH / 2, colW, 70, 14), PR.mustard, { shadow: false, tex: 0.4 });
     txt('LINH HOẠT', 0, -colH / 2 + 46, 26, PR.char, { align: 'center', weight: 800 });
@@ -353,7 +353,7 @@ SCENES.check = () => {
   });
 
   // Col 3: 15%
-  withT(810, colY, 0, popS(E0 + 0.3), () => {
+  withT(850, colY, 0, popS(E0 + 0.3), () => {
     pp(pR(-colW / 2, -colH / 2, colW, colH, 16), '#edf2f7', { key: 'ck_c3', sb: 12, sy: 6, tex: 0.4 });
     pp(pR(-colW / 2, -colH / 2, colW, 70, 14), PR.blue, { shadow: false, tex: 0.4 });
     txt('PHÁT SINH', 0, -colH / 2 + 46, 26, PR.creamL, { align: 'center', weight: 800 });
@@ -362,7 +362,7 @@ SCENES.check = () => {
   });
 
   // Rubber stamp "BẤT NGỜ!" slams on the middle column
-  prStamp('BẤT NGỜ!', 500, 940, PR.red, tNgo + 0.1, { rot: -0.08, size: 50, from: 1.3 });
+  prStamp('BẤT NGỜ!', 540, 940, PR.red, tNgo + 0.1, { rot: -0.08, size: 50, from: 1.3 });
 
   // Piggy with top hat looks completely amazed ('wow')
   piggy(PIGGY_X, PIGGY_Y, { hat: 'tophat', mood: 'wow', look: -15, key: 'pg5' });
@@ -380,10 +380,10 @@ SCENES.step = () => {
   prFloor(1560, PR.woodD, { trim: false });
 
   // Open 7-day spending notebook
-  tmNotebook(450, 780, popS(E0 + 0.15));
+  tmNotebook(540, 780, popS(E0 + 0.15));
 
   // Cross out the wrong advice: "CẮT GIẢM TOÀN BỘ"
-  withT(450, 430, -0.02, popS(tCat - 0.2), () => {
+  withT(540, 430, -0.02, popS(tCat - 0.2), () => {
     pp(pR(-220, -32, 440, 64, 10), PR.paperW, { key: 'cut_bad', sb: 10, sy: 5, tex: 0.4 });
     txt('CẮT GIẢM MỌI THỨ NGAY?', 0, 10, 24, PR.greyD, { align: 'center', weight: 800 });
     // Red strike-through
@@ -391,7 +391,7 @@ SCENES.step = () => {
   });
 
   // Golden message stamp slams at bottom of notebook
-  prStamp('NHÌN RÕ TRƯỚC KHI CẮT GIẢM', 450, 1140, PR.moneyK, tDau + 0.4, { rot: -0.03, size: 28, from: 1.25 });
+  prStamp('NHÌN RÕ TRƯỚC KHI CẮT GIẢM', 540, 1140, PR.moneyK, tDau + 0.4, { rot: -0.03, size: 28, from: 1.25 });
 
   // Piggy with nón lá holding a lucky coin
   piggy(PIGGY_X, PIGGY_Y, { hat: 'nonla', mood: 'happy', look: -14, hold: propCoin(55), key: 'pg6' });
@@ -416,7 +416,7 @@ SCENES.cta = () => {
   prCoin(820, 560, 34, 'cta_c2');
 
   // Main CTA Action Card
-  withT(470, 780, 0, popS(tLuu), () => {
+  withT(540, 780, 0, popS(tLuu), () => {
     const w = 580, h = 420;
     pp(pR(-w / 2, -h / 2, w, h, 20), PR.paperW, { key: 'cta_box', sb: 18, sy: 9, tex: 0.45 });
     // Top banner

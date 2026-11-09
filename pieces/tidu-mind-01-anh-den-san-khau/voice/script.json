@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Bạn có bao giờ bước vào một căn phòng và nghĩ tất cả mọi người đang nhìn mình?",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "feel",
+   "text": "Một vết bẩn trên áo, một câu nói lỡ lời — và bạn nhớ mãi, dù người khác đã quên ngay.",
+   "after": 2.0,
+   "file": "feel.wav"
+  },
+  {
+   "id": "explain",
+   "text": "Trong tâm lý học, hiện tượng này được gọi là hiệu ứng ánh đèn sân khấu.",
+   "after": 1.8,
+   "file": "explain.wav"
+  },
+  {
+   "id": "science",
+   "text": "Chúng ta có xu hướng đánh giá quá cao mức độ người khác chú ý đến mình. Thực tế, họ cũng đang bận tâm với cuộc sống của chính họ.",
+   "after": 3.5,
+   "file": "science.wav"
+  },
+  {
+   "id": "reframe",
+   "text": "Lần tới khi thấy ngượng ngùng, hãy tự hỏi: mình có đang tưởng tượng ánh đèn chiếu vào mình quá mạnh không?",
+   "after": 3.0,
+   "file": "reframe.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn từng rơi vào tình huống này chưa? Kể một câu chuyện nhé.",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

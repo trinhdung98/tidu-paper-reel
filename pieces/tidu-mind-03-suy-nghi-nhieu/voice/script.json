@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Bạn đã nghĩ về một vấn đề suốt ba tiếng, nhưng vẫn chưa giải quyết được gì?",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "diff",
+   "text": "Có một điểm khác biệt giữa suy nghĩ để giải quyết và lo lắng lặp đi lặp lại.",
+   "after": 1.8,
+   "file": "diff.wav"
+  },
+  {
+   "id": "solve",
+   "text": "Giải quyết vấn đề thường dẫn đến một lựa chọn hoặc hành động. Còn lo lắng có thể đưa bạn quay lại cùng một câu hỏi: nếu chuyện xấu xảy ra thì sao?",
+   "after": 2.5,
+   "file": "solve.wav"
+  },
+  {
+   "id": "write",
+   "text": "Hãy thử viết vấn đề ra giấy. Phần nào mình có thể tác động? Bước nhỏ nhất có thể làm ngay là gì?",
+   "after": 2.2,
+   "file": "write.wav"
+  },
+  {
+   "id": "time",
+   "text": "Nếu chưa thể xử lý, hãy dành một khoảng thời gian riêng để xem xét nó.",
+   "after": 2.0,
+   "file": "time.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn hay nghĩ nhiều nhất về công việc, tương lai hay các mối quan hệ?",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Bạn đồng ý giúp mọi người, dù bản thân đã quá tải?",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "fear",
+   "text": "Đôi khi chúng ta sợ từ chối vì không muốn làm ai thất vọng. Nhưng đồng ý với tất cả mọi việc cũng đồng nghĩa thời gian dành cho những ưu tiên khác bị thu hẹp.",
+   "after": 2.2,
+   "file": "fear.wav"
+  },
+  {
+   "id": "boundary",
+   "text": "Đặt ranh giới không có nghĩa là bạn không quan tâm người khác. Nó có nghĩa bạn nói rõ điều mình có thể và không thể đảm nhận.",
+   "after": 2.0,
+   "file": "boundary.wav"
+  },
+  {
+   "id": "sayno",
+   "text": "Thay vì im lặng rồi khó chịu, bạn có thể nói: mình không thể giúp việc này hôm nay.",
+   "after": 1.8,
+   "file": "sayno.wav"
+  },
+  {
+   "id": "healthy",
+   "text": "Một mối quan hệ lành mạnh cần cả sự quan tâm lẫn khả năng trao đổi về giới hạn.",
+   "after": 2.0,
+   "file": "healthy.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn thấy khó nói không nhất trong tình huống nào?",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

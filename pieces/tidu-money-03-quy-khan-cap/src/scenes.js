@@ -109,9 +109,9 @@ SCENES.reason = () => {
   prFloor(1560, PR.woodD, { trim: false });
 
   // Central Shield with "QUỸ KHẨN CẤP"
-  tmShield(470, 640, PR.teal, popS(E0 + 0.15));
+  tmShield(540, 640, PR.teal, popS(E0 + 0.15));
 
-  withT(470, 880, 0, popS(tKhan), () => {
+  withT(540, 880, 0, popS(tKhan), () => {
     pp(pR(-280, -75, 560, 150, 18), PR.paperW, { key: 'rs_box', sb: 16, sy: 8, tex: 0.45 });
     txt('CHIẾC PHAO TÀI CHÍNH', 0, -22, 28, PR.char, { align: 'center', weight: 800 });
     txt('Bảo vệ bạn trước mọi biến cố bất ngờ!', 0, 28, 24, PR.teal, { align: 'center', weight: 800 });
@@ -132,7 +132,7 @@ SCENES.monthly = () => {
   prFloor(1560, PR.woodD, { trim: false });
 
   // Monthly breakdown card: 4.000.000₫
-  withT(470, 750, 0, popS(E0 + 0.15), () => {
+  withT(540, 750, 0, popS(E0 + 0.15), () => {
     const w = 580, h = 420;
     pp(pR(-w / 2, -h / 2, w, h, 18), PR.paperW, { key: 'mo_card', sb: 18, sy: 9, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 88, 16), PR.green, { shadow: false, tex: 0.4 });
@@ -155,7 +155,7 @@ SCENES.monthly = () => {
   });
 
   // Stamp: "MỨC CƠ BẢN"
-  prStamp('MỨC CƠ BẢN', 470, 1080, PR.green, tBon + 0.3, { rot: -0.04, size: 36, from: 1.25 });
+  prStamp('MỨC CƠ BẢN', 540, 1080, PR.green, tBon + 0.3, { rot: -0.04, size: 36, from: 1.25 });
 
   // Piggy with newsboy hat holding calculator
   piggy(PIGGY_X, PIGGY_Y, { hat: 'newsboy', mood: 'neutral', look: -15, key: 'p3' });
@@ -173,11 +173,11 @@ SCENES.calc = () => {
   prFloor(1560, PR.wood, { trim: false });
 
   // Two target stacks: 3 Months vs 6 Months
-  tmCashStack(280, 720, 'QUỸ 3 THÁNG', '12.000.000₫', PR.teal, popS(tBa));
-  tmCashStack(660, 720, 'QUỸ 6 THÁNG', '24.000.000₫', PR.green, popS(tSau));
+  tmCashStack(350, 720, 'QUỸ 3 THÁNG', '12.000.000₫', PR.teal, popS(tBa));
+  tmCashStack(730, 720, 'QUỸ 6 THÁNG', '24.000.000₫', PR.green, popS(tSau));
 
   // Comparison card
-  withT(470, 980, 0, popS(tSau + 0.3), () => {
+  withT(540, 980, 0, popS(tSau + 0.3), () => {
     pp(pR(-280, -55, 560, 110, 14), PR.paperW, { key: 'calc_comp', sb: 12, sy: 6, tex: 0.4 });
     txt('4 Triệu × 3 Tháng = 12.000.000₫', 0, -10, 24, PR.teal, { align: 'center', weight: 800, font: F_MONO });
     txt('4 Triệu × 6 Tháng = 24.000.000₫', 0, 30, 24, PR.green, { align: 'center', weight: 800, font: F_MONO });
@@ -202,7 +202,7 @@ SCENES.benchmark = () => {
     { title: 'MỨC ĐỘ ỔN ĐỊNH THU NHẬP', desc: 'Thu nhập đều đặn hay theo hoa hồng', col: PR.blue }
   ];
 
-  withT(470, 760, 0, popS(E0 + 0.1), () => {
+  withT(540, 760, 0, popS(E0 + 0.1), () => {
     const w = 600, h = 480;
     pp(pR(-w / 2, -h / 2, w, h, 18), PR.paperW, { key: 'bm_box', sb: 16, sy: 8, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 85, 16), PR.navy, { shadow: false, tex: 0.4 });
@@ -239,7 +239,7 @@ SCENES.start = () => {
     { label: 'Mục tiêu', amt: '12.000.000₫', w: 540 }
   ];
 
-  withT(470, 760, 0, popS(E0 + 0.15), () => {
+  withT(540, 760, 0, popS(E0 + 0.15), () => {
     txt('TÍCH LŨY TỪNG BƯỚC NHỎ', 0, -220, 30, PR.char, { align: 'center', weight: 800 });
     steps.forEach((st, i) => {
       const sy = -140 + i * 90;
@@ -250,7 +250,7 @@ SCENES.start = () => {
   });
 
   // Stamp: "BẮT ĐẦU TỪ KHOẢN NHỎ"
-  prStamp('BẮT ĐẦU TỪ KHOẢN NHỎ', 470, 1080, PR.mustard, tTien + 0.2, { rot: -0.03, size: 32, from: 1.25 });
+  prStamp('BẮT ĐẦU TỪ KHOẢN NHỎ', 540, 1080, PR.mustard, tTien + 0.2, { rot: -0.03, size: 32, from: 1.25 });
 
   // Piggy nonla
   piggy(PIGGY_X, PIGGY_Y, { hat: 'nonla', mood: 'happy', look: -14, hold: propCoin(55), key: 'p6' });
@@ -267,7 +267,7 @@ SCENES.safe = () => {
   prFloor(1560, PR.wood, { trim: false });
 
   // Emergency Box with Shield & Lock
-  withT(470, 600, 0, popS(E0 + 0.1), () => {
+  withT(540, 600, 0, popS(E0 + 0.1), () => {
     pp(pR(-280, -90, 560, 180, 18), PR.paperW, { key: 'safe_box', sb: 16, sy: 8, tex: 0.45 });
     tmShield(-180, 0, PR.teal, 0.9);
     txt('NƠI GIỮ QUỸ KHẨN CẤP', -70, -20, 26, PR.char, { weight: 800 });
@@ -275,7 +275,7 @@ SCENES.safe = () => {
   });
 
   // CTA Card
-  withT(470, 920, 0, popS(tCan + 0.2), () => {
+  withT(540, 920, 0, popS(tCan + 0.2), () => {
     const w = 580, h = 340;
     pp(pR(-w / 2, -h / 2, w, h, 20), PR.paperW, { key: 'cta_box_03', sb: 18, sy: 9, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 82, 18), PR.money, { shadow: false, tex: 0.4 });

@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Một tin nhắn chưa được trả lời có thể khiến bạn tưởng tượng ra cả một câu chuyện.",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "overthink",
+   "text": "Họ giận mình sao? Mình nói gì sai à? Hay họ không còn thích mình nữa?",
+   "after": 1.8,
+   "file": "overthink.wav"
+  },
+  {
+   "id": "reality",
+   "text": "Nhưng hãy nhìn lại. Điều bạn thực sự biết chỉ là họ chưa trả lời. Những phần còn lại đều là suy đoán.",
+   "after": 2.2,
+   "file": "reality.wav"
+  },
+  {
+   "id": "distortion",
+   "text": "Khi lo lắng, chúng ta đôi khi mặc định mình biết người khác đang nghĩ gì.",
+   "after": 1.8,
+   "file": "distortion.wav"
+  },
+  {
+   "id": "action",
+   "text": "Cách đơn giản để kiểm tra là hỏi: mình có bằng chứng nào cho kết luận này không? Nếu cần, hãy trao đổi trực tiếp thay vì tự viết tiếp câu chuyện trong đầu.",
+   "after": 3.0,
+   "file": "action.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Lưu video này cho lần tiếp theo bạn chờ một tin nhắn.",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

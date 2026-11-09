@@ -67,10 +67,10 @@ SCENES.hook = () => {
 
   // Ringing phone
   const vibrate = Math.sin(TT * 45) * 4;
-  tmPhone(470 + vibrate, 720, 'TỔNG ĐÀI (GIẢ MẠO)', true, popS(E0 + 0.15));
+  tmPhone(540 + vibrate, 720, 'TỔNG ĐÀI (GIẢ MẠO)', true, popS(E0 + 0.15));
 
   // Speech bubble asking for OTP
-  withT(470, 1030, 0, popS(tHoi), () => {
+  withT(540, 1055, 0, popS(tHoi), () => {
     pp(pR(-240, -45, 480, 90, 14), PR.mustard, { key: 'hk_bubble', sb: 14, sy: 7, tex: 0.45 });
     txt('"Vui lòng đọc mã OTP gửi về máy!"', 0, 12, 22, PR.char, { align: 'center', weight: 800 });
   });
@@ -90,13 +90,13 @@ SCENES.scam = () => {
   prFloor(1560, PR.char, { studs: true });
 
   // OTP Card
-  tmOTPSMS(470, 640, '8 4 9 2 0 1', popS(E0 + 0.15));
+  tmOTPSMS(540, 640, '8 4 9 2 0 1', popS(E0 + 0.15));
 
   // Big Red Cross over OTP
-  prCross(470, 640, tDung + 0.2, 90);
+  prCross(540, 640, tDung + 0.2, 90);
 
   // Warning Banner
-  withT(470, 920, 0, popS(tDung + 0.4), () => {
+  withT(540, 920, 0, popS(tDung + 0.4), () => {
     pp(pR(-280, -60, 560, 120, 16), PR.red, { key: 'scam_ban', sb: 16, sy: 8, tex: 0.45 });
     txt('TUYỆT ĐỐI KHÔNG ĐỌC MÃ OTP!', 0, -12, 28, PR.creamL, { align: 'center', weight: 800 });
     txt('Không mật khẩu  ·  Không thông tin thẻ', 0, 28, 22, PR.creamL, { align: 'center', weight: 700 });
@@ -121,7 +121,7 @@ SCENES.fake = () => {
     { title: 'GIẢ MẠO GIỌNG NÓI & AI', desc: 'Giọng đọc chuyên nghiệp như tổng đài', ic: '🎙️' }
   ];
 
-  withT(470, 740, 0, popS(E0 + 0.15), () => {
+  withT(540, 740, 0, popS(E0 + 0.15), () => {
     const w = 600, h = 460;
     pp(pR(-w / 2, -h / 2, w, h, 18), PR.paperW, { key: 'fk_box', sb: 16, sy: 8, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 82, 16), PR.char, { shadow: false, tex: 0.35 });
@@ -151,14 +151,14 @@ SCENES.stop = () => {
   prFloor(1560, PR.woodD, { trim: false });
 
   // Red Hang Up Button & Stop sign
-  withT(470, 680, 0, popS(E0 + 0.15), () => {
+  withT(540, 680, 0, popS(E0 + 0.15), () => {
     pp(pE(0, -50, 80, 80), PR.red, { key: 'stop_circle', sb: 18, sy: 9, tex: 0.4 });
     txt('📞', 0, -32, 48, PR.creamL, { align: 'center' });
     txt('GÁC MÁY NGAY', 0, 75, 34, PR.char, { align: 'center', weight: 800 });
   });
 
   // Stamp: "DỪNG TƯƠNG TÁC"
-  prStamp('DỪNG TƯƠNG TÁC NGAY!', 470, 960, PR.red, tDung + 0.2, { rot: -0.04, size: 36, from: 1.3 });
+  prStamp('DỪNG TƯƠNG TÁC NGAY!', 540, 960, PR.red, tDung + 0.2, { rot: -0.04, size: 36, from: 1.3 });
 
   // Piggy flat
   piggy(PIGGY_X, PIGGY_Y, { hat: 'bowler', mood: 'flat', look: -15, key: 'p4' });
@@ -173,7 +173,7 @@ SCENES.verify = () => {
   prFloor(1560, PR.wood, { trim: false });
 
   // 2 Verification Steps Card
-  withT(470, 740, 0, popS(E0 + 0.15), () => {
+  withT(540, 740, 0, popS(E0 + 0.15), () => {
     const w = 600, h = 420;
     pp(pR(-w / 2, -h / 2, w, h, 18), PR.paperW, { key: 'vf_card', sb: 16, sy: 8, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 82, 16), PR.teal, { shadow: false, tex: 0.35 });
@@ -205,17 +205,17 @@ SCENES.seconds = () => {
   prFloor(1560, PR.wood, { trim: false });
 
   // Stamp: "BẢO VỆ TÀI KHOẢN"
-  prStamp('VÀI GIÂY TRÁNH MẤT TIỀN!', 470, 560, PR.mustard, E0 + 0.1, { rot: -0.03, size: 34, from: 1.25 });
+  prStamp('VÀI GIÂY TRÁNH MẤT TIỀN!', 540, 560, PR.mustard, E0 + 0.1, { rot: -0.03, size: 34, from: 1.25 });
 
   // CTA Card
-  withT(470, 880, 0, popS(tSai + 0.2), () => {
+  withT(540, 880, 0, popS(tSai + 0.2), () => {
     const w = 580, h = 360;
     pp(pR(-w / 2, -h / 2, w, h, 20), PR.paperW, { key: 'cta_box_07', sb: 18, sy: 9, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 82, 18), PR.money, { shadow: false, tex: 0.4 });
     txt('CÙNG NHAU CẢNH GIÁC', 0, -h / 2 + 52, 28, PR.creamL, { align: 'center', weight: 800 });
 
     txt('CHIA SẺ VIDEO NÀY', 0, 5, 32, PR.char, { align: 'center', weight: 800 });
-    txt('cho người thân và bạn bè để cùng phòng tránh lừa đảo!', 0, 50, 21, PR.greyD, { align: 'center', weight: 700 });
+    txt('cho người thân và bạn bè cùng phòng tránh lừa đảo!', 0, 50, 18, PR.greyD, { align: 'center', weight: 700 });
 
     pp(pR(-180, 95, 360, 52, 12), PR.navy, { key: 'cta_btn_07', sb: 8, sy: 4, tex: 0.4 });
     txt('CHIA SẺ NGAY ↗️', 0, 130, 24, PR.creamL, { align: 'center', weight: 800 });

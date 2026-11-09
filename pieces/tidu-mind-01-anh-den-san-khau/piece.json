@@ -1,0 +1,10 @@
+{
+  "name": "tidu-mind-01-anh-den-san-khau",
+  "title": "Tidu Mind 01 — Vì sao bạn nghĩ ai cũng đang nhìn mình?",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> feel -> explain -> science -> reframe -> cta",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -14 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}

@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Bạn mở mạng xã hội và thấy người khác liên tục thành công. Người mua nhà, người đi du lịch, người vừa được thăng chức.",
+   "after": 2.0,
+   "file": "hook.wav"
+  },
+  {
+   "id": "slow",
+   "text": "Rồi bạn nhìn cuộc sống của mình và tự hỏi: sao mình chậm thế?",
+   "after": 1.8,
+   "file": "slow.wav"
+  },
+  {
+   "id": "iceberg",
+   "text": "Nhưng có một điều cần nhớ. Những gì bạn thấy trên mạng thường chỉ là một phần cuộc sống của người khác.",
+   "after": 2.2,
+   "file": "iceberg.wav"
+  },
+  {
+   "id": "compare",
+   "text": "Bạn đang dùng cả hành trình của mình để so với những khoảnh khắc được chọn đăng.",
+   "after": 2.0,
+   "file": "compare.wav"
+  },
+  {
+   "id": "reframe",
+   "text": "So sánh đôi khi tạo động lực, nhưng cũng có thể khiến bạn nản lòng.",
+   "after": 1.8,
+   "file": "reframe.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Thử đổi câu hỏi: hôm nay mình đã tiến bộ điều gì so với chính mình trước đây?",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

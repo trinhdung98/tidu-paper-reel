@@ -94,7 +94,7 @@ SCENES.hook = () => {
   prClock(190, 420, 68, 10, 0);
 
   // Big 10.000.000 banknote in center
-  withT(470, 650, -0.02, popS(E0 + 0.1), () => {
+  withT(540, 650, -0.02, popS(E0 + 0.1), () => {
     pp(pR(-260, -110, 520, 220, 16), '#8fc28a', { key: 'hk_bill', sb: 18, sy: 9, tex: 0.5 });
     pp(pR(-240, -95, 480, 190, 12), '#a9d6a0', { shadow: false, tex: 0.4 });
     pp(pE(170, 0, 45, 55), PR.moneyD, { shadow: false, tex: 0.3 });
@@ -104,9 +104,9 @@ SCENES.hook = () => {
 
   // Three paper envelopes below
   const envPop = popS(tMuoi + 0.3);
-  tmEnvelope(220, 1000, 200, 140, 'THIẾT YẾU', '5 TRIỆU', PR.green, envPop);
-  tmEnvelope(470, 1000, 200, 140, 'MONG MUỐN', '3 TRIỆU', PR.mustard, envPop);
-  tmEnvelope(720, 1000, 200, 140, 'TIẾT KIỆM', '2 TRIỆU', PR.blue, envPop);
+  tmEnvelope(290, 1000, 200, 140, 'THIẾT YẾU', '5 TRIỆU', PR.green, envPop);
+  tmEnvelope(540, 1000, 200, 140, 'MONG MUỐN', '3 TRIỆU', PR.mustard, envPop);
+  tmEnvelope(790, 1000, 200, 140, 'TIẾT KIỆM', '2 TRIỆU', PR.blue, envPop);
 
   // Piggy with visor
   piggy(PIGGY_X, PIGGY_Y, { hat: 'visor', mood: TT < tTien ? 'neutral' : 'happy', look: -15, key: 'p1' });
@@ -123,13 +123,13 @@ SCENES.rule = () => {
   prFloor(1560, PR.char, { studs: true });
 
   // Ratio bar
-  tmRatioBar(470, 620, 680, 110, 0.5, 0.3, 0.2, popS(E0 + 0.15));
+  tmRatioBar(540, 620, 680, 110, 0.5, 0.3, 0.2, popS(E0 + 0.15));
 
   // 3 Category Cards
   const cards = [
-    { title: 'THIẾT YẾU', pct: '50%', amt: '5.000.000₫', col: PR.green, x: 200 },
-    { title: 'MONG MUỐN', pct: '30%', amt: '3.000.000₫', col: PR.mustard, x: 470 },
-    { title: 'TIẾT KIỆM', pct: '20%', amt: '2.000.000₫', col: PR.blue, x: 740 }
+    { title: 'THIẾT YẾU', pct: '50%', amt: '5.000.000₫', col: PR.green, x: 270 },
+    { title: 'MONG MUỐN', pct: '30%', amt: '3.000.000₫', col: PR.mustard, x: 540 },
+    { title: 'TIẾT KIỆM', pct: '20%', amt: '2.000.000₫', col: PR.blue, x: 810 }
   ];
 
   cards.forEach((c, i) => {
@@ -159,7 +159,7 @@ SCENES.needs = () => {
     { name: 'Ăn uống & nấu nướng', cost: '1.800.000₫' },
     { name: 'Xăng xe & di chuyển', cost: '700.000₫' }
   ];
-  tmEnvelopeBreakdown(470, 780, 'CHI PHÍ THIẾT YẾU', '50%', '5 TRIỆU', PR.green, items, popS(E0 + 0.15));
+  tmEnvelopeBreakdown(540, 780, 'CHI PHÍ THIẾT YẾU', '50%', '5 TRIỆU', PR.green, items, popS(E0 + 0.15));
 
   // Piggy bowler
   piggy(PIGGY_X, PIGGY_Y, { hat: 'bowler', mood: 'neutral', look: -16, key: 'p3' });
@@ -177,7 +177,7 @@ SCENES.wants = () => {
     { name: 'Mua sắm cá nhân', cost: '1.000.000₫' },
     { name: 'Sở thích giải trí', cost: '800.000₫' }
   ];
-  tmEnvelopeBreakdown(470, 780, 'MONG MUỐN CÁ NHÂN', '30%', '3 TRIỆU', PR.mustard, items, popS(E0 + 0.15));
+  tmEnvelopeBreakdown(540, 780, 'MONG MUỐN CÁ NHÂN', '30%', '3 TRIỆU', PR.mustard, items, popS(E0 + 0.15));
 
   // Piggy newsboy holding coin
   piggy(PIGGY_X, PIGGY_Y, { hat: 'newsboy', mood: 'happy', look: -15, hold: propCoin(52), key: 'p4' });
@@ -196,11 +196,11 @@ SCENES.savings = () => {
     { name: 'Tích lũy quỹ khẩn cấp', cost: '1.000.000₫' },
     { name: 'Trả nợ hoặc đầu tư', cost: '1.000.000₫' }
   ];
-  tmEnvelopeBreakdown(470, 750, 'TIẾT KIỆM & TRẢ NỢ', '20%', '2 TRIỆU', PR.blue, items, popS(E0 + 0.15));
+  tmEnvelopeBreakdown(540, 750, 'TIẾT KIỆM & TRẢ NỢ', '20%', '2 TRIỆU', PR.blue, items, popS(E0 + 0.15));
 
   // Gold coin drop into jar
-  prCoin(470, 1080, 48, 's_coin');
-  prStamp('TÍCH LŨY DÀI HẠN', 470, 1170, PR.blue, tNo + 0.2, { rot: -0.04, size: 30, from: 1.25 });
+  prCoin(540, 1080, 48, 's_coin');
+  prStamp('TÍCH LŨY DÀI HẠN', 540, 1170, PR.blue, tNo + 0.2, { rot: -0.04, size: 30, from: 1.25 });
 
   // Piggy tophat
   piggy(PIGGY_X, PIGGY_Y, { hat: 'tophat', mood: 'happy', look: -14, hold: propCoin(55), key: 'p5' });
@@ -217,20 +217,20 @@ SCENES.adjust = () => {
   prFloor(1560, PR.woodD, { trim: false });
 
   // Ratio comparisons: Standard 50-30-20 vs Adjusted 55-25-20
-  withT(470, 600, 0, popS(E0 + 0.1), () => {
+  withT(540, 600, 0, popS(E0 + 0.1), () => {
     pp(pR(-300, -80, 600, 160, 16), PR.paperW, { key: 'adj_1', sb: 12, sy: 6, tex: 0.4 });
     txt('CÔNG THỨC THAM KHẢO', 0, -42, 22, PR.greyD, { align: 'center', weight: 700 });
     tmRatioBar(0, 16, 540, 70, 0.5, 0.3, 0.2);
   });
 
-  withT(470, 840, 0, popS(E0 + 0.3), () => {
+  withT(540, 840, 0, popS(E0 + 0.3), () => {
     pp(pR(-300, -80, 600, 160, 16), PR.paperW, { key: 'adj_2', sb: 12, sy: 6, tex: 0.4 });
     txt('HOÀN TOÀN CÓ THỂ LINH HOẠT', 0, -42, 22, PR.green, { align: 'center', weight: 800 });
     tmRatioBar(0, 16, 540, 70, 0.55, 0.25, 0.2);
   });
 
   // Stamp: "KHÔNG BẮT BUỘC"
-  prStamp('KHÔNG BẮT BUỘC', 470, 1060, PR.red, tBat + 0.1, { rot: -0.06, size: 44, from: 1.3 });
+  prStamp('KHÔNG BẮT BUỘC', 540, 1060, PR.red, tBat + 0.1, { rot: -0.06, size: 44, from: 1.3 });
 
   // Piggy flat/thinking
   piggy(PIGGY_X, PIGGY_Y, { hat: 'bowler', mood: 'flat', look: -15, key: 'p6' });
@@ -247,7 +247,7 @@ SCENES.rent = () => {
   prFloor(1560, PR.wood, { trim: false });
 
   // Large house scenario: 60% Needs - 25% Wants - 15% Savings
-  withT(470, 620, 0, popS(E0 + 0.15), () => {
+  withT(540, 620, 0, popS(E0 + 0.15), () => {
     pp(pR(-300, -110, 600, 220, 16), PR.paperW, { key: 'rent_card', sb: 14, sy: 7, tex: 0.45 });
     txt('🏠 KHI TIỀN THUÊ NHÀ CAO', 0, -60, 26, PR.char, { align: 'center', weight: 800 });
     tmRatioBar(0, 5, 540, 75, 0.6, 0.25, 0.15);
@@ -255,7 +255,7 @@ SCENES.rent = () => {
   });
 
   // Stamp: "ĐIỀU CHỈNH THEO THỰC TẾ"
-  prStamp('ĐIỀU CHỈNH THEO THỰC TẾ', 470, 890, PR.moneyK, tMinh + 0.2, { rot: -0.03, size: 30, from: 1.25 });
+  prStamp('ĐIỀU CHỈNH THEO THỰC TẾ', 540, 890, PR.moneyK, tMinh + 0.2, { rot: -0.03, size: 30, from: 1.25 });
 
   // Piggy nonla
   piggy(PIGGY_X, PIGGY_Y, { hat: 'nonla', mood: 'happy', look: -14, hold: propCoin(55), key: 'p7' });
@@ -272,10 +272,10 @@ SCENES.purpose = () => {
   prFloor(1560, PR.char, { studs: true });
 
   // Stamp: "MỖI ĐỒNG TIỀN ĐỀU CÓ MỤC ĐÍCH"
-  prStamp('MỖI ĐỒNG TIỀN ĐỀU CÓ MỤC ĐÍCH', 470, 560, PR.mustard, E0 + 0.1, { rot: -0.02, size: 28, from: 1.2 });
+  prStamp('MỖI ĐỒNG TIỀN ĐỀU CÓ MỤC ĐÍCH', 540, 560, PR.mustard, E0 + 0.1, { rot: -0.02, size: 28, from: 1.2 });
 
   // CTA Card
-  withT(470, 880, 0, popS(tDich + 0.2), () => {
+  withT(540, 880, 0, popS(tDich + 0.2), () => {
     const w = 580, h = 380;
     pp(pR(-w / 2, -h / 2, w, h, 20), PR.paperW, { key: 'cta_box_02', sb: 18, sy: 9, tex: 0.45 });
     pp(pR(-w / 2, -h / 2, w, 85, 18), PR.money, { shadow: false, tex: 0.4 });
