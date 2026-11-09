@@ -1,0 +1,59 @@
+{
+ "lead": 0.3,
+ "tail": 3.4,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Số tiếp theo là gì: hai, năm, mười, mười bảy?",
+   "after": 4.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "look",
+   "text": "Để tìm quy luật, hãy xem mỗi lần số tăng thêm bao nhiêu.",
+   "after": 1.8,
+   "file": "look.wav"
+  },
+  {
+   "id": "d1",
+   "text": "Từ hai lên năm là cộng ba.",
+   "after": 2.0,
+   "file": "d1.wav"
+  },
+  {
+   "id": "d2",
+   "text": "Từ năm lên mười là cộng năm.",
+   "after": 2.0,
+   "file": "d2.wav"
+  },
+  {
+   "id": "d3",
+   "text": "Tiếp theo là cộng bảy.",
+   "after": 2.2,
+   "file": "d3.wav"
+  },
+  {
+   "id": "next",
+   "text": "Các số cộng thêm là ba, năm, bảy, nên theo quy luật này, bước kế tiếp là cộng chín.",
+   "after": 2.6,
+   "file": "next.wav"
+  },
+  {
+   "id": "ans",
+   "text": "Mười bảy cộng chín bằng hai mươi sáu.",
+   "after": 3.2,
+   "file": "ans.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Nếu tiếp tục quy luật này, số sau hai mươi sáu là bao nhiêu?",
+   "after": 0.1,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Trúc Ly",
+  "speed": 0.88
+ }
+}

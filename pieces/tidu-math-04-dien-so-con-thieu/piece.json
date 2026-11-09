@@ -1,0 +1,10 @@
+{
+  "name": "tidu-math-04-dien-so-con-thieu",
+  "title": "Tidu Math 04 — Điền số còn thiếu",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> 14 dots, 6 known -> 14 − 6 -> 8 -> card flip -> tip -> make your own",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -13 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}

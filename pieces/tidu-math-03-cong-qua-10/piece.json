@@ -1,0 +1,10 @@
+{
+  "name": "tidu-math-03-cong-qua-10",
+  "title": "Tidu Math 03 — Vì sao 7 + 8 dễ hơn bạn nghĩ?",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> 7 needs 3 -> move 3 -> 10 and 5 -> 15 -> tip -> try 8 + 6",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -13 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}

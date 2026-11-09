@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 2.8,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Số nào đang trốn trong ô giấy này?",
+   "after": 3.4,
+   "file": "hook.wav"
+  },
+  {
+   "id": "whole",
+   "text": "Ta biết cả hai nhóm có mười bốn chấm, trong đó một nhóm đã có sáu.",
+   "after": 3.0,
+   "file": "whole.wav"
+  },
+  {
+   "id": "find",
+   "text": "Muốn tìm nhóm còn lại, hãy lấy mười bốn, trừ sáu.",
+   "after": 3.0,
+   "file": "find.wav"
+  },
+  {
+   "id": "result",
+   "text": "Kết quả bằng tám.",
+   "after": 2.2,
+   "file": "result.wav"
+  },
+  {
+   "id": "reveal",
+   "text": "Vậy số bí mật chính là tám.",
+   "after": 2.4,
+   "file": "reveal.wav"
+  },
+  {
+   "id": "tip",
+   "text": "Khi biết tổng và một phần, ta dùng phép trừ để tìm phần còn thiếu.",
+   "after": 1.8,
+   "file": "tip.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Thử tự tạo một phép tính có ô trống để đố bạn bè nhé!",
+   "after": 0.1,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Trúc Ly",
+  "speed": 0.88
+ }
+}

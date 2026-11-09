@@ -1,0 +1,10 @@
+{
+  "name": "tidu-math-06-mot-nua-hai-phan-tu",
+  "title": "Tidu Math 06 — Một nửa có bằng hai phần tư?",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> equal sheets -> 1/2 -> 2/4 -> overlay -> 1/2 = 2/4 -> tip -> find another",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -13 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}

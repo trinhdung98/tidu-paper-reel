@@ -1,0 +1,59 @@
+{
+ "lead": 0.3,
+ "tail": 3.4,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Một phần hai và hai phần tư: phân số nào lớn hơn?",
+   "after": 3.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "same",
+   "text": "Hai tờ giấy có diện tích bằng nhau.",
+   "after": 1.6,
+   "file": "same.wav"
+  },
+  {
+   "id": "half",
+   "text": "Tờ thứ nhất chia làm hai phần bằng nhau và tô một phần.",
+   "after": 2.4,
+   "file": "half.wav"
+  },
+  {
+   "id": "quarter",
+   "text": "Tờ thứ hai chia thành bốn phần bằng nhau và tô hai phần.",
+   "after": 2.6,
+   "file": "quarter.wav"
+  },
+  {
+   "id": "look",
+   "text": "Nhìn xem, phần được tô trên hai tờ giấy bằng nhau hoàn toàn.",
+   "after": 2.8,
+   "file": "look.wav"
+  },
+  {
+   "id": "equal",
+   "text": "Vậy một phần hai bằng hai phần tư.",
+   "after": 2.2,
+   "file": "equal.wav"
+  },
+  {
+   "id": "tip",
+   "text": "Số phần khác nhau, nhưng lượng vẫn có thể bằng nhau!",
+   "after": 1.8,
+   "file": "tip.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn tìm thêm một phân số bằng một phần hai được không?",
+   "after": 0.1,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Trúc Ly",
+  "speed": 0.88
+ }
+}

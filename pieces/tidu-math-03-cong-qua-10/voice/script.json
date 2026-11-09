@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 3.0,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Không cần đếm từng ngón tay để tính bảy cộng tám!",
+   "after": 3.0,
+   "file": "hook.wav"
+  },
+  {
+   "id": "need",
+   "text": "Số bảy cần thêm ba để thành mười.",
+   "after": 3.0,
+   "file": "need.wav"
+  },
+  {
+   "id": "move",
+   "text": "Vậy ta lấy ba từ nhóm tám chuyển sang.",
+   "after": 3.2,
+   "file": "move.wav"
+  },
+  {
+   "id": "split",
+   "text": "Bây giờ, bên này có mười, còn bên kia có năm.",
+   "after": 2.6,
+   "file": "split.wav"
+  },
+  {
+   "id": "sum",
+   "text": "Mười cộng năm bằng mười lăm.",
+   "after": 2.6,
+   "file": "sum.wav"
+  },
+  {
+   "id": "tip",
+   "text": "Đây là cách tách và gộp số để tính nhanh, rất hữu ích khi cộng qua mười.",
+   "after": 1.8,
+   "file": "tip.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn thử dùng cách này tính tám cộng sáu nhé!",
+   "after": 0.1,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Trúc Ly",
+  "speed": 0.88
+ }
+}

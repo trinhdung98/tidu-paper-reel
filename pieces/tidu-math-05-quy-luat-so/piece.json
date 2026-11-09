@@ -1,0 +1,10 @@
+{
+  "name": "tidu-math-05-quy-luat-so",
+  "title": "Tidu Math 05 — Quy luật số bí ẩn",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> look at the steps -> +3 -> +5 -> +7 -> next is +9 -> 26 -> what comes after 26",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -13 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}
