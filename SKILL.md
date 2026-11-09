@@ -71,6 +71,7 @@ Never post it anywhere without the user's explicit go-ahead.
 - **World:** `prWall(colour,{ streak, panel, gap })`, `prFloor(y, colour, { studs, trim })`, `prBunting(y)`, `prClock(x,y,r,h,m)`, `prCorkboard`, `prNote`, `prStar`, `prBoard(x,y,w,h)`.
 - **Story props:** `prSign`, `prTerm(str, frac)`, `prCounter(label, value, x, y, { s, rot, big })`, `countUp(t0,d,a,b)`, `prStamp(str,x,y,colour,t0,{ rot, size })`, `prCheck`/`prCross(x,y,t)`, `prChecklist(x,y,w,title,items,t0,dt)`, `prRepoCard(x,y,repo,sub,stars,ta,tb)`, `prCommentBox(x,y,WORD,t)`, `prReceipt(x,y,rows,total)`, `prFolder(x,y,s,fill,{ label })`, `prBurst(x,y,t0)`, `chalk(str,x,y,size,frac)`, `chalkLine(points, frac)`, `sparkIcon`.
 - **Mascot:** `clawd(x,y,{ s, hat, mood, look, view, walk, hold: propStick(angle) | propPencil(angle), hand: { x, y }, flip })`. Set `CLAWD_SCALE` once per piece.
+- **Tidu Math owl** (a drop-in alternative to clawd, same options): `tidu(x,y,{ ... })` with hats `mortar`, `propeller`, `chef`, `builder`, `crown`, `party`, `explorer`; `hand` is the wing tip. Place it at about `tidu(880, 1800, ...)` (its feet are short). Set `TIDU_SCALE` once per piece.
 - **Time:** `TT` (now), `E0` (scene start), `ev(t,d)` 0→1, `popS(t)` back-eased pop, `springMove(t0,a,b,SPRING.playful)`, `VL(id)`, `VW(id, word, n)`, `seg`, `EZ.*`.
 - **Determinism:** seeded `RNG(...)` only; never `Math.random()` or the clock. `$REEL check` verifies it.
 

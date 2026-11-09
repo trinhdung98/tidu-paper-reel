@@ -3,11 +3,12 @@
 //  flat cut-paper shapes with NO outlines, a mottled paper texture inside every shape, soft drop shadows,
 //  a muted palette (slate, navy, mustard, cream) with one hero colour (the mascot's terracotta).
 //  Pieces: a screwed enamel sign (kicker + headline), a typing terminal bar, counter cards, rubber stamps,
-//  word-by-word caption chips on torn salmon paper, and the box mascot ("clawd") with a hat per scene.
+//  word-by-word caption chips on torn salmon paper, the box mascot ("clawd") and the Tidu Math owl ("tidu"), each with a hat per scene.
 //  Built on kit/core.js. Motion on 1s (smooth, code-driven), static paper (no boil).
 // =====================================================================
 const PR = {
   clawd: '#d67555', clawdD: '#c46b4c', clawdL: '#de8466',
+  tidu: '#2aa79b', tiduD: '#1f8a80', tiduL: '#5cc3b5',
   slate: '#869997', slateL: '#95a9a7', slateD: '#788a89',
   navy: '#1c2b56', navyD: '#192833', ink: '#181b24', char: '#23262c',
   cream: '#e9e5da', creamL: '#f4f1e8', paperW: '#f9f8f4',
@@ -243,6 +244,129 @@ function clawdHat(h, key) {
   } else if (h === 'beret') {
     pp(pE(-30, top - 30, 230, 70, -0.12), '#7b2d3a', { key: key + 'beret', sb: 14, sy: 7, tex: 0.6 });
     pp(pR(-46, top - 120, 24, 36, 8), '#7b2d3a', { key: key + 'bnub', sb: 4, sy: 2, tex: 0.4 });
+  }
+}
+// ---- THE TIDU MATH OWL: a teal paper owl with round glasses, a + − × ÷ belly patch and orange feet.
+//  Same contract as clawd(): (x, y) = where the body meets the feet. o: s, hat ('mortar'|'propeller'|'chef'|'builder'|'crown'|'party'|'explorer'|null),
+//     mood ('neutral'|'happy'|'wow'|'flat'), look (pupil shift, px), view ('side'), walk, hand: { x, y } wing-tip position (default folded at the left side),
+//     hold(hx, hy, behind) draws a prop at the wing tip (propStick, propPencil), pop (0..1 scale-in), lean (rad), flip, key
+var TIDU_SCALE = 1;
+function tidu(x, y, o = {}) {
+  const s = (o.s ?? 1) * (o.pop ?? 1) * TIDU_SCALE; if (s <= 0.01) return;
+  const key = o.key ?? 'td', ph = hash(key) % 100 / 100 * TAU;
+  const bob = Math.sin(TT * TAU * 1.15 + ph) * 7, sq = 1 + Math.sin(TT * TAU * 2.3 + ph) * 0.012;
+  ctx.save(); ctx.translate(x, y); ctx.rotate(o.lean ?? 0); ctx.scale(o.flip ? -s : s, s);
+  // feet: three toes each, lifted in turn when o.walk
+  [-80, 80].forEach((fx, i) => {
+    const lift = o.walk ? Math.max(0, Math.sin(TT * TAU * 2.4 + i * Math.PI)) * 22 : 0;
+    [-30, 0, 30].forEach((dx, j) => pp(pE(fx + dx, 16 - lift + (j === 1 ? 4 : 0), 17, 28, dx * 0.012), PR.orange, { key: key + 'toe' + i + j, sb: 8, sy: 4, tex: 0.5 }));
+  });
+  ctx.translate(0, bob * 0.6); ctx.scale(1 / sq, sq);
+  const side = o.view === 'side', fx = side ? -70 : 0, lk = o.look ?? 0, mood = o.mood ?? 'neutral';
+  const blink = (Math.floor(TT * FPS) + Math.round(ph * 10)) % 96 < 4;
+  [-1, 1].forEach((d) => pp(pG([[d * 110 + fx * 0.5, -400], [d * 205 + fx * 0.5, -515], [d * 192 + fx * 0.5, -340]]), PR.tiduD, { key: key + 'tuft' + d, sb: 10, sy: 5, tex: 0.55 }));
+  pp(pE(0, -235, 205, 235), PR.tidu, { key: key + 'body', sb: 22, sy: 10, tex: 0.6, rim: 'rgba(220,255,248,0.3)', rw: 3 });
+  if (!side) pp(pE(180, -205, 60, 138, -0.16), PR.tiduD, { key: key + 'wingR', sb: 10, sy: 5, tex: 0.55 });
+  // belly patch with the four operations
+  pp(pE(fx * 0.4, -125, 132, 110), PR.creamL, { key: key + 'belly', sb: 6, sy: 3, tex: 0.5 });
+  [['+', -46, -160], ['−', 46, -160], ['×', -46, -88], ['÷', 46, -88]].forEach(([k, bx, by]) => tiduSym(k, bx + fx * 0.4, by, 24, PR.tiduD, key + 'sym' + k));
+  // the front wing: an elongated feather from the shoulder to the hand (wing tip), props held at the tip.
+  // Folded in front view it tucks under the glasses (like the far wing); raised (o.hand) or side-on it is drawn over the face.
+  const shx = side ? -100 : -165, shy = side ? -180 : -290;
+  const hx = o.hand?.x ?? -215, hy = o.hand?.y ?? (side ? -80 : -125) + Math.sin(TT * TAU * 1.3 + ph) * 6;
+  const wing = () => {
+    const wl = Math.hypot(hx - shx, hy - shy), wa = Math.atan2(hy - shy, hx - shx);
+    if (o.hold) o.hold(hx, hy, true);
+    pp(pE((shx + hx) / 2, (shy + hy) / 2, wl / 2 + 40, 58, wa), PR.tiduD, { key: key + 'wingL', sb: 12, sy: 6, tex: 0.55, rim: 'rgba(220,255,248,0.22)', rw: 2 });
+    if (o.hold) o.hold(hx, hy, false);
+  };
+  const wingOver = side || !!o.hand;
+  if (!wingOver) wing();
+  // glasses and eyes
+  const eyes = side ? [[fx - 82, 1], [fx + 64, 0.8]] : [[-82, 1], [82, 1]];
+  pp(pR(fx - 30, -334, 60, 18, 6), PR.navy, { key: key + 'bridge', shadow: false, tex: 0.4 });
+  for (const [gx, k] of eyes) {
+    const gy = -320, R = 80 * k, r = 63 * k;
+    pp(pE(gx, gy, R, R), PR.navy, { key: key + 'rim' + gx, sb: 10, sy: 5, tex: 0.45 });
+    pp(pE(gx, gy, r, r), PR.paperW, { key: key + 'eye' + gx, shadow: false, tex: 0.25 });
+    if (mood === 'happy') {
+      ctx.save(); ctx.strokeStyle = PR.ink; ctx.lineWidth = 14 * k; ctx.lineCap = 'round'; ctx.beginPath();
+      ctx.moveTo(gx - 28 * k + lk, gy + 12); ctx.quadraticCurveTo(gx + lk, gy - 34 * k, gx + 28 * k + lk, gy + 12); ctx.stroke(); ctx.restore();
+      pp(pE(gx * 1.12, gy + 96, 30 * k, 14), PR.pink, { key: key + 'blush' + gx, shadow: false, tex: 0.3 });
+      continue;
+    }
+    const pr = (mood === 'wow' ? 34 : 27) * k, px = gx + lk * k, py = gy + 6;
+    pp(pE(px, py, pr, pr), PR.ink, { key: key + 'pup' + gx, shadow: false, tex: 0.2 });
+    pp(pE(px + pr * 0.35, py - pr * 0.38, pr * 0.3, pr * 0.3), PR.paperW, { shadow: false, tex: false });
+    if (blink || mood === 'flat') {
+      ctx.save(); ctx.beginPath(); ctx.ellipse(gx, gy, r, r, 0, 0, TAU); ctx.clip();
+      pp(pR(gx - r, gy - r, 2 * r, blink ? 2 * r : r + 4, 0), PR.tiduL, { key: key + 'lid' + gx, shadow: false, tex: 0.5 });
+      pp(pR(gx - r, (blink ? gy : gy + 4) - 4, 2 * r, 8, 3), PR.tiduD, { shadow: false, tex: false });
+      ctx.restore();
+    }
+  }
+  // beak: closed, or open on 'wow'
+  if (mood === 'wow') {
+    pp(pE(fx, -230, 22, 18), PR.ink, { key: key + 'mouth', shadow: false, tex: 0.2 });
+    pp(pG([[fx - 30, -274], [fx + 30, -274], [fx, -238]]), PR.orange, { key: key + 'beakU', sb: 6, sy: 3, tex: 0.45 });
+    pp(pG([[fx - 20, -222], [fx + 20, -222], [fx, -196]]), PR.orange, { key: key + 'beakL', sb: 6, sy: 3, tex: 0.45 });
+  } else pp(pG([[fx - 28, -270], [fx + 28, -270], [fx, -212]]), PR.orange, { key: key + 'beak', sb: 6, sy: 3, tex: 0.45 });
+  if (wingOver) wing();
+  if (o.hat) { ctx.save(); ctx.translate(fx * 0.5, 0); tiduHat(o.hat, key); ctx.restore(); }
+  ctx.restore();
+}
+// a paper + − × ÷ sign of half-size r, centred at (x, y)
+function tiduSym(k, x, y, r, c, key) {
+  const t = r * 0.34, o = { key, shadow: false, tex: 0.3 };
+  withT(x, y, k === '×' ? Math.PI / 4 : 0, 1, () => {
+    pp(pR(-r, -t / 2, 2 * r, t, t / 2), c, o);
+    if (k === '+' || k === '×') pp(pR(-t / 2, -r, t, 2 * r, t / 2), c, o);
+    if (k === '÷') { pp(pE(0, -r * 0.66, t * 0.62, t * 0.62), c, o); pp(pE(0, r * 0.66, t * 0.62, t * 0.62), c, o); }
+  });
+}
+function tiduHat(h, key) {
+  const top = -440;
+  if (h === 'mortar') {
+    pp(pR(-130, top - 50, 260, 70, 8), PR.ink, { key: key + 'mcap', sb: 12, sy: 6, tex: 0.4 });
+    pp(pG([[0, top - 140], [260, top - 80], [0, top - 22], [-260, top - 80]]), '#262a3a', { key: key + 'mboard', sb: 16, sy: 8, tex: 0.45 });
+    const sw = Math.sin(TT * 5) * 6;
+    ctx.save(); ctx.strokeStyle = PR.mustard; ctx.lineWidth = 9; ctx.beginPath(); ctx.moveTo(0, top - 82); ctx.quadraticCurveTo(160, top - 70, 196 + sw, top + 20); ctx.stroke(); ctx.restore();
+    pp(pR(182 + sw, top + 16, 30, 62, 6), PR.mustard, { key: key + 'mtas', sb: 6, sy: 3, tex: 0.5 });
+  } else if (h === 'propeller') {
+    [PR.red, PR.yellow, PR.blue, PR.green].forEach((c, i) => pp(() => { ctx.moveTo(0, top + 14); ctx.arc(0, top + 14, 165, Math.PI + i * Math.PI / 4, Math.PI + (i + 1) * Math.PI / 4); ctx.closePath(); }, c, { key: key + 'pdome' + i, sb: 12, sy: 5, tex: 0.55 }));
+    pp(pR(-172, top - 2, 344, 28, 12), PR.navy, { key: key + 'pband', sb: 8, sy: 4, tex: 0.45 });
+    pp(pR(-9, top - 200, 18, 56, 4), PR.char, { key: key + 'pstem', sb: 6, sy: 3, tex: 0.3 });
+    const spin = Math.cos(TT * TAU * 1.5), sx = Math.sign(spin || 1) * Math.max(0.08, Math.abs(spin));
+    ctx.save(); ctx.translate(0, top - 200); ctx.scale(sx, 1);
+    pp(pE(-66, 0, 66, 16), PR.red, { key: key + 'pbl', sb: 6, sy: 3, tex: 0.4 }); pp(pE(66, 0, 66, 16), PR.blue, { key: key + 'pbr', sb: 6, sy: 3, tex: 0.4 });
+    ctx.restore();
+    pp(pE(0, top - 200, 15, 15), PR.mustard, { key: key + 'phub', shadow: false, tex: 0.4 });
+  } else if (h === 'chef') {
+    [[-100, -130, 82], [100, -130, 82], [0, -175, 96]].forEach(([cx, cy, r], i) => pp(pE(cx, top + cy, r, r * 0.92), PR.paperW, { key: key + 'cpuff' + i, sb: 12, sy: 5, tex: 0.5 }));
+    pp(pR(-150, top - 70, 300, 82, 10), PR.paperW, { key: key + 'cband', sb: 10, sy: 5, tex: 0.5 });
+    pp(pR(-150, top - 22, 300, 12, 2), PR.cream, { shadow: false, tex: 0.4 });
+  } else if (h === 'builder') {
+    pp(pA(0, top + 8, 172, Math.PI, TAU), PR.yellow, { key: key + 'bdome', sb: 14, sy: 6, tex: 0.6 });
+    pp(pR(-24, top - 170, 48, 172, 20), PR.mustard, { key: key + 'bcrest', shadow: false, tex: 0.5 });
+    pp(pR(-215, top - 12, 430, 34, 16), PR.mustard, { key: key + 'bbrim', sb: 10, sy: 5, tex: 0.5 });
+  } else if (h === 'crown') {
+    const pk = [[-160, top - 120], [0, top - 150], [160, top - 120]];
+    pp(pG([[-150, top + 12], [-160, top - 120], [-80, top - 50], [0, top - 150], [80, top - 50], [160, top - 120], [150, top + 12]]), PR.mustard, { key: key + 'crown', sb: 14, sy: 7, tex: 0.6 });
+    pk.forEach(([px, py], i) => pp(pE(px, py, 15, 15), PR.yellow, { key: key + 'cpk' + i, sb: 4, sy: 2, tex: 0.4 }));
+    pp(pR(-152, top - 24, 304, 34, 4), PR.yellow, { key: key + 'cband', shadow: false, tex: 0.5 });
+    [[-90, PR.blue], [0, PR.red], [90, PR.green]].forEach(([gx, c]) => pp(pE(gx, top - 7, 15, 15), c, { key: key + 'gem' + gx, sb: 4, sy: 2, tex: 0.4 }));
+  } else if (h === 'party') {
+    withT(30, top + 10, 0.2, 1, () => {
+      const w = (yy) => 115 * (1 + yy / 270);
+      pp(pG([[-115, 0], [115, 0], [0, -270]]), PR.blue, { key: key + 'pcone', sb: 14, sy: 7, tex: 0.55 });
+      [[-40, -80], [-150, -190]].forEach(([y0, y1], i) => pp(pG([[-w(y0), y0], [w(y0), y0], [w(y1), y1], [-w(y1), y1]]), PR.mustard, { key: key + 'pstr' + i, shadow: false, tex: 0.5 }));
+      pp(pE(0, -272, 32, 32), PR.red, { key: key + 'ppom', sb: 8, sy: 4, tex: 0.5 });
+    });
+  } else if (h === 'explorer') {
+    pp(pE(0, top + 4, 250, 44), PR.tan, { key: key + 'ebrim', sb: 14, sy: 7, tex: 0.6 });
+    pp(pA(0, top - 4, 166, Math.PI, TAU), '#d9c08b', { key: key + 'edome', sb: 10, sy: 4, tex: 0.6 });
+    pp(pR(-166, top - 40, 332, 30, 3), PR.brown, { key: key + 'eband', shadow: false, tex: 0.5 });
+    pp(pE(0, top - 172, 16, 10), PR.tan, { key: key + 'ebtn', shadow: false, tex: 0.4 });
   }
 }
 // ---- props
