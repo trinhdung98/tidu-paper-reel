@@ -1,0 +1,53 @@
+{
+ "lead": 0.3,
+ "tail": 2.6,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Tính một trăm, trừ bốn mươi tám, mà không cần đặt tính, bạn làm được không?",
+   "after": 3.0,
+   "file": "hook.wav"
+  },
+  {
+   "id": "round",
+   "text": "Bí quyết là làm tròn số bốn mươi tám thành năm mươi.",
+   "after": 2.8,
+   "file": "round.wav"
+  },
+  {
+   "id": "sub",
+   "text": "Một trăm, trừ năm mươi, bằng năm mươi.",
+   "after": 2.8,
+   "file": "sub.wav"
+  },
+  {
+   "id": "over",
+   "text": "Nhưng chúng ta vừa trừ nhiều hơn hai đơn vị, nên phải cộng trả lại hai.",
+   "after": 2.4,
+   "file": "over.wav"
+  },
+  {
+   "id": "add",
+   "text": "Năm mươi cộng hai bằng năm mươi hai.",
+   "after": 2.2,
+   "file": "add.wav"
+  },
+  {
+   "id": "tip",
+   "text": "Tính nhẩm dễ hơn khi chọn một số tròn chục!",
+   "after": 1.8,
+   "file": "tip.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Lưu lại mẹo này để thử với một trăm, trừ sáu mươi chín nhé!",
+   "after": 0.1,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Trúc Ly",
+  "speed": 0.88
+ }
+}

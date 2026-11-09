@@ -1,0 +1,10 @@
+{
+  "name": "tidu-math-02-tru-nham",
+  "title": "Tidu Math 02 — 100 trừ 48 trong nháy mắt",
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "storyFormat": "voice-cut list: hook -> round 48 to 50 -> 100 − 50 -> give back 2 -> 52 -> tip -> save CTA",
+  "style": "paper-reel",
+  "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
+  "voice": { "file": "voice/voice.wav", "music": -13 },
+  "review": { "safe": { "top": 120, "bottom": 300, "right": 120 }, "refs": {} }
+}

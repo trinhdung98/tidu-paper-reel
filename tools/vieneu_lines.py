@@ -8,11 +8,19 @@ import os, sys, json, subprocess, re, unicodedata
 from vieneu import Vieneu
 
 MODEL = os.environ.get('WHISPER_MODEL_MULTI', os.path.expanduser('~/.cache/whisper/ggml-small.bin'))
-DIGITS = {'0': 'không', '1': 'một', '2': 'hai', '3': 'ba', '4': 'bốn', '5': 'năm', '6': 'sáu', '7': 'bảy', '8': 'tám', '9': 'chín', '10': 'mười',
-          '11': 'mười một', '12': 'mười hai', '13': 'mười ba', '14': 'mười bốn', '15': 'mười lăm'}
+UNITS = ['không', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín']
+def say_number(n):
+    """0–999 as read aloud (whisper writes '48' for 'bốn mươi tám'): mười lăm, hai mươi mốt, một trăm lẻ năm."""
+    if n < 10: return UNITS[n]
+    if n < 20: return 'mười' + ('' if n == 10 else ' lăm' if n == 15 else ' ' + UNITS[n - 10])
+    if n < 100:
+        t, u = divmod(n, 10)
+        return f'{UNITS[t]} mươi' + ('' if u == 0 else ' mốt' if u == 1 else ' lăm' if u == 5 else ' ' + UNITS[u])
+    h, r = divmod(n, 100)
+    return f'{UNITS[h]} trăm' + ('' if r == 0 else ' lẻ ' + UNITS[r] if r < 10 else ' ' + say_number(r))
 def words(s):
     s = unicodedata.normalize('NFC', s.lower())
-    return [w for t in re.findall(r'\w+', s) for w in DIGITS.get(t, t).split()]
+    return [w for t in re.findall(r'\w+', s) for w in (say_number(int(t)) if t.isdigit() and int(t) < 1000 else t).split()]
 def distance(a, b):
     D = list(range(len(b) + 1))
     for i in range(1, len(a) + 1):
