@@ -568,7 +568,8 @@ function drawAsset(name, x, y, w, h, o = {}) {
 //  a muted palette (slate, navy, mustard, cream) with one hero colour (the mascot's terracotta).
 //  Pieces: a screwed enamel sign (kicker + headline), a typing terminal bar, counter cards, rubber stamps,
 //  word-by-word caption chips on torn salmon paper, the box mascot ("clawd"), the Tidu Math owl ("tidu"), the Tidu Money pig ("piggy"),
-//  the Tidu Mind brain ("brainy"), the Tidu Science flask ("flasky") and the Tidu English parrot ("polly"), each with a hat per scene.
+//  the Tidu Mind brain ("brainy"), the Tidu Science flask ("flasky"), the Tidu English parrot ("polly") and the Tidu Tech robot ("botty"),
+//  each with a hat per scene.
 //  Built on kit/core.js. Motion on 1s (smooth, code-driven), static paper (no boil).
 // =====================================================================
 const PR = {
@@ -578,6 +579,7 @@ const PR = {
   mind: '#a08cd0', mindD: '#7d69b0', mindL: '#c4b6ea', mindK: '#463a70',
   sci: '#f08a3c', sciD: '#c9661f', sciL: '#f9c08c', glass: '#d8ecf1', glassD: '#a9cfd8', sciK: '#6b7886',
   eng: '#3d9be0', engD: '#2a78b8', engL: '#7cc0ef', engY: '#f6cf4a',
+  tech: '#c3cbd3', techD: '#9aa4ae', techL: '#e2e7ec', techK: '#4a5560', screen: '#14202b', glow: '#4ff0ff',
   slate: '#869997', slateL: '#95a9a7', slateD: '#788a89',
   navy: '#1c2b56', navyD: '#192833', ink: '#181b24', char: '#23262c',
   cream: '#e9e5da', creamL: '#f4f1e8', paperW: '#f9f8f4',
@@ -968,7 +970,7 @@ function piggy(x, y, o = {}) {
     pp(pR(lx - 34, bottom - 22, 68, 22, 8), PR.moneyK, { key: key + 'hoof' + i, shadow: false, tex: 0.4 });
   });
   ctx.translate(0, bob * 0.6); ctx.scale(1 / sq, sq);
-  piggyTail(side ? 292 : 212, side ? -250 : -150, key);
+  piggyTail(side ? 292 : 212, side ? -250 : -150);
   // ears: the far ear behind the body, the near ear(s) with a light inner flap
   if (side) {
     pp(pG([[-60, -350], [-5, -470], [45, -372]]), PR.moneyD, { key: key + 'earF', sb: 10, sy: 5, tex: 0.55 });
@@ -1037,7 +1039,7 @@ function piggy(x, y, o = {}) {
   if (o.hat) { ctx.save(); if (side) ctx.translate(-130, 30); piggyHat(o.hat, key); ctx.restore(); }
   ctx.restore();
 }
-function piggyTail(x, y, key) {
+function piggyTail(x, y) {
   const P = []; for (let i = 0; i <= 40; i++) { const u = i / 40, a = -Math.PI / 2 + u * TAU * 1.4, r = 34 * (1 - u * 0.55); P.push([x + u * 46 + Math.cos(a) * r, y + Math.sin(a) * r]); }
   ctx.save(); ctx.shadowColor = 'rgba(12,10,8,0.3)'; ctx.shadowBlur = 8; ctx.shadowOffsetY = 4;
   ctx.strokeStyle = PR.moneyD; ctx.lineWidth = 15; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
@@ -1459,6 +1461,128 @@ function pollyHat(h, key) {
     });
   }
 }
+// ---- THE TIDU TECH ROBOT: a silver paper robot whose head is a dark rounded screen; the face is drawn on it in glowing cyan
+//  (with faint scanlines) and changes with the mood. A blinking antenna, ear discs, a capsule body with a control panel and
+//  a cyan core, tube arms and legs, boots.
+//  Same contract as clawd()/tidu(): (x, y) = where the body meets the legs; the boots reach about 70px below it.
+//  o: s, hat ('headset'|'vr'|'beanie'|'drone'|'mortar'|'tinfoil'|'party'|null), mood ('neutral'|'happy'|'wow'|'flat'), look (eye shift, px),
+//     view ('side'), walk, hand: { x, y } near hand (default hanging at the left side), hold(hx, hy, behind) draws a prop in the hand
+//     (propPhone, propChip, propWrench, propStick, ...), pop (0..1 scale-in), lean (rad), flip, key
+var BOTTY_SCALE = 1;
+function botty(x, y, o = {}) {
+  const s = (o.s ?? 1) * (o.pop ?? 1) * BOTTY_SCALE; if (s <= 0.01) return;
+  const key = o.key ?? 'bt', ph = hash(key) % 100 / 100 * TAU;
+  const bob = Math.sin(TT * TAU * 1.15 + ph) * 7, sq = 1 + Math.sin(TT * TAU * 2.3 + ph) * 0.012;
+  ctx.save(); ctx.translate(x, y); ctx.rotate(o.lean ?? 0); ctx.scale(o.flip ? -s : s, s);
+  const side = o.view === 'side', mood = o.mood ?? 'neutral', lk = o.look ?? 0;
+  const blink = (Math.floor(TT * FPS) + Math.round(ph * 10)) % 96 < 4;
+  // legs, knee joints and boots (behind the body), lifted in turn when o.walk
+  (side ? [-40, 50] : [-62, 62]).forEach((lx, i) => {
+    const lift = o.walk ? Math.max(0, Math.sin(TT * TAU * 2.4 + i * Math.PI)) * 20 : 0;
+    pp(pR(lx - 20, -40 - lift, 40, 90, 14), PR.techD, { key: key + 'leg' + i, sb: 10, sy: 5, tex: 0.45 });
+    pp(pE(lx, 8 - lift, 18, 18), PR.techK, { key: key + 'knee' + i, shadow: false, tex: 0.35 });
+    pp(pR(lx - 44 + (side ? -16 : 0), 36 - lift, 88, 34, 14), PR.techK, { key: key + 'boot' + i, sb: 8, sy: 4, tex: 0.4 });
+  });
+  ctx.translate(0, bob * 0.6); ctx.scale(1 / sq, sq);
+  const glow = (fn, w = 14) => { ctx.save(); ctx.shadowColor = PR.glow; ctx.shadowBlur = 18; ctx.strokeStyle = PR.glow; ctx.fillStyle = PR.glow; ctx.lineWidth = w; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; fn(); ctx.restore(); };
+  // body: a capsule with a control panel, three LEDs and a glowing core
+  const px0 = side ? -40 : 0;
+  pp(pR(-150, -250, 300, 252, 70), PR.tech, { key: key + 'body', sb: 22, sy: 10, tex: 0.5, rim: 'rgba(255,255,255,0.55)', rw: 3 });
+  pp(pR(px0 - 90, -205, 180, 116, 18), PR.techK, { key: key + 'panel', shadow: false, tex: 0.35 });
+  [[-56, PR.red], [-26, PR.yellow], [4, PR.green]].forEach(([lx, c]) => pp(pE(px0 + lx, -180, 10, 10), c, { shadow: false, tex: false }));
+  pp(pR(px0 + 26, -188, 46, 14, 6), PR.techD, { shadow: false, tex: false });
+  glow(() => { ctx.beginPath(); ctx.arc(px0, -130, 20 + Math.sin(TT * TAU * 1.2 + ph) * 3, 0, TAU); ctx.fill(); });
+  pp(pR(-34, -282, 68, 40, 8), PR.techD, { key: key + 'neck', sb: 6, sy: 3, tex: 0.4 });
+  // antenna (its bulb blinks), ear discs, the head
+  const on = Math.floor(TT * 1.5 + ph) % 2 === 0, ax = side ? 30 : 0;
+  pp(pR(ax - 6, -630, 12, 76, 6), PR.techK, { key: key + 'ant', sb: 6, sy: 3, tex: 0.3 });
+  if (on) { ctx.save(); ctx.shadowColor = 'rgba(255,90,90,0.9)'; ctx.shadowBlur = 24; ctx.fillStyle = '#ff5a5a'; ctx.beginPath(); ctx.arc(ax, -640, 20, 0, TAU); ctx.fill(); ctx.restore(); }
+  else pp(pE(ax, -640, 20, 20), '#8a2a2a', { key: key + 'bulb', shadow: false, tex: 0.3 });
+  (side ? [140] : [-205, 205]).forEach((ex) => { pp(pE(ex, -415, 28, 56), PR.techD, { key: key + 'ear' + ex, sb: 8, sy: 4, tex: 0.45 }); pp(pE(ex, -415, 12, 30), PR.techK, { shadow: false, tex: false }); });
+  pp(pR(-200, -560, 400, 292, 80), PR.tech, { key: key + 'head', sb: 22, sy: 10, tex: 0.5, rim: 'rgba(255,255,255,0.55)', rw: 3 });
+  const [sx0, sw] = side ? [-192, 262] : [-162, 324];
+  const scr = () => ctx.roundRect(sx0, -525, sw, 222, 50);
+  pp(scr, PR.screen, { key: key + 'screen', shadow: false, tex: 0.25 });
+  // the face on the screen: glowing strokes, clipped to the screen, with scanlines over it
+  ctx.save(); ctx.beginPath(); scr(); ctx.clip();
+  const eyes = side ? [[-128, 0.85], [-52, 0.85]] : [[-72, 1], [72, 1]], ey = -440, [mx, my] = side ? [-92, -360] : [0, -360];
+  for (const [ex0, k] of eyes) {
+    const ex = ex0 + lk;
+    if (blink && mood !== 'happy') { glow(() => { ctx.beginPath(); ctx.moveTo(ex - 22 * k, ey + 6); ctx.lineTo(ex + 22 * k, ey + 6); ctx.stroke(); }, 10); continue; }
+    if (mood === 'happy') glow(() => { ctx.beginPath(); ctx.moveTo(ex - 28 * k, ey + 14); ctx.quadraticCurveTo(ex, ey - 30, ex + 28 * k, ey + 14); ctx.stroke(); });
+    else if (mood === 'wow') glow(() => { ctx.beginPath(); ctx.arc(ex, ey, 34 * k, 0, TAU); ctx.stroke(); ctx.beginPath(); ctx.arc(ex, ey, 11 * k, 0, TAU); ctx.fill(); }, 10);
+    else if (mood === 'flat') glow(() => { ctx.beginPath(); ctx.roundRect(ex - 24 * k, ey, 48 * k, 26, 10); ctx.fill(); });
+    else glow(() => { ctx.beginPath(); ctx.roundRect(ex - 20 * k, ey - 32, 40 * k, 64, 20); ctx.fill(); });
+  }
+  if (mood === 'happy') (side ? [-160] : [-122, 122]).forEach((cx) => { ctx.save(); ctx.shadowColor = '#ff7fb0'; ctx.shadowBlur = 14; ctx.fillStyle = 'rgba(255,127,176,0.85)'; ctx.beginPath(); ctx.roundRect(cx - 20, -392, 40, 14, 7); ctx.fill(); ctx.restore(); });
+  if (mood === 'happy') glow(() => { ctx.beginPath(); ctx.moveTo(mx - 44, my - 12); ctx.arc(mx, my - 12, 44, 0, Math.PI); ctx.closePath(); ctx.fill(); });
+  else if (mood === 'wow') glow(() => { ctx.beginPath(); ctx.arc(mx, my, 22, 0, TAU); ctx.stroke(); }, 10);
+  else if (mood === 'flat') glow(() => { ctx.beginPath(); ctx.moveTo(mx - 34, my); ctx.lineTo(mx + 34, my); ctx.stroke(); }, 10);
+  else glow(() => { ctx.beginPath(); ctx.arc(mx, my - 26, 34, 0.18 * Math.PI, 0.82 * Math.PI); ctx.stroke(); }, 10);
+  ctx.fillStyle = 'rgba(255,255,255,0.05)'; for (let yy = -525; yy < -303; yy += 8) ctx.fillRect(sx0, yy, sw, 2);
+  pp(pR(sx0 + 24, -510, sw * 0.4, 16, 8), 'rgba(255,255,255,0.08)', { shadow: false, tex: false });
+  ctx.restore();
+  // arms: the far one hangs still (front view only); the near one is o.hand and holds the prop
+  const arm = (sx, sy, hx, hy, k) => {
+    const wl = Math.hypot(hx - sx, hy - sy), wa = Math.atan2(hy - sy, hx - sx);
+    pp(pE((sx + hx) / 2, (sy + hy) / 2, wl / 2 + 16, 22, wa), PR.techD, { key: k, sb: 10, sy: 5, tex: 0.45 });
+    pp(pE(sx, sy, 20, 20), PR.techK, { key: k + 'j', shadow: false, tex: 0.35 });
+    pp(pE(hx, hy, 30, 30), PR.techL, { key: k + 'h', sb: 6, sy: 3, tex: 0.4 });
+  };
+  if (!side) arm(150, -200, 205, -104, key + 'armR');
+  const shx = side ? 30 : -150, shy = side ? -200 : -200;
+  const hx = o.hand?.x ?? (side ? -10 : -205), hy = o.hand?.y ?? (side ? -96 : -104) + Math.sin(TT * TAU * 1.3 + ph) * 6;
+  if (o.hold) o.hold(hx, hy, true);
+  arm(shx, shy, hx, hy, key + 'armL');
+  if (o.hold) o.hold(hx, hy, false);
+  if (o.hat) bottyHat(o.hat, key);
+  ctx.restore();
+}
+function bottyHat(h, key) {
+  const top = -560;
+  if (h === 'headset') {
+    ctx.save(); ctx.strokeStyle = PR.techK; ctx.lineWidth = 30; ctx.lineCap = 'round'; ctx.beginPath(); ctx.arc(0, -415, 232, Math.PI * 1.1, Math.PI * 1.9); ctx.stroke(); ctx.restore();
+    [-1, 1].forEach((d) => {
+      pp(pR(d * 209 - 31, -475, 62, 120, 24), PR.techK, { key: key + 'hcup' + d, sb: 10, sy: 5, tex: 0.4 });
+      ctx.save(); ctx.shadowColor = PR.glow; ctx.shadowBlur = 14; ctx.strokeStyle = PR.glow; ctx.lineWidth = 6; ctx.beginPath(); ctx.arc(d * 209, -415, 16, 0, TAU); ctx.stroke(); ctx.restore();
+    });
+    ctx.save(); ctx.strokeStyle = PR.techK; ctx.lineWidth = 12; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(-215, -370); ctx.quadraticCurveTo(-200, -300, -120, -296); ctx.stroke(); ctx.restore();
+    pp(pE(-112, -296, 20, 15), PR.techK, { key: key + 'hmic', sb: 4, sy: 2, tex: 0.3 });
+  } else if (h === 'vr') {
+    pp(pR(-206, top + 22, 412, 26, 10), PR.techK, { key: key + 'vstrap', sb: 6, sy: 3, tex: 0.35 });
+    pp(pR(-150, top - 84, 300, 112, 34), '#5d6875', { key: key + 'vbox', sb: 14, sy: 7, tex: 0.4 });
+    pp(pR(-130, top - 64, 260, 72, 26), '#1d3b5a', { key: key + 'vlens', shadow: false, tex: 0.25 });
+    pp(pR(-110, top - 56, 120, 12, 6), 'rgba(255,255,255,0.25)', { shadow: false, tex: false });
+    ctx.save(); ctx.shadowColor = PR.glow; ctx.shadowBlur = 12; ctx.fillStyle = PR.glow; ctx.beginPath(); ctx.arc(118, top - 62, 7, 0, TAU); ctx.fill(); ctx.restore();
+  } else if (h === 'beanie') {
+    pp(pA(0, top + 30, 200, Math.PI, TAU), '#3f5a7a', { key: key + 'bdome', sb: 14, sy: 6, tex: 0.75 });
+    pp(pR(-206, top - 8, 412, 64, 24), '#33495f', { key: key + 'bcuff', sb: 8, sy: 4, tex: 0.7 });
+    for (let i = -4; i <= 4; i++) pp(pR(i * 44 - 4, top - 2, 8, 52, 4), 'rgba(0,0,0,0.12)', { shadow: false, tex: false });
+  } else if (h === 'drone') {
+    const hy = top - 130 + Math.sin(TT * TAU * 0.9) * 10, spin = Math.max(0.15, Math.abs(Math.cos(TT * TAU * 3)));
+    pp(pR(-150, hy - 6, 300, 12, 6), PR.techK, { key: key + 'darm', sb: 8, sy: 10, tex: 0.3 });
+    pp(pR(-62, hy - 22, 124, 44, 16), PR.char, { key: key + 'dbody', sb: 14, sy: 24, tex: 0.35 });
+    [-150, 150].forEach((rx) => { pp(pR(rx - 8, hy - 26, 16, 22, 4), PR.techK, { shadow: false, tex: false }); pp(pE(rx, hy - 28, 70 * spin, 10), 'rgba(205,225,240,0.75)', { key: key + 'drot' + rx, shadow: false, tex: false }); });
+    ctx.save(); ctx.shadowColor = PR.glow; ctx.shadowBlur = 12; ctx.fillStyle = PR.glow; ctx.beginPath(); ctx.arc(0, hy, 8, 0, TAU); ctx.fill(); ctx.restore();
+  } else if (h === 'mortar') {
+    pp(pR(-130, top - 50, 260, 70, 8), PR.ink, { key: key + 'mcap', sb: 12, sy: 6, tex: 0.4 });
+    pp(pG([[0, top - 140], [260, top - 80], [0, top - 22], [-260, top - 80]]), '#262a3a', { key: key + 'mboard', sb: 16, sy: 8, tex: 0.45 });
+    const sw = Math.sin(TT * 5) * 6;
+    ctx.save(); ctx.strokeStyle = PR.mustard; ctx.lineWidth = 9; ctx.beginPath(); ctx.moveTo(0, top - 82); ctx.quadraticCurveTo(160, top - 70, 196 + sw, top + 20); ctx.stroke(); ctx.restore();
+    pp(pR(182 + sw, top + 16, 30, 62, 6), PR.mustard, { key: key + 'mtas', sb: 6, sy: 3, tex: 0.5 });
+  } else if (h === 'tinfoil') {
+    const P = [[-196, top + 26], [-150, top - 40], [-96, top - 66], [-44, top - 150], [0, top - 252], [42, top - 160], [102, top - 92], [150, top - 50], [196, top + 26]];
+    pp(pG(P), '#d9dde2', { key: key + 'tfoil', sb: 14, sy: 7, tex: 0.6, rim: 'rgba(255,255,255,0.8)', rw: 3 });
+    [[[-150, top - 40], [-44, top - 150], [-60, top + 20]], [[42, top - 160], [150, top - 50], [70, top + 10]], [[0, top - 252], [42, top - 160], [-10, top - 80]]].forEach((T, i) => pp(pG(T), i === 1 ? 'rgba(120,130,140,0.35)' : 'rgba(255,255,255,0.45)', { key: key + 'tfacet' + i, shadow: false, tex: false }));
+  } else if (h === 'party') {
+    withT(30, top + 10, 0.2, 1, () => {
+      const w = (yy) => 115 * (1 + yy / 270);
+      pp(pG([[-115, 0], [115, 0], [0, -270]]), PR.blue, { key: key + 'pcone', sb: 14, sy: 7, tex: 0.55 });
+      [[-40, -80], [-150, -190]].forEach(([y0, y1], i) => pp(pG([[-w(y0), y0], [w(y0), y0], [w(y1), y1], [-w(y1), y1]]), PR.mustard, { key: key + 'pstr' + i, shadow: false, tex: 0.5 }));
+      pp(pE(0, -272, 32, 32), PR.red, { key: key + 'ppom', sb: 8, sy: 4, tex: 0.5 });
+    });
+  }
+}
 // ---- props
 // a gold ₫ coin of radius r
 function prCoin(x, y, r, key = 'coin') {
@@ -1515,6 +1639,23 @@ function prBlock(x, y, letter, c = PR.red, s = 1, rot = 0) {
     pp(pR(-80, -80, 160, 160, 8), '#e8c891', { key: 'blkf' + letter, sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-66, -66, 132, 132, 6), PR.creamL, { key: 'blki' + letter, shadow: false, tex: 0.4 });
     txtR(letter, 0, 6, 110, c, { align: 'center', base: 'middle', weight: 800 });
+  });
+}
+// a circuit-board patch (w x h at x, y): seeded right-angled traces and solder nodes that pulse in turn; a background detail for tech scenes
+function prCircuit(x, y, w, h, key = 'circ', c = 'rgba(79,240,255,0.4)') {
+  const R = RNG(key);
+  ctx.save(); ctx.strokeStyle = c; ctx.lineWidth = 5; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  const nodes = [];
+  for (let i = 0; i < 9; i++) {
+    let px = x + R.r(0, w), py = y + R.r(0, h); ctx.beginPath(); ctx.moveTo(px, py);
+    for (let j = 0; j < 3; j++) { if (j % 2) py = clamp(py + R.r(-h / 3, h / 3), y, y + h); else px = clamp(px + R.r(-w / 3, w / 3), x, x + w); ctx.lineTo(px, py); }
+    ctx.stroke(); nodes.push([px, py]);
+  }
+  ctx.restore();
+  nodes.forEach(([nx, ny], i) => {
+    const lit = (Math.floor(TT * 3) + i) % 4 === 0;
+    ctx.save(); if (lit) { ctx.shadowColor = PR.glow; ctx.shadowBlur = 16; }
+    ctx.fillStyle = lit ? PR.glow : c; ctx.beginPath(); ctx.arc(nx, ny, 9, 0, TAU); ctx.fill(); ctx.restore();
   });
 }
 function prClock(x, y, r, hh, mm, key = 'clk') {
@@ -1611,6 +1752,22 @@ const propBook = (a = -0.1) => (hx, hy, behind) => { if (!behind) return; withT(
   pp(pR(-96, -224, 184, 150, 10), PR.red, { key: 'bookc', sb: 6, sy: 3, tex: 0.5 });
   pp(pR(-96, -224, 26, 150, 6), PR.redD, { key: 'bookspine', shadow: false, tex: 0.45 });
   txtR('ABC', 10, -146, 56, PR.paperW, { align: 'center', base: 'middle', weight: 800 });
+}); };
+// tech props for botty({ hold }) (any mascot can hold them): a smartphone, an AI chip and a wrench (angle a)
+const propPhone = (a = -0.15) => (hx, hy, behind) => { if (!behind) return; withT(hx, hy, a, 1, () => {
+  pp(pR(-52, -236, 104, 196, 18), PR.char, { key: 'phone', sb: 12, sy: 6, tex: 0.35 });
+  pp(pR(-42, -222, 84, 160, 10), '#1d3b5a', { key: 'phones', shadow: false, tex: 0.25 });
+  [[-26, -200], [6, -200], [-26, -168], [6, -168]].forEach(([ix, iy], i) => pp(pR(ix, iy, 22, 22, 6), [PR.glow, PR.yellow, PR.pink, PR.green][i], { shadow: false, tex: false }));
+  pp(pR(-14, -54, 28, 6, 3), PR.techD, { shadow: false, tex: false });
+}); };
+const propChip = (a = -0.1) => (hx, hy, behind) => { if (!behind) return; withT(hx, hy, a, 1, () => {
+  for (let i = 0; i < 4; i++) [-1, 1].forEach((d) => { pp(pR(-50 + i * 30, d < 0 ? -226 : -96, 12, 26, 3), PR.mustard, { shadow: false, tex: 0.3 }); pp(pR(d < 0 ? -86 : 60, -190 + i * 30, 26, 12, 3), PR.mustard, { shadow: false, tex: 0.3 }); });
+  pp(pR(-62, -210, 124, 124, 12), '#2b2f36', { key: 'chip', sb: 12, sy: 6, tex: 0.35 });
+  ctx.save(); ctx.shadowColor = PR.glow; ctx.shadowBlur = 14; txtR('AI', 0, -146, 58, PR.glow, { align: 'center', base: 'middle', weight: 800 }); ctx.restore();
+}); };
+const propWrench = (a = -0.4) => (hx, hy, behind) => { if (!behind) return; withT(hx, hy, a, 1, () => {
+  pp(pR(-14, -200, 28, 200, 12), PR.techK, { key: 'wrh', sb: 8, sy: 4, tex: 0.4 });
+  pp(() => { ctx.arc(0, -226, 44, 0, TAU); ctx.moveTo(22, -262); ctx.arc(0, -262, 22, 0, TAU, true); }, PR.techK, { key: 'wrhead', sb: 8, sy: 4, tex: 0.4 });
 }); };
 // a framed blackboard with a chalk tray; draw on it afterwards with chalk() / chalkLine()
 function prBoard(x, y, w, h, key = 'board') {
