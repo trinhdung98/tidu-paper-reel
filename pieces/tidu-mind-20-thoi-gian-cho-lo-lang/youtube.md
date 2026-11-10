@@ -3,44 +3,48 @@
 ## Tiêu đề
 
 ```
-Dành thời gian riêng cho những lo lắng ⏱️ Kỹ thuật Worry Time hiệu quả #Shorts
+Dành một khoảng thời gian riêng cho những lo lắng · Scheduled Worry Time #Shorts
 ```
 
 Phương án khác:
-- `Lo lắng cứ chen vào công việc cả ngày? Thử ngay kỹ thuật Worry Time #Shorts`
-- `Cách nhốt nỗi lo vào hộp để làm việc tập trung suốt cả ngày | Tidu Mind #Shorts`
+- `Lo lắng cứ chen vào công việc cả ngày? Thử cách này #Shorts`
+- `Quản lý sự chú ý: Dành khoảng thời gian riêng cho các mối lo #Shorts`
 
 ## Mô tả
 
 ```
-Nếu những suy nghĩ lo âu cứ liên tục nhảy vào đầu và làm gián đoạn sự tập trung của bạn suốt cả ngày, hãy thử kỹ thuật tâm lý này! 📦⏱️
+Nếu những điều lo lắng cứ chen vào công việc cả ngày, bạn có thể thử cách này.
 
-Đó là kỹ thuật "KHUNG GIỜ LO LẮNG" (Worry Time) trong liệu pháp hành vi nhận thức (CBT).
+Đó là kỹ thuật "khoảng thời gian cho lo lắng" (scheduled worry time / stimulus control) trong liệu pháp hành vi nhận thức (CBT). Kỹ thuật này giúp bạn đặt ranh giới thời gian cho những mối lo âu, rèn luyện sự chú ý và giảm bớt việc suy nghĩ lan man trong lúc làm việc.
 
-CÁCH THỰC HÀNH 3 BƯỚC:
-1. ĐẶT HẸN CỐ ĐỊNH: Dành riêng 10 đến 15 phút vào một khung giờ cố định trong ngày (ví dụ: 16:30 – 16:45 chiều) chỉ để xem xét các mối lo.
-2. CẤT VÀO HỘP: Khi một suy nghĩ lo âu bất chợt xuất hiện vào buổi sáng, hãy ghi nhanh vào một mẩu giấy rồi "cất vào hộp", tự nhủ: "Mình sẽ giải quyết nó vào lúc 16:30 chiều!"
-3. PHÂN LOẠI & XỬ LÝ: Đến đúng khung giờ hẹn, lấy các mẩu giấy ra và tự hỏi:
-   🟢 Có thể giải quyết bằng hành động không? -> Có: Lập ngay kế hoạch hành động cụ thể.
-   ⚪ Chưa thể kiểm soát? -> Ghi nhận và chấp nhận sự không chắc chắn của cuộc sống.
+CÁCH THỰC HÀNH:
+1. ĐẶT KHOẢNG THỜI GIAN NGẮN: Dành riêng khoảng 10 đến 15 phút để xem xét các mối lo của mình.
+2. GHI LẠI ĐỂ XEM SAU: Khi một suy nghĩ xuất hiện ngoài khoảng thời gian đó, hãy ghi lại để xem sau và tiếp tục công việc hiện tại.
+3. ĐẾN GIỜ ĐÃ CHỌN: Tự hỏi:
+   - Điều này có thể giải quyết bằng hành động cụ thể không? Nếu có, hãy lập một kế hoạch.
+   - Nếu chưa thể giải quyết bằng hành động, hãy ghi nhận sự không chắc chắn ấy.
 
-Đây là phương pháp huấn luyện sự chú ý, giúp bạn giành lại quyền kiểm soát tâm trí thay vì để nỗi lo chi phối cả ngày dài! 🧠✨
+Đây là một cách quản lý sự chú ý, không phải phương pháp đảm bảo mọi lo lắng sẽ biến mất.
 
-Nguồn: Adrian Wells, Metacognitive Therapy & Borkovec et al., "Worry Time Technique".
+Nguồn nghiên cứu tham khảo:
+- Borkovec, T. D., Wilkinson, L., Folensbee, R., & Lerman, C. (1983). Stimulus control applications to the treatment of worry. Behaviour Research and Therapy, 21(3), 247-251. DOI: 10.1016/0005-7967(83)90206-1
+- McGowan, S. K., & Behar, E. (2013). A preliminary investigation of stimulus control training for worry: Effects on anxiety and insomnia. Behavior Modification, 37(1), 90-112. DOI: 10.1177/0145445512455661
 
-👉 Lưu video lại để thực hành vào những ngày bạn cảm thấy đầu óc quá tải nhé! 👇
+Lưu video để thử bài tập này vào một ngày bạn thấy suy nghĩ quá nhiều nhé!
 
-#TiduMind #WorryTime #KhungGioLoLang #KiemSoatAuLo #TapTrungLamViec #LieuPhapCBT #PhatTrienBanThan #Shorts
+Lưu ý: Nội dung mang tính chất chia sẻ kiến thức tâm lý tham khảo, không thay thế cho việc chẩn đoán hoặc can thiệp y khoa/tâm lý chuyên nghiệp.
+
+#TiduMind #WorryTime #StimulusControl #QuanLyChuY #TamLyHoc #LieuPhapCBT #TapTrung #Shorts
 ```
 
 ## Thẻ (Tags)
 
 ```
-tidu mind, worry time, khung gio lo lang, kiem soat au lo, tap trung, lieu phap cbt, phat trien ban than, ky nang quan ly thoi gian, shorts
+tidu mind, worry time, stimulus control, thoi gian cho lo lang, quan ly su chu y, tap trung lam viec, lieu phap cbt, tam ly hoc, bot suy nghi, shorts
 ```
 
 ## Bình luận ghim (Pinned Comment)
 
 ```
-Nhốt nỗi lo vào khung giờ riêng: Giành lại sự tập trung và bình yên cho cả ngày dài của bạn! Lưu lại để thử nhé! ⏱️📦
+Dành một khoảng thời gian riêng cho các mối lo giúp bạn rèn luyện sự chú ý và không để âu lo chen vào công việc cả ngày. Lưu video để thử khi cần nhé!
 ```

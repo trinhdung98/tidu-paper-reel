@@ -3,43 +3,49 @@
 ## Tiêu đề
 
 ```
-Một ngày tệ không có nghĩa cuộc sống của bạn tệ 📅 Thoát bẫy khái quát hoá #Shorts
+Một ngày tệ không có nghĩa cuộc sống của bạn tệ | Thoát bẫy khái quát hoá #Shorts
 ```
 
 Phương án khác:
 - `Chỉ vì hôm nay thất bại, bạn có nghĩ mình sẽ mãi thất bại? | Tidu Mind #Shorts`
-- `Bẫy suy nghĩ khái quát hoá quá mức trong CBT và cách giải phóng bản thân #Shorts`
+- `Bẫy tư duy khái quát hoá quá mức (Overgeneralization) trong CBT #Shorts`
 
 ## Mô tả
 
 ```
-Chỉ vì một buổi phỏng vấn không thành công, bạn có từng nghĩ: "Mình sẽ chẳng bao giờ tìm được một công việc tốt"? 🌧️
+Chỉ vì hôm nay thất bại, bạn có đang nghĩ mình sẽ mãi thất bại?
 
-Trong liệu pháp nhận thức hành vi (CBT), đây là bẫy tư duy: KHÁI QUÁT HÓA QUÁ MỨC (Overgeneralization).
+Khi thất vọng, chúng ta đôi khi lấy một trải nghiệm riêng lẻ để kết luận về cả tương lai. Một cuộc phỏng vấn không thành công dễ biến thành suy nghĩ: "mình chẳng bao giờ tìm được việc".
 
-Khi gặp thất vọng, chúng ta có xu hướng lấy một trải nghiệm riêng lẻ, tiêu cực trong hiện tại để vội vã kết luận về toàn bộ con người và tương lai của mình. Dấu đỏ của một ngày lan ra làm đen tối cả cuốn lịch cuộc đời!
+Trong Liệu pháp Nhận thức Hành vi (CBT), đây được gọi là bẫy tư duy "Khái quát hoá quá mức" (Overgeneralization) — xu hướng biến một sự kiện đơn lẻ thành quy luật vĩnh viễn.
 
-Nhưng sự thật là: MỘT KẾT QUẢ KHÔNG THỂ ĐẠI DIỆN CHO MỌI KHẢ NĂNG.
+Thực tế, một kết quả chưa thể đại diện cho mọi khả năng.
 
-💡 CÁCH TỰ ĐỐI THOẠI CÔNG BẰNG & CHÍNH XÁC:
-Thay vì nói: "Mình luôn luôn thất bại!"
-Hãy nói: "Cuộc phỏng vấn LẦN NÀY chưa tốt, và mình cần xem lại phần chuẩn bị câu hỏi chuyên môn."
+Hãy thử thay câu nói ấy bằng điều chính xác hơn:
+"cuộc phỏng vấn lần này chưa tốt, và mình cần xem lại phần chuẩn bị."
 
-Cách nói này không hề né tránh khó khăn. Nó chỉ giúp bạn phân biệt rõ ràng: Một sự kiện cụ thể hoàn toàn khác với một kết luận khái quát về tương lai! 📅🌱
+Cách nói mới không phủ nhận khó khăn. Nó chỉ giúp bạn phân biệt một sự kiện cụ thể với một kết luận quá rộng về toàn bộ tương lai.
 
-👉 Bạn có câu nói nào thường dùng để tự trách mình mà bạn muốn thay đổi từ hôm nay không? Bình luận nhé! 👇
+Bạn có câu nói nào thường dùng để tự trách mình không? Hãy chia sẻ bên dưới nhé.
 
-#TiduMind #MotNgayTe #LieuPhapCBT #Overgeneralization #KhaiQuatHoa #TuYeuThuongBanThan #PhatTrienBanThan #Shorts
+---
+Tài liệu tham khảo:
+- Beck, A. T., Rush, A. J., Shaw, B. F., & Emery, G. (1979). Cognitive Therapy of Depression. Guilford Press.
+- Burns, D. D. (1980). Feeling Good: The New Mood Therapy. William Morrow and Company.
+
+Lưu ý: Video mang tính chất cung cấp thông tin giáo dục đại chúng, không thay thế cho chẩn đoán hoặc tư vấn tâm lý chuyên nghiệp.
+
+#TiduMind #TamLyHoc #CBT #Overgeneralization #KhaiQuatHoa #PhatTrienBanThan #Shorts
 ```
 
 ## Thẻ (Tags)
 
 ```
-tidu mind, mot ngay te, overgeneralization, lieu phap cbt, tu trach ban than, phat trien ban than, chua lanh tam hon, shorts
+tidu mind, mot ngay te, overgeneralization, khai quat hoa qua muc, lieu phap nhan thuc hanh vi, cbt, tu thoai, phat trien ban than, shorts
 ```
 
 ## Bình luận ghim (Pinned Comment)
 
 ```
-Một ngày tệ chỉ là một trang trong cuốn lịch 365 ngày. Đừng để một nốt trầm định nghĩa cả bản nhạc cuộc đời bạn! 📅❤️
+Một cuộc phỏng vấn chưa tốt chỉ là một sự kiện của ngày hôm nay, không phải kết luận về cả tương lai của bạn. Bạn có câu nói nào hay dùng để tự trách mình không? Chia sẻ cùng Tidu nhé!
 ```

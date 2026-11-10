@@ -7,41 +7,42 @@ Một điểm tốt không có nghĩa mọi thứ đều tốt ✨ Hiệu ứng 
 ```
 
 Phương án khác:
-- `Nói chuyện tự tin có chắc là người giỏi? | Tidu Mind #Shorts`
-- `Hiệu ứng hào quang: Tại sao ấn tượng đầu tiên dễ đánh lừa chúng ta? #Shorts`
+- `Nói chuyện tự tin có chắc là người rất giỏi? | Tidu Mind #Shorts`
+- `Hiệu ứng hào quang: Khi một ấn tượng nổi bật dẫn dắt mọi đánh giá #Shorts`
 
 ## Mô tả
 
 ```
-Một người nói chuyện tự tin có chắc cũng là một người rất giỏi trong công việc? 🤔
+Một người nói chuyện tự tin có chắc cũng là người rất giỏi?
 
-Không nhất thiết! Trong tâm lý học xã hội, đây chính là HIỆU ỨNG HÀO QUANG (Halo Effect).
+Không nhất thiết. Trong tâm lý học, đây được gọi là HIỆU ỨNG HÀO QUANG (Halo Effect).
 
-Khi một người có một đặc điểm nổi bật tích cực (vẻ ngoài chỉnh chu, cách nói chuyện lưu loát, nụ cười cuốn hút), chúng ta có xu hướng vô thức gán cho họ hàng loạt đức tính tốt đẹp khác: thông minh, đáng tin cậy, làm việc chuyên nghiệp... dù chưa có bằng chứng xác thực!
+Một ấn tượng nổi bật ban đầu về ai đó — chẳng hạn như cách nói chuyện tự tin, vẻ ngoài ăn mặc chỉnh chu — có thể ảnh hưởng đến cách chúng ta đánh giá những đặc điểm khác của họ. Chúng ta dễ xem họ là đáng tin hơn hay giỏi giang hơn, dù vẻ ngoài chưa đủ để chứng minh năng lực hay tính cách thực tế.
 
-Điều này không có nghĩa ấn tượng đầu tiên luôn sai, nhưng nó nhắc chúng ta:
-✨ Vẻ ngoài không đại diện cho toàn bộ năng lực
-✨ Sự tự tin không thay thế cho kiến thức thực chất
-✨ Đánh giá con người cần thời gian và bằng chứng độc lập
+Điều này không có nghĩa ấn tượng đầu tiên luôn sai. Nhưng nó nhắc chúng ta cần thêm thời gian để quan sát nhiều hơn.
 
-💡 BÀI HỌC:
-Hãy tách bạch từng thuộc tính để đánh giá riêng: Tự tin là một kỹ năng trình bày, còn kiến thức và kết quả thực tế cần được kiểm chứng qua sản phẩm cụ thể! 🧠⚖️
+💡 GỢI Ý ĐÁNH GIÁ:
+Hãy thử đánh giá sự tự tin, kiến thức và kết quả công việc bằng những bằng chứng riêng biệt thay vì để một điểm sáng làm lu mờ tất cả.
 
-Nguồn: APA Dictionary of Psychology, "Halo Effect" (Edward Thorndike).
+Nghiên cứu & Nguồn tham khảo:
+- Thorndike, E. L. (1920). A constant error in psychological ratings. Journal of Applied Psychology, 4(1), 25–29. https://doi.org/10.1037/h0071663
+- Nisbett, R. E., & Wilson, T. D. (1977). The halo effect: Evidence for unconscious alteration of judgments. Journal of Personality and Social Psychology, 35(4), 250–256. https://doi.org/10.1037/0022-3514.35.4.250
 
-👉 Bạn từng thay đổi hoàn toàn ấn tượng về ai đó sau khi làm việc chung chưa? Bình luận nhé! 👇
+Lưu ý: Video mang tính chất chia sẻ kiến thức tâm lý học phổ thông, không thay thế cho tư vấn tâm lý hay lời khuyên chuyên môn.
 
-#TiduMind #HaloEffect #HieuUngHaoQuang #TamLyXaHoi #NhanDienConNguoi #DanhGiaCongViec #PhatTrienBanThan #Shorts
+👉 Bạn từng thay đổi ấn tượng về ai đó sau khi hiểu họ hơn chưa? Chia sẻ câu chuyện của bạn ở phần bình luận nhé!
+
+#TiduMind #HaloEffect #HieuUngHaoQuang #TamLyHoc #DanhGiaConNguoi #KyNangSong #PhatTrienBanThan #Shorts
 ```
 
 ## Thẻ (Tags)
 
 ```
-tidu mind, hieu ung hao quang, halo effect, danh gia con nguoi, an tuong dau tien, tam ly hoc, ky nang song, phat trien ban than, shorts
+tidu mind, hieu ung hao quang, halo effect, danh gia con nguoi, an tuong dau tien, tam ly hoc, thorndike, ky nang song, phat trien ban than, shorts
 ```
 
-## Bình luận ghim (Pinned Comment)
+## Pinned Comment
 
 ```
-Đừng để một hào quang sáng chói làm mờ đi những góc nhìn khách quan! Lưu video để nhớ đánh giá từng điều bằng chứng cứ riêng nhé! ✨🧠
+Một ấn tượng tốt ban đầu không hẳn đã sai, nhưng đừng vội kết luận tất cả. Bạn từng thay đổi ấn tượng về ai đó sau một thời gian làm việc chung chưa? Chia sẻ cùng Tidu nhé! ✨
 ```

@@ -3,51 +3,52 @@
 ## Tiêu đề
 
 ```
-Trì hoãn không đơn giản chỉ vì lười biếng 📱 Bí mật tâm lý đằng sau #Shorts
+Trì hoãn không đơn giản chỉ vì lười biếng #Shorts
 ```
 
 Phương án khác:
+- `Trì hoãn là cách né tránh cảm xúc: Bước nhỏ để bắt đầu #Shorts`
 - `Biết cần làm việc nhưng lại mở điện thoại thêm một lần nữa? #Shorts`
-- `Trì hoãn là né tránh cảm xúc: Cách phá vỡ bằng một bước cực nhỏ #Shorts`
 
 ## Mô tả
 
 ```
-Bạn biết mình cần phải ngồi vào bàn làm việc, nhưng bàn tay vẫn vô thức với lấy chiếc điện thoại để lướt thêm một lát? 📱⏳
+Bạn biết mình cần làm việc, nhưng lại mở điện thoại thêm một lần nữa?
 
-Đừng vội tự dằn vặt rằng mình lười biếng! Các nghiên cứu tâm lý học chỉ ra rằng:
-👉 TRÌ HOÃN THỰC CHẤT LÀ MỘT CƠ CHẾ NÉ TRÁNH CẢM XÚC TIÊU CỰC.
+Nhiều người thường tự dằn vặt rằng mình lười biếng hay thiếu kỷ luật. Nhưng nghiên cứu tâm lý học cho thấy:
+Trì hoãn thường bắt nguồn từ cơ chế điều hòa cảm xúc (emotion regulation), cụ thể là né tránh các cảm xúc khó chịu trong ngắn hạn.
 
-Khi một nhiệm vụ khiến bạn cảm thấy:
-- Quá khó hoặc mơ hồ
-- Sợ làm không hoàn hảo, sợ bị đánh giá
-- Cảm giác nhàm chán, thiếu động lực
-Bộ não sẽ tự động chuyển hướng sang chiếc điện thoại để tìm kiếm cảm giác dễ chịu tức thì!
+Một công việc có thể gợi lên những cảm giác mà bạn muốn né tránh:
+- Thấy nhiệm vụ quá khó hoặc mơ hồ
+- Cảm giác nhàm chán
+- Lo lắng hoặc sợ làm không tốt
 
-Nhưng né tránh chỉ xoa dịu ngắn hạn, còn công việc vẫn còn nguyên cùng áp lực gấp đôi.
+Chuyển sang việc dễ chịu hơn (như lướt điện thoại) giúp xoa dịu cảm xúc nhất thời. Nhưng công việc vẫn còn nguyên, khiến áp lực sau đó càng tăng thêm.
 
-💡 CHIẾN LƯỢC BƯỚC CỰC NHỎ (MICRO-STEP):
-Đừng ép bản thân phải hoàn thành cả bài tập lớn. Hãy hạ thấp rào cản bắt đầu xuống mức nhỏ nhất:
-✓ Chỉ đọc trang đầu tiên của tài liệu
-✓ Hoặc chỉ viết đúng một dòng tiêu đề
-✓ Hoặc mở file Word lên và ngồi trước màn hình 2 phút
-Khi đã vượt qua được điểm ma sát ban đầu, đà quán tính sẽ kéo bạn tiếp tục làm việc! 🚀✨
+GỢI Ý THỰC HÀNH:
+1. Quan sát và gọi tên: Tự hỏi điều gì trong nhiệm vụ này đang khiến mình muốn né tránh?
+2. Chọn một bước thật cụ thể: Chẳng hạn đọc trang đầu tiên của tài liệu hoặc viết dòng tiêu đề.
+3. Đừng chỉ ép bản thân phải cố gắng nhiều hơn: Hãy tìm cách làm cho điểm bắt đầu trở nên dễ tiếp cận hơn.
 
-Nguồn: Dr. Tim Pychyl, Procrastination Research Group (Carleton University).
+Nguồn tham khảo:
+- Sirois, F. M., & Pychyl, T. A. (2013). Procrastination and the priority of short-term mood regulation: More hurt than heal. Social and Personality Psychology Compass, 7(2), 115–127. DOI: 10.1111/spc3.12011
+- Pychyl, T. A. (2013). Solving the Procrastination Puzzle: A Concise Guide to Strategies for Change. TarcherPerigee.
 
-👉 Bạn thường hay trì hoãn việc gì nhất trong ngày? Chia sẻ thú thật bên dưới nhé! 👇
+Bạn thường trì hoãn việc gì nhất? Chia sẻ cùng Tidu Mind nhé!
 
-#TiduMind #TriHoan #Procrastination #QuanLyThoiGian #DongLucLamViec #PhatTrienBanThan #TamLyHoc #TapTrung #Shorts
+Lưu ý: Video chia sẻ thông tin tâm lý học phổ quát nhằm nâng cao nhận thức bản thân, không thay thế cho chẩn đoán hay can thiệp tâm lý chuyên nghiệp.
+
+#TiduMind #TriHoan #Procrastination #TamLyHoc #PhatTrienBanThan #Shorts
 ```
 
 ## Thẻ (Tags)
 
 ```
-tidu mind, tri hoan, procrastination, vuot qua tri hoan, quan ly cam xuc, dong luc lam viec, phat trien ban than, shorts
+tidu mind, tri hoan, procrastination, tam ly tri hoan, ne tranh cam xuc, buoc cuc nho, vuot qua tri hoan, phat trien ban than, shorts
 ```
 
 ## Bình luận ghim (Pinned Comment)
 
 ```
-Đừng ép mình cố gắng thật phi thường. Hãy bắt đầu bằng một bước cực nhỏ để đánh bại sự trì hoãn! 💪✨
+Đừng chỉ ép bản thân cố gắng hơn. Hãy thử hạ thấp điểm bắt đầu bằng một bước thật cụ thể nhé!
 ```
