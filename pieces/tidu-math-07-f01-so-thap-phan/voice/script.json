@@ -1,0 +1,101 @@
+{
+ "lead": 0.3,
+ "tail": 1.1,
+ "lang": "vi",
+ "vieneu": {
+  "voice": "Trúc Ly",
+  "speed": 0.88
+ },
+ "lines": [
+  {
+   "id": "question1",
+   "text": "Không phẩy năm và không phẩy hai mươi lăm, số nào lớn hơn?",
+   "after": 0.2,
+   "file": "question1.wav"
+  },
+  {
+   "id": "question2",
+   "text": "Mỗi bảng là một đơn vị, mỗi ô là một phần một trăm.",
+   "after": 0.25,
+   "file": "question2.wav"
+  },
+  {
+   "id": "misconception1",
+   "text": "Nhiều bạn chọn số có nhiều chữ số hơn.",
+   "after": 0.15,
+   "file": "misconception1.wav"
+  },
+  {
+   "id": "misconception2",
+   "text": "Vì hai mươi lăm lớn hơn năm, không phẩy hai mươi lăm có vẻ lớn hơn.",
+   "after": 0.15,
+   "file": "misconception2.wav"
+  },
+  {
+   "id": "misconception3",
+   "text": "Nhưng quy tắc này có đúng với số thập phân không?",
+   "after": 0.25,
+   "file": "misconception3.wav"
+  },
+  {
+   "id": "explanation1",
+   "text": "Thêm chữ số không vào cuối: không phẩy năm bằng không phẩy năm mươi.",
+   "after": 0.2,
+   "file": "explanation1.wav"
+  },
+  {
+   "id": "explanation2",
+   "text": "Năm phần mười là năm cột, tức năm mươi ô nhỏ.",
+   "after": 0.15,
+   "file": "explanation2.wav"
+  },
+  {
+   "id": "explanation3",
+   "text": "Giá trị không đổi, nên quy tắc đếm chữ số là sai.",
+   "after": 0.2,
+   "file": "explanation3.wav"
+  },
+  {
+   "id": "explanation4",
+   "text": "Còn không phẩy hai mươi lăm là hai mươi lăm ô nhỏ.",
+   "after": 0.15,
+   "file": "explanation4.wav"
+  },
+  {
+   "id": "explanation5",
+   "text": "Giờ ta so năm mươi ô với hai mươi lăm ô.",
+   "after": 0.25,
+   "file": "explanation5.wav"
+  },
+  {
+   "id": "reveal1",
+   "text": "Vậy không phẩy năm lớn hơn không phẩy hai mươi lăm.",
+   "after": 0.2,
+   "file": "reveal1.wav"
+  },
+  {
+   "id": "reveal2",
+   "text": "Trên tia số, không phẩy năm nằm bên phải.",
+   "after": 0.25,
+   "file": "reveal2.wav"
+  },
+  {
+   "id": "takeaway1",
+   "text": "Muốn so số thập phân, hãy thêm số không để phần thập phân dài bằng nhau.",
+   "after": 0.15,
+   "file": "takeaway1.wav"
+  },
+  {
+   "id": "takeaway2",
+   "text": "Rồi so từng hàng từ trái sang phải.",
+   "after": 0.2,
+   "file": "takeaway2.wav"
+  },
+  {
+   "id": "takeaway3",
+   "text": "Bạn thử so không phẩy bảy và không phẩy sáu mươi chín nhé.",
+   "after": 0.2,
+   "file": "takeaway3.wav"
+  }
+ ]
+}

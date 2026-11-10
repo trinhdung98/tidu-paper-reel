@@ -1,0 +1,107 @@
+{
+ "lead": 0.3,
+ "tail": 1.2,
+ "lang": "vi",
+ "vieneu": {
+  "voice": "Trúc Ly",
+  "speed": 0.88
+ },
+ "lines": [
+  {
+   "id": "initial1",
+   "text": "Vì sao diện tích hình bình hành bằng đáy nhân chiều cao?",
+   "after": 0.15,
+   "file": "initial1.wav"
+  },
+  {
+   "id": "initial2",
+   "text": "Hình bình hành này có đáy dài sáu đơn vị.",
+   "after": 0.15,
+   "file": "initial2.wav"
+  },
+  {
+   "id": "initial3",
+   "text": "Chiều cao vuông góc với đáy, dài bốn đơn vị.",
+   "after": 0.2,
+   "file": "initial3.wav"
+  },
+  {
+   "id": "trigger1",
+   "text": "Ta cắt theo đúng đường cao, vuông góc với đáy.",
+   "after": 0.15,
+   "file": "trigger1.wav"
+  },
+  {
+   "id": "trigger2",
+   "text": "Nhát cắt tách ra một mảnh tam giác ở góc nhọn bên trái.",
+   "after": 0.2,
+   "file": "trigger2.wav"
+  },
+  {
+   "id": "change1",
+   "text": "Ta trượt mảnh tam giác sang đầu bên phải, đi đúng sáu đơn vị.",
+   "after": 0.15,
+   "file": "change1.wav"
+  },
+  {
+   "id": "change2",
+   "text": "Mảnh giấy không co, không giãn, cũng không xoay.",
+   "after": 0.15,
+   "file": "change2.wav"
+  },
+  {
+   "id": "change3",
+   "text": "Cạnh xiên của nó tiến lại gần cạnh xiên phía bên kia.",
+   "after": 0.2,
+   "file": "change3.wav"
+  },
+  {
+   "id": "result1",
+   "text": "Hai mảnh ghép khít thành một hình chữ nhật dài sáu, rộng bốn.",
+   "after": 0.15,
+   "file": "result1.wav"
+  },
+  {
+   "id": "result2",
+   "text": "Đếm ô vuông: bốn hàng, mỗi hàng sáu ô.",
+   "after": 0.15,
+   "file": "result2.wav"
+  },
+  {
+   "id": "result3",
+   "text": "Sáu nhân bốn bằng hai mươi bốn đơn vị vuông.",
+   "after": 0.15,
+   "file": "result3.wav"
+  },
+  {
+   "id": "result4",
+   "text": "Không thêm, không bớt giấy, nên hình bình hành cũng có diện tích ấy.",
+   "after": 0.2,
+   "file": "result4.wav"
+  },
+  {
+   "id": "implication1",
+   "text": "Vậy diện tích hình bình hành bằng đáy nhân chiều cao.",
+   "after": 0.15,
+   "file": "implication1.wav"
+  },
+  {
+   "id": "implication2",
+   "text": "Nhớ dùng chiều cao vuông góc với đáy, không dùng cạnh xiên.",
+   "after": 0.15,
+   "file": "implication2.wav"
+  },
+  {
+   "id": "implication3",
+   "text": "Nếu đáy dài tám đơn vị, chiều cao ba đơn vị, diện tích bằng mấy?",
+   "after": 0.15,
+   "file": "implication3.wav"
+  },
+  {
+   "id": "implication4",
+   "text": "Nhân tám với ba, ta được hai mươi bốn đơn vị vuông.",
+   "after": 0.2,
+   "file": "implication4.wav"
+  }
+ ]
+}

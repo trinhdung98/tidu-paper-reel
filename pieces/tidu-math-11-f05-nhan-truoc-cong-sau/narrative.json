@@ -1,0 +1,147 @@
+{
+ "format": "F05",
+ "title": "Sáu cộng bốn nhân hai",
+ "channel": "math",
+ "beats": [
+  {
+   "stage": "challenge",
+   "title": "Tính trong năm giây",
+   "lines": [
+    {
+     "id": "challenge1",
+     "text": "Bạn có tính được phép tính này trong năm giây không?",
+     "after": 0.15
+    },
+    {
+     "id": "challenge2",
+     "text": "Sáu cộng bốn nhân hai bằng bao nhiêu?",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "question": "6 + 4 × 2 = ?",
+    "choices": [
+     "14",
+     "20",
+     "16",
+     "18"
+    ],
+    "correct": 0,
+    "countdown": 5,
+    "explanation": ""
+   }
+  },
+  {
+   "stage": "options",
+   "title": "Bốn lựa chọn",
+   "lines": [
+    {
+     "id": "options1",
+     "text": "Chọn mười bốn, hai mươi, mười sáu, hoặc mười tám.",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "question": "6 + 4 × 2 = ?",
+    "choices": [
+     "14",
+     "20",
+     "16",
+     "18"
+    ],
+    "correct": 0,
+    "countdown": 5,
+    "explanation": ""
+   }
+  },
+  {
+   "stage": "thinking",
+   "title": "Năm giây suy nghĩ",
+   "lines": [
+    {
+     "id": "thinking1",
+     "text": "Chọn thầm một đáp án nhé, năm giây bắt đầu.",
+     "after": 5.5
+    }
+   ],
+   "visual": {
+    "question": "6 + 4 × 2 = ?",
+    "choices": [
+     "14",
+     "20",
+     "16",
+     "18"
+    ],
+    "correct": 0,
+    "countdown": 5,
+    "explanation": ""
+   }
+  },
+  {
+   "stage": "answer",
+   "title": "Đáp án mười bốn",
+   "lines": [
+    {
+     "id": "answer1",
+     "text": "Mười bốn là đáp án đúng.",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "question": "6 + 4 × 2 = ?",
+    "choices": [
+     "14",
+     "20",
+     "16",
+     "18"
+    ],
+    "correct": 0,
+    "countdown": 5,
+    "explanation": "Đáp án đúng là 14"
+   }
+  },
+  {
+   "stage": "explanation",
+   "title": "Nhân trước, cộng sau",
+   "lines": [
+    {
+     "id": "explain1",
+     "text": "Ta nhân bốn với hai trước, kết quả là tám.",
+     "after": 0.15
+    },
+    {
+     "id": "explain2",
+     "text": "Rồi mới cộng: sáu cộng tám bằng mười bốn.",
+     "after": 0.15
+    },
+    {
+     "id": "explain3",
+     "text": "Nếu chọn hai mươi, có thể bạn đã cộng sáu với bốn trước rồi mới nhân hai.",
+     "after": 0.15
+    },
+    {
+     "id": "explain4",
+     "text": "Không có ngoặc, ta làm phép nhân trước, sau đó làm phép cộng.",
+     "after": 0.15
+    },
+    {
+     "id": "explain5",
+     "text": "Còn sáu cộng bốn, tất cả nhân hai, sẽ bằng bao nhiêu?",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "question": "6 + 4 × 2 = ?",
+    "choices": [
+     "14",
+     "20",
+     "16",
+     "18"
+    ],
+    "correct": 0,
+    "countdown": 5,
+    "explanation": "4 × 2 = 8, rồi 6 + 8 = 14"
+   }
+  }
+ ]
+}

@@ -1,0 +1,182 @@
+{
+ "format": "F06",
+ "title": "Diện tích hình bình hành",
+ "channel": "math",
+ "beats": [
+  {
+   "stage": "initial",
+   "title": "Một hình bình hành",
+   "lines": [
+    {
+     "id": "initial1",
+     "text": "Vì sao diện tích hình bình hành bằng đáy nhân chiều cao?",
+     "after": 0.15
+    },
+    {
+     "id": "initial2",
+     "text": "Hình bình hành này có đáy dài sáu đơn vị.",
+     "after": 0.15
+    },
+    {
+     "id": "initial3",
+     "text": "Chiều cao vuông góc với đáy, dài bốn đơn vị.",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "before": "Hình bình hành",
+    "after": "Hình chữ nhật",
+    "progress": 0,
+    "trigger": "Chưa cắt",
+    "labels": [
+     "Ban đầu",
+     "Cắt",
+     "Dời",
+     "Ghép",
+     "Đếm"
+    ]
+   }
+  },
+  {
+   "stage": "trigger",
+   "title": "Cắt theo đường cao",
+   "lines": [
+    {
+     "id": "trigger1",
+     "text": "Ta cắt theo đúng đường cao, vuông góc với đáy.",
+     "after": 0.15
+    },
+    {
+     "id": "trigger2",
+     "text": "Nhát cắt tách ra một mảnh tam giác ở góc nhọn bên trái.",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "before": "Hình bình hành",
+    "after": "Hình chữ nhật",
+    "progress": 0.25,
+    "trigger": "Cắt theo đường cao",
+    "labels": [
+     "Ban đầu",
+     "Cắt",
+     "Dời",
+     "Ghép",
+     "Đếm"
+    ]
+   }
+  },
+  {
+   "stage": "change",
+   "title": "Trượt mảnh tam giác",
+   "lines": [
+    {
+     "id": "change1",
+     "text": "Ta trượt mảnh tam giác sang đầu bên phải, đi đúng sáu đơn vị.",
+     "after": 0.15
+    },
+    {
+     "id": "change2",
+     "text": "Mảnh giấy không co, không giãn, cũng không xoay.",
+     "after": 0.15
+    },
+    {
+     "id": "change3",
+     "text": "Cạnh xiên của nó tiến lại gần cạnh xiên phía bên kia.",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "before": "Hình bình hành",
+    "after": "Hình chữ nhật",
+    "progress": 0.5,
+    "trigger": "Chỉ trượt, không co giãn",
+    "labels": [
+     "Ban đầu",
+     "Cắt",
+     "Dời",
+     "Ghép",
+     "Đếm"
+    ]
+   }
+  },
+  {
+   "stage": "result",
+   "title": "Thành hình chữ nhật",
+   "lines": [
+    {
+     "id": "result1",
+     "text": "Hai mảnh ghép khít thành một hình chữ nhật dài sáu, rộng bốn.",
+     "after": 0.15
+    },
+    {
+     "id": "result2",
+     "text": "Đếm ô vuông: bốn hàng, mỗi hàng sáu ô.",
+     "after": 0.15
+    },
+    {
+     "id": "result3",
+     "text": "Sáu nhân bốn bằng hai mươi bốn đơn vị vuông.",
+     "after": 0.15
+    },
+    {
+     "id": "result4",
+     "text": "Không thêm, không bớt giấy, nên hình bình hành cũng có diện tích ấy.",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "before": "Hình bình hành",
+    "after": "Hình chữ nhật",
+    "progress": 1,
+    "trigger": "Cùng các mảnh, cùng diện tích",
+    "labels": [
+     "Ban đầu",
+     "Cắt",
+     "Dời",
+     "Ghép",
+     "Đếm"
+    ]
+   }
+  },
+  {
+   "stage": "implication",
+   "title": "Đáy nhân chiều cao",
+   "lines": [
+    {
+     "id": "implication1",
+     "text": "Vậy diện tích hình bình hành bằng đáy nhân chiều cao.",
+     "after": 0.15
+    },
+    {
+     "id": "implication2",
+     "text": "Nhớ dùng chiều cao vuông góc với đáy, không dùng cạnh xiên.",
+     "after": 0.15
+    },
+    {
+     "id": "implication3",
+     "text": "Nếu đáy dài tám đơn vị, chiều cao ba đơn vị, diện tích bằng mấy?",
+     "after": 0.15
+    },
+    {
+     "id": "implication4",
+     "text": "Nhân tám với ba, ta được hai mươi bốn đơn vị vuông.",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "before": "Hình bình hành",
+    "after": "Hình chữ nhật",
+    "progress": 1,
+    "trigger": "Diện tích = đáy × chiều cao",
+    "labels": [
+     "Ban đầu",
+     "Cắt",
+     "Dời",
+     "Ghép",
+     "Đếm"
+    ]
+   }
+  }
+ ]
+}

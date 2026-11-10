@@ -1,0 +1,32 @@
+{
+  "name": "tidu-math-13-f07-gap-doi-canh",
+  "title": "Nhân đôi cạnh hình vuông",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "style": "paper-reel",
+  "fonts": {
+    "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf",
+    "Bevan": "Bevan-Regular.ttf"
+  },
+  "voice": {
+    "file": "voice/voice.wav",
+    "music": -13
+  },
+  "review": {
+    "safe": {
+      "top": 120,
+      "bottom": 300,
+      "right": 120
+    },
+    "refs": {}
+  },
+  "narrativeFormat": "F07",
+  "storyFormat": "F07 Giả sử và thực tế: hypothesis -> assumptions -> consequences -> reality -> takeaway",
+  "scenes": [
+    "kit/math-format.js",
+    "src/scenes.js"
+  ]
+}

@@ -1,0 +1,107 @@
+{
+ "lead": 0.3,
+ "tail": 1.2,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "ask",
+   "text": "Bốn mươi chín cộng ba mươi tám: đặt tính hay bù tròn thì dễ hơn?",
+   "after": 0.15,
+   "file": "ask.wav"
+  },
+  {
+   "id": "depends",
+   "text": "Câu trả lời còn tùy con số và tình huống.",
+   "after": 0.2,
+   "file": "depends.wav"
+  },
+  {
+   "id": "criteria",
+   "text": "So theo ba điều: chính xác, số bước phải nhớ, và khi nào tiện.",
+   "after": 0.2,
+   "file": "criteria.wav"
+  },
+  {
+   "id": "colUnits",
+   "text": "Đặt tính: chín cộng tám bằng mười bảy, viết bảy, nhớ một.",
+   "after": 0.15,
+   "file": "colUnits.wav"
+  },
+  {
+   "id": "colTens",
+   "text": "Bốn cộng ba, thêm một đã nhớ, là tám: được tám mươi bảy.",
+   "after": 0.2,
+   "file": "colTens.wav"
+  },
+  {
+   "id": "compUp",
+   "text": "Bù tròn: bốn mươi chín thêm một thành năm mươi.",
+   "after": 0.15,
+   "file": "compUp.wav"
+  },
+  {
+   "id": "compAdd",
+   "text": "Năm mươi cộng ba mươi tám bằng tám mươi tám.",
+   "after": 0.15,
+   "file": "compAdd.wav"
+  },
+  {
+   "id": "compBack",
+   "text": "Đã thêm một thì phải trừ lại một: còn tám mươi bảy.",
+   "after": 0.2,
+   "file": "compBack.wav"
+  },
+  {
+   "id": "sameAnswer",
+   "text": "Hai cách đều ra tám mươi bảy.",
+   "after": 0.15,
+   "file": "sameAnswer.wav"
+  },
+  {
+   "id": "memory",
+   "text": "Ghi số nhớ ra giấy khi đặt tính; bù tròn thì nhớ bớt một.",
+   "after": 0.15,
+   "file": "memory.wav"
+  },
+  {
+   "id": "roundCase",
+   "text": "Bài này có bốn mươi chín sát năm mươi, nên bù tròn gọn.",
+   "after": 0.2,
+   "file": "roundCase.wav"
+  },
+  {
+   "id": "nearTen",
+   "text": "Khi có số gần tròn chục, bù tròn nhẩm thường nhanh.",
+   "after": 0.15,
+   "file": "nearTen.wav"
+  },
+  {
+   "id": "longCase",
+   "text": "Khi số dài, nhiều chữ số, đặt tính giúp theo dõi từng hàng.",
+   "after": 0.2,
+   "file": "longCase.wav"
+  },
+  {
+   "id": "noWinner",
+   "text": "Không cách nào luôn nhanh hơn trong mọi bài.",
+   "after": 0.15,
+   "file": "noWinner.wav"
+  },
+  {
+   "id": "choose",
+   "text": "Hãy nhìn con số rồi chọn cách hợp lúc đó.",
+   "after": 0.15,
+   "file": "choose.wav"
+  },
+  {
+   "id": "practice",
+   "text": "Năm mươi chín cộng hai mươi sáu, bạn sẽ chọn cách nào?",
+   "after": 0.2,
+   "file": "practice.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Trúc Ly",
+  "speed": 0.88
+ }
+}

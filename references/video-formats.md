@@ -55,6 +55,19 @@ Endings: each format closes the way its last stage says: a practice item, a ques
 
 Shared layout bands (from [style.md](style.md) and [layout-rules.md](layout-rules.md)): sign 140–296, optional strip 322–400, hero band 420–1300, caption chips 1450–1600 (no other text), mascot bottom right, nothing in the phone-UI corner. Paired cards centre at x 350 and 730; a solo hero at x 540.
 
+## Custom Tidu Math illustrations
+
+The seven Tidu Math productions (pieces 07–13) use their own mathematical objects rather than the sample artwork. In `piece.json`, set `"scenes": ["kit/math-format.js", "src/scenes.js"]` to load the shared math stage shell before the piece's painter.
+
+`kit/math-format.js` installs the five stage boundaries, paper backgrounds, progress dots, channel sign, preview watermark and spoken captions. The piece defines `renderBeat(beat, index)`, calls `mfInstall(renderBeat)`, and supplies `SFX_CUES()`. Use `{ mascot: false }` as the second `mfInstall` argument when the character belongs inside the story, as in the cake-sharing piece.
+
+`MF_TIMES` exposes the stage spans; `mfLine(beat)` identifies the current spoken line. `mfText`, `mfCard`, `mfArrow` and `mfOwl` provide the shared drawing treatments. Mathematical objects, conserved counts, geometry and word-triggered changes remain the piece's responsibility; use `VL` and `VW` for the actual aligned takes. Prefix private globals to avoid collisions with the concatenated kit (for example, `LX` and `LY` already belong to the core).
+
+With the corner mascot enabled, captions use at most two words and end at x 680, leaving room for the owl's hat. The character-story layout can disable that mascot and retain the full caption width.
+
+The shell does not replace the format contract or review. Check that the illustration proves the narrated mathematics, inspect the opening frame and spoken-line pauses, and rebuild after changing voice timing. For a quiz, keep the title and opening choices free of answer hints, and preserve the full silent countdown before the reveal.
+
+
 ## F01 — Câu hỏi và giải thích (question → explanation)
 
 25–60 s. Sample "So số thập phân" (math, about 42 s): which is larger, 0,5 or 0,25?
@@ -166,4 +179,4 @@ Each contract's `reviewQuestions` are the format-specific review. The general re
 
 The implementation was exercised with all seven generated samples: creation, contract validation, preview build, Canvas rendering, text overlap/safe-zone checks, and deterministic frame checks. The 24 contract regression tests pass. Quiz countdown boundaries were visually inspected; exporting a preview without measured voice was refused. Legacy starter creation still works.
 
-Verification used synthetic preview timing. No new TTS takes or publishable MP4s were generated; real voice duration, pronunciation and final audio must be reviewed for each production piece.
+The generated-sample verification above used synthetic timing. The seven custom [Tidu Math productions](../pieces/tidu-math-format-demos.md) (pieces 07–13) additionally use real Trúc Ly narration, aligned word timings and 1080×1920/30 fps H.264/AAC MP4 exports. Their final builds passed strict format checks, sampled text checks and deterministic-frame checks; opening, stage and spoken-line frames and encoded-video previews were visually reviewed. ASR is a screening aid, not a guarantee of pronunciation: listen to the final mixes before posting.

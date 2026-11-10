@@ -1,0 +1,125 @@
+{
+ "lead": 0.3,
+ "tail": 1.1,
+ "lang": "vi",
+ "vieneu": {
+  "voice": "Trúc Ly",
+  "speed": 0.88
+ },
+ "lines": [
+  {
+   "id": "characterOwl",
+   "text": "Đây là Tidu, chú cú đang chuẩn bị một buổi dã ngoại.",
+   "after": 0.2,
+   "file": "characterOwl.wav"
+  },
+  {
+   "id": "characterFriends",
+   "text": "Ba người bạn đi cùng là Na, Bin và Mai.",
+   "after": 0.2,
+   "file": "characterFriends.wav"
+  },
+  {
+   "id": "characterGoal",
+   "text": "Tidu muốn ai cũng có phần bánh như nhau.",
+   "after": 0.25,
+   "file": "characterGoal.wav"
+  },
+  {
+   "id": "problemTray",
+   "text": "Trên khay có tất cả mười hai chiếc bánh.",
+   "after": 0.2,
+   "file": "problemTray.wav"
+  },
+  {
+   "id": "problemPlates",
+   "text": "Tidu đặt ra ba cái đĩa, mỗi bạn một đĩa.",
+   "after": 0.2,
+   "file": "problemPlates.wav"
+  },
+  {
+   "id": "problemAsk",
+   "text": "Vậy mỗi đĩa cần bao nhiêu chiếc để ba bạn được bằng nhau?",
+   "after": 0.25,
+   "file": "problemAsk.wav"
+  },
+  {
+   "id": "attemptRush",
+   "text": "Lần thứ nhất, Tidu xếp vội theo kiểu ước chừng.",
+   "after": 0.2,
+   "file": "attemptRush.wav"
+  },
+  {
+   "id": "attemptCount",
+   "text": "Đĩa của Na có sáu chiếc, Bin có bốn, còn Mai chỉ có hai.",
+   "after": 0.2,
+   "file": "attemptCount.wav"
+  },
+  {
+   "id": "attemptCheck",
+   "text": "Đủ mười hai chiếc, nhưng ba đĩa không bằng nhau.",
+   "after": 0.25,
+   "file": "attemptCheck.wav"
+  },
+  {
+   "id": "attemptDeal",
+   "text": "Lần thứ hai, Tidu gom bánh lại và chia lần lượt từng vòng.",
+   "after": 0.2,
+   "file": "attemptDeal.wav"
+  },
+  {
+   "id": "attemptRound",
+   "text": "Mỗi vòng, Tidu đặt vào mỗi đĩa đúng một chiếc.",
+   "after": 0.25,
+   "file": "attemptRound.wav"
+  },
+  {
+   "id": "consequenceRounds",
+   "text": "Tidu chia tiếp vòng hai, vòng ba, rồi vòng bốn.",
+   "after": 0.2,
+   "file": "consequenceRounds.wav"
+  },
+  {
+   "id": "consequenceEmpty",
+   "text": "Khay đã trống, không còn chiếc bánh nào bị sót lại.",
+   "after": 0.2,
+   "file": "consequenceEmpty.wav"
+  },
+  {
+   "id": "consequenceCount",
+   "text": "Đếm lại từng đĩa: Na bốn chiếc, Bin bốn chiếc, Mai cũng bốn chiếc.",
+   "after": 0.2,
+   "file": "consequenceCount.wav"
+  },
+  {
+   "id": "consequenceTotal",
+   "text": "Ba lần bốn là mười hai, vừa đúng số bánh ban đầu.",
+   "after": 0.25,
+   "file": "consequenceTotal.wav"
+  },
+  {
+   "id": "lessonTry",
+   "text": "Khi cần chia đều, bạn có thể thử chia lần lượt từng vòng như Tidu.",
+   "after": 0.2,
+   "file": "lessonTry.wav"
+  },
+  {
+   "id": "lessonDivide",
+   "text": "Mười hai chiếc chia đều cho ba bạn, ta viết mười hai chia ba bằng bốn.",
+   "after": 0.2,
+   "file": "lessonDivide.wav"
+  },
+  {
+   "id": "lessonRule",
+   "text": "Các phần bằng nhau, và tổng số bánh vẫn giữ nguyên.",
+   "after": 0.2,
+   "file": "lessonRule.wav"
+  },
+  {
+   "id": "lessonPractice",
+   "text": "Bạn thử nhé: mười lăm chiếc bánh chia đều cho ba bạn, mỗi bạn được mấy chiếc?",
+   "after": 0.2,
+   "file": "lessonPractice.wav"
+  }
+ ]
+}

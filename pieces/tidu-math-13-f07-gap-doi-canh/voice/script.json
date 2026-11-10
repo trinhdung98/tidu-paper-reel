@@ -1,0 +1,113 @@
+{
+ "lead": 0.3,
+ "tail": 1.1,
+ "lang": "vi",
+ "vieneu": {
+  "voice": "Trúc Ly",
+  "speed": 0.88
+ },
+ "lines": [
+  {
+   "id": "hypothesis1",
+   "text": "Nếu nhân đôi cạnh một hình vuông, diện tích có chỉ gấp đôi không?",
+   "after": 0.2,
+   "file": "hypothesis1.wav"
+  },
+  {
+   "id": "hypothesis2",
+   "text": "Giả sử cạnh hai đơn vị được nhân đôi thành bốn đơn vị.",
+   "after": 0.15,
+   "file": "hypothesis2.wav"
+  },
+  {
+   "id": "hypothesis3",
+   "text": "Nhiều bạn đoán gấp đôi, nhưng đó mới là dự đoán cần kiểm chứng.",
+   "after": 0.25,
+   "file": "hypothesis3.wav"
+  },
+  {
+   "id": "assumptions1",
+   "text": "Để so sánh công bằng, hai hình dùng cùng một đơn vị đo.",
+   "after": 0.15,
+   "file": "assumptions1.wav"
+  },
+  {
+   "id": "assumptions2",
+   "text": "Mỗi ô vuông cạnh một đơn vị là một đơn vị diện tích.",
+   "after": 0.15,
+   "file": "assumptions2.wav"
+  },
+  {
+   "id": "assumptions3",
+   "text": "Hình mới vẫn là hình vuông, nên chiều rộng và chiều cao đều gấp đôi.",
+   "after": 0.25,
+   "file": "assumptions3.wav"
+  },
+  {
+   "id": "consequences1",
+   "text": "Hình nhỏ có hai hàng, mỗi hàng hai ô, tức là bốn ô.",
+   "after": 0.15,
+   "file": "consequences1.wav"
+  },
+  {
+   "id": "consequences2",
+   "text": "Hình lớn có bốn hàng, mỗi hàng bốn ô, tức là mười sáu ô.",
+   "after": 0.2,
+   "file": "consequences2.wav"
+  },
+  {
+   "id": "consequences3",
+   "text": "Chia hình lớn thành bốn phần bằng nhau, mỗi phần bằng một hình vuông nhỏ.",
+   "after": 0.2,
+   "file": "consequences3.wav"
+  },
+  {
+   "id": "consequences4",
+   "text": "Vậy diện tích tăng gấp bốn lần, chứ không chỉ gấp đôi.",
+   "after": 0.25,
+   "file": "consequences4.wav"
+  },
+  {
+   "id": "reality1",
+   "text": "Thực tế, kiểu gấp đôi đó xảy ra khi ta chỉ nhân đôi một chiều.",
+   "after": 0.15,
+   "file": "reality1.wav"
+  },
+  {
+   "id": "reality2",
+   "text": "Chiều rộng thành bốn, chiều cao vẫn là hai: hình chữ nhật tám ô.",
+   "after": 0.2,
+   "file": "reality2.wav"
+  },
+  {
+   "id": "reality3",
+   "text": "Hình đó không phải hình vuông, vì cạnh dọc vẫn chỉ dài hai.",
+   "after": 0.15,
+   "file": "reality3.wav"
+  },
+  {
+   "id": "reality4",
+   "text": "Hình vuông cạnh bốn có mười sáu ô, gấp đôi hình chữ nhật kia.",
+   "after": 0.25,
+   "file": "reality4.wav"
+  },
+  {
+   "id": "takeaway1",
+   "text": "Với hình vuông, nhân đôi mọi cạnh thì diện tích tăng gấp bốn lần.",
+   "after": 0.2,
+   "file": "takeaway1.wav"
+  },
+  {
+   "id": "takeaway2",
+   "text": "Cạnh ba thì có chín ô; cạnh sáu thì có ba mươi sáu ô.",
+   "after": 0.2,
+   "file": "takeaway2.wav"
+  },
+  {
+   "id": "takeaway3",
+   "text": "Lần tới mở vở ô li, hãy tự vẽ và đếm để kiểm chứng nhé.",
+   "after": 0.2,
+   "file": "takeaway3.wav"
+  }
+ ]
+}

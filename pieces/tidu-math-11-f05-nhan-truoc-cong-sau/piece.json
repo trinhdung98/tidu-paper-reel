@@ -1,0 +1,32 @@
+{
+  "name": "tidu-math-11-f05-nhan-truoc-cong-sau",
+  "title": "Sáu cộng bốn nhân hai",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "style": "paper-reel",
+  "fonts": {
+    "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf",
+    "Bevan": "Bevan-Regular.ttf"
+  },
+  "voice": {
+    "file": "voice/voice.wav",
+    "music": -13
+  },
+  "review": {
+    "safe": {
+      "top": 120,
+      "bottom": 300,
+      "right": 120
+    },
+    "refs": {}
+  },
+  "narrativeFormat": "F05",
+  "storyFormat": "F05 Đố vui có đếm ngược: challenge -> options -> thinking -> answer -> explanation",
+  "scenes": [
+    "kit/math-format.js",
+    "src/scenes.js"
+  ]
+}

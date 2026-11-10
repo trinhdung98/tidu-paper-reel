@@ -1,0 +1,195 @@
+{
+ "format": "F07",
+ "title": "Nhân đôi cạnh hình vuông",
+ "channel": "math",
+ "beats": [
+  {
+   "stage": "hypothesis",
+   "title": "Giả sử nhân đôi",
+   "lines": [
+    {
+     "id": "hypothesis1",
+     "text": "Nếu nhân đôi cạnh một hình vuông, diện tích có chỉ gấp đôi không?",
+     "after": 0.2
+    },
+    {
+     "id": "hypothesis2",
+     "text": "Giả sử cạnh hai đơn vị được nhân đôi thành bốn đơn vị.",
+     "after": 0.15
+    },
+    {
+     "id": "hypothesis3",
+     "text": "Nhiều bạn đoán gấp đôi, nhưng đó mới là dự đoán cần kiểm chứng.",
+     "after": 0.25
+    }
+   ],
+   "visual": {
+    "hypothesis": "Cạnh gấp đôi thì diện tích gấp đôi?",
+    "assumptions": [
+     "Cạnh 2 đơn vị thành cạnh 4 đơn vị",
+     "Mới là dự đoán, cần kiểm chứng"
+    ],
+    "consequences": [
+     "?"
+    ],
+    "reality": "Thực tế: chưa kiểm chứng",
+    "takeaway": "?"
+   }
+  },
+  {
+   "stage": "assumptions",
+   "title": "Cùng một đơn vị",
+   "lines": [
+    {
+     "id": "assumptions1",
+     "text": "Để so sánh công bằng, hai hình dùng cùng một đơn vị đo.",
+     "after": 0.15
+    },
+    {
+     "id": "assumptions2",
+     "text": "Mỗi ô vuông cạnh một đơn vị là một đơn vị diện tích.",
+     "after": 0.15
+    },
+    {
+     "id": "assumptions3",
+     "text": "Hình mới vẫn là hình vuông, nên chiều rộng và chiều cao đều gấp đôi.",
+     "after": 0.25
+    }
+   ],
+   "visual": {
+    "hypothesis": "Cạnh gấp đôi thì diện tích gấp đôi?",
+    "assumptions": [
+     "Cùng một đơn vị đo",
+     "1 ô = 1 đơn vị diện tích",
+     "Rộng và cao đều gấp đôi"
+    ],
+    "consequences": [
+     "?"
+    ],
+    "reality": "Thực tế: chưa kiểm chứng",
+    "takeaway": "?"
+   }
+  },
+  {
+   "stage": "consequences",
+   "title": "Đếm từng ô",
+   "lines": [
+    {
+     "id": "consequences1",
+     "text": "Hình nhỏ có hai hàng, mỗi hàng hai ô, tức là bốn ô.",
+     "after": 0.15
+    },
+    {
+     "id": "consequences2",
+     "text": "Hình lớn có bốn hàng, mỗi hàng bốn ô, tức là mười sáu ô.",
+     "after": 0.2
+    },
+    {
+     "id": "consequences3",
+     "text": "Chia hình lớn thành bốn phần bằng nhau, mỗi phần bằng một hình vuông nhỏ.",
+     "after": 0.2
+    },
+    {
+     "id": "consequences4",
+     "text": "Vậy diện tích tăng gấp bốn lần, chứ không chỉ gấp đôi.",
+     "after": 0.25
+    }
+   ],
+   "visual": {
+    "hypothesis": "Cạnh gấp đôi thì diện tích gấp đôi?",
+    "assumptions": [
+     "Cùng một đơn vị đo",
+     "1 ô = 1 đơn vị diện tích",
+     "Rộng và cao đều gấp đôi"
+    ],
+    "consequences": [
+     "2 × 2 = 4 ô",
+     "4 × 4 = 16 ô",
+     "4 phần = 4 hình nhỏ",
+     "16 : 4 = 4, gấp bốn"
+    ],
+    "reality": "Thực tế: đang đếm ô để kiểm chứng",
+    "takeaway": "?"
+   }
+  },
+  {
+   "stage": "reality",
+   "title": "Bẫy gấp đôi",
+   "lines": [
+    {
+     "id": "reality1",
+     "text": "Thực tế, kiểu gấp đôi đó xảy ra khi ta chỉ nhân đôi một chiều.",
+     "after": 0.15
+    },
+    {
+     "id": "reality2",
+     "text": "Chiều rộng thành bốn, chiều cao vẫn là hai: hình chữ nhật tám ô.",
+     "after": 0.2
+    },
+    {
+     "id": "reality3",
+     "text": "Hình đó không phải hình vuông, vì cạnh dọc vẫn chỉ dài hai.",
+     "after": 0.15
+    },
+    {
+     "id": "reality4",
+     "text": "Hình vuông cạnh bốn có mười sáu ô, gấp đôi hình chữ nhật kia.",
+     "after": 0.25
+    }
+   ],
+   "visual": {
+    "hypothesis": "Cạnh gấp đôi thì diện tích gấp đôi?",
+    "assumptions": [
+     "Cùng một đơn vị đo",
+     "1 ô = 1 đơn vị diện tích",
+     "Rộng và cao đều gấp đôi"
+    ],
+    "consequences": [
+     "2 × 2 = 4 ô",
+     "4 × 4 = 16 ô",
+     "4 phần = 4 hình nhỏ",
+     "16 : 4 = 4, gấp bốn"
+    ],
+    "reality": "Chỉ nhân đôi một chiều thì diện tích gấp đôi",
+    "takeaway": "?"
+   }
+  },
+  {
+   "stage": "takeaway",
+   "title": "Nhân đôi mọi cạnh",
+   "lines": [
+    {
+     "id": "takeaway1",
+     "text": "Với hình vuông, nhân đôi mọi cạnh thì diện tích tăng gấp bốn lần.",
+     "after": 0.2
+    },
+    {
+     "id": "takeaway2",
+     "text": "Cạnh ba thì có chín ô; cạnh sáu thì có ba mươi sáu ô.",
+     "after": 0.2
+    },
+    {
+     "id": "takeaway3",
+     "text": "Lần tới mở vở ô li, hãy tự vẽ và đếm để kiểm chứng nhé.",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "hypothesis": "Cạnh gấp đôi thì diện tích gấp đôi?",
+    "assumptions": [
+     "Cùng một đơn vị đo",
+     "1 ô = 1 đơn vị diện tích",
+     "Rộng và cao đều gấp đôi"
+    ],
+    "consequences": [
+     "2 × 2 = 4 ô",
+     "4 × 4 = 16 ô",
+     "4 phần = 4 hình nhỏ",
+     "16 : 4 = 4, gấp bốn"
+    ],
+    "reality": "Chỉ nhân đôi một chiều thì diện tích gấp đôi",
+    "takeaway": "Hình vuông: nhân đôi mọi cạnh thì diện tích gấp bốn"
+   }
+  }
+ ]
+}

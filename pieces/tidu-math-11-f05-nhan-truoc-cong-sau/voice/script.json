@@ -1,0 +1,71 @@
+{
+ "lead": 0.3,
+ "tail": 1.1,
+ "lang": "vi",
+ "vieneu": {
+  "voice": "Trúc Ly",
+  "speed": 0.88
+ },
+ "lines": [
+  {
+   "id": "challenge1",
+   "text": "Bạn có tính được phép tính này trong năm giây không?",
+   "after": 0.15,
+   "file": "challenge1.wav"
+  },
+  {
+   "id": "challenge2",
+   "text": "Sáu cộng bốn nhân hai bằng bao nhiêu?",
+   "after": 0.2,
+   "file": "challenge2.wav"
+  },
+  {
+   "id": "options1",
+   "text": "Chọn mười bốn, hai mươi, mười sáu, hoặc mười tám.",
+   "after": 0.2,
+   "file": "options1.wav"
+  },
+  {
+   "id": "thinking1",
+   "text": "Chọn thầm một đáp án nhé, năm giây bắt đầu.",
+   "after": 5.5,
+   "file": "thinking1.wav"
+  },
+  {
+   "id": "answer1",
+   "text": "Mười bốn là đáp án đúng.",
+   "after": 0.2,
+   "file": "answer1.wav"
+  },
+  {
+   "id": "explain1",
+   "text": "Ta nhân bốn với hai trước, kết quả là tám.",
+   "after": 0.15,
+   "file": "explain1.wav"
+  },
+  {
+   "id": "explain2",
+   "text": "Rồi mới cộng: sáu cộng tám bằng mười bốn.",
+   "after": 0.15,
+   "file": "explain2.wav"
+  },
+  {
+   "id": "explain3",
+   "text": "Nếu chọn hai mươi, có thể bạn đã cộng sáu với bốn trước rồi mới nhân hai.",
+   "after": 0.15,
+   "file": "explain3.wav"
+  },
+  {
+   "id": "explain4",
+   "text": "Không có ngoặc, ta làm phép nhân trước, sau đó làm phép cộng.",
+   "after": 0.15,
+   "file": "explain4.wav"
+  },
+  {
+   "id": "explain5",
+   "text": "Còn sáu cộng bốn, tất cả nhân hai, sẽ bằng bao nhiêu?",
+   "after": 0.2,
+   "file": "explain5.wav"
+  }
+ ]
+}

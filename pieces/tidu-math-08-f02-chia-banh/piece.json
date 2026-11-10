@@ -1,0 +1,32 @@
+{
+  "name": "tidu-math-08-f02-chia-banh",
+  "title": "Tidu chia bánh cho ba bạn",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "style": "paper-reel",
+  "fonts": {
+    "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf",
+    "Bevan": "Bevan-Regular.ttf"
+  },
+  "voice": {
+    "file": "voice/voice.wav",
+    "music": -13
+  },
+  "review": {
+    "safe": {
+      "top": 120,
+      "bottom": 300,
+      "right": 120
+    },
+    "refs": {}
+  },
+  "narrativeFormat": "F02",
+  "storyFormat": "F02 Câu chuyện nhân vật: character -> problem -> attempts -> consequence -> lesson",
+  "scenes": [
+    "kit/math-format.js",
+    "src/scenes.js"
+  ]
+}

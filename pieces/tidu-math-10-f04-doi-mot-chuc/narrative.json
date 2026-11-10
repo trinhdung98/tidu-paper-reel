@@ -1,0 +1,172 @@
+{
+ "format": "F04",
+ "title": "Vì sao phải đổi một chục?",
+ "channel": "math",
+ "beats": [
+  {
+   "stage": "system",
+   "title": "Vì sao đổi chục",
+   "lines": [
+    {
+     "id": "hook1",
+     "text": "Năm mươi hai bớt hai mươi bảy, vì sao ta phải đổi một chục thành mười đơn vị?",
+     "after": 0.2
+    },
+    {
+     "id": "hook2",
+     "text": "Hãy xếp năm mươi hai bằng que chục và khối đơn vị, rồi nhìn thật kỹ.",
+     "after": 0.25
+    }
+   ],
+   "visual": {
+    "layers": [
+     "Chục",
+     "Đơn vị",
+     "Đổi chục",
+     "Kiểm tra"
+    ],
+    "active": 0,
+    "detail": "52 − 27 = ?"
+   }
+  },
+  {
+   "stage": "components",
+   "title": "Chục và đơn vị",
+   "lines": [
+    {
+     "id": "parts1",
+     "text": "Năm mươi hai gồm năm que chục, mỗi que có đúng mười khối.",
+     "after": 0.15
+    },
+    {
+     "id": "parts2",
+     "text": "Bên cạnh là hai khối đơn vị lẻ.",
+     "after": 0.2
+    },
+    {
+     "id": "parts3",
+     "text": "Hai mươi bảy cần bớt đi hai que chục và bảy khối đơn vị.",
+     "after": 0.15
+    },
+    {
+     "id": "parts4",
+     "text": "Nhưng hàng đơn vị chỉ có hai khối, không thể lấy ra bảy khối.",
+     "after": 0.25
+    }
+   ],
+   "visual": {
+    "layers": [
+     "Chục",
+     "Đơn vị",
+     "Đổi chục",
+     "Kiểm tra"
+    ],
+    "active": 1,
+    "detail": "Có 2 đơn vị, cần bớt 7"
+   }
+  },
+  {
+   "stage": "process",
+   "title": "Đổi một chục",
+   "lines": [
+    {
+     "id": "swap1",
+     "text": "Ta tháo một que chục ra thành đúng mười khối đơn vị.",
+     "after": 0.2
+    },
+    {
+     "id": "swap2",
+     "text": "Mười khối ấy chuyển sang hàng đơn vị, que chục cũ không còn nữa.",
+     "after": 0.2
+    },
+    {
+     "id": "swap3",
+     "text": "Bây giờ có bốn chục và mười hai đơn vị, tổng vẫn là năm mươi hai khối.",
+     "after": 0.25
+    }
+   ],
+   "visual": {
+    "layers": [
+     "Chục",
+     "Đơn vị",
+     "Đổi chục",
+     "Kiểm tra"
+    ],
+    "active": 2,
+    "detail": "1 chục = 10 đơn vị"
+   }
+  },
+  {
+   "stage": "mechanism",
+   "title": "Bớt từng hàng",
+   "lines": [
+    {
+     "id": "why1",
+     "text": "Đổi chục không phải phép màu, cũng không làm số thay đổi.",
+     "after": 0.15
+    },
+    {
+     "id": "why2",
+     "text": "Ta chỉ viết lại cùng một lượng theo cách khác để bớt được.",
+     "after": 0.2
+    },
+    {
+     "id": "why3",
+     "text": "Mười hai khối đơn vị, bớt đi bảy khối, còn lại năm khối.",
+     "after": 0.2
+    },
+    {
+     "id": "why4",
+     "text": "Bốn que chục, bớt đi hai que, còn lại hai que chục.",
+     "after": 0.25
+    }
+   ],
+   "visual": {
+    "layers": [
+     "Chục",
+     "Đơn vị",
+     "Đổi chục",
+     "Kiểm tra"
+    ],
+    "active": 1,
+    "detail": "Bớt đơn vị trước, rồi bớt chục"
+   }
+  },
+  {
+   "stage": "result",
+   "title": "Còn hai mươi lăm",
+   "lines": [
+    {
+     "id": "end1",
+     "text": "Vậy năm mươi hai bớt hai mươi bảy còn hai mươi lăm.",
+     "after": 0.2
+    },
+    {
+     "id": "end2",
+     "text": "Hai mươi lăm là hai que chục và năm khối đơn vị còn lại trên bàn.",
+     "after": 0.2
+    },
+    {
+     "id": "end3",
+     "text": "Thử lại: hai mươi lăm cộng hai mươi bảy bằng năm mươi hai, đúng rồi.",
+     "after": 0.2
+    },
+    {
+     "id": "end4",
+     "text": "Lần tới hàng đơn vị không đủ để bớt, hãy đổi một chục thành mười đơn vị.",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "layers": [
+     "Chục",
+     "Đơn vị",
+     "Đổi chục",
+     "Kiểm tra"
+    ],
+    "active": 3,
+    "detail": "52 − 27 = 25"
+   }
+  }
+ ]
+}

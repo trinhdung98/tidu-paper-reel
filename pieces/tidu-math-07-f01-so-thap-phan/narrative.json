@@ -1,0 +1,168 @@
+{
+ "format": "F01",
+ "title": "0,5 hay 0,25 lớn hơn",
+ "channel": "math",
+ "beats": [
+  {
+   "stage": "question",
+   "title": "Số nào lớn hơn",
+   "lines": [
+    {
+     "id": "question1",
+     "text": "Không phẩy năm và không phẩy hai mươi lăm, số nào lớn hơn?",
+     "after": 0.2
+    },
+    {
+     "id": "question2",
+     "text": "Mỗi bảng là một đơn vị, mỗi ô là một phần một trăm.",
+     "after": 0.25
+    }
+   ],
+   "visual": {
+    "question": "0,5 và 0,25: số nào lớn hơn?",
+    "misconception": "?",
+    "answer": "?",
+    "items": [
+     "0,5",
+     "0,25"
+    ],
+    "groups": []
+   }
+  },
+  {
+   "stage": "misconception",
+   "title": "Cái bẫy chữ số",
+   "lines": [
+    {
+     "id": "misconception1",
+     "text": "Nhiều bạn chọn số có nhiều chữ số hơn.",
+     "after": 0.15
+    },
+    {
+     "id": "misconception2",
+     "text": "Vì hai mươi lăm lớn hơn năm, không phẩy hai mươi lăm có vẻ lớn hơn.",
+     "after": 0.15
+    },
+    {
+     "id": "misconception3",
+     "text": "Nhưng quy tắc này có đúng với số thập phân không?",
+     "after": 0.25
+    }
+   ],
+   "visual": {
+    "question": "0,5 và 0,25: số nào lớn hơn?",
+    "misconception": "Nhiều chữ số hơn thì lớn hơn?",
+    "answer": "?",
+    "items": [
+     "0,5",
+     "0,25"
+    ],
+    "groups": []
+   }
+  },
+  {
+   "stage": "explanation",
+   "title": "Thêm chữ số không",
+   "lines": [
+    {
+     "id": "explanation1",
+     "text": "Thêm chữ số không vào cuối: không phẩy năm bằng không phẩy năm mươi.",
+     "after": 0.2
+    },
+    {
+     "id": "explanation2",
+     "text": "Năm phần mười là năm cột, tức năm mươi ô nhỏ.",
+     "after": 0.15
+    },
+    {
+     "id": "explanation3",
+     "text": "Giá trị không đổi, nên quy tắc đếm chữ số là sai.",
+     "after": 0.2
+    },
+    {
+     "id": "explanation4",
+     "text": "Còn không phẩy hai mươi lăm là hai mươi lăm ô nhỏ.",
+     "after": 0.15
+    },
+    {
+     "id": "explanation5",
+     "text": "Giờ ta so năm mươi ô với hai mươi lăm ô.",
+     "after": 0.25
+    }
+   ],
+   "visual": {
+    "question": "0,50 và 0,25: số nào lớn hơn?",
+    "misconception": "Nhiều chữ số hơn thì lớn hơn?",
+    "answer": "?",
+    "items": [
+     "0,50",
+     "0,25"
+    ],
+    "groups": [
+     50,
+     25
+    ]
+   }
+  },
+  {
+   "stage": "reveal",
+   "title": "Đối chiếu đáp án",
+   "lines": [
+    {
+     "id": "reveal1",
+     "text": "Vậy không phẩy năm lớn hơn không phẩy hai mươi lăm.",
+     "after": 0.2
+    },
+    {
+     "id": "reveal2",
+     "text": "Trên tia số, không phẩy năm nằm bên phải.",
+     "after": 0.25
+    }
+   ],
+   "visual": {
+    "question": "0,50 và 0,25: số nào lớn hơn?",
+    "misconception": "Nhiều chữ số hơn thì lớn hơn?",
+    "answer": "0,5 > 0,25",
+    "items": [
+     "0,50",
+     "0,25"
+    ],
+    "groups": [
+     50,
+     25
+    ]
+   }
+  },
+  {
+   "stage": "takeaway",
+   "title": "Cách so nhanh",
+   "lines": [
+    {
+     "id": "takeaway1",
+     "text": "Muốn so số thập phân, hãy thêm số không để phần thập phân dài bằng nhau.",
+     "after": 0.15
+    },
+    {
+     "id": "takeaway2",
+     "text": "Rồi so từng hàng từ trái sang phải.",
+     "after": 0.2
+    },
+    {
+     "id": "takeaway3",
+     "text": "Bạn thử so không phẩy bảy và không phẩy sáu mươi chín nhé.",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "question": "Thêm số 0 cho phần thập phân dài bằng nhau, rồi so từng hàng",
+    "misconception": "Nhiều chữ số hơn thì lớn hơn?",
+    "answer": "0,5 > 0,25",
+    "items": [
+     "0,7",
+     "0,69"
+    ],
+    "groups": []
+   }
+  }
+ ]
+}

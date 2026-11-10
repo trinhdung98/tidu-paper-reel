@@ -1,0 +1,32 @@
+{
+  "name": "tidu-math-10-f04-doi-mot-chuc",
+  "title": "Vì sao phải đổi một chục?",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "style": "paper-reel",
+  "fonts": {
+    "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf",
+    "Bevan": "Bevan-Regular.ttf"
+  },
+  "voice": {
+    "file": "voice/voice.wav",
+    "music": -13
+  },
+  "review": {
+    "safe": {
+      "top": 120,
+      "bottom": 300,
+      "right": 120
+    },
+    "refs": {}
+  },
+  "narrativeFormat": "F04",
+  "storyFormat": "F04 Hệ thống và quy trình: system -> components -> process -> mechanism -> result",
+  "scenes": [
+    "kit/math-format.js",
+    "src/scenes.js"
+  ]
+}

@@ -1,0 +1,227 @@
+{
+ "format": "F03",
+ "title": "Đặt tính hay bù tròn",
+ "channel": "math",
+ "beats": [
+  {
+   "stage": "options",
+   "title": "Hai cách tính",
+   "lines": [
+    {
+     "id": "ask",
+     "text": "Bốn mươi chín cộng ba mươi tám: đặt tính hay bù tròn thì dễ hơn?",
+     "after": 0.15
+    },
+    {
+     "id": "depends",
+     "text": "Câu trả lời còn tùy con số và tình huống.",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "left": "Đặt tính",
+    "right": "Bù tròn",
+    "rows": [
+     {
+      "label": "Chính xác",
+      "left": "?",
+      "right": "?"
+     },
+     {
+      "label": "Bước phải nhớ",
+      "left": "?",
+      "right": "?"
+     },
+     {
+      "label": "Khi nào tiện",
+      "left": "?",
+      "right": "?"
+     }
+    ],
+    "condition": "Cách nào dễ hơn? Còn tùy con số."
+   }
+  },
+  {
+   "stage": "criteria",
+   "title": "Ba tiêu chí",
+   "lines": [
+    {
+     "id": "criteria",
+     "text": "So theo ba điều: chính xác, số bước phải nhớ, và khi nào tiện.",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "left": "Đặt tính",
+    "right": "Bù tròn",
+    "rows": [
+     {
+      "label": "Chính xác",
+      "left": "?",
+      "right": "?"
+     },
+     {
+      "label": "Bước phải nhớ",
+      "left": "?",
+      "right": "?"
+     },
+     {
+      "label": "Khi nào tiện",
+      "left": "?",
+      "right": "?"
+     }
+    ],
+    "condition": "So theo ba tiêu chí"
+   }
+  },
+  {
+   "stage": "comparison",
+   "title": "Tính thử cả hai",
+   "lines": [
+    {
+     "id": "colUnits",
+     "text": "Đặt tính: chín cộng tám bằng mười bảy, viết bảy, nhớ một.",
+     "after": 0.15
+    },
+    {
+     "id": "colTens",
+     "text": "Bốn cộng ba, thêm một đã nhớ, là tám: được tám mươi bảy.",
+     "after": 0.2
+    },
+    {
+     "id": "compUp",
+     "text": "Bù tròn: bốn mươi chín thêm một thành năm mươi.",
+     "after": 0.15
+    },
+    {
+     "id": "compAdd",
+     "text": "Năm mươi cộng ba mươi tám bằng tám mươi tám.",
+     "after": 0.15
+    },
+    {
+     "id": "compBack",
+     "text": "Đã thêm một thì phải trừ lại một: còn tám mươi bảy.",
+     "after": 0.2
+    },
+    {
+     "id": "sameAnswer",
+     "text": "Hai cách đều ra tám mươi bảy.",
+     "after": 0.15
+    },
+    {
+     "id": "memory",
+     "text": "Ghi số nhớ ra giấy khi đặt tính; bù tròn thì nhớ bớt một.",
+     "after": 0.15
+    },
+    {
+     "id": "roundCase",
+     "text": "Bài này có bốn mươi chín sát năm mươi, nên bù tròn gọn.",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "left": "Đặt tính",
+    "right": "Bù tròn",
+    "rows": [
+     {
+      "label": "Chính xác",
+      "left": "Ra 87",
+      "right": "Ra 87"
+     },
+     {
+      "label": "Bước phải nhớ",
+      "left": "Ghi số nhớ ra giấy",
+      "right": "Tự nhớ trừ 1"
+     },
+     {
+      "label": "Khi nào tiện",
+      "left": "Cần giấy bút",
+      "right": "49 sát 50"
+     }
+    ],
+    "condition": "Hai cách đều ra 87"
+   }
+  },
+  {
+   "stage": "conditions",
+   "title": "Tùy tình huống",
+   "lines": [
+    {
+     "id": "nearTen",
+     "text": "Khi có số gần tròn chục, bù tròn nhẩm thường nhanh.",
+     "after": 0.15
+    },
+    {
+     "id": "longCase",
+     "text": "Khi số dài, nhiều chữ số, đặt tính giúp theo dõi từng hàng.",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "left": "Đặt tính",
+    "right": "Bù tròn",
+    "rows": [
+     {
+      "label": "Chính xác",
+      "left": "Ra 87",
+      "right": "Ra 87"
+     },
+     {
+      "label": "Bước phải nhớ",
+      "left": "Ghi số nhớ ra giấy",
+      "right": "Tự nhớ trừ 1"
+     },
+     {
+      "label": "Khi nào tiện",
+      "left": "Nhiều chữ số",
+      "right": "Số gần tròn chục"
+     }
+    ],
+    "condition": "Gần tròn chục: bù tròn. Số dài: đặt tính."
+   }
+  },
+  {
+   "stage": "conclusion",
+   "title": "Chọn theo con số",
+   "lines": [
+    {
+     "id": "noWinner",
+     "text": "Không cách nào luôn nhanh hơn trong mọi bài.",
+     "after": 0.15
+    },
+    {
+     "id": "choose",
+     "text": "Hãy nhìn con số rồi chọn cách hợp lúc đó.",
+     "after": 0.15
+    },
+    {
+     "id": "practice",
+     "text": "Năm mươi chín cộng hai mươi sáu, bạn sẽ chọn cách nào?",
+     "after": 0.2
+    }
+   ],
+   "visual": {
+    "left": "Đặt tính",
+    "right": "Bù tròn",
+    "rows": [
+     {
+      "label": "Chính xác",
+      "left": "Ra 87",
+      "right": "Ra 87"
+     },
+     {
+      "label": "Bước phải nhớ",
+      "left": "Ghi số nhớ ra giấy",
+      "right": "Tự nhớ trừ 1"
+     },
+     {
+      "label": "Khi nào tiện",
+      "left": "Nhiều chữ số",
+      "right": "Số gần tròn chục"
+     }
+    ],
+    "condition": "Nhìn con số, rồi chọn cách hợp lúc đó"
+   }
+  }
+ ]
+}

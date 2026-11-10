@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tidu narrative video</title>
+<style>
+html,body { margin:0; height:100%; background:#1b1714; overflow:hidden; }
+body { display:flex; align-items:center; justify-content:center; }
+canvas { height:min(100vh,calc(100vw * 16 / 9)); width:auto; aspect-ratio:9/16; display:block; cursor:pointer; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+"use strict";
+const FPS = 30, W = 1080, H = 1920;
+const DURATION = VOICE.duration, NFRAMES = Math.round(DURATION * FPS), LOOP_T = NFRAMES / FPS;
+const SAFE = { top:120, bottom:300, right:120 };
+const HAND = '"Chalkboard SE", "Comic Sans MS", cursive', CX = 540;
+const VL = (id) => VOICE.lines.find((l) => l.id === id);
+const VW = (id, word, n = 0) => {
+  const l = VL(id), norm = (s) => s.toLowerCase().normalize('NFC').replace(/[^\p{L}\p{N}']/gu, '');
+  const hits = l.words.filter((w) => norm(w.w) === norm(word));
+  return hits[n] || hits[0] || { t0:l.t0, t1:l.t1 };
+};
+const CUT = (id) => Math.max(0, VL(id).t0 - 0.1);
