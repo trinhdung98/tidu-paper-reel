@@ -1,0 +1,171 @@
+{
+  "id": "F03",
+  "name": "So sánh có điều kiện",
+  "duration": [30, 60],
+  "learningGoal": "The viewer can compare two options on named criteria and choose by situation instead of looking for a universal winner.",
+  "topics": [
+    "Ghi việc cần làm: sổ giấy hay điện thoại",
+    "Gửi tiết kiệm hay giữ tiền mặt cho việc gấp",
+    "Học thuộc lòng hay hiểu rồi tự suy ra",
+    "Trả tiền mặt hay quét mã",
+    "Đọc sách giấy hay đọc trên màn hình",
+    "Làm bài một mạch hay chia thành nhiều lần ngắn"
+  ],
+  "stages": [
+    {
+      "id": "options",
+      "label": "Hai lựa chọn",
+      "purpose": "Put two real options side by side and say up front that the answer depends on the situation.",
+      "layout": "Two equal option cards centred at x 350 and 730 (w <= 340) in the band 420-700. Criteria table below them in 740-1250, rows still showing '?'. Condition strip centred at x 540 in 1270-1380.",
+      "motion": "Both option cards are on screen at the cut; neither is larger, brighter or pre-marked.",
+      "ending": "Hold both options as equals; no winner implied."
+    },
+    {
+      "id": "criteria",
+      "label": "Tiêu chí",
+      "purpose": "Name the criteria before judging, so the comparison is fair and checkable.",
+      "layout": "Option cards keep their centres and sizes. Each criterion label appears in the table's centre column; both cells of its row still show '?'.",
+      "motion": "Each criterion label pops in on the word that names it, top to bottom.",
+      "ending": "All criteria visible, every cell still '?'."
+    },
+    {
+      "id": "comparison",
+      "label": "So sánh",
+      "purpose": "Fill each criterion for both options, giving each side its real strength and weakness.",
+      "layout": "Same table. Left cells under the left card, right cells under the right card, every cell text fitted to its cell width.",
+      "motion": "Cells fill row by row on the words that name them; a small tick or cross shape (prCheck/prCross, never a glyph) marks each side per row.",
+      "ending": "Every row filled and each option wins at least one row."
+    },
+    {
+      "id": "conditions",
+      "label": "Điều kiện",
+      "purpose": "Map situations to choices: 'if this, then that' for each option.",
+      "layout": "Table stays. The condition strip states the mapping; the option that fits the spoken situation is highlighted while the other fades with globalAlpha, then they swap on the second situation.",
+      "motion": "Highlight switches on the word that names each situation.",
+      "ending": "End with both options having had a turn as the better fit."
+    },
+    {
+      "id": "conclusion",
+      "label": "Kết luận",
+      "purpose": "Conclude without a universal winner: choose by situation or combine both.",
+      "layout": "Both cards back at full strength in 420-700; the conclusion in the condition strip; the table may shrink but keeps its rows.",
+      "motion": "The conclusion writes on; both cards get the same small bounce so neither looks like the winner.",
+      "ending": "Close on a question about the viewer's own situation. Never stamp one option as the winner."
+    }
+  ],
+  "reviewQuestions": [
+    "Are both options presented fairly, each winning at least one criterion?",
+    "Are the criteria named before any judgement?",
+    "Is every cell claim true in ordinary use and no stronger than the narration?",
+    "Does the conclusion avoid declaring one option the winner in all cases?",
+    "Do the conditions map concrete situations to options?"
+  ],
+  "sources": [
+    {
+      "title": "Schwartz & Bransford 1998, A Time for Telling (Cognition and Instruction)",
+      "url": "https://doi.org/10.1207/s1532690xci1604_4",
+      "scope": "Analysing paired contrasting cases before an explanation prepares learners to understand the explanation."
+    },
+    {
+      "title": "Brame 2016, Effective Educational Videos: Principles and Guidelines for Maximizing Student Learning from Video Content (CBE Life Sciences Education)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5132380/",
+      "scope": "Signaling, segmenting and weeding extraneous detail in instructional video; it gives no evidence for fixed cut lengths or an optimal total duration."
+    }
+  ],
+  "example": {
+    "title": "Sổ giấy hay điện thoại",
+    "channel": "mind",
+    "beats": [
+      {
+        "stage": "options",
+        "title": "Ghi việc ở đâu",
+        "lines": [
+          {"id": "options1", "text": "Ghi việc cần làm vào sổ giấy hay vào điện thoại, cách nào tốt hơn?", "after": 0.15},
+          {"id": "options2", "text": "Câu trả lời thật ra phụ thuộc vào cách bạn dùng nó.", "after": 0.2}
+        ],
+        "visual": {
+          "left": "Sổ giấy",
+          "right": "Điện thoại",
+          "rows": [
+            {"label": "Mang theo", "left": "?", "right": "?"},
+            {"label": "Nhắc giờ", "left": "?", "right": "?"},
+            {"label": "Xao nhãng", "left": "?", "right": "?"}
+          ],
+          "condition": "Cách nào hợp với bạn?"
+        }
+      },
+      {
+        "stage": "criteria",
+        "title": "Ba tiêu chí",
+        "lines": [{"id": "criteria1", "text": "Hãy so theo ba điều: mang theo, nhắc giờ, và mức độ làm bạn xao nhãng.", "after": 0.2}],
+        "visual": {
+          "left": "Sổ giấy",
+          "right": "Điện thoại",
+          "rows": [
+            {"label": "Mang theo", "left": "?", "right": "?"},
+            {"label": "Nhắc giờ", "left": "?", "right": "?"},
+            {"label": "Xao nhãng", "left": "?", "right": "?"}
+          ],
+          "condition": "So theo ba tiêu chí"
+        }
+      },
+      {
+        "stage": "comparison",
+        "title": "Mỗi bên một mạnh",
+        "lines": [
+          {"id": "comparison1", "text": "Nếu bạn để sổ ở nhà, danh sách sẽ không ở bên bạn khi cần.", "after": 0.15},
+          {"id": "comparison2", "text": "Nếu điện thoại ở trong túi, nó có thể nhắc đúng giờ; sổ giấy thì không tự nhắc.", "after": 0.15},
+          {"id": "comparison3", "text": "Nhưng mở điện thoại để xem danh sách có thể kéo bạn sang ứng dụng khác.", "after": 0.15},
+          {"id": "comparison4", "text": "Sổ giấy thì không hiện thông báo nào.", "after": 0.2}
+        ],
+        "visual": {
+          "left": "Sổ giấy",
+          "right": "Điện thoại",
+          "rows": [
+            {"label": "Mang theo", "left": "Cần nhớ mang theo", "right": "Có sẵn nếu mang theo"},
+            {"label": "Nhắc giờ", "left": "Không tự nhắc", "right": "Có thể đặt lời nhắc"},
+            {"label": "Xao nhãng", "left": "Không có thông báo", "right": "Có thể kéo sang ứng dụng khác"}
+          ],
+          "condition": "Mỗi cách có điểm mạnh riêng"
+        }
+      },
+      {
+        "stage": "conditions",
+        "title": "Tùy tình huống",
+        "lines": [
+          {"id": "conditions1", "text": "Nếu bạn làm việc ở bàn cả buổi, sổ giấy có thể giúp bạn tập trung hơn.", "after": 0.15},
+          {"id": "conditions2", "text": "Nếu việc của bạn có giờ hẹn rõ ràng, lời nhắc trên điện thoại có thể tiện hơn.", "after": 0.2}
+        ],
+        "visual": {
+          "left": "Sổ giấy",
+          "right": "Điện thoại",
+          "rows": [
+            {"label": "Mang theo", "left": "Cần nhớ mang theo", "right": "Có sẵn nếu mang theo"},
+            {"label": "Nhắc giờ", "left": "Không tự nhắc", "right": "Có thể đặt lời nhắc"},
+            {"label": "Xao nhãng", "left": "Không có thông báo", "right": "Có thể kéo sang ứng dụng khác"}
+          ],
+          "condition": "Làm ở bàn: sổ giấy. Có giờ hẹn: điện thoại."
+        }
+      },
+      {
+        "stage": "conclusion",
+        "title": "Chọn theo việc",
+        "lines": [
+          {"id": "conclusion1", "text": "Không có cách nào thắng trong mọi trường hợp.", "after": 0.15},
+          {"id": "conclusion2", "text": "Hãy chọn theo tình huống, hoặc dùng cả hai cho hai loại việc.", "after": 0.15},
+          {"id": "conclusion3", "text": "Bạn đang ghi việc bằng cách nào?", "after": 0.2}
+        ],
+        "visual": {
+          "left": "Sổ giấy",
+          "right": "Điện thoại",
+          "rows": [
+            {"label": "Mang theo", "left": "Cần nhớ mang theo", "right": "Có sẵn nếu mang theo"},
+            {"label": "Nhắc giờ", "left": "Không tự nhắc", "right": "Có thể đặt lời nhắc"},
+            {"label": "Xao nhãng", "left": "Không có thông báo", "right": "Có thể kéo sang ứng dụng khác"}
+          ],
+          "condition": "Chọn theo tình huống, hoặc dùng cả hai"
+        }
+      }
+    ]
+  }
+}

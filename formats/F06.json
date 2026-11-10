@@ -1,0 +1,162 @@
+{
+  "id": "F06",
+  "name": "Biến đổi trước và sau",
+  "duration": [25, 60],
+  "learningGoal": "The viewer can describe the start, the trigger conditions, the intermediate steps and the end state, and when the change does not happen.",
+  "topics": [
+    "Hạt đậu khô thành cây đậu non",
+    "Từ ngại nói đến dám chào bằng tiếng Anh",
+    "Đá thành nước rồi thành hơi",
+    "Một khoản để dành nhỏ lớn dần theo thời gian",
+    "Từ viết chữ nguệch ngoạc đến viết chữ đều",
+    "Sữa thành sữa chua"
+  ],
+  "stages": [
+    {
+      "id": "initial",
+      "label": "Ban đầu",
+      "purpose": "Show the starting state clearly enough that the change will be obvious later.",
+      "layout": "Before/after track: the subject centred at x 540 in the band 420-1050, a progress bar with stage labels in 1080-1200 inside x 70-1010, the trigger tag in 322-400. Progress marker at the start; the bar is a qualitative stage track, never a measured percentage.",
+      "motion": "The subject is on screen at the cut and barely moves; only ambient background life moves.",
+      "ending": "End on the unchanged starting state."
+    },
+    {
+      "id": "trigger",
+      "label": "Tác nhân",
+      "purpose": "Name what starts the change, stated as conditions, not as a guarantee.",
+      "layout": "Subject keeps its centre and size. The trigger items (water, warmth) appear around it; the trigger tag updates.",
+      "motion": "Each trigger item arrives on the word that names it; the progress marker moves only a little.",
+      "ending": "End with the conditions in place and the change just beginning."
+    },
+    {
+      "id": "change",
+      "label": "Thay đổi",
+      "purpose": "Show the change as a sequence of visible steps in their real order.",
+      "layout": "Same subject slot; it morphs step by step. The progress label of the current step lights; earlier labels stay lit.",
+      "motion": "Each step happens on the word that names it; progress advances with each spoken step, never jumping to the end.",
+      "ending": "End mid-way: the subject has clearly changed but is not finished."
+    },
+    {
+      "id": "result",
+      "label": "Kết quả",
+      "purpose": "Show the end state next to a reminder of the start, with honest qualifiers on time and conditions.",
+      "layout": "End state in the subject slot; a small 'before' thumbnail sits at the left of the progress bar for comparison. Progress marker at the end.",
+      "motion": "The final step completes on the result word; the before thumbnail pops in on the comparison word.",
+      "ending": "Hold before and after together."
+    },
+    {
+      "id": "implication",
+      "label": "Ý nghĩa",
+      "purpose": "Say what the transformation teaches, including when it does not happen, and suggest a safe way to see it yourself.",
+      "layout": "Before and after both visible; the trigger tag states the condition-based takeaway.",
+      "motion": "The takeaway writes on; the after state gives one small idle motion (a leaf sway).",
+      "ending": "Close on a small safe experiment or practice the viewer can try. No product pitch."
+    }
+  ],
+  "reviewQuestions": [
+    "Are the intermediate steps in their real order and shown, not skipped?",
+    "Are time and outcome claims qualified (often, may, depending on temperature) and free of invented numbers?",
+    "Is the trigger described as conditions rather than a guarantee?",
+    "Do before and after stay comparable on screen at the result stage?",
+    "Is the suggested try-it-yourself activity safe for the audience?"
+  ],
+  "sources": [
+    {
+      "title": "OpenStax Biology 2e, 32.2 Pollination and Fertilization: Seed Germination",
+      "url": "https://openstax.org/books/biology-2e/pages/32-2-pollination-and-fertilization",
+      "scope": "Sample biology: seed dormancy, environmental germination conditions, radicle/root development and stored food reserves supporting the seedling. The animation is schematic, not a measured growth timeline."
+    },
+    {
+      "title": "Tversky, Morrison & Betrancourt 2002, Animation: can it facilitate? (International Journal of Human-Computer Studies)",
+      "url": "https://doi.org/10.1006/ijhc.2002.1017",
+      "scope": "Design guidance: show perceptible intermediate states and stable references; animation is not automatically better than information-equivalent static diagrams."
+    },
+    {
+      "title": "Brame 2016, Effective Educational Videos: Principles and Guidelines for Maximizing Student Learning from Video Content (CBE Life Sciences Education)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5132380/",
+      "scope": "Signaling, segmenting and weeding extraneous detail in instructional video; it gives no evidence for fixed cut lengths or an optimal total duration."
+    }
+  ],
+  "example": {
+    "title": "Hạt đậu nảy mầm",
+    "channel": "science",
+    "beats": [
+      {
+        "stage": "initial",
+        "title": "Hạt đậu khô",
+        "lines": [{"id": "initial1", "text": "Một hạt đậu khô có thể nằm yên trong túi rất lâu mà không thay đổi.", "after": 0.2}],
+        "visual": {
+          "before": "Hạt đậu khô",
+          "after": "Cây đậu non",
+          "progress": 0,
+          "trigger": "Chưa có nước",
+          "labels": ["Hạt khô", "Hạt phồng", "Rễ", "Thân mầm", "Lá đầu tiên"],
+          "subject": "plant"
+        }
+      },
+      {
+        "stage": "trigger",
+        "title": "Nước và độ ấm",
+        "lines": [
+          {"id": "trigger1", "text": "Rồi ta đặt hạt lên bông ẩm, ở nơi đủ ấm và có không khí.", "after": 0.15},
+          {"id": "trigger2", "text": "Nước, độ ấm và không khí giúp hạt đậu bắt đầu nảy mầm.", "after": 0.2}
+        ],
+        "visual": {
+          "before": "Hạt đậu khô",
+          "after": "Cây đậu non",
+          "progress": 0.1,
+          "trigger": "Nước, độ ấm, không khí",
+          "labels": ["Hạt khô", "Hạt phồng", "Rễ", "Thân mầm", "Lá đầu tiên"],
+          "subject": "plant"
+        }
+      },
+      {
+        "stage": "change",
+        "title": "Rễ và mầm",
+        "lines": [
+          {"id": "change1", "text": "Đầu tiên, hạt hút nước và phồng to lên, vỏ hạt bắt đầu nứt.", "after": 0.15},
+          {"id": "change2", "text": "Sau đó, một chiếc rễ nhỏ nhú ra và mọc hướng xuống dưới.", "after": 0.15},
+          {"id": "change3", "text": "Tiếp theo, một thân mầm nhỏ vươn lên phía trên.", "after": 0.2}
+        ],
+        "visual": {
+          "before": "Hạt đậu khô",
+          "after": "Cây đậu non",
+          "progress": 0.6,
+          "trigger": "Nước, độ ấm, không khí",
+          "labels": ["Hạt khô", "Hạt phồng", "Rễ", "Thân mầm", "Lá đầu tiên"],
+          "subject": "plant"
+        }
+      },
+      {
+        "stage": "result",
+        "title": "Cây đậu non",
+        "lines": [{"id": "result1", "text": "Sau vài ngày, tùy nhiệt độ, hạt khô đã thành một cây đậu non có lá đầu tiên.", "after": 0.2}],
+        "visual": {
+          "before": "Hạt đậu khô",
+          "after": "Cây đậu non",
+          "progress": 1,
+          "trigger": "Nước, độ ấm, không khí",
+          "labels": ["Hạt khô", "Hạt phồng", "Rễ", "Thân mầm", "Lá đầu tiên"],
+          "subject": "plant"
+        }
+      },
+      {
+        "stage": "implication",
+        "title": "Cần đúng điều kiện",
+        "lines": [
+          {"id": "implication1", "text": "Thời gian thôi là chưa đủ, hạt đậu cần đúng điều kiện để bắt đầu thay đổi.", "after": 0.15},
+          {"id": "implication2", "text": "Nếu thiếu nước hoặc quá lạnh, hạt có thể nằm yên rất lâu.", "after": 0.15},
+          {"id": "implication3", "text": "Bạn có thể tự thử với vài hạt đậu xanh và một miếng bông ẩm.", "after": 0.2}
+        ],
+        "visual": {
+          "before": "Hạt đậu khô",
+          "after": "Cây đậu non",
+          "progress": 1,
+          "trigger": "Đủ điều kiện mới thay đổi",
+          "labels": ["Hạt khô", "Hạt phồng", "Rễ", "Thân mầm", "Lá đầu tiên"],
+          "subject": "plant"
+        }
+      }
+    ]
+  }
+}

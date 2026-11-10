@@ -24,6 +24,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { GPU_ARGS, gpuReport } from './gpu.mjs';
+import { validateFormatPiece } from './formats.mjs';
 
 const require = createRequire(import.meta.url);
 function loadPlaywright() {
@@ -58,6 +59,10 @@ const onlyAudio = flag('only-audio');
 const FORMAT = opt('format', null), BLUR = Math.max(1, parseInt(opt('blur', '1'), 10));
 const url = pathToFileURL(path.join(ROOT, 'index.html')).href + '?export=1' + (FORMAT ? `&format=${encodeURIComponent(FORMAT)}` : '');
 const PIECE_JSON = fs.existsSync(path.join(ROOT, 'piece.json')) ? JSON.parse(fs.readFileSync(path.join(ROOT, 'piece.json'), 'utf8')) : {};
+if (PIECE_JSON.narrativeFormat) {
+  const { errors } = validateFormatPiece(ROOT, { requireVoice:true });
+  if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
+}
 
 fs.mkdirSync(RENDERS, { recursive: true });
 const BASE_ARGS = ['--autoplay-policy=no-user-gesture-required'];
@@ -70,9 +75,14 @@ await probe.goto(url);
 await probe.waitForFunction(() => window.TIMELINE);
 const meta = await probe.evaluate(() => {
   const T = window.TIMELINE;
-  return { frames: T.frames, fps: T.fps, width: T.width || 1080, height: T.height || 1080, narration: T.narration || null, gpu: !!T.gpu, aspect: T.aspect || null };
+  return { frames: T.frames, fps: T.fps, width: T.width || 1080, height: T.height || 1080, narration: T.narration || null, gpu: !!T.gpu, aspect: T.aspect || null, preview:!!T.preview };
 });
 await probe.close();
+if (meta.preview) {
+  console.error('index.html is a preview. Rebuild with real voice timing before export.');
+  await browser.close();
+  process.exit(1);
+}
 if (meta.gpu || flag('gpu')) {
   await browser.close();
   browser = await chromium.launch({ args: [...BASE_ARGS, ...GPU_ARGS] });

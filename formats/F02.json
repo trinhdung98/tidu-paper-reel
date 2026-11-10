@@ -1,0 +1,133 @@
+{
+  "id": "F02",
+  "name": "Câu chuyện nhân vật",
+  "duration": [40, 90],
+  "learningGoal": "The viewer follows one causal chain (goal, obstacle, attempt, result) and takes away one idea framed as something to try.",
+  "topics": [
+    "Để dành trước rồi mới tiêu",
+    "Mua theo cảm hứng khi đang giảm giá",
+    "Trì hoãn bài tập đến phút cuối",
+    "Ngại hỏi lại khi chưa hiểu bài",
+    "Lần đầu tự lập kế hoạch chi tiêu tuần",
+    "So sánh mình với bạn bè trên mạng"
+  ],
+  "stages": [
+    {
+      "id": "character",
+      "label": "Nhân vật",
+      "purpose": "Introduce one named, fictional character and the goal they want, so the viewer has someone to follow.",
+      "layout": "The character (the channel mascot or a paper figure, the same identity in every beat) centred at x 540 in the band 420-1050. Speech bubble above the figure, inside x 70-1010. Goal items as small props in 1080-1300.",
+      "motion": "Character is on screen at the cut; the speech bubble pops in on the first spoken word of the goal; goal items pop in on their names.",
+      "ending": "Hold the character with the goal visible; nothing has gone wrong yet."
+    },
+    {
+      "id": "problem",
+      "label": "Vấn đề",
+      "purpose": "Show the concrete obstacle through everyday actions, not through a lecture.",
+      "layout": "Same character position and size. The items that cause the problem line up in 1080-1300; the speech bubble keeps its place and shows the new dialogue.",
+      "motion": "Each problem item drops in on its name; the character's mood changes on the word that names the problem.",
+      "ending": "End with the problem unsolved and the character visibly stuck."
+    },
+    {
+      "id": "attempts",
+      "label": "Các lần thử",
+      "purpose": "Show at least two attempts: one that fails for a visible reason and one that changes the approach.",
+      "layout": "Character stays in place. Each attempt is one prop change in 1080-1300 (the wallet, the jar). A small attempt counter sits beside the sign, not in the caption band.",
+      "motion": "A failed attempt ends with a soft cross or a fade on its prop; the new approach pops in on its verb.",
+      "ending": "End on the new approach in action, before its result is known."
+    },
+    {
+      "id": "consequence",
+      "label": "Kết quả",
+      "purpose": "Show what changed because of the new approach, honestly: partial progress counts, no miracle.",
+      "layout": "Same character and prop slots. The progress prop (a fuller jar, a ticked list) is the hero in 760-1300.",
+      "motion": "Progress grows on the word that names it; the mood changes on the payoff word.",
+      "ending": "Hold the result with any remaining gap still visible."
+    },
+    {
+      "id": "lesson",
+      "label": "Bài học",
+      "purpose": "Name the transferable idea as something to try, not a rule or a promise, then turn it to the viewer.",
+      "layout": "Lesson card (two short phrases) centred at x 540 in 420-760; the character stays in its slot, happy.",
+      "motion": "Lesson phrases write on as spoken; the character nods or waves on the closing question.",
+      "ending": "Close on a question to the viewer about their own situation. No product pitch."
+    }
+  ],
+  "reviewQuestions": [
+    "Is the character clearly fictional and is that stated in youtube.md when the story could read as real advice?",
+    "Does each stage follow causally from the previous one?",
+    "Is the result honest (partial progress, no miracle) and the lesson phrased as a suggestion, not a promise?",
+    "Does the story avoid presenting one anecdote as proof that the lesson works for everyone?",
+    "Are amounts and durations in the story either generic or clearly part of the fiction?"
+  ],
+  "sources": [
+    {
+      "title": "Dahlstrom 2014, Using narratives and storytelling to communicate science with nonexpert audiences (PNAS)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4183170/",
+      "scope": "Narratives built on a character, time and a causal chain are easier to follow; a single story is an anecdote, not evidence for its lesson."
+    },
+    {
+      "title": "Brame 2016, Effective Educational Videos: Principles and Guidelines for Maximizing Student Learning from Video Content (CBE Life Sciences Education)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5132380/",
+      "scope": "Signaling, segmenting and weeding extraneous detail in instructional video; it gives no evidence for fixed cut lengths or an optimal total duration."
+    }
+  ],
+  "example": {
+    "title": "Hũ tiết kiệm của Lan",
+    "channel": "money",
+    "fictional": true,
+    "beats": [
+      {
+        "stage": "character",
+        "title": "Lan muốn xe đạp",
+        "lines": [
+          {"id": "character1", "text": "Đây là Lan, một cô bé đang muốn tự mua một chiếc xe đạp.", "after": 0.15},
+          {"id": "character2", "text": "Mỗi tuần, Lan nhận một khoản tiền tiêu vặt từ bố mẹ.", "after": 0.2}
+        ],
+        "visual": {"subject": "savings", "name": "Lan", "dialogue": "Mình muốn tự mua xe đạp!", "mood": "happy", "items": ["Xe đạp", "Tiền tiêu vặt"]}
+      },
+      {
+        "stage": "problem",
+        "title": "Ví lại trống",
+        "lines": [
+          {"id": "problem1", "text": "Nhưng cuối tuần nào, ví của Lan cũng gần như trống rỗng.", "after": 0.15},
+          {"id": "problem2", "text": "Một ly trà sữa, một gói bánh, một món đồ chơi nhỏ.", "after": 0.15},
+          {"id": "problem3", "text": "Món nào cũng rẻ, nên Lan không thấy mình đã tiêu nhiều.", "after": 0.2}
+        ],
+        "visual": {"subject": "savings", "name": "Lan", "dialogue": "Tiền đi đâu hết rồi?", "mood": "wow", "items": ["Trà sữa", "Gói bánh", "Đồ chơi nhỏ"]}
+      },
+      {
+        "stage": "attempts",
+        "title": "Đổi cách để dành",
+        "lines": [
+          {"id": "attempt1", "text": "Lần thứ nhất, Lan định để dành số tiền còn lại vào cuối tuần.", "after": 0.15},
+          {"id": "attempt2", "text": "Đến chủ nhật, số tiền còn lại chỉ đủ mua một cây kẹo.", "after": 0.15},
+          {"id": "attempt3", "text": "Lần thứ hai, Lan làm ngược lại.", "after": 0.15},
+          {"id": "attempt4", "text": "Ngay khi nhận tiền, Lan bỏ một phần vào hũ tiết kiệm trước.", "after": 0.15},
+          {"id": "attempt5", "text": "Phần còn lại mới dùng để tiêu trong tuần.", "after": 0.2}
+        ],
+        "visual": {"subject": "savings", "name": "Lan", "dialogue": "Lần này để dành trước!", "mood": "calm", "items": ["Ví", "Hũ tiết kiệm"]}
+      },
+      {
+        "stage": "consequence",
+        "title": "Hũ nặng dần",
+        "lines": [
+          {"id": "consequence1", "text": "Lan vẫn uống trà sữa, nhưng ít hơn trước một chút.", "after": 0.15},
+          {"id": "consequence2", "text": "Sau vài tháng, chiếc hũ đã nặng dần lên.", "after": 0.15},
+          {"id": "consequence3", "text": "Lan chưa đủ tiền mua xe, nhưng lần đầu thấy mục tiêu gần hơn.", "after": 0.2}
+        ],
+        "visual": {"subject": "savings", "name": "Lan", "dialogue": "Hũ nặng dần lên rồi.", "mood": "happy", "items": ["Hũ tiết kiệm", "Xe đạp"]}
+      },
+      {
+        "stage": "lesson",
+        "title": "Để dành trước",
+        "lines": [
+          {"id": "lesson1", "text": "Câu chuyện của Lan gợi ý một cách thử đơn giản.", "after": 0.15},
+          {"id": "lesson2", "text": "Để dành trước rồi mới tiêu, thay vì tiêu trước rồi mới để dành.", "after": 0.15},
+          {"id": "lesson3", "text": "Còn bạn, bạn muốn để dành cho mục tiêu nào?", "after": 0.2}
+        ],
+        "visual": {"subject": "savings", "name": "Lan", "dialogue": "Để dành trước, tiêu sau.", "mood": "happy", "items": ["Để dành trước", "Tiêu sau"]}
+      }
+    ]
+  }
+}

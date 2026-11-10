@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 # reel — the paper-reel pipeline in one command. Free and local: Kokoro voice, whisper.cpp timing, canvas + Playwright + ffmpeg.
 #   reel doctor                              check every dependency, print the fix for anything missing
-#   reel new <piece-dir> [--from khan-skill] copy the starter (or an example) into <piece-dir>
+#   reel new <piece-dir> [--from khan-skill | --format F01]  create a piece
+#
+#   reel formats [F01]                      list narrative formats or inspect one contract
+#   reel formatcheck <piece> [--require-voice]  validate narrative, timing and quiz holds
 #   reel voice <piece> [--voice am_michael] [--speed 1.32] [--only id1,id2] [--say | --vieneu | --eleven]
 #                                            one take per script line -> voice.wav + word times (default Kokoro; --say: macOS voice;
 #                                            --vieneu [--voice "Trúc Ly"]: local Vietnamese; --eleven [--voice <id>]: ElevenLabs)
-#   reel build <piece>                       assemble index.html (style + kit + scenes + VOICE)
-#   reel still <piece> <t1,t2,..> <out.png> [--scale 0.4]   render frames to look at
+#   reel build <piece> [--preview]           assemble index.html; preview estimates timing without TTS
+#   reel still <piece> <t1,t2,..> <out.png> [--scale 0.4] [--preview]  render frames
 #   reel check <piece>                       text overlap / safe-zone check + determinism
 #   reel export <piece> [out.mp4]            render the MP4 (-14 LUFS), copy it to out.mp4, delete the frame cache
 set -euo pipefail
@@ -36,12 +39,9 @@ case "$cmd" in
     c "kokoro model"        "test -f '$KOKORO_DIR/models/kokoro-v1.0.onnx' -a -f '$KOKORO_DIR/voices/voices-v1.0.bin'" "mkdir -p $KOKORO_DIR/models $KOKORO_DIR/voices && curl -L -o $KOKORO_DIR/models/kokoro-v1.0.onnx https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx && curl -L -o $KOKORO_DIR/voices/voices-v1.0.bin https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin"
     c "fonts (SuperClarendon, Avenir Next, Chalkduster)" "ls /System/Library/Fonts/Supplemental/SuperClarendon.ttc /System/Library/Fonts/Avenir\ Next.ttc /System/Library/Fonts/Supplemental/Chalkduster.ttf" "macOS system fonts; on other systems the kit falls back to Rockwell/Georgia, Helvetica/Arial"
     [ $ok = 1 ] && echo "all good" || { echo "fix the MISSING lines above"; exit 1; } ;;
-  new)
-    dest="${1:?usage: reel new <piece-dir> [--from khan-skill]}"; shift; from="templates/starter"
-    if [ "${1:-}" = "--from" ]; then from="examples/${2:?example name}"; fi
-    [ -e "$dest" ] && { echo "$dest already exists"; exit 1; }
-    mkdir -p "$(dirname "$dest")"; cp -R "$SKILL/$from" "$dest"
-    echo "new piece: $dest (from $from). Next: edit voice/script.json, then: reel voice $dest" ;;
+  new) node "$T/new.mjs" "$@" ;;
+  formats) node "$T/formats.mjs" "$@" ;;
+  formatcheck) node "$T/formatcheck.mjs" "$@" ;;
   voice)
     p="${1:?usage: reel voice <piece> [--voice V] [--speed S] [--only ids] [--say [--voice Linh] [--rate 170]] [--eleven [--voice <voice_id>] [--model M]]}"; shift
     case " $* " in
@@ -51,14 +51,31 @@ case "$cmd" in
       *) "$KOKORO_PY" -u "$T/kokoro_lines.py" "$p" "$@" 2>&1 | grep -v -i warn || true; node "$T/voice.mjs" "$p" ;;
     esac
     node "$T/align.mjs" "$p" ;;
-  build) node "$T/build.mjs" "${1:?piece}" ;;
-  still) p="${1:?piece}"; ts="${2:?times}"; out="${3:?out.png}"; shift 3; node "$T/build.mjs" "$p" >/dev/null && node "$T/still.mjs" "$p" "$ts" "$out" --scale "${2:-0.4}" ;;
-  check) p="${1:?piece}"; node "$T/build.mjs" "$p" >/dev/null; node "$T/textcheck.mjs" "$p" | tail -12; node "$T/tile.mjs" "$p" "/tmp/reel-tile.png" 30 300 600 | grep -i determin ;;
+  build) node "$T/build.mjs" "$@" ;;
+  still)
+    p="${1:?piece}"; ts="${2:?times}"; out="${3:?out.png}"; shift 3
+    preview=(); opts=()
+    while [ "$#" -gt 0 ]; do
+      case "$1" in
+        --preview) preview=(--preview); shift ;;
+        --scale) opts+=(--scale "${2:?scale}"); shift 2 ;;
+        *) echo "unknown still option: $1" >&2; exit 2 ;;
+      esac
+    done
+    [ "${#opts[@]}" -gt 0 ] || opts=(--scale 0.4)
+    node "$T/build.mjs" "$p" "${preview[@]}" && node "$T/still.mjs" "$p" "$ts" "$out" "${opts[@]}" ;;
+  check)
+    p="${1:?piece}"; node "$T/formatcheck.mjs" "$p"
+    node "$T/build.mjs" "$p"
+    node "$T/textcheck.mjs" "$p"
+    node "$T/tile.mjs" "$p" "/tmp/reel-tile.png" 30 300 600 ;;
   export)
-    p="${1:?piece}"; out="${2:-}"; node "$T/build.mjs" "$p" >/dev/null
-    node "$T/export.mjs" "$p" --workers "${WORKERS:-6}" --no-captions | grep -E "written|wrote|voice:|error|Error" || true
+    p="${1:?piece}"; out="${2:-}"
+    node "$T/formatcheck.mjs" "$p" --require-voice
+    node "$T/build.mjs" "$p"
+    node "$T/export.mjs" "$p" --workers "${WORKERS:-6}" --no-captions
     rm -rf "$p/frames"
     [ -n "$out" ] && cp "$p/renders/final.mp4" "$out" && echo "-> $out"
     ffmpeg -nostats -i "$p/renders/final.mp4" -af ebur128=framelog=quiet -f null - 2>&1 | grep -E "^\s+I:" || true ;;
-  *) sed -n '2,13p' "$0" ;;
+  *) printf '%s\n' 'Usage: reel doctor | formats [Fxx] | new <piece> [--format Fxx | --from example] | voice <piece> [options] | build <piece> [--preview] | still <piece> <times> <out.png> [--scale N] [--preview] | formatcheck <piece> [--require-voice] | check <piece> | export <piece> [out.mp4]' ;;
 esac

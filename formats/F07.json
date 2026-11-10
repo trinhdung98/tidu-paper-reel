@@ -1,0 +1,172 @@
+{
+  "id": "F07",
+  "name": "Giả sử và thực tế",
+  "duration": [40, 90],
+  "learningGoal": "The viewer can separate an imagined condition from reality, follow its consequences under stated assumptions, and check the idea against the real world.",
+  "topics": ["Nếu không có ma sát", "Nếu ai cũng tiêu hết tiền ngay khi nhận", "Nếu điện thoại không có mật khẩu", "Nếu một tuần có tám ngày", "Nếu không có số không", "Nếu mọi người cùng nói một ngôn ngữ"],
+  "stages": [
+    {
+      "id": "hypothesis",
+      "label": "Giả sử",
+      "purpose": "State the 'what if' and label it as a thought experiment in the first beat.",
+      "layout": "Hypothesis card centred at x 540 in the band 420-700 with a visible 'GIẢ ĐỊNH' tag; a scene of the everyday world in 740-1300. Reality slot reserved but shows the unchecked state.",
+      "motion": "The hypothesis card is on screen at the cut; the everyday scene shifts into the hypothetical look (a tint or a wobble) on the word that changes the world.",
+      "ending": "End with the hypothetical world switched on and clearly labelled as imagined."
+    },
+    {
+      "id": "assumptions",
+      "label": "Giả định",
+      "purpose": "Say exactly what changes and what stays the same, so the consequences follow logically.",
+      "layout": "Assumption list as tags under the hypothesis card in 720-1000; the scene stays in 1020-1300.",
+      "motion": "Each assumption tag pops in on the word that names it.",
+      "ending": "End with every assumption visible."
+    },
+    {
+      "id": "consequences",
+      "label": "Hệ quả",
+      "purpose": "Walk through everyday consequences one at a time, each following from the assumptions, qualitative only.",
+      "layout": "One consequence per spoken line as a small scene in 760-1300 (feet slipping, a ball sliding); a consequence list grows in a side column inside x 70-1010.",
+      "motion": "Each consequence plays its action on its verb; the list item appears with it.",
+      "ending": "End with the full consequence list visible and still labelled hypothetical."
+    },
+    {
+      "id": "reality",
+      "label": "Thực tế",
+      "purpose": "Return to the real world, say which assumption does not hold or was simplified, and check the idea against what people actually see and do.",
+      "layout": "The hypothetical tint switches off and a 'THỰC TẾ' tag replaces 'GIẢ ĐỊNH' (a colour change alone is not enough); the reality card replaces the unchecked state in the reality slot; real-world examples in 760-1300.",
+      "motion": "The world snaps back to normal on the word that returns to reality; each example pops in on its name.",
+      "ending": "End with the reality card readable; hypothetical and real are visibly different."
+    },
+    {
+      "id": "takeaway",
+      "label": "Ghi nhớ",
+      "purpose": "Give one balanced takeaway and an everyday moment to notice it.",
+      "layout": "Takeaway card in 420-700; hypothesis card shrinks with its 'GIẢ ĐỊNH' tag still on; the real scene stays below.",
+      "motion": "The takeaway writes on as spoken.",
+      "ending": "Close on something the viewer can notice in daily life. No product pitch."
+    }
+  ],
+  "reviewQuestions": [
+    "Is the hypothesis labelled as imagined from the first stage on, in voice and on screen?",
+    "Are the assumptions explicit, changing only one condition and keeping the rest as in the real world?",
+    "Does every consequence follow from the stated assumptions and stay qualitative unless sourced?",
+    "Does the reality stage clearly return to the real world?",
+    "Is the takeaway balanced rather than alarming?"
+  ],
+  "sources": [
+    {
+      "title": "OpenStax College Physics 2e, 4.2 Newton's First Law of Motion: Inertia",
+      "url": "https://openstax.org/books/college-physics-2e/pages/4-2-newtons-first-law-of-motion-inertia",
+      "scope": "Physics principle for the sample: a moving object keeps moving unless a net external force such as friction acts on it."
+    },
+    {
+      "title": "OpenStax College Physics 2e, 5.1 Friction",
+      "url": "https://openstax.org/books/college-physics-2e/pages/5-1-friction",
+      "scope": "Physics principle for the sample: friction is a force that opposes relative motion between surfaces in contact."
+    },
+    {
+      "title": "Rafetseder, Cristi-Vargas & Perner 2010, Counterfactual reasoning: developing a sense of \"nearest possible world\" (Child Development)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3201838/",
+      "scope": "Sound counterfactual reasoning changes only the stated condition and keeps everything else as in the real world."
+    },
+    {
+      "title": "Dahlstrom 2014, Using narratives and storytelling to communicate science with nonexpert audiences (PNAS)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4183170/",
+      "scope": "Narratives built on a character, time and a causal chain are easier to follow; a single story is an anecdote, not evidence for its lesson."
+    },
+    {
+      "title": "Brame 2016, Effective Educational Videos: Principles and Guidelines for Maximizing Student Learning from Video Content (CBE Life Sciences Education)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5132380/",
+      "scope": "Signaling, segmenting and weeding extraneous detail in instructional video; it gives no evidence for fixed cut lengths or an optimal total duration."
+    }
+  ],
+  "example": {
+    "title": "Nếu không có ma sát",
+    "channel": "science",
+    "beats": [
+      {
+        "stage": "hypothesis",
+        "title": "Giả sử",
+        "lines": [
+          {"id": "hypothesis1", "text": "Giả sử một ngày, mặt đất và mọi bề mặt quanh ta không còn ma sát.", "after": 0.15},
+          {"id": "hypothesis2", "text": "Đây chỉ là một thí nghiệm tưởng tượng, không phải điều sẽ xảy ra.", "after": 0.2}
+        ],
+        "visual": {
+          "hypothesis": "Giả sử mọi bề mặt không còn ma sát",
+          "assumptions": ["Chỉ là thí nghiệm tưởng tượng"],
+          "consequences": ["?"],
+          "reality": "Chưa đối chiếu thực tế",
+          "takeaway": "?",
+          "subject": "friction"
+        }
+      },
+      {
+        "stage": "assumptions",
+        "title": "Chỉ bỏ ma sát",
+        "lines": [
+          {"id": "assumptions1", "text": "Để tưởng tượng cho rõ, ta chỉ bỏ đi ma sát giữa các bề mặt.", "after": 0.15},
+          {"id": "assumptions2", "text": "Trọng lực, không khí và mọi thứ khác vẫn giữ nguyên như bình thường.", "after": 0.2}
+        ],
+        "visual": {
+          "hypothesis": "Giả sử mọi bề mặt không còn ma sát",
+          "assumptions": ["Chỉ là thí nghiệm tưởng tượng", "Bỏ ma sát giữa các bề mặt", "Trọng lực, không khí giữ nguyên"],
+          "consequences": ["?"],
+          "reality": "Chưa đối chiếu thực tế",
+          "takeaway": "?",
+          "subject": "friction"
+        }
+      },
+      {
+        "stage": "consequences",
+        "title": "Mọi thứ trượt",
+        "lines": [
+          {"id": "consequences1", "text": "Bạn bước một bước, nhưng bàn chân trượt đi vì không có gì giữ lại.", "after": 0.15},
+          {"id": "consequences2", "text": "Quả bóng đang trượt có thể đi xa hơn nhiều, vì không còn ma sát với sàn.", "after": 0.15},
+          {"id": "consequences3", "text": "Bóp phanh xe đạp cũng khó dừng lại, vì phanh cần ma sát để hãm bánh.", "after": 0.15},
+          {"id": "consequences4", "text": "Ngay cả nút dây giày cũng dễ tự tuột ra.", "after": 0.2}
+        ],
+        "visual": {
+          "hypothesis": "Giả sử mọi bề mặt không còn ma sát",
+          "assumptions": ["Chỉ là thí nghiệm tưởng tượng", "Bỏ ma sát giữa các bề mặt", "Trọng lực, không khí giữ nguyên"],
+          "consequences": ["Bước chân bị trượt", "Bóng trượt xa hơn", "Phanh khó giữ bánh", "Nút dây giày tự tuột"],
+          "reality": "Chưa đối chiếu thực tế",
+          "takeaway": "?",
+          "subject": "friction"
+        }
+      },
+      {
+        "stage": "reality",
+        "title": "Trở lại thực tế",
+        "lines": [
+          {"id": "reality1", "text": "Quay lại thế giới thật, ma sát có mặt gần như ở mọi nơi.", "after": 0.15},
+          {"id": "reality2", "text": "Có lúc ta muốn giảm nó, như tra dầu cho xích xe đạp.", "after": 0.15},
+          {"id": "reality3", "text": "Có lúc ta lại cần nhiều hơn, như đế giày có rãnh để đỡ trơn trượt.", "after": 0.2}
+        ],
+        "visual": {
+          "hypothesis": "Giả sử mọi bề mặt không còn ma sát",
+          "assumptions": ["Chỉ là thí nghiệm tưởng tượng", "Bỏ ma sát giữa các bề mặt", "Trọng lực, không khí giữ nguyên"],
+          "consequences": ["Bước chân bị trượt", "Bóng trượt xa hơn", "Phanh khó giữ bánh", "Nút dây giày tự tuột"],
+          "reality": "Ma sát có mặt gần như ở mọi nơi",
+          "takeaway": "?",
+          "subject": "friction"
+        }
+      },
+      {
+        "stage": "takeaway",
+        "title": "Ma sát giúp ta",
+        "lines": [
+          {"id": "takeaway1", "text": "Ma sát cản sự trượt, nhưng cũng nhờ nó mà ta đứng vững và dừng lại được.", "after": 0.15},
+          {"id": "takeaway2", "text": "Lần tới đi trên sàn trơn, hãy để ý xem ma sát đang giúp bạn thế nào.", "after": 0.2}
+        ],
+        "visual": {
+          "hypothesis": "Giả sử mọi bề mặt không còn ma sát",
+          "assumptions": ["Chỉ là thí nghiệm tưởng tượng", "Bỏ ma sát giữa các bề mặt", "Trọng lực, không khí giữ nguyên"],
+          "consequences": ["Bước chân bị trượt", "Bóng trượt xa hơn", "Phanh khó giữ bánh", "Nút dây giày tự tuột"],
+          "reality": "Ma sát có mặt gần như ở mọi nơi",
+          "takeaway": "Ma sát cản trượt, nhưng giúp ta đứng vững",
+          "subject": "friction"
+        }
+      }
+    ]
+  }
+}

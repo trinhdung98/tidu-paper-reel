@@ -1,0 +1,154 @@
+{
+  "id": "F01",
+  "name": "Câu hỏi và giải thích",
+  "duration": [25, 60],
+  "learningGoal": "The viewer can name the tempting wrong rule, explain why it fails, and apply the replacement rule to a new item.",
+  "topics": [
+    "Vì sao 0,5 lớn hơn 0,25",
+    "Vì sao nhân với số nhỏ hơn 1 lại ra số nhỏ hơn",
+    "Vì sao đổi chỗ các số hạng thì tổng không đổi",
+    "Vì sao lãi suất cao hơn chưa chắc lời nhiều hơn",
+    "Vì sao vật nặng và vật nhẹ có thể rơi gần như cùng lúc",
+    "Vì sao mật khẩu dài khó đoán hơn mật khẩu ngắn"
+  ],
+  "stages": [
+    {
+      "id": "question",
+      "label": "Câu hỏi",
+      "purpose": "Ask one concrete question the viewer can try to answer in their head before any explanation.",
+      "layout": "Sign in 140-296. Question card centred at x 540 in the band 420-760. The compared items as two equal cards centred at x 350 and 730 in the band 800-1150. The answer slot shows only '?'.",
+      "motion": "The question card is fully drawn at the cut (frame 0 is the thumbnail). Each item card pops in on the word that names it.",
+      "ending": "Hold the open question with the answer slot still '?'; no hint of which item wins."
+    },
+    {
+      "id": "misconception",
+      "label": "Hiểu lầm",
+      "purpose": "Say the tempting wrong rule out loud and show why it feels right, without mocking the viewer.",
+      "layout": "Item cards keep their centres and sizes. The misconception card replaces the question card in 420-760 and writes the wrong rule in words.",
+      "motion": "The wrong rule writes on while it is spoken; the item the rule favours grows slightly on its name.",
+      "ending": "End on the doubt line: the misconception card gets a question mark or tilt, never the answer."
+    },
+    {
+      "id": "explanation",
+      "label": "Giải thích",
+      "purpose": "Reason step by step on the same items until the wrong rule no longer works, and give the replacement rule.",
+      "layout": "Items stay in their slots; each spoken step adds one visible change on them (a padded digit, an aligned column, shaded hundredths in a 10x10 grid when visual.groups is set). One change per line.",
+      "motion": "Every change is cued on the word that names it; earlier changes stay on screen so the chain of reasoning is visible.",
+      "ending": "Both items are directly comparable; the answer slot is still '?'."
+    },
+    {
+      "id": "reveal",
+      "label": "Đáp án",
+      "purpose": "State the answer and confirm it with a second concrete representation.",
+      "layout": "Answer card fills 420-760. The winning item is marked and the other fades with globalAlpha. A second representation (shapes, a number line) may replace the items in 800-1150.",
+      "motion": "The answer stamps on the answer word; the misconception card gets a cross as the answer lands.",
+      "ending": "The answer stays readable through the pause after the last reveal line."
+    },
+    {
+      "id": "takeaway",
+      "label": "Ghi nhớ",
+      "purpose": "Turn the explanation into one reusable rule and hand the viewer a fresh practice item.",
+      "layout": "Rule card (the question field) in 420-760. New practice items in the item slots with nothing marked; the earlier answer stays as a small strip above the captions.",
+      "motion": "The rule writes on; practice items pop in on their names and stay unmarked.",
+      "ending": "Close on the practice question for the viewer. No product pitch and no comment-keyword CTA."
+    }
+  ],
+  "reviewQuestions": [
+    "Is the misconception one learners really hold, stated fairly and without mocking?",
+    "Does the explanation stage correct it explicitly and give a replacement rule, not just the answer?",
+    "Is the answer absent from narration and visuals until the reveal stage?",
+    "Does the takeaway give a new practice item whose answer is not shown?",
+    "Is every number on screen in the script and mathematically correct?"
+  ],
+  "sources": [
+    {
+      "title": "Schroeder & Kucera 2022, Refutation Text Facilitates Learning: a Meta-Analysis of Between-Subjects Experiments (Educational Psychology Review)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8784251/",
+      "scope": "Stating a misconception, explicitly correcting it and giving the replacement explanation; studied with texts, applied here to narration."
+    },
+    {
+      "title": "St Hilaire, Chan & Ahn 2024, Guessing as a learning intervention: A meta-analytic review of the prequestion effect (Psychonomic Bulletin & Review)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37640836/",
+      "scope": "Asking a question before teaching mainly helps learning of the content the question targets, not all of the material."
+    },
+    {
+      "title": "Brame 2016, Effective Educational Videos: Principles and Guidelines for Maximizing Student Learning from Video Content (CBE Life Sciences Education)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5132380/",
+      "scope": "Signaling, segmenting and weeding extraneous detail in instructional video; it gives no evidence for fixed cut lengths or an optimal total duration."
+    }
+  ],
+  "example": {
+    "title": "So số thập phân",
+    "channel": "math",
+    "beats": [
+      {
+        "stage": "question",
+        "title": "Số nào lớn hơn",
+        "lines": [{"id": "question1", "text": "Không phẩy năm và không phẩy hai mươi lăm, số nào lớn hơn?", "after": 0.2}],
+        "visual": {"question": "0,5 và 0,25: số nào lớn hơn?", "misconception": "?", "answer": "?", "items": ["0,5", "0,25"], "groups": []}
+      },
+      {
+        "stage": "misconception",
+        "title": "Cái bẫy chữ số",
+        "lines": [
+          {"id": "misconception1", "text": "Một cách nghĩ rất phổ biến là xem số nào có nhiều chữ số hơn.", "after": 0.15},
+          {"id": "misconception2", "text": "Hai mươi lăm trông lớn hơn năm, nên không phẩy hai mươi lăm có vẻ lớn hơn.", "after": 0.15},
+          {"id": "misconception3", "text": "Nhưng so số thập phân không giống so số tự nhiên.", "after": 0.2}
+        ],
+        "visual": {
+          "question": "0,5 và 0,25: số nào lớn hơn?",
+          "misconception": "Nhiều chữ số hơn thì lớn hơn",
+          "answer": "?",
+          "items": ["0,5", "0,25"],
+          "groups": []
+        }
+      },
+      {
+        "stage": "explanation",
+        "title": "Thêm số không",
+        "lines": [
+          {"id": "explanation1", "text": "Hãy viết thêm một chữ số không vào sau không phẩy năm.", "after": 0.15},
+          {"id": "explanation2", "text": "Không phẩy năm bằng không phẩy năm mươi, giá trị không hề thay đổi.", "after": 0.15},
+          {"id": "explanation3", "text": "Ta chỉ cần so năm mươi phần một trăm với hai mươi lăm phần một trăm.", "after": 0.2}
+        ],
+        "visual": {
+          "question": "0,50 và 0,25: số nào lớn hơn?",
+          "misconception": "Nhiều chữ số hơn thì lớn hơn",
+          "answer": "?",
+          "items": ["0,50", "0,25"],
+          "groups": [50, 25]
+        }
+      },
+      {
+        "stage": "reveal",
+        "title": "Không phẩy năm",
+        "lines": [
+          {"id": "reveal1", "text": "Vậy không phẩy năm lớn hơn không phẩy hai mươi lăm.", "after": 0.15},
+          {"id": "reveal2", "text": "Giống như nửa chiếc bánh nhiều hơn một phần tư chiếc bánh cùng cỡ.", "after": 0.2}
+        ],
+        "visual": {
+          "question": "0,50 và 0,25: số nào lớn hơn?",
+          "misconception": "Nhiều chữ số hơn thì lớn hơn",
+          "answer": "0,5 lớn hơn 0,25",
+          "items": ["0,50", "0,25"],
+          "groups": [50, 25]
+        }
+      },
+      {
+        "stage": "takeaway",
+        "title": "Cách so nhanh",
+        "lines": [
+          {"id": "takeaway1", "text": "Khi so số thập phân, hãy viết cho số chữ số sau dấu phẩy bằng nhau.", "after": 0.15},
+          {"id": "takeaway2", "text": "Bạn thử so không phẩy bảy và không phẩy sáu mươi chín xem nhé.", "after": 0.2}
+        ],
+        "visual": {
+          "question": "Viết bằng số chữ số rồi so từng hàng",
+          "misconception": "Nhiều chữ số hơn thì lớn hơn",
+          "answer": "0,5 lớn hơn 0,25",
+          "items": ["0,7", "0,69"],
+          "groups": []
+        }
+      }
+    ]
+  }
+}

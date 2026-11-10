@@ -1,0 +1,153 @@
+{
+  "id": "F05",
+  "name": "Đố vui có đếm ngược",
+  "duration": [15, 45],
+  "learningGoal": "The viewer commits to an answer during a real pause, then checks it against the worked solution and the slip behind a tempting wrong choice.",
+  "topics": ["Ba hộp bánh, ăn mất hai chiếc", "Số tiếp theo trong dãy số", "Tiền thừa khi mua hai món đồ", "Từ tiếng Anh nào chỉ màu sắc", "Dấu hiệu nào cho thấy tin nhắn lừa đảo", "Vật nào nổi, vật nào chìm"],
+  "stages": [
+    {
+      "id": "challenge",
+      "label": "Thử thách",
+      "purpose": "Set a short, fair problem with every number the viewer needs, and say how long they will have.",
+      "layout": "Problem card centred at x 540 in the band 420-760 with the concrete objects drawn (boxes, cakes) in 780-1050. No choices yet, no highlighted object.",
+      "motion": "The problem card is on screen at the cut; objects pop in on the words that name them.",
+      "ending": "End with the full problem visible; nothing hints at the answer."
+    },
+    {
+      "id": "options",
+      "label": "Lựa chọn",
+      "purpose": "Show the choices, including the answers that common slips produce.",
+      "layout": "Problem card shrinks but stays in 420-640. Four equal choice cards in a 2x2 grid or one row in 1070-1300, same size and colour, in a fixed order. The countdown slot is reserved centred at x 540 between problem and choices.",
+      "motion": "Each choice card pops in on the word that names it; none is larger, brighter or pre-marked.",
+      "ending": "End with every choice visible and equal."
+    },
+    {
+      "id": "thinking",
+      "label": "Suy nghĩ",
+      "purpose": "Give the viewer silent time to commit to an answer (they may also pause the video); this is a linear participatory quiz, with no clicks or scoring.",
+      "layout": "Same problem and choice cards. The countdown sits centred at x 540 between them, never under one choice.",
+      "motion": "One spoken line starts the countdown; after it ends, the countdown ticks one number per second (countdown seconds) during the line's pause. The frame keeps moving (ticking, a breathing mascot) so it is never static.",
+      "ending": "The countdown reaches zero before the answer cut: the pause after the single thinking line lasts at least countdown + 0.1 s."
+    },
+    {
+      "id": "answer",
+      "label": "Đáp án",
+      "purpose": "Reveal the one correct choice clearly.",
+      "layout": "Same layout as options: the correct card is marked on the spot and the others fade with globalAlpha. A stamp with the narration's own words may sit above the choices.",
+      "motion": "The mark and the fade land on the word that says the answer.",
+      "ending": "The answer card stays readable through the pause."
+    },
+    {
+      "id": "explanation",
+      "label": "Giải thích",
+      "purpose": "Show the working, then explain the slip behind the most tempting wrong choice, and invite another try.",
+      "layout": "Working card in 420-760 replacing the problem card; the choice cards stay in their slots, and a wrong card briefly brightens while its slip is explained.",
+      "motion": "Each step of the working writes on as spoken; each wrong choice lights on the line that explains it.",
+      "ending": "Close on an invitation to make or try a similar problem. No comment-keyword CTA for kids' content."
+    }
+  ],
+  "reviewQuestions": [
+    "Is the problem fair: every number needed is given and exactly one choice is correct?",
+    "Is the answer hidden from narration and visuals until the answer stage?",
+    "Does the pause after the single thinking line cover the whole countdown?",
+    "Is it clear this is a participatory linear quiz with no clicking or scoring?",
+    "Do the wrong choices come from plausible slips, and is the most tempting one explained?"
+  ],
+  "sources": [
+    {
+      "title": "Szpunar, Khan & Schacter 2013, Interpolated memory tests reduce mind wandering and improve learning of online lectures (PNAS)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3631699/",
+      "scope": "Tests between segments of a 21-minute recorded lecture; supports retrieval breaks, not any specific short-video timing."
+    },
+    {
+      "title": "St Hilaire, Chan & Ahn 2024, Guessing as a learning intervention: A meta-analytic review of the prequestion effect (Psychonomic Bulletin & Review)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37640836/",
+      "scope": "Asking a question before teaching mainly helps learning of the content the question targets, not all of the material."
+    },
+    {
+      "title": "Brame 2016, Effective Educational Videos: Principles and Guidelines for Maximizing Student Learning from Video Content (CBE Life Sciences Education)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5132380/",
+      "scope": "Signaling, segmenting and weeding extraneous detail in instructional video; it gives no evidence for fixed cut lengths or an optimal total duration."
+    }
+  ],
+  "example": {
+    "title": "Đố nhanh bốn giây",
+    "channel": "math",
+    "beats": [
+      {
+        "stage": "challenge",
+        "title": "Ba hộp bánh",
+        "lines": [
+          {"id": "challenge1", "text": "Bạn có giải được bài này trong bốn giây không?", "after": 0.15},
+          {"id": "challenge2", "text": "Có ba hộp bánh, mỗi hộp có bốn chiếc.", "after": 0.15},
+          {"id": "challenge3", "text": "Bạn ăn mất hai chiếc, còn lại mấy chiếc?", "after": 0.2}
+        ],
+        "visual": {
+          "subject": "cookies",
+          "question": "3 hộp, mỗi hộp 4 bánh, ăn mất 2. Còn lại mấy chiếc?",
+          "choices": ["8", "10", "12", "14"],
+          "correct": 1,
+          "countdown": 4,
+          "explanation": ""
+        }
+      },
+      {
+        "stage": "options",
+        "title": "Chọn một số",
+        "lines": [{"id": "options1", "text": "Tám, mười, mười hai, hay mười bốn chiếc?", "after": 0.2}],
+        "visual": {
+          "subject": "cookies",
+          "question": "3 hộp, mỗi hộp 4 bánh, ăn mất 2. Còn lại mấy chiếc?",
+          "choices": ["8", "10", "12", "14"],
+          "correct": 1,
+          "countdown": 4,
+          "explanation": ""
+        }
+      },
+      {
+        "stage": "thinking",
+        "title": "Bốn giây",
+        "lines": [{"id": "thinking1", "text": "Bắt đầu đếm ngược nào.", "after": 4.2}],
+        "visual": {
+          "subject": "cookies",
+          "question": "3 hộp, mỗi hộp 4 bánh, ăn mất 2. Còn lại mấy chiếc?",
+          "choices": ["8", "10", "12", "14"],
+          "correct": 1,
+          "countdown": 4,
+          "explanation": ""
+        }
+      },
+      {
+        "stage": "answer",
+        "title": "Mười chiếc",
+        "lines": [{"id": "answer1", "text": "Đáp án đúng là mười chiếc bánh.", "after": 0.2}],
+        "visual": {
+          "subject": "cookies",
+          "question": "3 hộp, mỗi hộp 4 bánh, ăn mất 2. Còn lại mấy chiếc?",
+          "choices": ["8", "10", "12", "14"],
+          "correct": 1,
+          "countdown": 4,
+          "explanation": "Còn lại 10 chiếc bánh"
+        }
+      },
+      {
+        "stage": "explanation",
+        "title": "Nhân rồi trừ",
+        "lines": [
+          {"id": "explanation1", "text": "Ba hộp, mỗi hộp bốn chiếc, là mười hai chiếc.", "after": 0.15},
+          {"id": "explanation2", "text": "Ăn mất hai chiếc thì còn mười hai trừ hai, bằng mười.", "after": 0.15},
+          {"id": "explanation3", "text": "Nếu bạn chọn mười hai, có thể bạn đã quên trừ hai chiếc vừa ăn.", "after": 0.15},
+          {"id": "explanation4", "text": "Thử tự đặt một bài tương tự để đố bạn nhé.", "after": 0.2}
+        ],
+        "visual": {
+          "subject": "cookies",
+          "question": "3 hộp, mỗi hộp 4 bánh, ăn mất 2. Còn lại mấy chiếc?",
+          "choices": ["8", "10", "12", "14"],
+          "correct": 1,
+          "countdown": 4,
+          "explanation": "3 × 4 = 12, rồi 12 − 2 = 10"
+        }
+      }
+    ]
+  }
+}

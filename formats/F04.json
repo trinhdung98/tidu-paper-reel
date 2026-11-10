@@ -1,0 +1,135 @@
+{
+  "id": "F04",
+  "name": "Hệ thống và quy trình",
+  "duration": [45, 90],
+  "learningGoal": "The viewer can name the parts of the system in order and explain the one mechanism that links the action to the result.",
+  "topics": [
+    "Bên trong chiếc đèn pin",
+    "Một tin nhắn đi từ máy này sang máy khác",
+    "Tiền chuyển khoản đi qua những bước nào",
+    "Máy tính cộng hai số như thế nào",
+    "Nước đi qua máy lọc ra sao",
+    "Một bức thư đi từ hộp thư đến tay người nhận"
+  ],
+  "stages": [
+    {
+      "id": "system",
+      "label": "Hệ thống",
+      "purpose": "Show the whole system doing its everyday job and ask what happens inside.",
+      "layout": "The whole object (or a closed box of it) centred at x 540 in the band 420-1000. The layer strip (one tag per component, in path order) runs across 1060-1200 inside x 70-1010. Detail card under the sign in 322-400.",
+      "motion": "The object is on screen at the cut and performs its visible job once (the bulb lights) on the word that names it.",
+      "ending": "End with the outside behaviour shown and the inside still closed."
+    },
+    {
+      "id": "components",
+      "label": "Bộ phận",
+      "purpose": "Open the system and name each component once, in the order the process uses them.",
+      "layout": "The object opens into an exploded view in 420-1000; each component sits above its tag in the layer strip. The active tag is highlighted, the others stay visible at reduced alpha.",
+      "motion": "Each component slides out and its tag lights on the word that names it; one component per spoken line.",
+      "ending": "All components visible and labelled; nothing is moving yet."
+    },
+    {
+      "id": "process",
+      "label": "Quy trình",
+      "purpose": "Run the steps in order, showing the state before and after the key action.",
+      "layout": "Components return to their assembled positions with gaps visible; the active tag marks the step being spoken.",
+      "motion": "The key part changes state on its verb (the switch closes); nothing else moves at the same time.",
+      "ending": "End right after the key action, before the effect is explained."
+    },
+    {
+      "id": "mechanism",
+      "label": "Cơ chế",
+      "purpose": "Explain why the action causes the effect, as one idea that connects the components, and say what the simplification leaves out when it matters.",
+      "layout": "Same assembled view. A path or flow (dots moving along a chalkLine) traces the components in layer order; the active tag follows the flow.",
+      "motion": "The flow starts on the word that names it and runs continuously; breaking the path stops it on the word that names the break.",
+      "ending": "End with the mechanism visible: flow running when complete, stopped when broken."
+    },
+    {
+      "id": "result",
+      "label": "Kết quả",
+      "purpose": "State the result as a cause-and-effect rule, add one practical consequence, and point to the next time the viewer meets the system.",
+      "layout": "Assembled object back in 420-1000 doing its job; the rule in the detail card; the layer strip stays.",
+      "motion": "The object's job repeats once on the rule's key word.",
+      "ending": "Close on a real-life moment where the viewer will see the mechanism. No product pitch."
+    }
+  ],
+  "reviewQuestions": [
+    "Are the components correct and named in the order the process uses them?",
+    "Does the diagram stay in the same place through the explanation so changes are easy to follow?",
+    "Are intermediate states shown (open, closed, flowing, stopped) rather than only the start and the end?",
+    "Is the mechanism simplified without becoming wrong?",
+    "Is any safety-relevant detail (mains electricity, batteries) handled responsibly?"
+  ],
+  "sources": [
+    {
+      "title": "OpenStax University Physics Volume 2, 9.1 Electrical Current",
+      "url": "https://openstax.org/books/university-physics-volume-2/pages/9-1-electrical-current",
+      "scope": "Sample physics: a battery, switch, lamp and wires need a complete current path; opening the switch breaks that path. The video is a simplified DC illustration."
+    },
+    {
+      "title": "Tversky, Morrison & Betrancourt 2002, Animation: can it facilitate? (International Journal of Human-Computer Studies)",
+      "url": "https://doi.org/10.1006/ijhc.2002.1017",
+      "scope": "Design guidance: show perceptible intermediate states and stable references; animation is not automatically better than information-equivalent static diagrams."
+    },
+    {
+      "title": "Brame 2016, Effective Educational Videos: Principles and Guidelines for Maximizing Student Learning from Video Content (CBE Life Sciences Education)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5132380/",
+      "scope": "Signaling, segmenting and weeding extraneous detail in instructional video; it gives no evidence for fixed cut lengths or an optimal total duration."
+    }
+  ],
+  "example": {
+    "title": "Bên trong đèn pin",
+    "channel": "tech",
+    "beats": [
+      {
+        "stage": "system",
+        "title": "Đèn sáng vì sao",
+        "lines": [
+          {"id": "system1", "text": "Bấm công tắc, đèn pin sáng lên, nhưng bên trong đã xảy ra chuyện gì?", "after": 0.15},
+          {"id": "system2", "text": "Hãy mở một chiếc đèn pin dùng pin đơn giản và nhìn từng bộ phận.", "after": 0.2}
+        ],
+        "visual": {"layers": ["Pin", "Dây dẫn", "Công tắc", "Bóng đèn"], "active": 3, "detail": "Đèn pin sáng lên vì sao?", "subject": "circuit"}
+      },
+      {
+        "stage": "components",
+        "title": "Bốn bộ phận",
+        "lines": [
+          {"id": "components1", "text": "Đầu tiên là pin, nơi cung cấp năng lượng điện cho cả chiếc đèn.", "after": 0.15},
+          {"id": "components2", "text": "Tiếp theo là dây dẫn, nối các bộ phận thành một đường đi cho dòng điện.", "after": 0.15},
+          {"id": "components3", "text": "Rồi đến công tắc, giống như một cây cầu có thể nâng lên hạ xuống.", "after": 0.15},
+          {"id": "components4", "text": "Cuối cùng là bóng đèn, phần phát ra ánh sáng.", "after": 0.2}
+        ],
+        "visual": {"layers": ["Pin", "Dây dẫn", "Công tắc", "Bóng đèn"], "active": 0, "detail": "Bốn bộ phận chính", "subject": "circuit"}
+      },
+      {
+        "stage": "process",
+        "title": "Bấm công tắc",
+        "lines": [
+          {"id": "process1", "text": "Khi công tắc tắt, cây cầu bị nâng lên và đường đi bị hở.", "after": 0.15},
+          {"id": "process2", "text": "Khi bấm bật, công tắc đóng lại và nối liền đường đi.", "after": 0.2}
+        ],
+        "visual": {"layers": ["Pin", "Dây dẫn", "Công tắc", "Bóng đèn"], "active": 2, "detail": "Công tắc đóng lại", "subject": "circuit"}
+      },
+      {
+        "stage": "mechanism",
+        "title": "Một vòng kín",
+        "lines": [
+          {"id": "mechanism1", "text": "Lúc này pin, dây dẫn, công tắc và bóng đèn tạo thành một vòng kín.", "after": 0.15},
+          {"id": "mechanism2", "text": "Dòng điện chạy được qua vòng kín đó và đi qua bóng đèn.", "after": 0.15},
+          {"id": "mechanism3", "text": "Chỉ cần một chỗ hở, dòng điện dừng lại và đèn tắt.", "after": 0.2}
+        ],
+        "visual": {"layers": ["Pin", "Dây dẫn", "Công tắc", "Bóng đèn"], "active": 1, "detail": "Mạch kín cho dòng điện chạy qua", "subject": "circuit"}
+      },
+      {
+        "stage": "result",
+        "title": "Mạch kín thì sáng",
+        "lines": [
+          {"id": "result1", "text": "Vậy với đèn pin đơn giản này, đèn sáng khi mạch kín và tắt khi mạch hở.", "after": 0.15},
+          {"id": "result2", "text": "Pin yếu hoặc dây lỏng cũng có thể làm đèn mờ hay không sáng.", "after": 0.15},
+          {"id": "result3", "text": "Lần tới bật đèn pin, bạn sẽ biết bên trong đang có một vòng kín.", "after": 0.2}
+        ],
+        "visual": {"layers": ["Pin", "Dây dẫn", "Công tắc", "Bóng đèn"], "active": 3, "detail": "Mạch kín thì sáng, mạch hở thì tắt", "subject": "circuit"}
+      }
+    ]
+  }
+}
