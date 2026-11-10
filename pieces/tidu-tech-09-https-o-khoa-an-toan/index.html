@@ -588,7 +588,7 @@ const PR = {
 };
 // F_HEAD / F_CHIP are var so a piece can swap them; Vietnamese pieces embed Be Vietnam Pro + Bevan (piece.json "fonts"),
 // because Avenir Next and SuperClarendon misplace stacked tone marks (ĐẾM, những, được)
-var F_HEAD = '"Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif';
+var F_HEAD = '"Be Vietnam Pro", "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif';
 var F_CHIP = 'SuperClarendon, Rockwell, Georgia, serif';
 const F_CHALK = 'Chalkduster, "Chalkboard SE", "Comic Sans MS", cursive';
 const F_MONO = 'Menlo, "SF Mono", Consolas, monospace';
@@ -706,8 +706,9 @@ function prStamp(str, x, y, color, t0, o = {}) {
   const w = txtW(str, sz) + 60, h = sz * 1.45;
   withT(x, y, o.rot ?? -0.07, s, () => {
     if (u >= 1) pp(pR(-w / 2, -h / 2, w, h, 10), o.bg ?? 'rgba(250,248,240,0.94)', { key: 'stb' + str, sb: 10, sy: 5, tex: 0.45 });
-    ctx.save(); ctx.globalAlpha = u < 1 ? 0.75 : 1; ctx.strokeStyle = color; ctx.lineWidth = 7; ctx.beginPath(); ctx.roundRect(-w / 2 + 8, -h / 2 + 8, w - 16, h - 16, 7); ctx.stroke();
-    txt(str, 0, sz * 0.36, sz, color, { align: 'center', weight: 800 }); ctx.restore();
+    const alpha = u < 1 ? 0.75 : 1;
+    ctx.save(); ctx.globalAlpha = alpha; ctx.strokeStyle = color; ctx.lineWidth = 7; ctx.beginPath(); ctx.roundRect(-w / 2 + 8, -h / 2 + 8, w - 16, h - 16, 7); ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.globalAlpha = alpha; ctx.rotate(-(o.rot ?? -0.07)); txt(str, 0, sz * 0.36, sz, color, { align: 'center', weight: 800, font: F_HEAD }); ctx.restore();
   });
 }
 // ---- confetti / dots that burst from (x, y) at t0
@@ -1877,7 +1878,7 @@ function t9BrowserWithLock(cx, cy, isWarn = false) {
 
     // Green lock icon and domain
     pp(pR(-bw / 2 + 25, -bh / 2 + 12, bw - 50, 42, 10), PR.techK, { key: 't9_inp', shadow: false, tex: 0.3 });
-    txt('🔒 shop-giam-gia-90k.online', -bw / 2 + 50, -bh / 2 + 40, 19, PR.green, { weight: 800, font: F_MONO });
+    txt('shop-giam-gia-90k.online', -bw / 2 + 50, -bh / 2 + 40, 19, PR.green, { weight: 800, font: F_MONO });
     pp(pR(bw / 2 - 165, -bh / 2 + 16, 125, 34, 6), '#143c24', { shadow: false, tex: false });
     txt('HTTPS BẢO MẬT', bw / 2 - 102, -bh / 2 + 39, 13, PR.green, { align: 'center', weight: 800 });
 
@@ -1889,7 +1890,7 @@ function t9BrowserWithLock(cx, cy, isWarn = false) {
     if (isWarn) {
       // Red stamp overlay
       pp(pR(-260, 80, 520, 60, 12), PR.red, { key: 't9_fakebadge', sb: 10, sy: 5, tex: 0.45 });
-      txt('⚠️ WEB LỪA ĐẢO VẪN CÓ Ổ KHÓA!', 0, 118, 22, PR.creamL, { align: 'center', weight: 800 });
+      txt('WEB LỪA ĐẢO VẪN CÓ Ổ KHÓA!', 0, 118, 22, PR.creamL, { align: 'center', weight: 800 });
     }
   });
 }
@@ -1915,14 +1916,15 @@ function t9SealedEnvelope(cx, cy) {
 
     // Golden wax seal with lock
     pp(pE(0, 10, 48, 48), PR.mustard, { key: 'env_seal', sb: 10, sy: 5, tex: 0.4 });
-    txt('🔒', 0, 22, 36, PR.navy, { align: 'center', weight: 800 });
+    pp(pR(-8, 10, 16, 18, 4), PR.navy, { shadow: false, tex: false });
+    pp(pE(0, 8, 8, 8), PR.navy, { shadow: false, tex: false });
 
     txt('Dữ liệu (mật khẩu, thẻ) đi trong phong bì kín', 0, 95, 22, PR.navy, { align: 'center', weight: 800 });
     txt('Hacker ở quán cà phê không thể xem trộm giữa đường.', 0, 130, 19, PR.char, { align: 'center', weight: 600 });
 
     // Green guarantee tag
     pp(pR(-280, 180, 560, 50, 10), '#143c24', { key: 'env_ok', sb: 6, sy: 3, tex: 0.35 });
-    txt('✓ ĐẢM BẢO: KHÔNG BỊ NGHE LÉN DỌC ĐƯỜNG', 0, 212, 18, PR.green, { align: 'center', weight: 800 });
+    txt('ĐẢM BẢO: KHÔNG BỊ NGHE LÉN DỌC ĐƯỜNG', 0, 212, 18, PR.green, { align: 'center', weight: 800 });
   });
 }
 
@@ -1933,8 +1935,8 @@ function t9DestinationCheck(cx, cy) {
 
     // Comparison of two ends
     const sides = [
-      ['🏢 BÊN BÁN CHÂN CHÍNH', 'HTTPS bảo vệ giao dịch mua bán an toàn.', PR.green],
-      ['🦹 KẺ LỪA ĐẢO CHIẾM ĐOẠT', 'Kẻ lừa đảo vẫn dùng HTTPS để nhận dữ liệu kín đáo!', PR.red],
+      ['BÊN BÁN CHÂN CHÍNH', 'HTTPS bảo vệ giao dịch mua bán an toàn.', PR.green],
+      ['KẺ LỪA ĐẢO CHIẾM ĐOẠT', 'Kẻ lừa đảo vẫn dùng HTTPS để nhận dữ liệu kín đáo!', PR.red],
     ];
 
     sides.forEach(([title, desc, col], i) => {
@@ -1958,7 +1960,7 @@ SCENES.hook = () => {
   t9Wall('hk');
   prSign('CÓ Ổ KHÓA = KHÔNG BỊ LỪA ĐẢO?', { kicker: KICK });
 
-  t9BrowserWithLock(480, 880, false);
+  t9BrowserWithLock(540, 880, false);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'beanie',
@@ -1975,7 +1977,7 @@ SCENES.encryption = () => {
   t9Wall('enc');
   prSign('HTTPS CHỈ MÃ HÓA ĐƯỜNG TRUYỀN', { kicker: KICK });
 
-  t9SealedEnvelope(480, 880);
+  t9SealedEnvelope(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'headset',
@@ -1992,7 +1994,7 @@ SCENES.phishing = () => {
   t9Wall('phish');
   prSign('AI Ở ĐẦU BÊN KIA ĐƯỜNG TRUYỀN?', { kicker: KICK });
 
-  t9DestinationCheck(480, 880);
+  t9DestinationCheck(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'tinfoil',
@@ -2008,7 +2010,7 @@ SCENES.free_cert = () => {
   t9Wall('free');
   prSign('CHỨNG CHỈ HTTPS MIỄN PHÍ DỄ CÀI', { kicker: KICK });
 
-  t9BrowserWithLock(480, 880, true);
+  t9BrowserWithLock(540, 880, true);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'drone',
@@ -2025,9 +2027,9 @@ SCENES.verify = () => {
   t9Wall('vrf');
   prSign('3 BƯỚC KIỂM TRA TRƯỚC KHI MUA', { kicker: KICK });
 
-  withT(480, 840, 0, 1, () => {
+  withT(540, 840, 0, 1, () => {
     pp(pR(-370, -220, 740, 440, 20), PR.creamL, { key: 'vrf_card', sb: 18, sy: 9, tex: 0.5 });
-    txt('🔍 ĐỪNG CHỈ NHÌN Ổ KHÓA!', 0, -165, 26, PR.navy, { align: 'center', weight: 800 });
+    txt('ĐỪNG CHỈ NHÌN Ổ KHÓA!', 0, -165, 26, PR.navy, { align: 'center', weight: 800 });
 
     const checks = [
       ['1. SOI KỸ TÊN MIỀN CHÍNH THỨC', 'Cảnh giác tên miền lạ (.top, .xyz, sh0pee.vn...)'],
@@ -2061,26 +2063,26 @@ SCENES.takeaway = () => {
   const tStamp = VW('takeaway', 'chứng').t0;
 
   // Top Card: Kín đáo
-  withT(480, 680, 0, 1, () => {
+  withT(540, 680, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c1', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.blue, { key: 'ta_c1_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.blue, { shadow: false, tex: false });
-    txt('🔒 Ý NGHĨA THỰC CỦA Ổ KHÓA HTTPS', 0, -55, 24, PR.creamL, { align: 'center', weight: 800 });
+    txt('Ý NGHĨA THỰC CỦA Ổ KHÓA HTTPS', 0, -55, 24, PR.creamL, { align: 'center', weight: 800 });
     txt('Đảm bảo bạn đang nói chuyện riêng tư với máy chủ trang web.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
-    txt('✓ Dữ liệu không bị đọc trộm trên đường truyền', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
+    txt('Dữ liệu không bị đọc trộm trên đường truyền', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
   });
 
   // Bottom Card: Không chứng nhận tử tế
-  withT(480, 940, 0, 1, () => {
+  withT(540, 940, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c2', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.red, { key: 'ta_c2_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.red, { shadow: false, tex: false });
-    txt('⚠️ KHÔNG ĐẢM BẢO CHỦ WEB LÀ AI', 0, -55, 24, PR.creamL, { align: 'center', weight: 800 });
+    txt('KHÔNG ĐẢM BẢO CHỦ WEB LÀ AI', 0, -55, 24, PR.creamL, { align: 'center', weight: 800 });
     txt('Kẻ lừa đảo vẫn cài được HTTPS miễn phí trong vài phút.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
     txt('Đường truyền kín nhưng người nhận có thể là kẻ gian!', 0, 50, 19, PR.red, { align: 'center', weight: 800 });
   });
 
-  prStamp('KÍN ≠ TỬ TẾ!', 480, 1160, PR.red, tStamp, { size: 38, from: 1.25, rot: -0.04 });
+  prStamp('KÍN ≠ TỬ TẾ!', 540, 1160, PR.red, tStamp, { size: 38, from: 1.25, rot: -0.04 });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'vr',
@@ -2097,9 +2099,9 @@ SCENES.cta = () => {
   t9Wall('cta');
   prSign('CHIA SẺ CHO NGƯỜI HAY MUA ONLINE!', { kicker: KICK });
 
-  withT(480, 760, 0, 1, () => {
+  withT(540, 760, 0, 1, () => {
     pp(pR(-380, -180, 760, 360, 20), PR.creamL, { key: 'cta_card', sb: 18, sy: 9, tex: 0.5 });
-    txt('🛒 MUA SẮM ONLINE AN TOÀN', 0, -115, 28, PR.navy, { align: 'center', weight: 800 });
+    txt('MUA SẮM ONLINE AN TOÀN', 0, -115, 28, PR.navy, { align: 'center', weight: 800 });
 
     const tips = [
       '• Không vội tin vào biểu tượng ổ khóa màu xanh',
@@ -2112,7 +2114,7 @@ SCENES.cta = () => {
     });
   });
 
-  prCommentBox(480, 1090, 'CHIA SẺ NGAY', t0 + 0.2, { hint: 'Bạn hay mua sắm ở trang web nào?...' });
+  prCommentBox(540, 1090, 'CHIA SẺ NGAY', t0 + 0.2, { hint: 'Bạn hay mua sắm ở trang web nào?...' });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'party',

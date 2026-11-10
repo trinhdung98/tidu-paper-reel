@@ -117,7 +117,7 @@ SCENES.hook = () => {
 
   // Phi hành gia lơ lửng (bồng bềnh hình sin)
   const bob1 = Math.sin(TT * 2.2) * 22;
-  withT(CX - 160, bY + 30 + bob1, Math.sin(TT * 1.4) * 0.08, 1, () => {
+  withT(CX - 160, bY + 30 + bob1, Math.sin(TT * 1.4) * 0.08, 1.4, () => {
     // Mũ phi hành gia
     pp(pE(0, -60, 55, 52), PR.paperW, { key: 'asthel', sb: 12, sy: 6 });
     pp(pE(0, -62, 40, 32), '#90d4ed', { shadow: false });
@@ -128,7 +128,7 @@ SCENES.hook = () => {
 
   // Quả táo lơ lửng bên cạnh (bồng bềnh lệch pha)
   const bob2 = Math.cos(TT * 2.0) * 26;
-  tsApple(CX + 180, bY + 20 + bob2, 1.3);
+  tsApple(CX + 180, bY + 20 + bob2, 1.8);
 
   // Dấu hỏi lớn xuất hiện
   const tWhy = VW('hook', 'bay').t0;

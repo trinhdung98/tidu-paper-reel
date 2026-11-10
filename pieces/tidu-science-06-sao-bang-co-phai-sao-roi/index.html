@@ -709,11 +709,15 @@ const countUp = (t0, d, a, b) => Math.round(lerp(a, b, EZ.o3(ev(t0, d))));
 function prStamp(str, x, y, color, t0, o = {}) {
   if (TT < t0) return;
   const u = clamp((TT - t0) / 0.16), s = lerp(o.from ?? 1.9, 1, EZ.i2(u)) * (o.s ?? 1), sz = o.size ?? 64;
-  const w = txtW(str, sz) + 60, h = sz * 1.45;
+  // Box sized from real glyph bounds: Vietnamese stacked marks (Ề, Ẫ) rise above the caps and dot-below (Ệ, Ự)
+  // drops under the baseline; a fixed sz*1.45 box put them on the same-colored ring, where they vanished.
+  ctx.save(); ctx.font = `800 ${sz}px ${F_HEAD}`; const m = ctx.measureText(str); ctx.restore();
+  const asc = Math.max(m.actualBoundingBoxAscent, sz * 0.72), desc = Math.max(m.actualBoundingBoxDescent, 0);
+  const w = m.width + 60, h = asc + desc + 44;
   withT(x, y, o.rot ?? -0.07, s, () => {
     if (u >= 1) pp(pR(-w / 2, -h / 2, w, h, 10), o.bg ?? 'rgba(250,248,240,0.94)', { key: 'stb' + str, sb: 10, sy: 5, tex: 0.45 });
     ctx.save(); ctx.globalAlpha = u < 1 ? 0.75 : 1; ctx.strokeStyle = color; ctx.lineWidth = 7; ctx.beginPath(); ctx.roundRect(-w / 2 + 8, -h / 2 + 8, w - 16, h - 16, 7); ctx.stroke();
-    txt(str, 0, sz * 0.36, sz, color, { align: 'center', weight: 800 }); ctx.restore();
+    txt(str, 0, (asc - desc) / 2, sz, color, { align: 'center', weight: 800 }); ctx.restore();
   });
 }
 // ---- confetti / dots that burst from (x, y) at t0
@@ -2060,7 +2064,7 @@ SCENES.glow = () => {
   });
 
   const tBurn = VW('glow', 'sáng.').t0;
-  prStamp('BỐC CHÁY VÀ PHÁ HỦY', CX, 1180, PR.red, tBurn, { rot: 0.02, size: 46, from: 1.15 });
+  prStamp('BỐC CHÁY VÀ PHÁ HỦY', CX, 1125, PR.red, tBurn, { rot: 0.02, size: 46, from: 1.15 });
 
   flasky(FLASKY_X, FLASKY_Y, {
     hat: 'propeller',

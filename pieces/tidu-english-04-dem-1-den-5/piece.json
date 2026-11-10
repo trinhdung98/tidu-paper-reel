@@ -2,7 +2,7 @@
   "name": "tidu-english-04-dem-1-den-5",
   "title": "Tidu English 04 — Đếm 1 đến 5 bằng tiếng Anh",
   "format": { "width": 1080, "height": 1920, "fps": 30 },
-  "storyFormat": "voice-cut list: hook -> one -> two_five -> quiz -> answer -> countall -> cta",
+  "storyFormat": "voice-cut list: hook -> one -> two_three -> four_five -> quiz -> answer -> countall -> cta",
   "style": "paper-reel",
   "fonts": { "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf", "Bevan": "Bevan-Regular.ttf" },
   "voice": { "file": "voice/voice.wav", "music": -13 },

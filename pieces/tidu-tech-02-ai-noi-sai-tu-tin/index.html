@@ -1877,7 +1877,7 @@ function t2Chat(cx, cy, o = {}) {
     // User prompt bubble (Top Right)
     const uw = 560, uh = 90;
     pp(pR(100 - uw / 2, -180, uw, uh, 18), PR.techK, { key: 't2_user', sb: 12, sy: 6, tex: 0.4 });
-    txt('👤 Hãy kể tên 3 cuốn sách khoa học năm 1892', 100, -125, 20, PR.creamL, { align: 'center', weight: 700 });
+    txt('Hãy kể tên 3 cuốn sách khoa học năm 1892', 100, -125, 20, PR.creamL, { align: 'center', weight: 700 });
 
     // AI response bubble (Lower Center)
     const aw = 740, ah = 360;
@@ -1886,7 +1886,7 @@ function t2Chat(cx, cy, o = {}) {
     pp(pR(-aw / 2, -60, aw, 56, 22), '#0e1d2d', { key: 't2_aihd', shadow: false, tex: 0.3 });
     pp(pR(-aw / 2, -20, aw, 16, 0), '#0e1d2d', { shadow: false, tex: false });
     sparkIcon(-aw / 2 + 36, -32, 16, PR.glow, 0.2);
-    txt('🤖 TRỢ LÝ AI (TỰ TIN TRẢ LỜI)', -aw / 2 + 68, -25, 20, PR.glow, { weight: 800 });
+    txt('TRỢ LÝ AI (TỰ TIN TRẢ LỜI)', -aw / 2 + 68, -25, 20, PR.glow, { weight: 800 });
 
     // AI Generated Text
     txt('Dưới đây là 3 cuốn sách nổi tiếng xuất bản năm 1892:', -aw / 2 + 36, 25, 21, PR.char, { weight: 700 });
@@ -1898,10 +1898,10 @@ function t2Chat(cx, cy, o = {}) {
     if (o.isWrong) {
       // Red stamp & question badge
       pp(pR(-aw / 2 + 30, 205, aw - 60, 60, 12), PR.red, { key: 't2_errbar', sb: 8, sy: 4, tex: 0.4 });
-      txt('❌ TẤT CẢ CUỐN SÁCH TRÊN ĐỀU KHÔNG TỒN TẠI!', 0, 243, 21, PR.creamL, { align: 'center', weight: 800 });
+      txt('TẤT CẢ CUỐN SÁCH TRÊN ĐỀU KHÔNG TỒN TẠI!', 0, 243, 21, PR.creamL, { align: 'center', weight: 800 });
     } else {
       pp(pR(-aw / 2 + 30, 205, aw - 60, 60, 12), '#183828', { key: 't2_okbar', shadow: false, tex: 0.3 });
-      txt('✓ Câu trả lời cực kỳ mượt mà & thuyết phục', 0, 243, 21, PR.green, { align: 'center', weight: 800 });
+      txt('Câu trả lời cực kỳ mượt mà & thuyết phục', 0, 243, 21, PR.green, { align: 'center', weight: 800 });
     }
   });
 }
@@ -1963,7 +1963,7 @@ function t2RealityCheck(cx, cy) {
 
     // Warning note below
     pp(pR(-340, 210, 680, 60, 12), PR.navyD, { key: 't2_warnbox', sb: 8, sy: 4, tex: 0.4 });
-    txt('⚠️ Tự động tạo văn bản ≠ Tự động biết sự thật', 0, 248, 22, PR.mustard, { align: 'center', weight: 800 });
+    txt('Tự động tạo văn bản ≠ Tự động biết sự thật', 0, 248, 22, PR.mustard, { align: 'center', weight: 800 });
   });
 }
 
@@ -1971,9 +1971,9 @@ function t2RealityCheck(cx, cy) {
 function t2FakeItems(cx, cy) {
   withT(cx, cy, 0, 1, () => {
     const items = [
-      ['📖 TÊN SÁCH BỊA', '"Vũ trụ 1892" — GS. Nam', 'Tác giả & sách hoàn toàn hư cấu'],
-      ['📊 SỐ LIỆU GIẢ', '"89,4% tăng trưởng năm 1902"', 'Con số ngẫu nhiên nghe hợp lý'],
-      ['🔗 NGUỒN TRÍCH DẪN', 'doi:10.1038/s41586-fake', 'Mã trích dẫn và liên kết 404 rỗng'],
+      ['TÊN SÁCH BỊA', '"Vũ trụ 1892" — GS. Nam', 'Tác giả & sách hoàn toàn hư cấu'],
+      ['SỐ LIỆU GIẢ', '"89,4% tăng trưởng năm 1902"', 'Con số ngẫu nhiên nghe hợp lý'],
+      ['NGUỒN TRÍCH DẪN', 'doi:10.1038/s41586-fake', 'Mã trích dẫn và liên kết 404 rỗng'],
     ];
 
     items.forEach(([tag, title, desc], i) => {
@@ -2001,10 +2001,10 @@ SCENES.hook = () => {
   const tWrong = VW('hook', 'sai').t0;
   const isWrong = TT >= tWrong;
 
-  t2Chat(480, 880, { isWrong });
+  t2Chat(540, 880, { isWrong });
 
   if (isWrong) {
-    prCross(480, 1240, tWrong, 64);
+    prCross(540, 1240, tWrong, 64);
   }
 
   botty(BOTTY_X, BOTTY_Y, {
@@ -2025,7 +2025,7 @@ SCENES.term = () => {
   const tTerm = VW('term', 'ảo').t0;
 
   // Center Term Card
-  withT(480, 840, 0, 1, () => {
+  withT(540, 840, 0, 1, () => {
     pp(pR(-380, -220, 760, 440, 20), PR.creamL, { key: 'term_card', sb: 18, sy: 9, tex: 0.5 });
     // Header
     pp(pR(-380, -220, 760, 80, 20), '#0e1d2d', { shadow: false, tex: 0.4 });
@@ -2040,7 +2040,7 @@ SCENES.term = () => {
     txt('hoàn toàn không có thật nhưng nói rất tự tin!', 0, 120, 22, PR.mustard, { align: 'center', weight: 800 });
   });
 
-  prStamp('ẢO GIÁC AI', 480, 1180, PR.red, tTerm, { size: 42, from: 1.25, rot: -0.05 });
+  prStamp('ẢO GIÁC AI', 540, 1180, PR.red, tTerm, { size: 42, from: 1.25, rot: -0.05 });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'beanie',
@@ -2058,7 +2058,7 @@ SCENES.pattern = () => {
   t2Wall('pt');
   prSign('AI GHÉP TỪ THEO XÁC SUẤT', { kicker: KICK });
 
-  t2TokenStream(480, 860, t0 + 0.2);
+  t2TokenStream(540, 860, t0 + 0.2);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'drone',
@@ -2076,7 +2076,7 @@ SCENES.reality = () => {
   t2Wall('rl');
   prSign('AI KHÔNG TỰ KIỂM CHỨNG THỰC TẾ', { kicker: KICK });
 
-  t2RealityCheck(480, 880, t0);
+  t2RealityCheck(540, 880, t0);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'tinfoil',
@@ -2093,7 +2093,7 @@ SCENES.fake = () => {
   t2Wall('fk');
   prSign('DỮ LIỆU BỊA RA HOÀN TOÀN', { kicker: KICK });
 
-  t2FakeItems(480, 880, t0);
+  t2FakeItems(540, 880, t0);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'mortar',
@@ -2113,26 +2113,26 @@ SCENES.takeaway = () => {
   const tStamp = VW('takeaway', 'chính').t0;
 
   // Top Card: Văn phong thuyết phục
-  withT(480, 680, 0, 1, () => {
+  withT(540, 680, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c1', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.blue, { key: 'ta_c1_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.blue, { shadow: false, tex: false });
-    txt('🗣️ CÂU TRẢ LỜI NGHE THUYẾT PHỤC', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
+    txt('CÂU TRẢ LỜI NGHE THUYẾT PHỤC', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
     txt('Văn phong trôi chảy, ngữ pháp chuẩn, tự tin.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
-    txt('✓ AI chỉ giỏi ghép câu chữ hợp ngữ cảnh', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
+    txt('AI chỉ giỏi ghép câu chữ hợp ngữ cảnh', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
   });
 
   // Bottom Card: Độ chính xác
-  withT(480, 940, 0, 1, () => {
+  withT(540, 940, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c2', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.red, { key: 'ta_c2_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.red, { shadow: false, tex: false });
-    txt('🎯 CÂU TRẢ LỜI CHÍNH XÁC THỰC TẾ', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
+    txt('CÂU TRẢ LỜI CHÍNH XÁC THỰC TẾ', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
     txt('Cần nguồn kiểm chứng, sự kiện có thật ngoài đời.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
-    txt('⚠️ Nghe hay không có nghĩa là sự thật!', 0, 50, 19, PR.red, { align: 'center', weight: 800 });
+    txt('Nghe hay không có nghĩa là sự thật!', 0, 50, 19, PR.red, { align: 'center', weight: 800 });
   });
 
-  prStamp('KHÔNG ĐỒNG NGHĨA!', 480, 1160, PR.red, tStamp, { size: 38, from: 1.25, rot: -0.04 });
+  prStamp('KHÔNG ĐỒNG NGHĨA!', 540, 1160, PR.red, tStamp, { size: 38, from: 1.25, rot: -0.04 });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'vr',
@@ -2150,9 +2150,9 @@ SCENES.cta = () => {
   prSign('HÃY LUÔN KIỂM CHỨNG LẠI!', { kicker: KICK });
 
   // Big verification checklist card
-  withT(480, 760, 0, 1, () => {
+  withT(540, 760, 0, 1, () => {
     pp(pR(-380, -180, 760, 360, 20), PR.creamL, { key: 'cta_card', sb: 18, sy: 9, tex: 0.5 });
-    txt('🔍 NGUYÊN TẮC VÀNG KHI DÙNG AI', 0, -115, 30, PR.navy, { align: 'center', weight: 800 });
+    txt('NGUYÊN TẮC VÀNG KHI DÙNG AI', 0, -115, 30, PR.navy, { align: 'center', weight: 800 });
 
     const checks = [
       '1. Kiểm tra lại mọi số liệu và tên người',
@@ -2165,7 +2165,7 @@ SCENES.cta = () => {
     });
   });
 
-  prCommentBox(480, 1090, 'LƯU VIDEO NGAY', t0 + 0.2, { hint: 'Bạn từng bị AI lừa thông tin gì chưa?...' });
+  prCommentBox(540, 1090, 'LƯU VIDEO NGAY', t0 + 0.2, { hint: 'Bạn từng bị AI lừa thông tin gì chưa?...' });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'party',

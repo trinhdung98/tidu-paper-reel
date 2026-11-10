@@ -177,7 +177,7 @@ SCENES.scifi = () => {
 
   // Stamp: HIỆU ỨNG ÂM THANH
   const tLoud = VW('scifi', 'lớn.').t0;
-  prStamp('ÂM THANH KỸ XẢO PHIM', CX, 1180, PR.red, tLoud, { rot: 0.03, size: 44, from: 1.15 });
+  prStamp('ÂM THANH KỸ XẢO PHIM', CX, 1125, PR.red, tLoud, { rot: 0.03, size: 44, from: 1.15 });
 
   flasky(FLASKY_X, FLASKY_Y, {
     hat: 'propeller',

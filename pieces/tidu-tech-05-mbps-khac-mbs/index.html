@@ -1882,7 +1882,7 @@ function t5DownloadMeter(cx, cy) {
     // Download Speed Reality Card (Bottom)
     const dw = 740, dh = 240;
     pp(pR(-dw / 2, 20, dw, dh, 20), '#0e1d2d', { key: 't5_dl', sb: 18, sy: 9, tex: 0.45 });
-    txt('📥 TẢI FILE THỰC TẾ TRÊN MÁY:', -dw / 2 + 40, 68, 22, PR.creamL, { weight: 800 });
+    txt('TẢI FILE THỰC TẾ TRÊN MÁY:', -dw / 2 + 40, 68, 22, PR.creamL, { weight: 800 });
 
     // Progress bar
     pp(pR(-dw / 2 + 40, 95, dw - 80, 36, 10), PR.techK, { shadow: false, tex: 0.3 });
@@ -1939,7 +1939,9 @@ function t5MathConversion(cx, cy) {
     }
 
     // Bracket gathering into 1 Byte
-    txt('⬇️', 0, 0, 36, PR.mustard, { align: 'center', weight: 800 });
+    pp(pR(-10, -18, 20, 28, 2), PR.mustard, { shadow: false, tex: false });
+    pp(pR(-20, 10, 40, 10, 2), PR.mustard, { shadow: false, tex: false });
+    pp(pE(0, 26, 20, 14), PR.mustard, { shadow: false, tex: false });
     pp(pR(-280, 30, 560, 70, 14), PR.mustard, { key: 't5_1byte', sb: 12, sy: 6, tex: 0.5 });
     txt('8 bits = 1 Byte (B = 8b)', 0, 75, 30, PR.navy, { align: 'center', weight: 800 });
 
@@ -1959,7 +1961,7 @@ SCENES.hook = () => {
   t5Wall('hk');
   prSign('100 Mbps SAO TẢI ĐƯỢC 12 MB/s?', { kicker: KICK });
 
-  t5DownloadMeter(480, 880);
+  t5DownloadMeter(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'headset',
@@ -1979,7 +1981,7 @@ SCENES.difference = () => {
   const tDiff = VW('difference', 'không').t0;
 
   // Comparison statement card
-  withT(480, 840, 0, 1, () => {
+  withT(540, 840, 0, 1, () => {
     pp(pR(-370, -200, 740, 420, 20), PR.creamL, { key: 'diff_card', sb: 18, sy: 9, tex: 0.5 });
     txt('HAI ĐƠN VỊ HOÀN TOÀN KHÁC NHAU', 0, -145, 26, PR.navy, { align: 'center', weight: 800 });
 
@@ -1994,7 +1996,7 @@ SCENES.difference = () => {
     txt('Chữ "B" HOA — Đơn vị đo dung lượng file', -280, 120, 19, PR.creamD, { weight: 600 });
   });
 
-  prStamp('KHÁC NHAU GẤP 8 LẦN!', 480, 1180, PR.red, tDiff, { size: 36, from: 1.25, rot: -0.05 });
+  prStamp('KHÁC NHAU GẤP 8 LẦN!', 540, 1180, PR.red, tDiff, { size: 36, from: 1.25, rot: -0.05 });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'beanie',
@@ -2011,7 +2013,7 @@ SCENES.units = () => {
   t5Wall('units');
   prSign('PHÂN BIỆT: CHỮ b VÀ CHỮ B', { kicker: KICK });
 
-  t5LetterCards(480, 880);
+  t5LetterCards(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'mortar',
@@ -2029,7 +2031,7 @@ SCENES.math = () => {
   t5Wall('math');
   prSign('CÔNG THỨC: 1 BYTE = 8 BITS', { kicker: KICK });
 
-  t5MathConversion(480, 880, t0);
+  t5MathConversion(540, 880, t0);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'drone',
@@ -2046,14 +2048,14 @@ SCENES.overhead = () => {
   t5Wall('ovh');
   prSign('VÌ SAO THỰC TẾ CÒN THẤP HƠN?', { kicker: KICK });
 
-  withT(480, 840, 0, 1, () => {
+  withT(540, 840, 0, 1, () => {
     pp(pR(-370, -220, 740, 440, 20), PR.creamL, { key: 'ovh_card', sb: 18, sy: 9, tex: 0.5 });
     txt('CÁC YẾU TỐ LÀM GIẢM TỐC ĐỘ TẢI', 0, -165, 26, PR.navy, { align: 'center', weight: 800 });
 
     const factors = [
-      ['🌐 Giao thức mạng (TCP/IP Overhead)', 'Dữ liệu kiểm tra gói tin chiếm khoảng 5-10% băng thông.'],
-      ['⏰ Tắc nghẽn giờ cao điểm', 'Nhiều người dùng chung hạ tầng làm suy hao tốc độ.'],
-      ['🖥️ Giới hạn máy chủ nguồn', 'Server chứa file không cho phép tải ở tốc độ tối đa.'],
+      ['Giao thức mạng (TCP/IP Overhead)', 'Dữ liệu kiểm tra gói tin chiếm khoảng 5-10% băng thông.'],
+      ['Tắc nghẽn giờ cao điểm', 'Nhiều người dùng chung hạ tầng làm suy hao tốc độ.'],
+      ['Giới hạn máy chủ nguồn', 'Server chứa file không cho phép tải ở tốc độ tối đa.'],
     ];
 
     factors.forEach(([title, desc], i) => {
@@ -2081,26 +2083,26 @@ SCENES.takeaway = () => {
   const tStamp = VW('takeaway', 'nhỏ').t0;
 
   // Top Card: b nhỏ
-  withT(480, 680, 0, 1, () => {
+  withT(540, 680, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c1', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.blue, { key: 'ta_c1_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.blue, { shadow: false, tex: false });
-    txt('📶 CHỮ "b" NHỎ: NHÀ MẠNG QUẢNG CÁO', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
+    txt('CHỮ "b" NHỎ: NHÀ MẠNG QUẢNG CÁO', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
     txt('Đo bằng Megabit (Mbps) để số trông to và hấp dẫn hơn.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
     txt('Ví dụ: Gói 100 Mbps, 300 Mbps, 1 Gbps', 0, 50, 19, PR.blue, { align: 'center', weight: 800 });
   });
 
   // Bottom Card: B lớn
-  withT(480, 940, 0, 1, () => {
+  withT(540, 940, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c2', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.mustard, { key: 'ta_c2_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.mustard, { shadow: false, tex: false });
-    txt('💾 CHỮ "B" HOA: TẢI FILE THỰC TẾ', 0, -55, 26, PR.navy, { align: 'center', weight: 800 });
+    txt('CHỮ "B" HOA: TẢI FILE THỰC TẾ', 0, -55, 26, PR.navy, { align: 'center', weight: 800 });
     txt('Đo bằng MegaByte (MB/s). Lấy tốc độ mạng CHIA CHO 8!', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
     txt('100 Mbps ÷ 8 = 12,5 MB/s (Thực tế ~ 10-12 MB/s)', 0, 50, 19, PR.red, { align: 'center', weight: 800 });
   });
 
-  prStamp('CHIA CHO 8!', 480, 1160, PR.red, tStamp, { size: 38, from: 1.25, rot: -0.04 });
+  prStamp('CHIA CHO 8!', 540, 1160, PR.red, tStamp, { size: 38, from: 1.25, rot: -0.04 });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'vr',
@@ -2117,9 +2119,9 @@ SCENES.cta = () => {
   t5Wall('cta');
   prSign('BẠN ĐANG DÙNG GÓI MẠNG NÀO?', { kicker: KICK });
 
-  withT(480, 760, 0, 1, () => {
+  withT(540, 760, 0, 1, () => {
     pp(pR(-380, -180, 760, 360, 20), PR.creamL, { key: 'cta_card', sb: 18, sy: 9, tex: 0.5 });
-    txt('⚡ THỬ TÍNH TỐC ĐỘ MẠNG NHÀ BẠN', 0, -115, 28, PR.navy, { align: 'center', weight: 800 });
+    txt('THỬ TÍNH TỐC ĐỘ MẠNG NHÀ BẠN', 0, -115, 28, PR.navy, { align: 'center', weight: 800 });
 
     const speeds = [
       ['• Gói 150 Mbps:', 'Tải file tối đa ~ 18,7 MB/s'],
@@ -2135,7 +2137,7 @@ SCENES.cta = () => {
     });
   });
 
-  prCommentBox(480, 1090, 'BÌNH LUẬN GÓI MẠNG', t0 + 0.2, { hint: 'Mạng nhà bạn tải được bao nhiêu MB/s?...' });
+  prCommentBox(540, 1090, 'BÌNH LUẬN GÓI MẠNG', t0 + 0.2, { hint: 'Mạng nhà bạn tải được bao nhiêu MB/s?...' });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'party',

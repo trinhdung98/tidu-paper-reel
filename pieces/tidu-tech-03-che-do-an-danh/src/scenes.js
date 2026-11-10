@@ -40,7 +40,7 @@ function t3IncognitoBrowser(cx, cy) {
 
     // Incognito tab
     pp(pR(-bw / 2 + 100, -bh / 2 + 10, 240, 46, 8), '#0e1724', { key: 't3_actab', shadow: false, tex: 0.3 });
-    txt('🕶️ Tab ẩn danh', -bw / 2 + 130, -bh / 2 + 40, 18, PR.creamL, { weight: 700 });
+    txt('Tab ẩn danh', -bw / 2 + 130, -bh / 2 + 40, 18, PR.creamL, { weight: 700 });
 
     // Detective hat & glasses badge
     withT(0, -60, 0, 1, () => {
@@ -60,7 +60,7 @@ function t3IncognitoBrowser(cx, cy) {
 
     // Green check tag
     pp(pR(-240, 110, 480, 54, 12), '#143c24', { key: 't3_oktag', sb: 6, sy: 3, tex: 0.4 });
-    txt('✓ Tự động xóa lịch sử, cookies khi tắt tab', 0, 144, 18, PR.green, { align: 'center', weight: 800 });
+    txt('Tự động xóa lịch sử, cookies khi tắt tab', 0, 144, 18, PR.green, { align: 'center', weight: 800 });
   });
 }
 
@@ -68,9 +68,9 @@ function t3IncognitoBrowser(cx, cy) {
 function t3Observers(cx, cy) {
   withT(cx, cy, 0, 1, () => {
     const obs = [
-      ['🌐 WEBSITE ĐÍCH', 'Biết địa chỉ IP của bạn, thiết bị, và trang bạn xem.'],
-      ['📡 NHÀ CUNG CẤP MẠNG (ISP)', 'Biết tên miền (domain) bạn kết nối tới.'],
-      ['🏢 CÔNG TY / TRƯỜNG HỌC', 'Nếu dùng Wi-Fi chung, quản trị viên thấy log mạng.'],
+      ['WEBSITE ĐÍCH', 'Biết địa chỉ IP của bạn, thiết bị, và trang bạn xem.'],
+      ['NHÀ CUNG CẤP MẠNG (ISP)', 'Biết tên miền (domain) bạn kết nối tới.'],
+      ['CÔNG TY / TRƯỜNG HỌC', 'Nếu dùng Wi-Fi chung, quản trị viên thấy log mạng.'],
     ];
 
     txt('NHỮNG BÊN VẪN BIẾT BẠN TRUY CẬP:', 0, -180, 26, PR.mustard, { align: 'center', weight: 800 });
@@ -83,7 +83,8 @@ function t3Observers(cx, cy) {
       txt(desc, -320, iy + 76, 18, PR.char, { weight: 600 });
       // Eye icon badge
       pp(pE(310, iy + 55, 24, 24), '#102030', { shadow: false, tex: 0.3 });
-      txt('👁️', 310, iy + 63, 20, PR.mustard, { align: 'center', weight: 800 });
+      pp(pE(310, iy + 63, 10, 7), PR.mustard, { shadow: false, tex: false });
+      pp(pE(310, iy + 63, 4, 4), '#0e1d2d', { shadow: false, tex: false });
     });
   });
 }
@@ -97,7 +98,7 @@ SCENES.hook = () => {
   t3Wall('hk');
   prSign('BẬT ẨN DANH: KHÔNG AI BIẾT?', { kicker: KICK });
 
-  t3IncognitoBrowser(480, 880);
+  t3IncognitoBrowser(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'beanie',
@@ -115,11 +116,11 @@ SCENES.device = () => {
   prSign('CHỈ XÓA DỮ LIỆU TRÊN THIẾT BỊ', { kicker: KICK });
 
   // History erasing illustration
-  withT(480, 840, 0, 1, () => {
+  withT(540, 840, 0, 1, () => {
     pp(pR(-370, -200, 740, 420, 18), PR.creamL, { key: 'dev_card', sb: 16, sy: 8, tex: 0.5 });
     pp(pR(-370, -200, 740, 60, 18), PR.blue, { key: 'dev_hd', shadow: false, tex: 0.35 });
     pp(pR(-370, -150, 740, 16, 0), PR.blue, { shadow: false, tex: false });
-    txt('📱 TRÊN ĐIỆN THOẠI & MÁY TÍNH CỦA BẠN', 0, -162, 22, PR.creamL, { align: 'center', weight: 800 });
+    txt('TRÊN ĐIỆN THOẠI & MÁY TÍNH CỦA BẠN', 0, -162, 22, PR.creamL, { align: 'center', weight: 800 });
 
     const rows = [
       ['Lịch sử duyệt web (History)', 'TỰ ĐỘNG XÓA'],
@@ -156,19 +157,25 @@ SCENES.not_invisible = () => {
   const tNot = VW('not_invisible', 'vô').t0;
 
   // Phantom Card with Big Cross
-  withT(480, 840, 0, 1, () => {
+  withT(540, 840, 0, 1, () => {
     pp(pR(-360, -220, 720, 440, 20), PR.creamL, { key: 'ghost_card', sb: 18, sy: 9, tex: 0.5 });
     txt('ẢO TƯỞNG VỀ CHẾ ĐỘ ẨN DANH', 0, -160, 26, PR.char, { align: 'center', weight: 800 });
 
     // Ghost icon / Silhouette
     pp(pE(0, -30, 90, 90), '#d8dee9', { key: 'ghost_circ', sb: 8, sy: 4, tex: 0.35 });
-    txt('👻', 0, 8, 84, PR.char, { align: 'center', weight: 800 });
+    pp(pE(0, -20, 70, 70), '#d8dee9', { key: 'ghost_top', sb: 8, sy: 4, tex: 0.3 });
+    pp(pR(-70, 10, 140, 60, 0), '#d8dee9', { key: 'ghost_body', shadow: false, tex: false });
+    pp(pE(-46, 60, 24, 24), '#d8dee9', { shadow: false, tex: false });
+    pp(pE(0, 60, 24, 24), '#d8dee9', { shadow: false, tex: false });
+    pp(pE(46, 60, 24, 24), '#d8dee9', { shadow: false, tex: false });
+    pp(pE(-22, -18, 10, 12), '#102030', { shadow: false, tex: false });
+    pp(pE(22, -18, 10, 12), '#102030', { shadow: false, tex: false });
 
     txt('"Tàng hình trên mạng?"', 0, 105, 30, PR.red, { align: 'center', weight: 800 });
     txt('Thực tế: Dữ liệu mạng vẫn truyền đi bình thường!', 0, 150, 21, PR.char, { align: 'center', weight: 700 });
   });
 
-  prStamp('KHÔNG HỀ TÀNG HÌNH!', 480, 1180, PR.red, tNot, { size: 38, from: 1.25, rot: -0.05 });
+  prStamp('KHÔNG HỀ TÀNG HÌNH!', 540, 1180, PR.red, tNot, { size: 38, from: 1.25, rot: -0.05 });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'tinfoil',
@@ -184,7 +191,7 @@ SCENES.who_sees = () => {
   t3Wall('who');
   prSign('AI VẪN THẤY BẠN TRUY CẬP?', { kicker: KICK });
 
-  t3Observers(480, 880);
+  t3Observers(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'mortar',
@@ -204,7 +211,7 @@ SCENES.login = () => {
   const tLogin = VW('login', 'biết').t0;
 
   // Login Form Demo Card
-  withT(480, 840, 0, 1, () => {
+  withT(540, 840, 0, 1, () => {
     pp(pR(-370, -200, 740, 420, 18), PR.creamL, { key: 'login_card', sb: 16, sy: 8, tex: 0.5 });
     txt('KHI BẠN ĐĂNG NHẬP VÀO TÀI KHOẢN', 0, -145, 26, PR.navy, { align: 'center', weight: 800 });
 
@@ -220,7 +227,7 @@ SCENES.login = () => {
     txt('IDENTIFIED: WEBSITE BIẾT RÕ BẠN LÀ AI!', 0, 132, 22, PR.creamL, { align: 'center', weight: 800 });
   });
 
-  prCross(480, 1200, tLogin, 64);
+  prCross(540, 1200, tLogin, 64);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'drone',
@@ -240,26 +247,26 @@ SCENES.takeaway = () => {
   const tStamp = VW('takeaway', 'không').t0;
 
   // Top Card: Quyền riêng tư máy
-  withT(480, 680, 0, 1, () => {
+  withT(540, 680, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c1', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.blue, { key: 'ta_c1_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.blue, { shadow: false, tex: false });
-    txt('📱 QUYỀN RIÊNG TƯ TRÊN MÁY BẠN', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
+    txt('QUYỀN RIÊNG TƯ TRÊN MÁY BẠN', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
     txt('Không lưu lại lịch sử, cookie sau khi bạn tắt tab.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
-    txt('✓ Người mượn máy không thể soi lịch sử cũ', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
+    txt('Người mượn máy không thể soi lịch sử cũ', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
   });
 
   // Bottom Card: Tàng hình mạng
-  withT(480, 940, 0, 1, () => {
+  withT(540, 940, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c2', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.red, { key: 'ta_c2_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.red, { shadow: false, tex: false });
-    txt('🌐 TÀNG HÌNH TRÊN INTERNET', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
+    txt('TÀNG HÌNH TRÊN INTERNET', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
     txt('Website và nhà mạng vẫn nhận địa chỉ IP của bạn.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
-    txt('⚠️ Ẩn danh không thể thay thế VPN hoặc bảo mật mạng!', 0, 50, 19, PR.red, { align: 'center', weight: 800 });
+    txt('Ẩn danh không thể thay thế VPN hoặc bảo mật mạng!', 0, 50, 19, PR.red, { align: 'center', weight: 800 });
   });
 
-  prStamp('ẨN DANH CỤC BỘ!', 480, 1160, PR.mustard, tStamp, { size: 38, from: 1.25, rot: -0.04 });
+  prStamp('ẨN DANH CỤC BỘ!', 540, 1160, PR.mustard, tStamp, { size: 38, from: 1.25, rot: -0.04 });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'vr',
@@ -276,9 +283,9 @@ SCENES.cta = () => {
   t3Wall('cta');
   prSign('CHIA SẺ ĐỂ HIỂU ĐÚNG NHÉ!', { kicker: KICK });
 
-  withT(480, 760, 0, 1, () => {
+  withT(540, 760, 0, 1, () => {
     pp(pR(-380, -180, 760, 360, 20), PR.creamL, { key: 'cta_card', sb: 18, sy: 9, tex: 0.5 });
-    txt('💡 TÓM TẮT DỄ NHỚ', 0, -115, 30, PR.navy, { align: 'center', weight: 800 });
+    txt('TÓM TẮT DỄ NHỚ', 0, -115, 30, PR.navy, { align: 'center', weight: 800 });
 
     const notes = [
       '• Mượn máy người khác? Dùng ẩn danh rất tốt!',
@@ -291,7 +298,7 @@ SCENES.cta = () => {
     });
   });
 
-  prCommentBox(480, 1090, 'CHIA SẺ NGAY', t0 + 0.2, { hint: 'Bạn hay bật ẩn danh khi nào?...' });
+  prCommentBox(540, 1090, 'CHIA SẺ NGAY', t0 + 0.2, { hint: 'Bạn hay bật ẩn danh khi nào?...' });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'party',

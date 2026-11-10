@@ -109,12 +109,12 @@ function t4PhoneScan(cx, cy, s = 1, o = {}) {
     if (o.phishing) {
       // Red phishing warning bar
       pp(pR(-pw / 2 + 25, 145, pw - 50, 110, 14), PR.red, { key: 't4_warnbar', sb: 10, sy: 5, tex: 0.45 });
-      txt('⚠️ LIÊN KẾT PHÁT HIỆN:', -pw / 2 + 45, 180, 18, PR.creamL, { weight: 800 });
+      txt('LIÊN KẾT PHÁT HIỆN:', -pw / 2 + 45, 180, 18, PR.creamL, { weight: 800 });
       txt('pay-fake-bank.vn/login', -pw / 2 + 45, 215, 19, PR.mustard, { weight: 800, font: F_MONO });
       txt('Trang web giả mạo ngân hàng!', -pw / 2 + 45, 242, 16, PR.creamL, { weight: 700 });
     } else {
       pp(pR(-pw / 2 + 25, 160, pw - 50, 80, 12), PR.techK, { key: 't4_okbar', sb: 6, sy: 3, tex: 0.35 });
-      txt('🔗 Đang mở liên kết...', 0, 208, 20, PR.glow, { align: 'center', weight: 800 });
+      txt('Đang mở liên kết...', 0, 208, 20, PR.glow, { align: 'center', weight: 800 });
     }
   });
 }
@@ -154,10 +154,10 @@ SCENES.hook = () => {
   const tFake = VW('hook', 'dán').t0;
   const isFake = TT >= tFake;
 
-  t4QRCode(480, 880, 1.15, isFake);
+  t4QRCode(540, 880, 1.15, isFake);
 
   if (isFake) {
-    prCross(480, 1260, tFake, 64);
+    prCross(540, 1260, tFake, 64);
   }
 
   botty(BOTTY_X, BOTTY_Y, {
@@ -175,7 +175,7 @@ SCENES.phishing = () => {
   t4Wall('phish');
   prSign('QUÉT MÃ: DẪN ĐẾN WEB GIẢ MẠO', { kicker: KICK });
 
-  t4PhoneScan(480, 880, 1.05, { phishing: true });
+  t4PhoneScan(540, 880, 1.05, { phishing: true });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'headset',
@@ -194,7 +194,7 @@ SCENES.risk = () => {
 
   const tRisk = VW('risk', 'mất').t0;
 
-  withT(480, 840, 0, 1, () => {
+  withT(540, 840, 0, 1, () => {
     pp(pR(-370, -200, 740, 420, 20), PR.creamL, { key: 'risk_card', sb: 18, sy: 9, tex: 0.5 });
     txt('BẢN CHẤT CỦA MÃ QR LÀ GÌ?', 0, -145, 26, PR.navy, { align: 'center', weight: 800 });
 
@@ -204,11 +204,11 @@ SCENES.risk = () => {
 
     // Green statement
     pp(pR(-320, 40, 640, 110, 14), '#143c24', { key: 'rsk_ok', sb: 8, sy: 4, tex: 0.4 });
-    txt('✓ HÀNH ĐỘNG QUÉT MÃ HOÀN TOÀN KHÔNG THỂ', 0, 80, 20, PR.green, { align: 'center', weight: 800 });
+    txt('HÀNH ĐỘNG QUÉT MÃ HOÀN TOÀN KHÔNG THỂ', 0, 80, 20, PR.green, { align: 'center', weight: 800 });
     txt('tự động rút tiền hay hack máy của bạn!', 0, 116, 22, PR.creamL, { align: 'center', weight: 800 });
   });
 
-  prStamp('CHƯA MẤT TIỀN!', 480, 1180, PR.green, tRisk, { size: 38, from: 1.25, rot: -0.05 });
+  prStamp('CHƯA MẤT TIỀN!', 540, 1180, PR.green, tRisk, { size: 38, from: 1.25, rot: -0.05 });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'mortar',
@@ -224,7 +224,7 @@ SCENES.action = () => {
   t4Wall('act');
   prSign('RỦI RO Ở CÁC THAO TÁC TIẾP THEO', { kicker: KICK });
 
-  t4AttackStages(480, 880);
+  t4AttackStages(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'tinfoil',
@@ -240,9 +240,9 @@ SCENES.verify = () => {
   t4Wall('vrf');
   prSign('3 NGUYÊN TẮC AN TOÀN KHI QUÉT QR', { kicker: KICK });
 
-  withT(480, 840, 0, 1, () => {
+  withT(540, 840, 0, 1, () => {
     pp(pR(-370, -220, 740, 440, 20), PR.creamL, { key: 'vrf_card', sb: 18, sy: 9, tex: 0.5 });
-    txt('🔍 LUÔN KIỂM TRA TRƯỚC KHI BẤM', 0, -165, 28, PR.navy, { align: 'center', weight: 800 });
+    txt('LUÔN KIỂM TRA TRƯỚC KHI BẤM', 0, -165, 28, PR.navy, { align: 'center', weight: 800 });
 
     const rules = [
       ['1. KIỂM TRA TÊN MIỀN LINK', 'Đảm bảo đúng web chính thức của ngân hàng / dịch vụ.'],
@@ -276,26 +276,26 @@ SCENES.takeaway = () => {
   const tStamp = VW('takeaway', 'chuyển').t0;
 
   // Top Card: Bản chất QR
-  withT(480, 680, 0, 1, () => {
+  withT(540, 680, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c1', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.blue, { key: 'ta_c1_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.blue, { shadow: false, tex: false });
-    txt('📷 BẢN CHẤT MÃ QR', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
+    txt('BẢN CHẤT MÃ QR', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
     txt('Chỉ là hình thức mã hóa một chuỗi văn bản hoặc đường link.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
-    txt('✓ Bản thân mã QR vô hại!', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
+    txt('Bản thân mã QR vô hại!', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
   });
 
   // Bottom Card: Nơi xuất hiện rủi ro
-  withT(480, 940, 0, 1, () => {
+  withT(540, 940, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c2', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.red, { key: 'ta_c2_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.red, { shadow: false, tex: false });
-    txt('⚠️ RỦI RO LÀ ĐÍCH ĐẾN CỦA LINK', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
+    txt('RỦI RO LÀ ĐÍCH ĐẾN CỦA LINK', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
     txt('Website giả mạo đánh cắp tài khoản & thông tin OTP.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
     txt('Luôn nhìn kỹ người nhận tiền trước khi ấn xác nhận!', 0, 50, 19, PR.red, { align: 'center', weight: 800 });
   });
 
-  prStamp('SOI KỸ ĐÍCH ĐẾN!', 480, 1160, PR.mustard, tStamp, { size: 38, from: 1.25, rot: -0.04 });
+  prStamp('SOI KỸ ĐÍCH ĐẾN!', 540, 1160, PR.mustard, tStamp, { size: 38, from: 1.25, rot: -0.04 });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'vr',
@@ -312,9 +312,9 @@ SCENES.cta = () => {
   t4Wall('cta');
   prSign('LƯU LẠI ĐỂ DÙNG MẠNG AN TOÀN!', { kicker: KICK });
 
-  withT(480, 760, 0, 1, () => {
+  withT(540, 760, 0, 1, () => {
     pp(pR(-380, -180, 760, 360, 20), PR.creamL, { key: 'cta_card', sb: 18, sy: 9, tex: 0.5 });
-    txt('💳 THANH TOÁN QR AN TOÀN', 0, -115, 30, PR.navy, { align: 'center', weight: 800 });
+    txt('THANH TOÁN QR AN TOÀN', 0, -115, 30, PR.navy, { align: 'center', weight: 800 });
 
     const tips = [
       '• Quán ăn, cà phê: Sờ xem mã có bị dán đè không',
@@ -327,7 +327,7 @@ SCENES.cta = () => {
     });
   });
 
-  prCommentBox(480, 1090, 'LƯU VIDEO NGAY', t0 + 0.2, { hint: 'Bạn hay quét QR ở đâu nhất?...' });
+  prCommentBox(540, 1090, 'LƯU VIDEO NGAY', t0 + 0.2, { hint: 'Bạn hay quét QR ở đâu nhất?...' });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'party',

@@ -39,11 +39,13 @@ function t7VaultDoors(cx, cy, o = {}) {
       // Lock status
       if (o.keyStolen) {
         pp(pE(0, 50, 40, 40), PR.red, { key: 'd1_lck', sb: 8, sy: 4, tex: 0.4 });
-        txt('🔓', 0, 60, 32, PR.creamL, { align: 'center', weight: 800 });
+        pp(pR(-18, 42, 36, 30, 6), PR.creamL, { shadow: false, tex: false });
+        pp(pR(-6, 28, 24, 18, 4), PR.creamL, { shadow: false, tex: false });
         txt('ĐÃ BỊ LỘ!', 0, 130, 22, PR.red, { align: 'center', weight: 800 });
       } else {
         pp(pE(0, 50, 40, 40), PR.techK, { key: 'd1_lck', sb: 8, sy: 4, tex: 0.4 });
-        txt('🔒', 0, 60, 32, PR.creamL, { align: 'center', weight: 800 });
+        pp(pR(-18, 42, 36, 30, 6), PR.creamL, { shadow: false, tex: false });
+        pp(pE(0, 36, 14, 12), PR.creamL, { shadow: false, tex: false });
         txt('KHÓA 1', 0, 130, 22, PR.navy, { align: 'center', weight: 800 });
       }
     });
@@ -61,7 +63,8 @@ function t7VaultDoors(cx, cy, o = {}) {
 
       // Security Shield status
       pp(pE(0, 50, 40, 40), PR.green, { key: 'd2_lck', sb: 8, sy: 4, tex: 0.4 });
-      txt('🛡️', 0, 60, 32, PR.creamL, { align: 'center', weight: 800 });
+      pp(pR(-18, 42, 36, 36, 6), PR.creamL, { shadow: false, tex: false });
+      pp(pE(0, 80, 18, 10), PR.creamL, { shadow: false, tex: false });
       txt('BẢO VỆ TUYỆT ĐỐI', 0, 130, 20, PR.green, { align: 'center', weight: 800 });
     });
   });
@@ -73,9 +76,9 @@ function t7MethodRanks(cx, cy) {
     txt('XẾP HẠNG CÁC PHƯƠNG THỨC XÁC THỰC', 0, -180, 26, PR.glow, { align: 'center', weight: 800 });
 
     const ranks = [
-      ['🥇 PASSKEY / KHÓA BẢO MẬT VẬT LÝ', 'Chống lừa đảo tuyệt đối (Phishing-resistant)', PR.green],
-      ['🥈 ỨNG DỤNG AUTHENTICATOR', 'Google / Microsoft Authenticator (Mã đổi mỗi 30s)', PR.blue],
-      ['🥉 TIN NHẮN SMS OTP', 'Dễ bị tấn công tráo SIM / mã độc đọc trộm', PR.mustard],
+      ['PASSKEY / KHÓA BẢO MẬT VẬT LÝ', 'Chống lừa đảo tuyệt đối (Phishing-resistant)', PR.green],
+      ['ỨNG DỤNG AUTHENTICATOR', 'Google / Microsoft Authenticator (Mã đổi mỗi 30s)', PR.blue],
+      ['TIN NHẮN SMS OTP', 'Dễ bị tấn công tráo SIM / mã độc đọc trộm', PR.mustard],
     ];
 
     ranks.forEach(([title, desc, col], i) => {
@@ -100,7 +103,7 @@ SCENES.hook = () => {
   const tLeak = VW('hook', 'lộ').t0;
   const isLeaked = TT >= tLeak;
 
-  t7VaultDoors(480, 880, { keyStolen: isLeaked });
+  t7VaultDoors(540, 880, { keyStolen: isLeaked });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'beanie',
@@ -117,7 +120,7 @@ SCENES.mfa = () => {
   t7Wall('mfa');
   prSign('XÁC THỰC HAI LỚP (MFA)', { kicker: KICK });
 
-  t7VaultDoors(480, 880, { keyStolen: true });
+  t7VaultDoors(540, 880, { keyStolen: true });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'headset',
@@ -134,7 +137,7 @@ SCENES.step = () => {
   t7Wall('step');
   prSign('BƯỚC 2: XÁC MINH DANH TÍNH', { kicker: KICK });
 
-  withT(480, 840, 0, 1, () => {
+  withT(540, 840, 0, 1, () => {
     pp(pR(-370, -200, 740, 420, 20), PR.creamL, { key: 'step_card', sb: 18, sy: 9, tex: 0.5 });
     txt('QUY TRÌNH ĐĂNG NHẬP 2 BƯỚC', 0, -145, 26, PR.navy, { align: 'center', weight: 800 });
 
@@ -170,7 +173,7 @@ SCENES.blocked = () => {
 
   const tBlk = VW('blocked', 'chặn').t0;
 
-  withT(480, 840, 0, 1, () => {
+  withT(540, 840, 0, 1, () => {
     pp(pR(-370, -200, 740, 420, 20), PR.creamL, { key: 'blk_card', sb: 18, sy: 9, tex: 0.5 });
     txt('TÌNH HUỐNG KẺ GIAN ĐÁNH CẮP ĐƯỢC MẬT KHẨU', 0, -145, 22, PR.char, { align: 'center', weight: 800 });
 
@@ -179,11 +182,11 @@ SCENES.blocked = () => {
 
     // Blocked barrier
     pp(pR(-320, 20, 640, 130, 14), '#102030', { key: 'blk_shield', sb: 8, sy: 4, tex: 0.4 });
-    txt('⛔ HỆ THỐNG YÊU CẦU: NHẬP MÃ TỪ ĐIỆN THOẠI CỦA BẠN!', 0, 65, 20, PR.mustard, { align: 'center', weight: 800 });
+    txt('HỆ THỐNG YÊU CẦU: NHẬP MÃ TỪ ĐIỆN THOẠI CỦA BẠN!', 0, 65, 20, PR.mustard, { align: 'center', weight: 800 });
     txt('Kẻ gian không cầm điện thoại của bạn -> BỊ CHẶN HOÀN TOÀN!', 0, 110, 18, PR.green, { align: 'center', weight: 800 });
   });
 
-  prStamp('CHẶN ĐỨNG TRUY CẬP!', 480, 1180, PR.red, tBlk, { size: 36, from: 1.25, rot: -0.05 });
+  prStamp('CHẶN ĐỨNG TRUY CẬP!', 540, 1180, PR.red, tBlk, { size: 36, from: 1.25, rot: -0.05 });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'tinfoil',
@@ -199,7 +202,7 @@ SCENES.methods = () => {
   t7Wall('mth');
   prSign('ƯU TIÊN PASSKEY & AUTHENTICATOR', { kicker: KICK });
 
-  t7MethodRanks(480, 880);
+  t7MethodRanks(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'drone',
@@ -219,26 +222,26 @@ SCENES.takeaway = () => {
   const tStamp = VW('takeaway', 'khóa').t0;
 
   // Top Card: Chỉ mật khẩu
-  withT(480, 680, 0, 1, () => {
+  withT(540, 680, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c1', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.red, { key: 'ta_c1_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.red, { shadow: false, tex: false });
-    txt('❌ CHỈ DÙNG MỖI MẬT KHẨU (1 LỚP)', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
+    txt('CHỈ DÙNG MỖI MẬT KHẨU (1 LỚP)', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
     txt('Lộ mật khẩu qua phishing hoặc data leak = MẤT TÀI KHOẢN.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
     txt('Toàn bộ tài sản số bị đe dọa!', 0, 50, 19, PR.red, { align: 'center', weight: 800 });
   });
 
   // Bottom Card: Có MFA
-  withT(480, 940, 0, 1, () => {
+  withT(540, 940, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c2', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.green, { key: 'ta_c2_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.green, { shadow: false, tex: false });
-    txt('✅ BẬT XÁC THỰC HAI LỚP (MFA)', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
+    txt('BẬT XÁC THỰC HAI LỚP (MFA)', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
     txt('Lộ mật khẩu vẫn an toàn vì kẻ gian không có lớp khóa thứ 2.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
     txt('Giảm tới 99% nguy cơ bị chiếm quyền tài khoản!', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
   });
 
-  prStamp('BẬT MFA NGAY!', 480, 1160, PR.green, tStamp, { size: 38, from: 1.25, rot: -0.04 });
+  prStamp('BẬT MFA NGAY!', 540, 1160, PR.green, tStamp, { size: 38, from: 1.25, rot: -0.04 });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'vr',
@@ -255,9 +258,9 @@ SCENES.cta = () => {
   t7Wall('cta');
   prSign('KIỂM TRA BẢO MẬT NGAY HÔM NAY!', { kicker: KICK });
 
-  withT(480, 760, 0, 1, () => {
+  withT(540, 760, 0, 1, () => {
     pp(pR(-380, -180, 760, 360, 20), PR.creamL, { key: 'cta_card', sb: 18, sy: 9, tex: 0.5 });
-    txt('🛡️ 3 TÀI KHOẢN CẦN BẬT MFA NGAY', 0, -115, 28, PR.navy, { align: 'center', weight: 800 });
+    txt('3 TÀI KHOẢN CẦN BẬT MFA NGAY', 0, -115, 28, PR.navy, { align: 'center', weight: 800 });
 
     const accs = [
       '1. Email chính (Gmail, Outlook, iCloud) — Chìa khóa mọi tài khoản!',
@@ -270,7 +273,7 @@ SCENES.cta = () => {
     });
   });
 
-  prCommentBox(480, 1090, 'BẬT MFA NGAY', t0 + 0.2, { hint: 'Email của bạn đã bật MFA chưa?...' });
+  prCommentBox(540, 1090, 'BẬT MFA NGAY', t0 + 0.2, { hint: 'Email của bạn đã bật MFA chưa?...' });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'party',

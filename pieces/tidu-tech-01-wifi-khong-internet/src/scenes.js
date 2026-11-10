@@ -56,7 +56,7 @@ function ttPhone(cx, cy, s = 1, o = {}) {
     if (!o.mini) {
       // Browser URL bar
       pp(pR(-pw / 2 + 30, -ph / 2 + 76, pw - 60, 44, 12), PR.techK, { key: (o.key ?? 'ph') + '_url', sb: 4, sy: 2, tex: 0.3 });
-      txt('🔒 tidu.tech/internet', -pw / 2 + 50, -ph / 2 + 104, 18, PR.creamD, { weight: 600, font: F_MONO });
+      txt('tidu.tech/internet', -pw / 2 + 50, -ph / 2 + 104, 18, PR.creamD, { weight: 600, font: F_MONO });
     }
     // Screen Content
     if (o.error) {
@@ -193,7 +193,7 @@ function ttServerRack(cx, cy, s = 1, o = {}) {
     // Globe badge on top
     withT(0, -sh / 2 - 32, 0, 1, () => {
       pp(pR(-125, -22, 250, 44, 10), PR.navyD, { key: (o.key ?? 'sr') + '_badge', sb: 6, sy: 3, tex: 0.4 });
-      txt('🌐 MÁY CHỦ TOÀN CẦU', 0, 8, 17, PR.glow, { align: 'center', weight: 800 });
+      txt('MÁY CHỦ TOÀN CẦU', 0, 8, 17, PR.glow, { align: 'center', weight: 800 });
     });
   });
 }
@@ -283,7 +283,7 @@ SCENES.hook = () => {
   const isErr = TT >= tErr;
 
   // Hero: Big smartphone in the center
-  ttPhone(480, 920, 1.15, {
+  ttPhone(540, 920, 1.15, {
     key: 'hk_ph',
     bars: 4,
     barCol: PR.green,
@@ -291,7 +291,7 @@ SCENES.hook = () => {
   });
 
   if (isErr) {
-    prCross(480, 780, tErr, 72);
+    prCross(540, 780, tErr, 72);
   }
 
   // Mascot: botty on the right with gaming headset, puzzled
@@ -314,7 +314,7 @@ SCENES.difference = () => {
 
   // Two comparison cards side by side
   // Left: Wi-Fi card (Cyan)
-  ttCard(250, 840, 340, 520, '📶 WI-FI', [
+  ttCard(350, 840, 340, 520, 'WI-FI', [
     'Sóng vô tuyến nội bộ',
     'Nối thiết bị tới router',
     'Phạm vi: trong nhà bạn',
@@ -322,7 +322,7 @@ SCENES.difference = () => {
   ], PR.blue, 'c_wf');
 
   // Right: Internet card (Orange/Navy)
-  ttCard(690, 840, 340, 520, '🌐 INTERNET', [
+  ttCard(730, 840, 340, 520, 'INTERNET', [
     'Mạng lưới toàn cầu',
     'Hàng triệu máy chủ',
     'Cáp quang xuyên biển',
@@ -330,7 +330,7 @@ SCENES.difference = () => {
   ], PR.mustard, 'c_in');
 
   // Big "≠" (KHÁC NHAU) badge between them
-  withT(470, 840, 0, popS(tDiff), () => {
+  withT(540, 840, 0, popS(tDiff), () => {
     pp(pE(0, 0, 74, 74), PR.red, { key: 'diff_neq', sb: 16, sy: 8, tex: 0.5 });
     pp(pE(0, 0, 64, 64), PR.creamL, { shadow: false, tex: false });
     txt('≠', 0, 24, 72, PR.red, { align: 'center', weight: 800 });
@@ -374,7 +374,7 @@ SCENES.wifi = () => {
   // Connection label banner
   withT(440, 680, 0, 1, () => {
     pp(pR(-200, -32, 400, 64, 12), PR.navyD, { key: 'wf_lbl', sb: 10, sy: 5, tex: 0.4 });
-    txt('📡 SÓNG WI-FI NỘI BỘ (LAN)', 0, 10, 22, PR.glow, { align: 'center', weight: 800 });
+    txt('SÓNG WI-FI NỘI BỘ (LAN)', 0, 10, 22, PR.glow, { align: 'center', weight: 800 });
   });
 
   // Mascot: botty with drone hat watching the signals
@@ -487,27 +487,27 @@ SCENES.takeaway = () => {
   const tStamp = VW('takeaway', 'không').t0;
 
   // Top card: Wi-Fi meaning
-  withT(480, 680, 0, 1, () => {
+  withT(540, 680, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c1', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.blue, { key: 'ta_c1_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.blue, { shadow: false, tex: false });
-    txt('📶 VẠCH WI-FI: SÓNG TỚI ROUTER', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
+    txt('VẠCH WI-FI: SÓNG TỚI ROUTER', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
     txt('Chỉ cho biết điện thoại kết nối tốt tới router trong nhà.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
-    txt('✓ Tín hiệu nội bộ đạt 100%', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
+    txt('Tín hiệu nội bộ đạt 100%', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
   });
 
   // Bottom card: Internet meaning
-  withT(480, 940, 0, 1, () => {
+  withT(540, 940, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c2', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.mustard, { key: 'ta_c2_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.mustard, { shadow: false, tex: false });
-    txt('🌐 INTERNET: KẾT NỐI RA THẾ GIỚI', 0, -55, 26, PR.navy, { align: 'center', weight: 800 });
+    txt('INTERNET: KẾT NỐI RA THẾ GIỚI', 0, -55, 26, PR.navy, { align: 'center', weight: 800 });
     txt('Đường dây cáp từ router đi ra ngoài nhà mạng (ISP).', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
-    txt('⚠ Đường này đứt thì Wi-Fi đầy vạch vẫn mất mạng!', 0, 50, 19, PR.red, { align: 'center', weight: 800 });
+    txt('Đường này đứt thì Wi-Fi đầy vạch vẫn mất mạng!', 0, 50, 19, PR.red, { align: 'center', weight: 800 });
   });
 
   // Big rubber stamp slamming on the takeaway
-  prStamp('KHÔNG ĐỒNG NGHĨA!', 480, 1160, PR.red, tStamp, { size: 38, from: 1.25, rot: -0.04 });
+  prStamp('KHÔNG ĐỒNG NGHĨA!', 540, 1160, PR.red, tStamp, { size: 38, from: 1.25, rot: -0.04 });
 
   // Mascot: botty with VR goggles, cheerful
   botty(BOTTY_X, BOTTY_Y, {
@@ -526,23 +526,23 @@ SCENES.cta = () => {
   prSign('BẠN TỪNG BỊ TÌNH HUỐNG NÀY CHƯA?', { kicker: KICK });
 
   // Interactive Question Card
-  withT(480, 750, 0, 1, () => {
+  withT(540, 750, 0, 1, () => {
     pp(pR(-380, -160, 760, 320, 20), PR.creamL, { key: 'cta_card', sb: 18, sy: 9, tex: 0.5 });
     txt('TỪNG GẶP BAO GIỜ CHƯA?', 0, -88, 36, PR.navy, { align: 'center', weight: 800 });
 
     // Option A
     pp(pR(-340, -30, 320, 90, 14), PR.red, { key: 'cta_optA', sb: 8, sy: 4, tex: 0.4 });
-    txt('😤 BỊ HOÀI, BỰC LẮM!', -180, 24, 21, PR.creamL, { align: 'center', weight: 800 });
+    txt('BỊ HOÀI, BỰC LẮM!', -180, 24, 21, PR.creamL, { align: 'center', weight: 800 });
 
     // Option B
     pp(pR(20, -30, 320, 90, 14), PR.green, { key: 'cta_optB', sb: 8, sy: 4, tex: 0.4 });
-    txt('💡 GIỜ MỚI HIỂU ĐÓ!', 180, 24, 21, PR.creamL, { align: 'center', weight: 800 });
+    txt('GIỜ MỚI HIỂU ĐÓ!', 180, 24, 21, PR.creamL, { align: 'center', weight: 800 });
 
-    txt('Bình luận bên dưới trải nghiệm của bạn nhé! 👇', 0, 114, 22, PR.char, { align: 'center', weight: 700 });
+    txt('Bình luận bên dưới trải nghiệm của bạn nhé!', 0, 114, 22, PR.char, { align: 'center', weight: 700 });
   });
 
   // Comment prompt box typing on
-  prCommentBox(480, 1080, 'BÌNH LUẬN NGAY', t0 + 0.2, { hint: 'Bạn hay gặp lỗi này ở đâu?...' });
+  prCommentBox(540, 1080, 'BÌNH LUẬN NGAY', t0 + 0.2, { hint: 'Bạn hay gặp lỗi này ở đâu?...' });
 
   // Mascot: botty with party hat, celebrating and waving
   botty(BOTTY_X, BOTTY_Y, {

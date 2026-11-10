@@ -7,33 +7,33 @@
 ```
 
 Phương án khác:
-- `Cùng bé tập đếm số 1 đến 5 bằng tiếng Anh siêu nhanh và dễ nhớ #Shorts`
+- `Cùng bé tập đếm số 1 đến 5 bằng tiếng Anh #Shorts`
 - `Câu đố đếm sao bằng tiếng Anh: Còn lại bao nhiêu ngôi sao? | Tidu English #Shorts`
 
 ## Mô tả
 
 ```
-Có bao nhiêu ngôi sao bí mật bên trong chiếc hộp này? Cùng chú vẹt Polly đếm từ 1 đến 5 bằng tiếng Anh thật to nhé! 👇
+Có bao nhiêu ngôi sao trong chiếc hộp này? Cùng chú vẹt Polly đếm bằng tiếng Anh nhé! ⭐
 
-⭐ 5 SỐ ĐẾM ĐẦU TIÊN:
-1️⃣ One — Số 1
-2️⃣ Two — Số 2
-3️⃣ Three — Số 3
-4️⃣ Four — Số 4
-5️⃣ Five — Số 5
+⭐ ĐẾM TỪ 1 ĐẾN 5:
+1️⃣ One — Một
+2️⃣ Two — Hai
+3️⃣ Three — Ba
+4️⃣ Four — Bốn
+5️⃣ Five — Năm
 
-🎯 THỬ THÁCH CHO BÉ:
-Polly vừa giấu đi 1 ngôi sao, trên màn hình còn lại bao nhiêu ngôi sao?
-👉 Đáp án chính xác: "Four!" (Bốn ngôi sao) ⭐✨
+🎯 CÂU ĐỐ:
+Polly giấu đi một ngôi sao. Còn bao nhiêu ngôi sao nào?
+👉 Đáp án: "Four!" — Bốn ngôi sao ✨
 
-💬 Thử thách hôm nay: Hãy thử đếm 5 đồ vật trên bàn học của bé bằng tiếng Anh nhé!
+🍎 THỬ THÁCH HÔM NAY: Hãy thử đếm năm đồ vật trên bàn bằng tiếng Anh: One, two, three, four, five!
 
-Đăng ký kênh Tidu English để bé học thêm nhiều bài học đếm số và từ vựng thú vị mỗi ngày! 🦜
+Đăng ký kênh Tidu English để cùng Polly học thêm tiếng Anh nhé! 🦜
 
 #TiduEnglish #HọcSốTiếngAnh #ĐếmSốTiếngAnh #Shorts #NumbersForKids #OneToFive #TiếngAnhTrẻEm
 ```
 
-Nếu video được đánh dấu "Dành cho trẻ em" (YouTube tắt bình luận): đổi câu kêu gọi bình luận thành "Hãy tự đếm thật to 5 đồ vật quanh bạn nhé!".
+Video được đánh dấu "Dành cho trẻ em": YouTube tắt bình luận, nên lời kêu gọi là một hoạt động bé tự làm ở nhà (đếm đồ vật trên bàn), không phải bình luận.
 
 ## Thẻ
 

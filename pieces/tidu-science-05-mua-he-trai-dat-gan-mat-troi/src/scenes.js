@@ -228,7 +228,7 @@ SCENES.direct = () => {
   ctx.restore();
 
   const tDirect = VW('direct', 'tiếp').t0;
-  prStamp('ÁNH SÁNG TRỰC TIẾP + NGÀY DÀI', CX, 1170, PR.green, tDirect, { rot: 0.02, size: 44, from: 1.15 });
+  prStamp('ÁNH SÁNG TRỰC TIẾP + NGÀY DÀI', CX, 1125, PR.green, tDirect, { rot: 0.02, size: 44, from: 1.15 });
 
   flasky(FLASKY_X, FLASKY_Y, {
     hat: 'propeller',
@@ -304,8 +304,26 @@ SCENES.hemispheres = () => {
   txt('BÁN CẦU NAM', 750, cY - cH / 2 + 52, 24, PR.creamL, { align: 'center', weight: 800 });
   // Biểu tượng bông tuyết / quả cầu lạnh
   withT(750, cY + 20, 0, 1, () => {
-    pp(pE(0, 0, 70, 70), '#a0d8ef', { key: 'scold', sb: 12, sy: 6 });
-    txt('*', 0, 26, 80, PR.creamL, { align: 'center', weight: 800 });
+    ctx.save();
+    ctx.strokeStyle = '#a0d8ef';
+    ctx.lineWidth = 9;
+    ctx.lineCap = 'round';
+    for (let i = 0; i < 6; i++) {
+      const a = i * Math.PI / 3;
+      const cx = Math.cos(a), sx = Math.sin(a);
+      ctx.beginPath();
+      ctx.moveTo(cx * -66, sx * -66);
+      ctx.lineTo(cx * 66, sx * 66);
+      for (const r of [32, 52]) {
+        ctx.moveTo(cx * r, sx * r);
+        ctx.lineTo(cx * r + Math.cos(a + 1.1) * 22, sx * r + Math.sin(a + 1.1) * 22);
+        ctx.moveTo(cx * r, sx * r);
+        ctx.lineTo(cx * r + Math.cos(a - 1.1) * 22, sx * r + Math.sin(a - 1.1) * 22);
+      }
+      ctx.stroke();
+    }
+    ctx.restore();
+    pp(pE(0, 0, 10, 10), '#a0d8ef', { key: 'snowc', shadow: false });
   });
   txt('MÙA ĐÔNG (NGÀY NGẮN)', 750, cY + cH / 2 - 34, 22, PR.navyD, { align: 'center', weight: 800 });
 

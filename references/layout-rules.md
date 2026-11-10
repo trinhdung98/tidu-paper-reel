@@ -25,12 +25,14 @@ left  = 540 − gap/2
 right = 540 + gap/2
 ```
 
-| Desired gap | left | right |
-|---|---|---|
-| 340 px | 370 | 710 |
-| 380 px | 350 | 730 |
-| 400 px | 340 | 740 |
-| 440 px | 320 | 760 |
+| Desired gap | left | right | Note |
+|---|---|---|---|
+| 340 px | 370 | 710 | |
+| 380 px | 350 | 730 | **w=340 cards** — inner edges 60 px apart, badge at 540 fits |
+| 400 px | 340 | 740 | |
+| 440 px | 320 | 760 | |
+
+**Common wrong pair for w=340:** `(250, 690)` → midpoint 470, looks left-shifted. Correct: `(350, 730)`.
 
 Example: `tmJar(370, y)` + `withT(710, y, ...)` → midpoint 540 ✓
 
@@ -145,7 +147,7 @@ When the same widget appears across consecutive scenes (e.g. a week-tracker bar,
 
 ### 1 — Off-centre hero grep
 ```bash
-grep -n "withT(470\|withT(450\|prStamp('[^']*', 470\|prStamp('[^']*', 450" src/scenes.js
+grep -n "withT(470\|withT(450\|withT(480\|prStamp('[^']*', 470\|prStamp('[^']*', 450\|prStamp('[^']*', 480\|(480," src/scenes.js
 ```
 Every hit is a miscentred element. Valid exceptions: intentional asymmetric layouts where the element's partner brings the pair midpoint to 540 — confirm by computing `(x1 + x2) / 2`.
 

@@ -211,7 +211,7 @@ SCENES.glow = () => {
   });
 
   const tBurn = VW('glow', 'sáng.').t0;
-  prStamp('BỐC CHÁY VÀ PHÁ HỦY', CX, 1180, PR.red, tBurn, { rot: 0.02, size: 46, from: 1.15 });
+  prStamp('BỐC CHÁY VÀ PHÁ HỦY', CX, 1125, PR.red, tBurn, { rot: 0.02, size: 46, from: 1.15 });
 
   flasky(FLASKY_X, FLASKY_Y, {
     hat: 'propeller',

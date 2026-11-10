@@ -35,12 +35,12 @@ function t8UserPrompt(cx, cy) {
 
     // Prompt box
     pp(pR(-pw / 2 + 30, -80, pw - 60, 110, 14), PR.techK, { key: 't8_pbox', sb: 8, sy: 4, tex: 0.35 });
-    txt('👤 BẠN HỎI:', -pw / 2 + 55, -45, 18, PR.mustard, { weight: 800 });
+    txt('BẠN HỎI:', -pw / 2 + 55, -45, 18, PR.mustard, { weight: 800 });
     txt('"Thời tiết Hà Nội hôm nay thế nào?"', -pw / 2 + 55, -10, 24, PR.creamL, { weight: 700 });
 
     // Brain processing icon below
     pp(pR(-220, 60, 440, 70, 12), '#182436', { key: 't8_proc', shadow: false, tex: 0.3 });
-    txt('⚡ HỆ THỐNG BẮT ĐẦU XỬ LÝ...', 0, 102, 21, PR.glow, { align: 'center', weight: 800 });
+    txt('HỆ THỐNG BẮT ĐẦU XỬ LÝ...', 0, 102, 21, PR.glow, { align: 'center', weight: 800 });
   });
 }
 
@@ -106,7 +106,7 @@ function t8TokenStream(cx, cy) {
   withT(cx, cy, 0, 1, () => {
     const pw = 740, ph = 420;
     pp(pR(-pw / 2, -ph / 2, pw, ph, 20), PR.creamL, { key: 't8_strm', sb: 18, sy: 9, tex: 0.5 });
-    txt('🤖 DÒNG TẠO TỪ LIÊN TỤC (STREAMING)', 0, -ph / 2 + 50, 24, PR.navy, { align: 'center', weight: 800 });
+    txt('DÒNG TẠO TỪ LIÊN TỤC (STREAMING)', 0, -ph / 2 + 50, 24, PR.navy, { align: 'center', weight: 800 });
 
     // Flowing words box
     pp(pR(-pw / 2 + 30, -110, pw - 60, 240, 14), '#0e1d2d', { key: 't8_flow', sb: 8, sy: 4, tex: 0.35 });
@@ -139,7 +139,7 @@ SCENES.hook = () => {
   t8Wall('hk');
   prSign('ĐIỀU GÌ XẢY RA TRƯỚC KHI AI TRẢ LỜI?', { kicker: KICK });
 
-  t8UserPrompt(480, 880);
+  t8UserPrompt(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'headset',
@@ -156,7 +156,7 @@ SCENES.tokens = () => {
   t8Wall('tok');
   prSign('CHIA CÂU THÀNH CÁC TOKEN', { kicker: KICK });
 
-  t8Tokenization(480, 880);
+  t8Tokenization(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'beanie',
@@ -173,7 +173,7 @@ SCENES.context = () => {
   t8Wall('ctx');
   prSign('MẠNG NƠ-RON TÍNH XÁC SUẤT', { kicker: KICK });
 
-  t8NeuralPrediction(480, 880);
+  t8NeuralPrediction(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'mortar',
@@ -190,7 +190,7 @@ SCENES.generation = () => {
   t8Wall('gen');
   prSign('TẠO TỪ LIÊN TỤC NHƯ DÒNG CHẢY', { kicker: KICK });
 
-  t8TokenStream(480, 880);
+  t8TokenStream(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'drone',
@@ -207,7 +207,7 @@ SCENES.rag = () => {
   t8Wall('rag');
   prSign('KẾT HỢP TÌM KIẾM WEB (RAG)', { kicker: KICK });
 
-  withT(480, 840, 0, 1, () => {
+  withT(540, 840, 0, 1, () => {
     pp(pR(-370, -200, 740, 420, 20), PR.creamL, { key: 'rag_card', sb: 18, sy: 9, tex: 0.5 });
     txt('TÌM KIẾM DỮ LIỆU THỰC TẾ (RAG)', 0, -145, 26, PR.navy, { align: 'center', weight: 800 });
 
@@ -244,26 +244,26 @@ SCENES.takeaway = () => {
   const tStamp = VW('takeaway', 'chép').t0;
 
   // Top Card: Không phải từ điển
-  withT(480, 680, 0, 1, () => {
+  withT(540, 680, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c1', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.red, { key: 'ta_c1_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.red, { shadow: false, tex: false });
-    txt('📖 KHÔNG PHẢI MỞ TỪ ĐIỂN CHÉP ĐÁP ÁN', 0, -55, 24, PR.creamL, { align: 'center', weight: 800 });
+    txt('KHÔNG PHẢI MỞ TỪ ĐIỂN CHÉP ĐÁP ÁN', 0, -55, 24, PR.creamL, { align: 'center', weight: 800 });
     txt('AI không lưu sẵn hàng triệu câu trả lời trong kho lưu trữ.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
     txt('Mỗi lần trả lời là một lần AI tự sáng tác câu mới!', 0, 50, 19, PR.red, { align: 'center', weight: 800 });
   });
 
   // Bottom Card: Dự đoán xác suất
-  withT(480, 940, 0, 1, () => {
+  withT(540, 940, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c2', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.green, { key: 'ta_c2_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.green, { shadow: false, tex: false });
-    txt('⚡ DỰ ĐOÁN XÁC SUẤT TỪNG TOKEN', 0, -55, 24, PR.creamL, { align: 'center', weight: 800 });
+    txt('DỰ ĐOÁN XÁC SUẤT TỪNG TOKEN', 0, -55, 24, PR.creamL, { align: 'center', weight: 800 });
     txt('Ghép từ có khả năng xuất hiện hợp lý nhất theo ngữ cảnh.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
     txt('Đó là lý do cùng một câu hỏi, AI có thể trả lời khác nhau!', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
   });
 
-  prStamp('DỰ ĐOÁN XÁC SUẤT!', 480, 1160, PR.mustard, tStamp, { size: 36, from: 1.25, rot: -0.04 });
+  prStamp('DỰ ĐOÁN XÁC SUẤT!', 540, 1160, PR.mustard, tStamp, { size: 36, from: 1.25, rot: -0.04 });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'vr',
@@ -280,9 +280,9 @@ SCENES.cta = () => {
   t8Wall('cta');
   prSign('BẠN MUỐN XEM PHẦN HAI KHÔNG?', { kicker: KICK });
 
-  withT(480, 760, 0, 1, () => {
+  withT(540, 760, 0, 1, () => {
     pp(pR(-380, -180, 760, 360, 20), PR.creamL, { key: 'cta_card', sb: 18, sy: 9, tex: 0.5 });
-    txt('🧠 CHỦ ĐỀ PHẦN HAI GỒM NHỮNG GÌ?', 0, -115, 28, PR.navy, { align: 'center', weight: 800 });
+    txt('CHỦ ĐỀ PHẦN HAI GỒM NHỮNG GÌ?', 0, -115, 28, PR.navy, { align: 'center', weight: 800 });
 
     const topics = [
       '• Huấn luyện trước (Pre-training) bằng hàng tỷ trang web',
@@ -295,7 +295,7 @@ SCENES.cta = () => {
     });
   });
 
-  prCommentBox(480, 1090, 'BÌNH LUẬN "AI"', t0 + 0.2, { hint: 'Để lại bình luận "AI" để nhận phần 2 nhé!...' });
+  prCommentBox(540, 1090, 'BÌNH LUẬN "AI"', t0 + 0.2, { hint: 'Để lại bình luận "AI" để nhận phần 2 nhé!...' });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'party',

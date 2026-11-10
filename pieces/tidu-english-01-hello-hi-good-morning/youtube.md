@@ -3,35 +3,33 @@
 ## Tiêu đề
 
 ```
-Hello, Hi hay Good Morning? 👋 Cách chào tiếng Anh chuẩn và tự nhiên #Shorts
+Hello, Hi hay Good Morning? 👋 Cách chào bằng tiếng Anh cho bé #Shorts
 ```
 
 Phương án khác:
 - `Gặp bạn mới, chào "Hello" hay "Hi"? | Tiếng Anh giao tiếp cho bé #Shorts`
-- `Phân biệt Hello, Hi và Good Morning trong 45 giây | Tidu English #Shorts`
+- `Hello, Hi và Good Morning trong 30 giây | Tidu English #Shorts`
 
 ## Mô tả
 
 ```
-Gặp bạn mới, bạn biết nói gì bằng tiếng Anh không? 🤔 Cùng chú vẹt Polly khám phá 3 cách chào quen thuộc nhất nhé! 👇
+Gặp bạn mới, bạn nói gì bằng tiếng Anh? 🤔 Cùng chú vẹt Polly học 3 lời chào nhé! 👇
 
 📚 BÀI HỌC HÔM NAY:
-1️⃣ Hello! — "Xin chào" lịch sự, dùng được trong mọi hoàn cảnh.
-2️⃣ Hi! — "Xin chào" thân mật, thường dùng khi nói chuyện với bạn bè, người thân.
-3️⃣ Good morning! — "Chào buổi sáng", trang trọng và lịch sự khi gặp thầy cô, người lớn vào buổi sáng!
+1️⃣ Hello! — nghĩa là "Xin chào".
+2️⃣ Hi! — cũng là "Xin chào", thường thân mật hơn.
+3️⃣ Good morning! — "Chào buổi sáng", dùng vào buổi sáng.
 
-🎯 THỬ THÁCH NHỎ:
-Khi gặp cô giáo vào buổi sáng ở cổng trường, bạn sẽ chào thế nào?
-👉 Đáp án chính xác: "Good morning!" ☀️
+🎯 THỬ TÀI NHỎ:
+Gặp cô giáo vào buổi sáng, bạn sẽ nói gì?
+👉 Đáp án: "Good morning!" ☀️
 
-💬 Bạn thích dùng "Hello" hay "Hi" hơn? Hãy bình luận và luyện nói tiếng Anh cùng Polly nhé!
+🗣️ Bạn thích Hello hay Hi hơn? Hãy nói thử thật to cùng Polly nhé!
 
 Đăng ký kênh Tidu English để cùng bé học tiếng Anh vui nhộn mỗi ngày! 🦜✨
 
 #TiduEnglish #HọcTiếngAnh #TiếngAnhGiaoTiếp #Shorts #EnglishForKids #HelloHiGoodMorning #TiếngAnhTrẻEm
 ```
-
-Nếu video được đánh dấu "Dành cho trẻ em" (YouTube tắt bình luận): đổi câu kêu gọi bình luận thành "Hãy tự luyện nói thật to cùng Polly nhé!".
 
 ## Thẻ
 

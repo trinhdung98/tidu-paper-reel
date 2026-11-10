@@ -7,36 +7,36 @@ Hình tròn, vuông và tam giác tiếng Anh là gì? 🔺 Circle, Square & Tri
 ```
 
 Phương án khác:
-- `Học tên các hình khối cơ bản bằng tiếng Anh trong 50 giây | Tidu English #Shorts`
-- `Đố vui tìm hình tam giác bằng tiếng Anh cho bé siêu thú vị #Shorts`
+- `Học tên 3 hình cơ bản bằng tiếng Anh | Tidu English #Shorts`
+- `Đố vui tìm hình tam giác bằng tiếng Anh cho bé #Shorts`
 
 ## Mô tả
 
 ```
-Bạn có biết tên tiếng Anh của ba hình dạng quen thuộc này chưa? Cùng chú vẹt Polly khám phá và ghép thành một ngôi nhà giấy đáng yêu nhé! 👇
+Bạn có biết tên tiếng Anh của ba hình quen thuộc này không? Cùng chú vẹt Polly học tên từng hình, chơi trò đổi chỗ và ghép một ngôi nhà nhỏ nhé! 👇
 
-📐 3 HÌNH KHỐI CƠ BẢN:
+📐 3 HÌNH CƠ BẢN:
 🔵 Circle — Hình tròn
 🟥 Square — Hình vuông
 🔺 Triangle — Hình tam giác
 
 🎯 THỬ THÁCH CHO BÉ:
-Sau khi ba hình đổi chỗ cho nhau, bé có tìm đúng hình Triangle (tam giác) không?
-👉 Đáp án chính xác: "Triangle!" 🔺✨
+Ba hình đổi chỗ cho nhau. Bé có tìm được hình tam giác không?
+👉 Đáp án: "Triangle!" 🔺
 
-🏠 Điều kỳ diệu: Ghép hình tam giác làm mái nhà và hình vuông làm thân nhà, ta sẽ có ngay một ngôi nhà giấy tí hon!
+🏠 Ghép hình vuông và hình tam giác, ta được một ngôi nhà nhỏ!
 
-💬 Thử thách hôm nay: Bé nhìn thấy hình Circle (hình tròn) ở đâu trong ngôi nhà của mình nào?
+🔍 Việc nhỏ cho bé: Bé nhìn thấy hình circle ở đâu trong nhà? Hãy tìm quanh nhà, chỉ vào và nói thật to "Circle!" nhé.
 
-Đăng ký kênh Tidu English để cùng bé học tiếng Anh và khám phá thế giới xung quanh mỗi ngày! 🦜
+Đăng ký kênh Tidu English để cùng bé học tiếng Anh mỗi ngày! 🦜
 
-#TiduEnglish #HọcHìnhKhối #TiếngAnhTrẻEm #Shorts #ShapesInEnglish #CircleSquareTriangle #TiếngAnhGiaoTiếpChoBé
+#TiduEnglish #TiếngAnhTrẻEm #Shorts #ShapesInEnglish #CircleSquareTriangle #HọcTiếngAnhChoBé
 ```
 
-Nếu video được đánh dấu "Dành cho trẻ em" (YouTube tắt bình luận): đổi câu kêu gọi bình luận thành "Hãy tự tìm hình Circle quanh nhà và gọi tên thật to nhé!".
+Video dành cho trẻ em: YouTube tắt bình luận, nên lời kêu gọi là việc bé tự làm ở nhà, không phải bình luận.
 
 ## Thẻ
 
 ```
-hình khối tiếng anh, circle square triangle, hình tròn tiếng anh, hình vuông tiếng anh, hình tam giác tiếng anh, tiếng anh cho bé, tiếng anh trẻ em, shapes for kids, tidu english, học hình học tiếng anh
+hình tròn tiếng anh, hình vuông tiếng anh, hình tam giác tiếng anh, circle square triangle, các hình bằng tiếng anh, tiếng anh cho bé, tiếng anh trẻ em, shapes for kids, tidu english
 ```

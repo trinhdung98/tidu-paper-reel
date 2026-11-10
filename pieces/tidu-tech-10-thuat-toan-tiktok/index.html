@@ -588,7 +588,7 @@ const PR = {
 };
 // F_HEAD / F_CHIP are var so a piece can swap them; Vietnamese pieces embed Be Vietnam Pro + Bevan (piece.json "fonts"),
 // because Avenir Next and SuperClarendon misplace stacked tone marks (ĐẾM, những, được)
-var F_HEAD = '"Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif';
+var F_HEAD = '"Be Vietnam Pro", "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif';
 var F_CHIP = 'SuperClarendon, Rockwell, Georgia, serif';
 const F_CHALK = 'Chalkduster, "Chalkboard SE", "Comic Sans MS", cursive';
 const F_MONO = 'Menlo, "SF Mono", Consolas, monospace';
@@ -706,8 +706,9 @@ function prStamp(str, x, y, color, t0, o = {}) {
   const w = txtW(str, sz) + 60, h = sz * 1.45;
   withT(x, y, o.rot ?? -0.07, s, () => {
     if (u >= 1) pp(pR(-w / 2, -h / 2, w, h, 10), o.bg ?? 'rgba(250,248,240,0.94)', { key: 'stb' + str, sb: 10, sy: 5, tex: 0.45 });
-    ctx.save(); ctx.globalAlpha = u < 1 ? 0.75 : 1; ctx.strokeStyle = color; ctx.lineWidth = 7; ctx.beginPath(); ctx.roundRect(-w / 2 + 8, -h / 2 + 8, w - 16, h - 16, 7); ctx.stroke();
-    txt(str, 0, sz * 0.36, sz, color, { align: 'center', weight: 800 }); ctx.restore();
+    const alpha = u < 1 ? 0.75 : 1;
+    ctx.save(); ctx.globalAlpha = alpha; ctx.strokeStyle = color; ctx.lineWidth = 7; ctx.beginPath(); ctx.roundRect(-w / 2 + 8, -h / 2 + 8, w - 16, h - 16, 7); ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.globalAlpha = alpha; ctx.rotate(-(o.rot ?? -0.07)); txt(str, 0, sz * 0.36, sz, color, { align: 'center', weight: 800, font: F_HEAD }); ctx.restore();
   });
 }
 // ---- confetti / dots that burst from (x, y) at t0
@@ -1883,22 +1884,29 @@ function t10PhoneFeed(cx, cy, o = {}) {
     pp(pR(-vw / 2, -60, vw, vh, 16), o.cats ? '#1f3044' : '#142235', { key: 't10_vcard', sb: 10, sy: 5, tex: 0.4 });
 
     if (o.cats) {
-      txt('🐱', 0, 10, 90, PR.creamL, { align: 'center', weight: 800 });
+      pp(pE(0, 10, 55, 50), PR.creamL, { key: 't10_cat_face', sb: 6, sy: 3, tex: 0.3 });
+      pp(pR(-38, -40, 20, 22, 4), PR.creamL, { shadow: false, tex: false });
+      pp(pR(18, -40, 20, 22, 4), PR.creamL, { shadow: false, tex: false });
+      pp(pE(-16, 2, 7, 8), '#102030', { shadow: false, tex: false });
+      pp(pE(16, 2, 7, 8), '#102030', { shadow: false, tex: false });
+      pp(pE(0, 16, 5, 4), PR.mustard, { shadow: false, tex: false });
       txt('Mèo con ngáo ngơ siêu đáng yêu', 0, 85, 20, PR.creamL, { align: 'center', weight: 800 });
       txt('#catsoftiktok #cute #meomeo', 0, 120, 16, PR.glow, { align: 'center', weight: 700 });
 
       // Floating hearts
       for (let h = 0; h < 3; h++) {
         const hy = -20 - h * 40 - Math.sin(TT * 4 + h) * 15;
-        txt('❤️', 110, hy, 26, PR.red, { align: 'center', weight: 800 });
+        pp(pE(104, hy - 5, 14, 12), PR.red, { shadow: false, tex: false });
+        pp(pE(116, hy - 5, 14, 12), PR.red, { shadow: false, tex: false });
+        pp(pE(110, hy + 6, 16, 13), PR.red, { shadow: false, tex: false });
       }
     } else {
-      txt('📱 TỔNG HỢP VIDEO', 0, 10, 30, PR.creamL, { align: 'center', weight: 800 });
+      txt('TỔNG HỢP VIDEO', 0, 10, 30, PR.creamL, { align: 'center', weight: 800 });
       txt('Nấu ăn, thể thao, âm nhạc...', 0, 70, 18, PR.creamD, { align: 'center', weight: 600 });
     }
 
     // Right-side action bar icons
-    const actions = ['❤️ 142K', '💬 2.8K', '🔖 18K', '➡️ 9.5K'];
+    const actions = ['142K', '2.8K', '18K', '9.5K'];
     actions.forEach((act, i) => {
       txt(act, pw / 2 - 40, -40 + i * 55, 14, PR.creamL, { align: 'center', weight: 700 });
     });
@@ -1911,10 +1919,10 @@ function t10UserSignals(cx, cy) {
     txt('4 TÍN HIỆU TƯƠNG TÁC QUAN TRỌNG NHẤT', 0, -180, 24, PR.glow, { align: 'center', weight: 800 });
 
     const signals = [
-      ['⏱️ THỜI GIAN XEM VIDEO', 'Xem hết video hoặc xem đi xem lại (+ Điểm rất cao)'],
-      ['❤️ THẢ TIM & LƯU YÊU THÍCH', 'Bày tỏ sự quan tâm rõ ràng với chủ đề'],
-      ['💬 BÌNH LUẬN & CHIA SẺ', 'Hành động tương tác có trọng số lớn nhất'],
-      ['⏩ LƯỚT QUA TRONG 1 GIÂY', 'Không thích nội dung này (- Trừ điểm đề xuất)'],
+      ['THỜI GIAN XEM VIDEO', 'Xem hết video hoặc xem đi xem lại (+ Điểm rất cao)'],
+      ['THẢ TIM & LƯU YÊU THÍCH', 'Bày tỏ sự quan tâm rõ ràng với chủ đề'],
+      ['BÌNH LUẬN & CHIA SẺ', 'Hành động tương tác có trọng số lớn nhất'],
+      ['LƯỚT QUA TRONG 1 GIÂY', 'Không thích nội dung này (- Trừ điểm đề xuất)'],
     ];
 
     signals.forEach(([title, desc], i) => {
@@ -1933,9 +1941,9 @@ function t10MetadataCard(cx, cy) {
     txt('PHÂN TÍCH NỘI DUNG TỪNG VIDEO', 0, -180, 26, PR.glow, { align: 'center', weight: 800 });
 
     const metas = [
-      ['🎵 ÂM THANH XU HƯỚNG', 'Đoạn nhạc hoặc giọng lồng tiếng đang thịnh hành'],
-      ['🏷️ HASHTAG & TỪ KHÓA', 'Nhãn chủ đề: #haihuoc, #congnghe, #review...'],
-      ['📝 PHỤ ĐỀ & HÌNH ẢNH', 'AI quét hình ảnh và chữ xuất hiện trong video'],
+      ['ÂM THANH XU HƯỚNG', 'Đoạn nhạc hoặc giọng lồng tiếng đang thịnh hành'],
+      ['HASHTAG & TỪ KHÓA', 'Nhãn chủ đề: #haihuoc, #congnghe, #review...'],
+      ['PHỤ ĐỀ & HÌNH ẢNH', 'AI quét hình ảnh và chữ xuất hiện trong video'],
     ];
 
     metas.forEach(([title, desc], i) => {
@@ -1957,7 +1965,7 @@ SCENES.hook = () => {
   t10Wall('hk');
   prSign('VỪA XEM MÈO: FEED TOÀN MÈO?', { kicker: KICK });
 
-  t10PhoneFeed(480, 880, { cats: true });
+  t10PhoneFeed(540, 880, { cats: true });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'beanie',
@@ -1974,7 +1982,7 @@ SCENES.signals = () => {
   t10Wall('sig');
   prSign('HỌC TỪ HÀNH VI CỦA BẠN', { kicker: KICK });
 
-  t10UserSignals(480, 880);
+  t10UserSignals(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'headset',
@@ -1991,7 +1999,7 @@ SCENES.metrics = () => {
   t10Wall('met');
   prSign('THỜI GIAN XEM LÀ YẾU TỐ VÀNG', { kicker: KICK });
 
-  withT(480, 840, 0, 1, () => {
+  withT(540, 840, 0, 1, () => {
     pp(pR(-370, -220, 740, 440, 20), PR.creamL, { key: 'met_card', sb: 18, sy: 9, tex: 0.5 });
     txt('TRỌNG SỐ QUAN TRỌNG NHẤT: WATCH TIME', 0, -165, 24, PR.navy, { align: 'center', weight: 800 });
 
@@ -2026,7 +2034,7 @@ SCENES.metadata = () => {
   t10Wall('meta');
   prSign('PHÂN TÍCH NỘI DUNG TỪNG VIDEO', { kicker: KICK });
 
-  t10MetadataCard(480, 880);
+  t10MetadataCard(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'mortar',
@@ -2043,7 +2051,7 @@ SCENES.algorithm = () => {
   t10Wall('algo');
   prSign('TÍNH ĐIỂM & ĐỀ XUẤT CHO BẠN', { kicker: KICK });
 
-  withT(480, 840, 0, 1, () => {
+  withT(540, 840, 0, 1, () => {
     pp(pR(-370, -220, 740, 440, 20), PR.creamL, { key: 'algo_card', sb: 18, sy: 9, tex: 0.5 });
     txt('QUY TRÌNH XẾP HẠNG BẢNG TIN FYP', 0, -165, 26, PR.navy, { align: 'center', weight: 800 });
 
@@ -2080,26 +2088,26 @@ SCENES.takeaway = () => {
   const tStamp = VW('takeaway', 'thứ').t0;
 
   // Top Card: Bản chất thuật toán
-  withT(480, 680, 0, 1, () => {
+  withT(540, 680, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c1', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.blue, { key: 'ta_c1_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.blue, { shadow: false, tex: false });
-    txt('🪞 TẤM GƯƠNG PHẢN CHIẾU HÀNH VI', 0, -55, 24, PR.creamL, { align: 'center', weight: 800 });
+    txt('TẤM GƯƠNG PHẢN CHIẾU HÀNH VI', 0, -55, 24, PR.creamL, { align: 'center', weight: 800 });
     txt('Thuật toán không tự ép bạn xem gì, nó chỉ phản ánh thói quen của bạn.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
-    txt('✓ Dừng lại xem nhiều = Sẽ được xem nhiều hơn', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
+    txt('Dừng lại xem nhiều = Sẽ được xem nhiều hơn', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
   });
 
   // Bottom Card: Mẹo đổi feed
-  withT(480, 940, 0, 1, () => {
+  withT(540, 940, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c2', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.mustard, { key: 'ta_c2_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.mustard, { shadow: false, tex: false });
-    txt('💡 MUỐN THAY ĐỔI TRANG ĐỀ XUẤT?', 0, -55, 24, PR.navy, { align: 'center', weight: 800 });
+    txt('MUỐN THAY ĐỔI TRANG ĐỀ XUẤT?', 0, -55, 24, PR.navy, { align: 'center', weight: 800 });
     txt('Chủ động lướt qua nhanh nội dung vô bổ trong 1 giây.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
     txt('Tìm kiếm & thả tim cho nội dung học tập, sau 3 ngày feed sẽ đổi!', 0, 50, 19, PR.navy, { align: 'center', weight: 800 });
   });
 
-  prStamp('CÁ NHÂN HÓA 100%!', 480, 1160, PR.mustard, tStamp, { size: 36, from: 1.25, rot: -0.04 });
+  prStamp('CÁ NHÂN HÓA 100%!', 540, 1160, PR.mustard, tStamp, { size: 36, from: 1.25, rot: -0.04 });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'vr',
@@ -2116,14 +2124,14 @@ SCENES.cta = () => {
   t10Wall('cta');
   prSign('BẢNG TIN CỦA BẠN ĐANG CÓ GÌ?', { kicker: KICK });
 
-  withT(480, 760, 0, 1, () => {
+  withT(540, 760, 0, 1, () => {
     pp(pR(-380, -180, 760, 360, 20), PR.creamL, { key: 'cta_card', sb: 18, sy: 9, tex: 0.5 });
-    txt('📊 TOP 3 CHỦ ĐỀ PHỔ BIẾN TRÊN FYP', 0, -115, 28, PR.navy, { align: 'center', weight: 800 });
+    txt('TOP 3 CHỦ ĐỀ PHỔ BIẾN TRÊN FYP', 0, -115, 28, PR.navy, { align: 'center', weight: 800 });
 
     const topics = [
-      '🐱 Thú cưng, động vật hài hước',
-      '🍔 Ẩm thực, nấu ăn & du lịch trải nghiệm',
-      '📚 Kiến thức công nghệ, học tập & đời sống',
+      'Thú cưng, động vật hài hước',
+      'Ẩm thực, nấu ăn & du lịch trải nghiệm',
+      'Kiến thức công nghệ, học tập & đời sống',
     ];
     topics.forEach((top, i) => {
       pp(pR(-340, -55 + i * 65, 680, 50, 10), PR.techK, { key: 'cta_tp' + i, shadow: false, tex: 0.3 });
@@ -2131,7 +2139,7 @@ SCENES.cta = () => {
     });
   });
 
-  prCommentBox(480, 1090, 'CHỦ ĐỀ CỦA BẠN', t0 + 0.2, { hint: 'Feed của bạn đang đầy nội dung gì?...' });
+  prCommentBox(540, 1090, 'CHỦ ĐỀ CỦA BẠN', t0 + 0.2, { hint: 'Feed của bạn đang đầy nội dung gì?...' });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'party',

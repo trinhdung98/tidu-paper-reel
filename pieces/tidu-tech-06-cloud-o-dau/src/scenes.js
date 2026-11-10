@@ -42,12 +42,12 @@ function t6CloudHero(cx, cy) {
       pp(pR(-90, -110, 180, 220, 12), PR.creamL, { key: 'cld_photo', sb: 16, sy: 8, tex: 0.5 });
       // Picture inside
       pp(pR(-75, -95, 150, 140, 6), PR.blue, { shadow: false, tex: 0.3 });
-      txt('🌄 ẢNH KỶ NIỆM', 0, -20, 18, PR.creamL, { align: 'center', weight: 800 });
+      txt('ẢNH KỶ NIỆM', 0, -20, 18, PR.creamL, { align: 'center', weight: 800 });
       txt('Đang tải lên cloud...', 0, 85, 15, PR.char, { align: 'center', weight: 700 });
     });
 
     // Red X over the literal cloud idea
-    txt('❌ KHÔNG HỀ BAY LÊN TRỜI!', 0, 290, 26, PR.red, { align: 'center', weight: 800 });
+    txt('KHÔNG HỀ BAY LÊN TRỜI!', 0, 290, 26, PR.red, { align: 'center', weight: 800 });
   });
 }
 
@@ -60,7 +60,7 @@ function t6Datacenter(cx, cy) {
     // Roof / header
     pp(pR(-dw / 2, -dh / 2, dw, 60, 18), PR.techK, { key: 'dc_roof', shadow: false, tex: 0.35 });
     pp(pR(-dw / 2, -dh / 2 + 40, dw, 20, 0), PR.techK, { shadow: false, tex: false });
-    txt('🏢 TRUNG TÂM DỮ LIỆU VẬT LÝ (DATA CENTER)', 0, -dh / 2 + 42, 22, PR.glow, { align: 'center', weight: 800 });
+    txt('TRUNG TÂM DỮ LIỆU VẬT LÝ (DATA CENTER)', 0, -dh / 2 + 42, 22, PR.glow, { align: 'center', weight: 800 });
 
     // 3 Server rack rows
     [-1, 0, 1].forEach((d) => {
@@ -88,9 +88,9 @@ function t6BackupCopies(cx, cy) {
     txt('SAO LƯU DỰ PHÒNG ĐA VÙNG (REDUNDANCY)', 0, -180, 26, PR.glow, { align: 'center', weight: 800 });
 
     const centers = [
-      ['🇻🇳 TRUNG TÂM VIỆT NAM', 'Bản sao 1: Phục vụ truy cập siêu nhanh'],
-      ['🇸🇬 TRUNG TÂM SINGAPORE', 'Bản sao 2: Dự phòng khu vực Đông Nam Á'],
-      ['🇺🇸 TRUNG TÂM HOA KỲ', 'Bản sao 3: Lưu trữ an toàn tuyệt đối'],
+      ['TRUNG TÂM VIỆT NAM', 'Bản sao 1: Phục vụ truy cập siêu nhanh'],
+      ['TRUNG TÂM SINGAPORE', 'Bản sao 2: Dự phòng khu vực Đông Nam Á'],
+      ['TRUNG TÂM HOA KỲ', 'Bản sao 3: Lưu trữ an toàn tuyệt đối'],
     ];
 
     centers.forEach(([title, desc], i) => {
@@ -101,7 +101,8 @@ function t6BackupCopies(cx, cy) {
       txt(desc, -320, cy_i + 76, 18, PR.char, { weight: 600 });
       // Shield check
       pp(pE(310, cy_i + 55, 24, 24), '#143c24', { shadow: false, tex: 0.3 });
-      txt('🛡️', 310, cy_i + 64, 20, PR.green, { align: 'center', weight: 800 });
+      pp(pR(298, cy_i + 48, 24, 28, 4), PR.green, { shadow: false, tex: false });
+      pp(pE(310, cy_i + 56, 8, 6), PR.creamL, { shadow: false, tex: false });
     });
   });
 }
@@ -111,14 +112,16 @@ function t6DeviceSync(cx, cy) {
   withT(cx, cy, 0, 1, () => {
     // Center server hub
     pp(pE(0, -40, 70, 70), PR.techK, { key: 'hub_bg', sb: 12, sy: 6, tex: 0.4 });
-    txt('☁️', 0, -22, 60, PR.glow, { align: 'center', weight: 800 });
+    pp(pE(0, -38, 32, 22), PR.glow, { key: 'hub_cld_m', sb: 6, sy: 3, tex: 0.3 });
+    pp(pE(-22, -28, 20, 16), PR.glow, { shadow: false, tex: 0.3 });
+    pp(pE(22, -28, 20, 16), PR.glow, { shadow: false, tex: 0.3 });
     txt('DỮ LIỆU ĐÁM MÂY', 0, 65, 22, PR.glow, { align: 'center', weight: 800 });
 
     // 3 Devices connected
     const devs = [
-      ['📱 ĐIỆN THOẠI CŨ', -240, 180],
-      ['💻 MÁY TÍNH XÁCH TAY', 0, 180],
-      ['📱 ĐIỆN THOẠI MỚI', 240, 180],
+      ['ĐIỆN THOẠI CŨ', -240, 180],
+      ['MÁY TÍNH XÁCH TAY', 0, 180],
+      ['ĐIỆN THOẠI MỚI', 240, 180],
     ];
 
     devs.forEach(([name, dx, dy], i) => {
@@ -149,7 +152,7 @@ SCENES.hook = () => {
   t6Wall('hk');
   prSign('LƯU LÊN CLOUD: NẰM Ở ĐÂU?', { kicker: KICK });
 
-  t6CloudHero(480, 880);
+  t6CloudHero(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'beanie',
@@ -166,7 +169,7 @@ SCENES.datacenter = () => {
   t6Wall('dc');
   prSign('TRUNG TÂM DỮ LIỆU (DATA CENTER)', { kicker: KICK });
 
-  t6Datacenter(480, 860);
+  t6Datacenter(540, 860);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'headset',
@@ -183,7 +186,7 @@ SCENES.connection = () => {
   t6Wall('conn');
   prSign('KẾT NỐI QUA MẠNG INTERNET', { kicker: KICK });
 
-  withT(480, 840, 0, 1, () => {
+  withT(540, 840, 0, 1, () => {
     pp(pR(-370, -200, 740, 420, 20), PR.creamL, { key: 'conn_card', sb: 18, sy: 9, tex: 0.5 });
     txt('QUY TRÌNH GỬI VÀ NHẬN DỮ LIỆU', 0, -145, 26, PR.navy, { align: 'center', weight: 800 });
 
@@ -218,7 +221,7 @@ SCENES.backup = () => {
   t6Wall('bk');
   prSign('LƯU NHIỀU BẢN SAO DỰ PHÒNG', { kicker: KICK });
 
-  t6BackupCopies(480, 880);
+  t6BackupCopies(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'drone',
@@ -235,7 +238,7 @@ SCENES.sync = () => {
   t6Wall('sync');
   prSign('ĐỒNG BỘ MỌI THIẾT BỊ TỨC THÌ', { kicker: KICK });
 
-  t6DeviceSync(480, 880);
+  t6DeviceSync(540, 880);
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'tinfoil',
@@ -254,26 +257,26 @@ SCENES.takeaway = () => {
   const tStamp = VW('takeaway', 'người').t0;
 
   // Top Card: Cloud là gì
-  withT(480, 680, 0, 1, () => {
+  withT(540, 680, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c1', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.blue, { key: 'ta_c1_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.blue, { shadow: false, tex: false });
-    txt('☁️ BẢN CHẤT CỦA "ĐÁM MÂY"', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
+    txt('BẢN CHẤT CỦA "ĐÁM MÂY"', 0, -55, 26, PR.creamL, { align: 'center', weight: 800 });
     txt('"There is no cloud, it is just someone else\'s computer."', 0, 12, 21, PR.navy, { align: 'center', weight: 700 });
-    txt('✓ Đơn giản là máy tính của công ty khác (Google, Apple, AWS)', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
+    txt('Đơn giản là máy tính của công ty khác (Google, Apple, AWS)', 0, 50, 19, PR.green, { align: 'center', weight: 800 });
   });
 
   // Bottom Card: Lợi ích
-  withT(480, 940, 0, 1, () => {
+  withT(540, 940, 0, 1, () => {
     pp(pR(-380, -90, 760, 180, 18), PR.creamL, { key: 'ta_c2', sb: 14, sy: 7, tex: 0.5 });
     pp(pR(-380, -90, 760, 52, 18), PR.mustard, { key: 'ta_c2_hd', shadow: false, tex: 0.4 });
     pp(pR(-380, -56, 760, 18, 0), PR.mustard, { shadow: false, tex: false });
-    txt('💡 VÌ SAO BẠN NÊN DÙNG CLOUD?', 0, -55, 26, PR.navy, { align: 'center', weight: 800 });
+    txt('VÌ SAO BẠN NÊN DÙNG CLOUD?', 0, -55, 26, PR.navy, { align: 'center', weight: 800 });
     txt('Mất điện thoại không sợ mất dữ liệu hay ảnh kỷ niệm.', 0, 12, 21, PR.char, { align: 'center', weight: 600 });
     txt('Hạ tầng bảo vệ chuyên nghiệp với chi phí rẻ!', 0, 50, 19, PR.blue, { align: 'center', weight: 800 });
   });
 
-  prStamp('MÁY CHỦ THỰC TẾ!', 480, 1160, PR.mustard, tStamp, { size: 38, from: 1.25, rot: -0.04 });
+  prStamp('MÁY CHỦ THỰC TẾ!', 540, 1160, PR.mustard, tStamp, { size: 38, from: 1.25, rot: -0.04 });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'vr',
@@ -290,9 +293,9 @@ SCENES.cta = () => {
   t6Wall('cta');
   prSign('BẠN CÓ MUỐN KHÁM PHÁ THÊM?', { kicker: KICK });
 
-  withT(480, 760, 0, 1, () => {
+  withT(540, 760, 0, 1, () => {
     pp(pR(-380, -180, 760, 360, 20), PR.creamL, { key: 'cta_card', sb: 18, sy: 9, tex: 0.5 });
-    txt('🏢 TRUNG TÂM DỮ LIỆU CÓ GÌ ĐẶC BIỆT?', 0, -115, 28, PR.navy, { align: 'center', weight: 800 });
+    txt('TRUNG TÂM DỮ LIỆU CÓ GÌ ĐẶC BIỆT?', 0, -115, 28, PR.navy, { align: 'center', weight: 800 });
 
     const facts = [
       '• Hệ thống làm mát bằng chất lỏng & gió khổng lồ',
@@ -305,7 +308,7 @@ SCENES.cta = () => {
     });
   });
 
-  prCommentBox(480, 1090, 'BÌNH LUẬN "CLOUD"', t0 + 0.2, { hint: 'Bạn dùng cloud nào: iCloud hay Drive?...' });
+  prCommentBox(540, 1090, 'BÌNH LUẬN "CLOUD"', t0 + 0.2, { hint: 'Bạn dùng cloud nào: iCloud hay Drive?...' });
 
   botty(BOTTY_X, BOTTY_Y, {
     hat: 'party',

@@ -7,34 +7,36 @@
 ```
 
 Phương án khác:
-- `Bé học 3 màu cơ bản bằng tiếng Anh trong 48 giây | Tidu English #Shorts`
-- `What color is it? Câu đố đoán màu tiếng Anh siêu vui cho bé #Shorts`
+- `Bé học 3 màu đầu tiên bằng tiếng Anh: Red, Blue, Yellow | Tidu English #Shorts`
+- `What color is it? Câu đố đoán màu tiếng Anh cho bé #Shorts`
 
 ## Mô tả
 
 ```
-Bạn có đoán đúng 3 màu sắc quen thuộc này bằng tiếng Anh không? Cùng vẹt Polly lật mở từng ô màu nhé! 👇
+Bạn biết màu đỏ, xanh dương và vàng trong tiếng Anh chưa? Cùng vẹt Polly học ba màu đầu tiên nhé! 🦜
 
-🎨 3 MÀU SẮC ĐẦU TIÊN:
-🍎 Red — Màu đỏ (như quả táo đỏ mọng)
-🎈 Blue — Màu xanh dương (như quả bóng bay lơ lửng)
-☀️ Yellow — Màu vàng (như mặt trời ấm áp)
+🎨 3 MÀU ĐẦU TIÊN:
+🍎 Red — màu đỏ (quả táo)
+🎈 Blue — màu xanh dương (quả bóng bay)
+☀️ Yellow — màu vàng (mặt trời)
 
-🎯 THỬ THÁCH CHO BÉ:
-"What color is it?" — Quả bóng bay này có màu gì?
-👉 Đáp án chính xác: "It's blue!" 🎈✨
+🗣️ Nói theo nhé: Red, Blue, Yellow.
 
-💬 Thử thách hôm nay: Hãy nhìn quanh phòng và tìm một đồ vật màu blue nhé!
+🎯 THỬ THÁCH:
+"What color is it?" — Quả bóng bay này màu gì?
+👉 Đáp án: "It's blue!" 🎈
 
-Đăng ký Tidu English để cùng bé khám phá thế giới tiếng Anh vui nhộn mỗi ngày! 🦜
+🔍 Việc của bé hôm nay: hãy tìm một đồ vật màu blue quanh bạn!
 
-#TiduEnglish #HọcMàuSắc #TiếngAnhTrẻEm #Shorts #ColorsInEnglish #RedBlueYellow #TiếngAnhGiaoTiếpChoBé
+Đăng ký Tidu English để cùng bé học tiếng Anh mỗi ngày! 🦜
+
+#TiduEnglish #HọcMàuSắc #TiếngAnhTrẻEm #Shorts #ColorsInEnglish #RedBlueYellow
 ```
 
-Nếu video được đánh dấu "Dành cho trẻ em" (YouTube tắt bình luận): đổi câu kêu gọi bình luận thành "Hãy tự tìm đồ vật màu blue quanh bạn và nói thật to nhé!".
+Video dành cho trẻ em ("Made for kids"): YouTube tắt bình luận, nên lời kêu gọi là một việc bé làm ngoài màn hình (tìm đồ vật màu blue), không phải bình luận.
 
 ## Thẻ
 
 ```
-học màu tiếng anh, màu sắc tiếng anh, red blue yellow, tiếng anh cho bé, tiếng anh trẻ em, what color is it, học tiếng anh qua bài hát, tidu english, colors for kids, đoán màu tiếng anh
+học màu tiếng anh, màu sắc tiếng anh, red blue yellow, tiếng anh cho bé, tiếng anh trẻ em, what color is it, tidu english, colors for kids, đoán màu tiếng anh
 ```

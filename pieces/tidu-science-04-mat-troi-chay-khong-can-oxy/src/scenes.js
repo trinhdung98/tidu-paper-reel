@@ -174,8 +174,28 @@ SCENES.light = () => {
     pp(pE(0, 0, 160, 160), PR.yellow, { key: 'lbody1', sb: 12, sy: 6 });
   });
 
+  // Tia nắng động tỏa ra quanh Mặt Trời
+  ctx.save();
+  ctx.strokeStyle = PR.orange;
+  ctx.lineWidth = 6;
+  ctx.globalAlpha = 0.42;
+  for (let i = 0; i < 8; i++) {
+    const a = i * TAU / 8 + TT * 0.28;
+    ctx.beginPath();
+    ctx.moveTo(CX + Math.cos(a) * 230, 740 + Math.sin(a) * 230);
+    ctx.lineTo(CX + Math.cos(a) * 290, 740 + Math.sin(a) * 290);
+    ctx.stroke();
+  }
+  ctx.restore();
+
+  // Badge thực tế khoa học phía trên Mặt Trời
+  withT(CX, 385, 0.012, 1, () => {
+    pp(pR(-350, -40, 700, 80, 14), PR.navyD, { key: 'linfo', sb: 12, sy: 6, tex: 0.42 });
+    txt('KHÔNG CHÁY • KHÔNG CẦN OXY • KHÔNG CẦN CỦI', 0, 10, 24, PR.yellow, { align: 'center', weight: 800 });
+  });
+
   const tHeat = VW('light', 'nhiệt').t0;
-  prStamp('NGUỒN NHIỆT KHỔNG LỒ', CX, 1160, PR.orange, tHeat, { rot: -0.02, size: 46, from: 1.15 });
+  prStamp('NGUỒN NHIỆT KHỔNG LỒ', CX, 1125, PR.orange, tHeat, { rot: -0.02, size: 46, from: 1.15 });
 
   flasky(FLASKY_X, FLASKY_Y, {
     hat: 'propeller',
@@ -304,7 +324,7 @@ SCENES.reactor = () => {
   txt('LÒ PHẢN ỨNG HẠT NHÂN VĨ ĐẠI', CX, bY - bH / 2 + 54, 32, PR.navyD, { align: 'center', weight: 800 });
 
   // Biểu tượng nguyên tử năng lượng hạt nhân (Atom icon)
-  prAtom(CX, bY + 30, 110);
+  prAtom(CX, bY + 20, 180);
 
   const tReac = VW('reactor', 'lò').t0;
   prStamp('LÒ NHIỆT HẠCH TỰ NHIÊN', CX, 1180, PR.red, tReac, { rot: 0.02, size: 44, from: 1.15 });
