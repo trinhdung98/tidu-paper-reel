@@ -1,0 +1,27 @@
+{
+  "name": "tidu-mind-18-mot-ngay-te",
+  "title": "Tidu Mind 18 — Một ngày tệ không có nghĩa cuộc sống của bạn tệ",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "storyFormat": "voice-cut list: hook -> overgeneralize -> reality -> reframe -> differentiate -> cta",
+  "style": "paper-reel",
+  "fonts": {
+    "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf",
+    "Bevan": "Bevan-Regular.ttf"
+  },
+  "voice": {
+    "file": "voice/voice.wav",
+    "music": -14
+  },
+  "review": {
+    "safe": {
+      "top": 120,
+      "bottom": 300,
+      "right": 120
+    },
+    "refs": {}
+  }
+}

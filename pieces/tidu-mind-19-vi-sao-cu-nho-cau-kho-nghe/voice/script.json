@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Cuộc trò chuyện đã kết thúc, nhưng trong đầu bạn vẫn đang tranh luận?",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "rumination",
+   "text": "Bạn nghĩ về điều đáng lẽ mình nên nói, rồi tưởng tượng hàng loạt câu trả lời khác. Việc suy ngẫm có thể giúp ta rút kinh nghiệm.",
+   "after": 2.2,
+   "file": "rumination.wav"
+  },
+  {
+   "id": "loop",
+   "text": "Nhưng khi cùng một câu chuyện lặp đi lặp lại mà không đem lại góc nhìn mới, nó dễ trở nên mệt mỏi.",
+   "after": 2.0,
+   "file": "loop.wav"
+  },
+  {
+   "id": "question",
+   "text": "Hãy thử hỏi: mình đang học thêm điều gì, hay chỉ đang phát lại cảm giác khó chịu?",
+   "after": 2.0,
+   "file": "question.wav"
+  },
+  {
+   "id": "action",
+   "text": "Nếu có bài học, hãy ghi thành một hành động cụ thể. Nếu chưa có việc gì cần làm, bạn có thể chủ động chuyển sự chú ý sang hiện tại.",
+   "after": 2.4,
+   "file": "action.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn hay nhớ lại lời nói của mình hay lời nói của người khác?",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

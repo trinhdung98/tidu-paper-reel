@@ -1,0 +1,27 @@
+{
+  "name": "tidu-mind-12-mot-diem-tot",
+  "title": "Tidu Mind 12 — Một điểm tốt không có nghĩa mọi thứ đều tốt",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "storyFormat": "voice-cut list: hook -> explain -> mechanism -> notice -> reframe -> cta",
+  "style": "paper-reel",
+  "fonts": {
+    "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf",
+    "Bevan": "Bevan-Regular.ttf"
+  },
+  "voice": {
+    "file": "voice/voice.wav",
+    "music": -14
+  },
+  "review": {
+    "safe": {
+      "top": 120,
+      "bottom": 300,
+      "right": 120
+    },
+    "refs": {}
+  }
+}

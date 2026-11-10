@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Có khi người đối diện chưa nói xong, nhưng bạn đã chuẩn bị câu phản biện?",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "nature",
+   "text": "Điều đó rất dễ xảy ra khi chúng ta muốn bảo vệ quan điểm của mình. Nhưng một cuộc trò chuyện không nhất thiết phải có người thắng và người thua.",
+   "after": 2.2,
+   "file": "nature.wav"
+  },
+  {
+   "id": "principle",
+   "text": "Bạn có thể hiểu ý người khác mà vẫn không đồng tình.",
+   "after": 1.8,
+   "file": "principle.wav"
+  },
+  {
+   "id": "action",
+   "text": "Hãy thử làm ba việc: để họ nói hết, nhắc lại điều mình hiểu, rồi mới đưa ra góc nhìn của bản thân. Ví dụ: nếu mình hiểu đúng, bạn đang lo về thời hạn, đúng không?",
+   "after": 2.4,
+   "file": "action.wav"
+  },
+  {
+   "id": "reframe",
+   "text": "Một câu hỏi xác nhận đôi khi hữu ích hơn việc phản bác quá sớm.",
+   "after": 1.8,
+   "file": "reframe.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Lưu lại ba bước: Nghe hết – Xác nhận – Phản hồi.",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

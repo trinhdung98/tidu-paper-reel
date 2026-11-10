@@ -63,7 +63,7 @@ case "$cmd" in
       esac
     done
     [ "${#opts[@]}" -gt 0 ] || opts=(--scale 0.4)
-    node "$T/build.mjs" "$p" "${preview[@]}" && node "$T/still.mjs" "$p" "$ts" "$out" "${opts[@]}" ;;
+    node "$T/build.mjs" "$p" ${preview[@]+"${preview[@]}"} && node "$T/still.mjs" "$p" "$ts" "$out" "${opts[@]}" ;;
   check)
     p="${1:?piece}"; node "$T/formatcheck.mjs" "$p"
     node "$T/build.mjs" "$p"

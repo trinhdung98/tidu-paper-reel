@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Bạn biết mình cần làm việc, nhưng lại mở điện thoại thêm một lần nữa?",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "emotion",
+   "text": "Trì hoãn không phải lúc nào cũng đơn giản là lười biếng. Một công việc có thể khiến bạn thấy khó, chán, lo lắng hoặc sợ làm không tốt.",
+   "after": 2.2,
+   "file": "emotion.wav"
+  },
+  {
+   "id": "trap",
+   "text": "Chuyển sang việc dễ chịu hơn giúp bạn tạm tránh cảm giác đó. Nhưng công việc vẫn còn nguyên.",
+   "after": 2.0,
+   "file": "trap.wav"
+  },
+  {
+   "id": "notice",
+   "text": "Hãy thử quan sát: điều gì trong nhiệm vụ này đang khiến mình muốn né tránh?",
+   "after": 1.8,
+   "file": "notice.wav"
+  },
+  {
+   "id": "microstep",
+   "text": "Sau đó chọn một bước thật cụ thể, chẳng hạn đọc trang đầu tiên hoặc viết tiêu đề. Đừng chỉ ép bản thân cố gắng hơn. Hãy tìm cách làm điểm bắt đầu dễ tiếp cận hơn.",
+   "after": 2.4,
+   "file": "microstep.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn thường trì hoãn việc gì nhất?",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

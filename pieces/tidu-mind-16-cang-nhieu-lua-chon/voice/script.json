@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Bạn mở ứng dụng giao đồ ăn, có hàng trăm món, nhưng cuối cùng chẳng biết chọn gì?",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "paradox",
+   "text": "Nhiều lựa chọn mang lại sự tự do, nhưng trong một số tình huống cũng khiến việc quyết định khó khăn hơn.",
+   "after": 2.0,
+   "file": "paradox.wav"
+  },
+  {
+   "id": "reaction",
+   "text": "Bạn liên tục so sánh, sợ bỏ lỡ lựa chọn tốt hơn và trì hoãn việc chốt. Không phải lúc nào ít lựa chọn cũng tốt hơn.",
+   "after": 2.2,
+   "file": "reaction.wav"
+  },
+  {
+   "id": "criteria",
+   "text": "Điều quan trọng là có tiêu chí rõ ràng. Hãy thử xác định ba điều quan trọng nhất trước khi tìm kiếm. Sau đó loại những phương án không phù hợp.",
+   "after": 2.2,
+   "file": "criteria.wav"
+  },
+  {
+   "id": "reframe",
+   "text": "Đôi khi cách quyết định tốt hơn không phải xem thêm, mà là biết mình đang tìm điều gì.",
+   "after": 2.0,
+   "file": "reframe.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn thuộc nhóm quyết định nhanh hay suy nghĩ rất lâu trước khi chọn?",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

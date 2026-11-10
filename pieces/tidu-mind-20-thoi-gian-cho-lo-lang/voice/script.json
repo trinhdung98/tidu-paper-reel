@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Nếu những điều lo lắng cứ chen vào công việc cả ngày, bạn có thể thử cách này.",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "worrytime",
+   "text": "Hãy đặt một khoảng thời gian ngắn, khoảng mười đến mười lăm phút, để xem xét các mối lo của mình.",
+   "after": 2.2,
+   "file": "worrytime.wav"
+  },
+  {
+   "id": "box",
+   "text": "Khi một suy nghĩ xuất hiện ngoài khoảng đó, bạn có thể ghi lại để xem sau.",
+   "after": 1.8,
+   "file": "box.wav"
+  },
+  {
+   "id": "evaluate",
+   "text": "Đến thời gian đã chọn, hãy tự hỏi: điều này có thể giải quyết bằng hành động cụ thể không? Nếu có, hãy lập một kế hoạch. Nếu chưa, hãy ghi nhận sự không chắc chắn ấy.",
+   "after": 2.4,
+   "file": "evaluate.wav"
+  },
+  {
+   "id": "boundary",
+   "text": "Đây là một cách quản lý sự chú ý, không phải phương pháp đảm bảo mọi lo lắng sẽ biến mất.",
+   "after": 2.0,
+   "file": "boundary.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Lưu video để thử bài tập này vào một ngày bạn thấy suy nghĩ quá nhiều.",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

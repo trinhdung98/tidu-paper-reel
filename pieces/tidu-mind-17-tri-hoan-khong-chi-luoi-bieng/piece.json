@@ -1,0 +1,27 @@
+{
+  "name": "tidu-mind-17-tri-hoan-khong-chi-luoi-bieng",
+  "title": "Tidu Mind 17 — Trì hoãn không đơn giản chỉ vì lười biếng",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "storyFormat": "voice-cut list: hook -> emotion -> trap -> notice -> microstep -> cta",
+  "style": "paper-reel",
+  "fonts": {
+    "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf",
+    "Bevan": "Bevan-Regular.ttf"
+  },
+  "voice": {
+    "file": "voice/voice.wav",
+    "music": -14
+  },
+  "review": {
+    "safe": {
+      "top": 120,
+      "bottom": 300,
+      "right": 120
+    },
+    "refs": {}
+  }
+}

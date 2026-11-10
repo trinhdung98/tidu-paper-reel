@@ -1,0 +1,27 @@
+{
+  "name": "tidu-mind-19-vi-sao-cu-nho-cau-kho-nghe",
+  "title": "Tidu Mind 19 — Vì sao bạn cứ nhớ lại một câu nói khó nghe?",
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "storyFormat": "voice-cut list: hook -> rumination -> loop -> question -> action -> cta",
+  "style": "paper-reel",
+  "fonts": {
+    "Be Vietnam Pro": "BeVietnamPro-ExtraBold.ttf",
+    "Bevan": "Bevan-Regular.ttf"
+  },
+  "voice": {
+    "file": "voice/voice.wav",
+    "music": -14
+  },
+  "review": {
+    "safe": {
+      "top": 120,
+      "bottom": 300,
+      "right": 120
+    },
+    "refs": {}
+  }
+}

@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Người khác đi làm muộn là thiếu trách nhiệm. Còn bạn đi muộn là do kẹt xe?",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "bias",
+   "text": "Khi quan sát hành vi của người khác, chúng ta đôi khi đánh giá quá cao vai trò tính cách và xem nhẹ hoàn cảnh. Hiện tượng này liên quan đến lỗi quy kết cơ bản.",
+   "after": 2.2,
+   "file": "bias.wav"
+  },
+  {
+   "id": "reality",
+   "text": "Nhưng chỉ nhìn một hành động, ta thường chưa có đủ thông tin để hiểu nguyên nhân.",
+   "after": 1.8,
+   "file": "reality.wav"
+  },
+  {
+   "id": "example",
+   "text": "Một người trả lời cộc lốc có thể đang tức giận, mệt mỏi, hoặc đơn giản là không quen cách giao tiếp của bạn.",
+   "after": 2.2,
+   "file": "example.wav"
+  },
+  {
+   "id": "reframe",
+   "text": "Trước khi kết luận về tính cách ai đó, hãy thử hỏi: có hoàn cảnh nào mình chưa biết không?",
+   "after": 2.0,
+   "file": "reframe.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn đã từng hiểu lầm ai đó vì chỉ nhìn thấy một phần câu chuyện chưa?",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

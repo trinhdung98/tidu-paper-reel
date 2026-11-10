@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Bạn định giúp người khác tốt hơn, nhưng cuộc nói chuyện lại kết thúc bằng một cuộc cãi vã?",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "cause",
+   "text": "Có thể vấn đề không chỉ nằm ở nội dung góp ý, mà còn ở cách bạn truyền đạt. So sánh hai câu này.",
+   "after": 1.8,
+   "file": "cause.wav"
+  },
+  {
+   "id": "compare",
+   "text": "Bạn lúc nào cũng thiếu trách nhiệm. Và: hai lần gần đây bạn gửi báo cáo trễ, khiến nhóm phải đợi.",
+   "after": 2.2,
+   "file": "compare.wav"
+  },
+  {
+   "id": "impact",
+   "text": "Câu thứ hai nói rõ hành vi và tác động, thay vì đánh giá toàn bộ con người.",
+   "after": 2.0,
+   "file": "impact.wav"
+  },
+  {
+   "id": "reframe",
+   "text": "Khi góp ý, hãy thử nêu sự việc cụ thể, mô tả ảnh hưởng và cùng tìm giải pháp. Bạn vẫn có thể thẳng thắn mà không cần biến cuộc nói chuyện thành một cuộc công kích.",
+   "after": 2.2,
+   "file": "reframe.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn thích được góp ý trực tiếp hay cần thời gian để suy nghĩ trước?",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

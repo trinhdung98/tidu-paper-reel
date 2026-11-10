@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Cùng một món hàng, tại sao giá năm trăm nghìn có thể khiến ba trăm nghìn trông như một món hời?",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "explain",
+   "text": "Một phần câu trả lời là hiệu ứng neo.",
+   "after": 1.8,
+   "file": "explain.wav"
+  },
+  {
+   "id": "mechanism",
+   "text": "Khi đánh giá một con số, chúng ta có thể bị ảnh hưởng quá nhiều bởi thông tin xuất hiện đầu tiên. Giá ban đầu trở thành mốc so sánh, dù chưa chắc đó là mức giá hợp lý.",
+   "after": 2.2,
+   "file": "mechanism.wav"
+  },
+  {
+   "id": "broaden",
+   "text": "Hiệu ứng này không chỉ xuất hiện khi mua sắm, mà còn trong thương lượng và ước lượng.",
+   "after": 2.0,
+   "file": "broaden.wav"
+  },
+  {
+   "id": "reframe",
+   "text": "Trước khi quyết định, hãy tự hỏi: nếu chưa từng nhìn thấy con số đầu tiên, mình sẽ đánh giá lựa chọn này thế nào?",
+   "after": 2.0,
+   "file": "reframe.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn từng mua một món đồ chỉ vì thấy giảm giá rất sâu chưa?",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

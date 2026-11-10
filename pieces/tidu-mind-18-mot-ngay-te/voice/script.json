@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Chỉ vì hôm nay thất bại, bạn có đang nghĩ mình sẽ mãi thất bại?",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "overgeneralize",
+   "text": "Khi thất vọng, chúng ta đôi khi lấy một trải nghiệm riêng lẻ để kết luận về cả tương lai. Một cuộc phỏng vấn không thành công biến thành suy nghĩ: mình chẳng bao giờ tìm được việc.",
+   "after": 2.4,
+   "file": "overgeneralize.wav"
+  },
+  {
+   "id": "reality",
+   "text": "Nhưng một kết quả chưa thể đại diện cho mọi khả năng.",
+   "after": 1.8,
+   "file": "reality.wav"
+  },
+  {
+   "id": "reframe",
+   "text": "Hãy thử thay câu nói ấy bằng điều chính xác hơn: cuộc phỏng vấn lần này chưa tốt, và mình cần xem lại phần chuẩn bị.",
+   "after": 2.2,
+   "file": "reframe.wav"
+  },
+  {
+   "id": "differentiate",
+   "text": "Cách nói mới không phủ nhận khó khăn. Nó chỉ giúp bạn phân biệt một sự kiện với một kết luận quá rộng.",
+   "after": 2.0,
+   "file": "differentiate.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn có câu nói nào thường dùng để tự trách mình không?",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}

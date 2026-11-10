@@ -1,0 +1,47 @@
+{
+ "lead": 0.3,
+ "tail": 3.5,
+ "lang": "vi",
+ "lines": [
+  {
+   "id": "hook",
+   "text": "Một người nói chuyện tự tin có chắc cũng là người rất giỏi?",
+   "after": 1.6,
+   "file": "hook.wav"
+  },
+  {
+   "id": "explain",
+   "text": "Không nhất thiết. Trong tâm lý học có hiệu ứng hào quang.",
+   "after": 1.8,
+   "file": "explain.wav"
+  },
+  {
+   "id": "mechanism",
+   "text": "Một ấn tượng nổi bật về ai đó có thể ảnh hưởng đến cách chúng ta đánh giá những đặc điểm khác của họ. Một người ăn mặc chỉnh chu có thể được xem là đáng tin hơn, dù vẻ ngoài chưa đủ để chứng minh năng lực hay tính cách.",
+   "after": 2.4,
+   "file": "mechanism.wav"
+  },
+  {
+   "id": "notice",
+   "text": "Điều này không có nghĩa ấn tượng đầu tiên luôn sai. Nhưng nó nhắc chúng ta cần quan sát thêm.",
+   "after": 2.0,
+   "file": "notice.wav"
+  },
+  {
+   "id": "reframe",
+   "text": "Hãy thử đánh giá sự tự tin, kiến thức và kết quả công việc bằng những bằng chứng riêng biệt.",
+   "after": 2.0,
+   "file": "reframe.wav"
+  },
+  {
+   "id": "cta",
+   "text": "Bạn từng thay đổi ấn tượng về ai đó sau khi hiểu họ hơn chưa?",
+   "after": 0.3,
+   "file": "cta.wav"
+  }
+ ],
+ "vieneu": {
+  "voice": "Ngọc Huyền",
+  "speed": 0.88
+ }
+}
